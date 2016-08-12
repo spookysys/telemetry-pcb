@@ -6,11 +6,12 @@ Derived from Adafruit M0 Proto and Adalogger
 
 Compatible with Adafruit Feather products 
 * Same pinout and format - all pins available
-* MicroSD identical to Adalogger M0
+* MicroSD wired similar to Adalogger M0, but chip-select is on D7 not D4
 * Voltage is 3.0 instead of 3.3
 * Cut JP2 to free up D5
 
  All routed out pins are available for use by FeatherWing except D5. If you don't need hardware handshaking on the GSM UART, that pin also can be freed by cutting JP2 on the back of the board.    
+
 
 Components:
 * ATSAMD21G18

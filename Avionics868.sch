@@ -6333,7 +6333,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <label x="10.16" y="43.18" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="D7/SD_DET" class="0">
+<net name="D7/SD_CS" class="0">
 <segment>
 <pinref part="U1" gate="G$1" pin="PA21/I5/SERCOM3+5.3/I2SFS0"/>
 <wire x1="104.14" y1="38.1" x2="121.92" y2="38.1" width="0.1524" layer="91"/>
@@ -7084,14 +7084,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <label x="73.66" y="93.98" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="D7/SD_DET" class="0">
-<segment>
-<pinref part="X6" gate="G$1" pin="SD_SWITCH"/>
-<wire x1="91.44" y1="83.82" x2="73.66" y2="83.82" width="0.1524" layer="91"/>
-<label x="73.66" y="83.82" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="D4/SD_CS" class="0">
+<net name="D7/SD_CS" class="0">
 <segment>
 <pinref part="X6" gate="G$1" pin="SD_CD/DAT3"/>
 <wire x1="91.44" y1="101.6" x2="73.66" y2="101.6" width="0.1524" layer="91"/>
