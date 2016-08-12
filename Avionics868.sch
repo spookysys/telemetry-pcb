@@ -5616,6 +5616,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="R9" library="Seeed-Resistor-2016" deviceset="SMD-RES-100K-5%-1/10W(0603)" device="" value="100K 1/10W"/>
 <part name="U$2" library="microbuilder" deviceset="VBAT" device=""/>
 <part name="GND13" library="supply1" deviceset="GND" device=""/>
+<part name="TP3" library="microbuilder" deviceset="TESTPOINT" device="ROUND1.5MM"/>
 </parts>
 <sheets>
 <sheet>
@@ -6557,6 +6558,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="NAME" x="251.968" y="119.38" size="1.27" layer="95" align="center-left"/>
 <attribute name="VALUE" x="251.968" y="117.729" size="1.27" layer="95" align="center-left"/>
 </instance>
+<instance part="TP3" gate="G$1" x="73.66" y="83.82" rot="R90"/>
 </instances>
 <busses>
 </busses>
@@ -7168,6 +7170,14 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <label x="233.68" y="124.46" size="1.778" layer="95"/>
 </segment>
 </net>
+<net name="SD_DET" class="0">
+<segment>
+<pinref part="X6" gate="G$1" pin="SD_SWITCH"/>
+<wire x1="91.44" y1="83.82" x2="73.66" y2="83.82" width="0.1524" layer="91"/>
+<pinref part="TP3" gate="G$1" pin="P$1"/>
+<label x="73.66" y="83.82" size="1.778" layer="95"/>
+</segment>
+</net>
 </nets>
 </sheet>
 </sheets>
@@ -7176,12 +7186,12 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <approved hash="104,1,27.94,147.32,U2,IN,VBUS,,,"/>
 <approved hash="104,1,175.26,147.32,U3,VDD,VBUS,,,"/>
 <approved hash="104,1,200.66,142.24,U3,VSS,GND,,,"/>
-<approved hash="104,1,27.94,86.36,U$4,VDDA,+3V,,,"/>
-<approved hash="104,1,27.94,81.28,U$4,VDDIN,+3V,,,"/>
-<approved hash="104,1,27.94,20.32,U$4,GNDA,GND,,,"/>
-<approved hash="104,1,27.94,88.9,U$4,VDDIO,+3V,,,"/>
-<approved hash="104,2,112.776,127,U1,VDD,+3V,,,"/>
-<approved hash="104,2,107.696,127,U1,VDDIO,+3V,,,"/>
+<approved hash="104,1,27.94,86.36,U1,VDDA,+3V,,,"/>
+<approved hash="104,1,27.94,81.28,U1,VDDIN,+3V,,,"/>
+<approved hash="104,1,27.94,20.32,U1,GNDA,GND,,,"/>
+<approved hash="104,1,27.94,88.9,U1,VDDIO,+3V,,,"/>
+<approved hash="104,2,31.496,91.44,U6,VDD,+3V,,,"/>
+<approved hash="104,2,26.416,91.44,U6,VDDIO,+3V,,,"/>
 <approved hash="204,2,233.68,132.08,U5,VDD_EXT(2.8VOUT),,,,"/>
 <approved hash="104,2,162.56,119.38,U5,VRTC,N$29,,,"/>
 <approved hash="202,2,233.68,55.88,U5,MICP,,,,"/>
@@ -7191,19 +7201,22 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <approved hash="104,2,233.68,101.6,U5,SIM1_VDD,SIM_VDD,,,"/>
 <approved hash="202,2,233.68,91.44,U5,SIM1_DET,,,,"/>
 <approved hash="104,2,162.56,124.46,U5,GPS_VBAT,VBAT,,,"/>
-<approved hash="202,2,162.56,86.36,U5,UART1_RTS,,,,"/>
 <approved hash="202,2,162.56,76.2,U5,UART2_RXD,,,,"/>
 <approved hash="204,2,233.68,83.82,U5,SIM2_VDD,,,,"/>
 <approved hash="202,2,233.68,73.66,U5,SIM2_DET,,,,"/>
+<approved hash="106,2,162.56,93.98,GSM_RI,,,,,"/>
+<approved hash="106,2,233.68,124.46,NETLIGHT,,,,,"/>
 <approved hash="113,1,195.275,19.7358,FRAME1,,,,,"/>
 <approved hash="113,1,213.123,60.8288,JP1,,,,,"/>
 <approved hash="113,1,178.037,68.7112,JP3,,,,,"/>
 <approved hash="113,1,124.521,17.78,TP1,,,,,"/>
 <approved hash="113,1,124.521,15.24,TP2,,,,,"/>
 <approved hash="113,2,130.071,89.431,FRAME2,,,,,"/>
-<approved hash="113,2,144.719,48.26,TP4,,,,,"/>
-<approved hash="113,2,142.179,91.44,TP6,,,,,"/>
-<approved hash="113,2,141.595,96.52,TP13,,,,,"/>
+<approved hash="113,2,137.099,48.26,TP4,,,,,"/>
+<approved hash="113,2,137.099,91.44,TP6,,,,,"/>
+<approved hash="113,2,136.515,96.52,TP13,,,,,"/>
+<approved hash="113,2,248.981,119.38,TP5,,,,,"/>
+<approved hash="113,2,71.0592,83.82,TP3,,,,,"/>
 </errors>
 </schematic>
 </drawing>
