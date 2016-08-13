@@ -39,7 +39,7 @@ Currently sourcing PCB production and assembly
 
 # Credit
 
-Design derived from Adafruit M0 
+Design derived from Adafruit M0 Feather Proto and Adalogger
 
 Adafruit invests time and resources providing this open source design, 
 please support Adafruit and open-source hardware by purchasing 
