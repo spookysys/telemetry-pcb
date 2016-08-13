@@ -11,7 +11,7 @@ PCB files for Avionics Module
 * MicroSD
 * SIM868
   * GPS positioning
-  * GSP/GPRS (nanoSIM)
+  * GSM/GPRS (nanoSIM)
 * MPU-9250
   * 3D Acellerometer
   * 3D Gyroscope
