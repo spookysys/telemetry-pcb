@@ -5001,8 +5001,6 @@ Typical applications:&lt;p&gt;
 <wire x1="6.1" y1="8.95" x2="6.1" y2="-8.95" width="0.127" layer="21"/>
 <wire x1="6.1" y1="-8.95" x2="-6.1" y2="-8.95" width="0.127" layer="21"/>
 <rectangle x1="1" y1="-8.85" x2="2.7" y2="-5.75" layer="41"/>
-<rectangle x1="-1.5" y1="-8.85" x2="0.2" y2="-5.75" layer="42"/>
-<rectangle x1="-4.4" y1="-8.85" x2="-2.7" y2="-5.75" layer="42"/>
 <smd name="G8" x="6.35" y="-7.4" dx="1.1" dy="3.1" layer="1"/>
 <smd name="G1" x="-6.35" y="-7.4" dx="1.1" dy="3.1" layer="1"/>
 <smd name="C3" x="-6.35" y="-5.25" dx="1.1" dy="0.6" layer="1"/>
@@ -5026,10 +5024,6 @@ Typical applications:&lt;p&gt;
 <smd name="G4" x="-6.35" y="7.8" dx="1.1" dy="2.3" layer="1"/>
 <smd name="T1" x="6.35" y="5.715" dx="1.1" dy="0.6" layer="1"/>
 <smd name="S/W" x="-6.175" y="5.715" dx="1.45" dy="0.75" layer="1"/>
-<rectangle x1="-4.7" y1="3.05" x2="4.3" y2="8.05" layer="42"/>
-<rectangle x1="1" y1="-2.25" x2="2.7" y2="0.85" layer="42"/>
-<rectangle x1="-1.5" y1="-2.25" x2="0.2" y2="0.85" layer="42"/>
-<rectangle x1="-4.4" y1="-2.25" x2="-2.7" y2="0.85" layer="42"/>
 <wire x1="-5.15" y1="-9.15" x2="-5.3" y2="-9" width="0.127" layer="51" curve="-90"/>
 <wire x1="-5.15" y1="-9.15" x2="3.45" y2="-9.15" width="0.127" layer="51"/>
 <wire x1="3.45" y1="-9.15" x2="3.6" y2="-9" width="0.127" layer="51" curve="90"/>
@@ -5043,7 +5037,6 @@ Typical applications:&lt;p&gt;
 <rectangle x1="-4.4" y1="-2.25" x2="-2.7" y2="0.85" layer="41"/>
 <rectangle x1="-1.5" y1="-2.25" x2="0.2" y2="0.85" layer="41"/>
 <rectangle x1="1" y1="-2.25" x2="2.7" y2="0.85" layer="41"/>
-<rectangle x1="1" y1="-8.85" x2="2.7" y2="-5.75" layer="42"/>
 <rectangle x1="-1.5" y1="-8.85" x2="0.2" y2="-5.75" layer="41"/>
 <rectangle x1="-4.4" y1="-8.85" x2="-2.7" y2="-5.75" layer="41"/>
 </package>
