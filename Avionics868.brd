@@ -249,13 +249,13 @@
 <text x="36.3855" y="3.048" size="0.889" layer="22" font="vector" ratio="12" rot="SMR270" align="center">22</text>
 <text x="45.974" y="21.463" size="1.016" layer="22" font="vector" ratio="12" rot="SMR270" align="center">20</text>
 <text x="43.18" y="21.463" size="0.889" layer="22" font="vector" ratio="12" rot="SMR270" align="center">21</text>
-<dimension x1="0" y1="18.796" x2="88.773" y2="19.558" x3="44.3865" y3="45.974" textsize="1.778" layer="47" dtype="horizontal"/>
+<dimension x1="0" y1="18.796" x2="88.773" y2="19.558" x3="44.3865" y3="45.974" textsize="1.778" layer="47" dtype="horizontal" unit="inch"/>
 <dimension x1="2.54" y1="20.32" x2="48.26" y2="20.32" x3="25.4" y3="32.258" textsize="1.778" layer="47" dtype="horizontal" unit="inch"/>
 <dimension x1="0" y1="20.955" x2="10.795" y2="19.304" x3="5.3975" y3="24.384" textsize="1.778" layer="47" dtype="horizontal" unit="inch"/>
 <dimension x1="0" y1="19.558" x2="16.51" y2="21.59" x3="8.255" y3="27.432" textsize="1.778" layer="47" dtype="horizontal" unit="inch"/>
 <dimension x1="88.9" y1="21.59" x2="89.027" y2="19.05" x3="95.504" y3="20.32" textsize="1.778" layer="47" dtype="vertical" unit="inch"/>
 <dimension x1="1.397" y1="2.413" x2="3.81" y2="2.413" x3="2.6035" y3="-2.921" textsize="1.778" layer="47" unit="inch"/>
-<dimension x1="3.683" y1="0" x2="5.207" y2="22.86" x3="-5.588" y3="11.43" textsize="1.778" layer="47" dtype="vertical"/>
+<dimension x1="3.683" y1="0" x2="5.207" y2="22.86" x3="-5.588" y3="11.43" textsize="1.778" layer="47" dtype="vertical" unit="inch"/>
 <dimension x1="3.556" y1="0" x2="4.445" y2="11.43" x3="-2.032" y3="5.715" textsize="1.778" layer="47" dtype="vertical" unit="inch"/>
 <dimension x1="88.9" y1="21.59" x2="88.9" y2="1.27" x3="100.965" y3="11.43" textsize="1.778" layer="47" dtype="vertical" unit="inch"/>
 <wire x1="86.233" y1="0" x2="88.773" y2="2.54" width="0" layer="20" curve="90"/>
