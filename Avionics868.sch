@@ -5501,7 +5501,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="U$30" library="microbuilder" deviceset="GND" device=""/>
 <part name="GND1" library="supply1" deviceset="GND" device=""/>
 <part name="GND12" library="supply1" deviceset="GND" device=""/>
-<part name="L" library="microbuilder" deviceset="LED" device="0805_NOOUTLINE" value="RED"/>
+<part name="L1" library="microbuilder" deviceset="LED" device="0805_NOOUTLINE" value="RED"/>
 <part name="GND7" library="supply1" deviceset="GND" device=""/>
 <part name="C14" library="microbuilder" deviceset="CAP_CERAMIC" device="0603_NO" value="1uF"/>
 <part name="R7" library="microbuilder" deviceset="RESISTOR" device="_0603_NOOUT" value="2.2K"/>
@@ -5528,7 +5528,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="U$22" library="microbuilder" deviceset="GND" device=""/>
 <part name="JP3" library="microbuilder" deviceset="HEADER-1X12" device=""/>
 <part name="U3" library="microbuilder" deviceset="MCP73831/2" device="" value="MCP73831T-2ACI/OT"/>
-<part name="CHG" library="microbuilder" deviceset="LED" device="0805_NOOUTLINE" value="ORANGE"/>
+<part name="L3" library="microbuilder" deviceset="LED" device="0805_NOOUTLINE" value="BLUE"/>
 <part name="R2" library="microbuilder" deviceset="RESISTOR" device="_0603_NOOUT" value="1K"/>
 <part name="C3" library="microbuilder" deviceset="CAP_CERAMIC" device="0805-NOOUTLINE" value="10µF"/>
 <part name="U$33" library="microbuilder" deviceset="GND" device=""/>
@@ -5651,7 +5651,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="U$30" gate="G$1" x="27.94" y="127"/>
 <instance part="GND1" gate="1" x="167.64" y="99.06"/>
 <instance part="GND12" gate="1" x="83.82" y="127" rot="MR0"/>
-<instance part="L" gate="G$1" x="246.38" y="50.8" rot="R270"/>
+<instance part="L1" gate="G$1" x="246.38" y="50.8" rot="R270"/>
 <instance part="GND7" gate="1" x="129.54" y="144.78"/>
 <instance part="C14" gate="G$1" x="83.82" y="137.16"/>
 <instance part="R7" gate="G$1" x="246.38" y="63.5" rot="R270"/>
@@ -5682,7 +5682,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="FRAME1" gate="G$1" x="0" y="0"/>
 <instance part="JP3" gate="G$1" x="180.34" y="66.04"/>
 <instance part="U3" gate="G$1" x="187.96" y="144.78"/>
-<instance part="CHG" gate="G$1" x="154.94" y="142.24"/>
+<instance part="L3" gate="G$1" x="154.94" y="142.24"/>
 <instance part="R2" gate="G$1" x="165.1" y="142.24"/>
 <instance part="C3" gate="G$1" x="220.98" y="139.7"/>
 <instance part="U$33" gate="G$1" x="220.98" y="129.54"/>
@@ -5759,7 +5759,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="U$30" gate="G$1" pin="GND"/>
 </segment>
 <segment>
-<pinref part="L" gate="G$1" pin="C"/>
+<pinref part="L1" gate="G$1" pin="C"/>
 <pinref part="GND10" gate="1" pin="GND"/>
 <wire x1="246.38" y1="48.26" x2="246.38" y2="45.72" width="0.1524" layer="91"/>
 </segment>
@@ -6038,7 +6038,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="139.7" y1="154.94" x2="139.7" y2="147.32" width="0.1524" layer="91"/>
 <wire x1="139.7" y1="147.32" x2="147.32" y2="147.32" width="0.1524" layer="91"/>
 <wire x1="147.32" y1="147.32" x2="175.26" y2="147.32" width="0.1524" layer="91"/>
-<pinref part="CHG" gate="G$1" pin="A"/>
+<pinref part="L3" gate="G$1" pin="A"/>
 <wire x1="149.86" y1="142.24" x2="147.32" y2="142.24" width="0.1524" layer="91"/>
 <wire x1="147.32" y1="142.24" x2="147.32" y2="147.32" width="0.1524" layer="91"/>
 <junction x="147.32" y="147.32"/>
@@ -6078,7 +6078,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </net>
 <net name="N$2" class="0">
 <segment>
-<pinref part="L" gate="G$1" pin="A"/>
+<pinref part="L1" gate="G$1" pin="A"/>
 <pinref part="R7" gate="G$1" pin="2"/>
 <wire x1="246.38" y1="58.42" x2="246.38" y2="55.88" width="0.1524" layer="91"/>
 </segment>
@@ -6114,7 +6114,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </net>
 <net name="N$1" class="0">
 <segment>
-<pinref part="CHG" gate="G$1" pin="C"/>
+<pinref part="L3" gate="G$1" pin="C"/>
 <pinref part="R2" gate="G$1" pin="1"/>
 <wire x1="157.48" y1="142.24" x2="160.02" y2="142.24" width="0.1524" layer="91"/>
 </segment>
