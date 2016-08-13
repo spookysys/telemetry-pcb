@@ -5374,7 +5374,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="R7" library="Seeed-Resistor-2016" deviceset="SMD-RES-1K-5%-1/10W(0603)" device="" value="1K 1/10W"/>
 <part name="GND10" library="supply1" deviceset="GND" device=""/>
 <part name="U$34" library="microbuilder" deviceset="FIDUCIAL" device="&quot;&quot;"/>
-<part name="U$35" library="microbuilder" deviceset="FIDUCIAL" device="&quot;&quot;"/>
 <part name="SW1" library="adafruit" deviceset="SPST_TACT" device="-KMR2"/>
 <part name="U$31" library="microbuilder" deviceset="MOUNTINGHOLE" device="2.5"/>
 <part name="U$32" library="microbuilder" deviceset="MOUNTINGHOLE" device="2.5"/>
@@ -5488,8 +5487,13 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="+3V5" library="Custom" deviceset="+3V" device=""/>
 <part name="U$45" library="microbuilder" deviceset="GND" device=""/>
 <part name="C21" library="Seeed-Capacitor-2016" deviceset="CERAMIC-10UF-10V-10%-X5R(0603)" device="" value="10uf"/>
-<part name="+3V14" library="Custom" deviceset="+3V" device=""/>
 <part name="U$49" library="microbuilder" deviceset="GND" device=""/>
+<part name="C22" library="Seeed-Capacitor-2016" deviceset="CERAMIC-100NF-25V-10%-X7R(0402)" device="" value="100nf"/>
+<part name="U$50" library="microbuilder" deviceset="GND" device=""/>
+<part name="C23" library="Seeed-Capacitor-2016" deviceset="CERAMIC-10UF-10V-10%-X5R(0603)" device="" value="10uf"/>
+<part name="C24" library="Seeed-Capacitor-2016" deviceset="CERAMIC-100NF-25V-10%-X7R(0402)" device="" value="100nf"/>
+<part name="+3V14" library="Custom" deviceset="+3V" device=""/>
+<part name="U$35" library="microbuilder" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -5530,7 +5534,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="R7" gate="G$1" x="246.38" y="63.5" rot="R270"/>
 <instance part="GND10" gate="1" x="246.38" y="43.18" rot="MR0"/>
 <instance part="U$34" gate="G$1" x="210.82" y="17.78"/>
-<instance part="U$35" gate="G$1" x="205.74" y="17.78"/>
 <instance part="SW1" gate="G$1" x="124.46" y="152.4" smashed="yes" rot="R270">
 <attribute name="NAME" x="121.92" y="158.75" size="1.778" layer="95"/>
 <attribute name="VALUE" x="123.19" y="151.765" size="1.778" layer="96" rot="R270"/>
@@ -6435,9 +6438,16 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="C20" gate="G$1" x="15.24" y="65.024" rot="R270"/>
 <instance part="+3V5" gate="G$1" x="15.24" y="78.74" rot="MR0"/>
 <instance part="U$45" gate="G$1" x="15.24" y="53.34"/>
-<instance part="C21" gate="G$1" x="53.594" y="98.552" rot="R270"/>
-<instance part="+3V14" gate="G$1" x="53.34" y="111.76" rot="MR0"/>
-<instance part="U$49" gate="G$1" x="53.34" y="86.36"/>
+<instance part="C21" gate="G$1" x="48.514" y="113.538" rot="R270"/>
+<instance part="U$49" gate="G$1" x="48.514" y="101.092"/>
+<instance part="C22" gate="G$1" x="58.42" y="113.538" rot="R90"/>
+<instance part="U$50" gate="G$1" x="58.42" y="101.092"/>
+<instance part="C23" gate="G$1" x="71.374" y="121.158" rot="R270"/>
+<instance part="C24" gate="G$1" x="81.28" y="121.158" rot="R90"/>
+<instance part="+3V14" gate="G$1" x="76.708" y="127.508" smashed="yes" rot="MR0">
+<attribute name="VALUE" x="75.184" y="125.73" size="1.27" layer="96" rot="MR0"/>
+</instance>
+<instance part="U$35" gate="G$1" x="76.454" y="114.808"/>
 </instances>
 <busses>
 </busses>
@@ -6661,7 +6671,20 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <segment>
 <pinref part="C21" gate="G$1" pin="2"/>
 <pinref part="U$49" gate="G$1" pin="GND"/>
-<wire x1="53.34" y1="88.9" x2="53.594" y2="94.742" width="0.1524" layer="91"/>
+<wire x1="48.514" y1="103.632" x2="48.514" y2="109.728" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="C22" gate="G$1" pin="1"/>
+<pinref part="U$50" gate="G$1" pin="GND"/>
+<wire x1="58.42" y1="103.632" x2="58.42" y2="109.728" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="C24" gate="G$1" pin="1"/>
+<pinref part="C23" gate="G$1" pin="2"/>
+<wire x1="81.28" y1="117.348" x2="76.454" y2="117.348" width="0.1524" layer="91"/>
+<pinref part="U$35" gate="G$1" pin="GND"/>
+<wire x1="76.454" y1="117.348" x2="71.374" y2="117.348" width="0.1524" layer="91"/>
+<junction x="76.454" y="117.348"/>
 </segment>
 </net>
 <net name="SCL" class="0">
@@ -6767,9 +6790,12 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="15.24" y1="68.834" x2="15.24" y2="76.2" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="C21" gate="G$1" pin="1"/>
+<pinref part="C23" gate="G$1" pin="1"/>
+<pinref part="C24" gate="G$1" pin="2"/>
+<wire x1="71.374" y1="124.968" x2="76.708" y2="124.968" width="0.1524" layer="91"/>
 <pinref part="+3V14" gate="G$1" pin="+3V"/>
-<wire x1="53.594" y1="102.362" x2="53.34" y2="109.22" width="0.1524" layer="91"/>
+<wire x1="76.708" y1="124.968" x2="81.28" y2="124.968" width="0.1524" layer="91"/>
+<junction x="76.708" y="124.968"/>
 </segment>
 </net>
 <net name="MPU_INT" class="0">
@@ -6865,6 +6891,15 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="111.76" y1="111.76" x2="111.76" y2="114.3" width="0.1524" layer="91"/>
 <wire x1="111.76" y1="114.3" x2="93.98" y2="114.3" width="0.1524" layer="91"/>
 <label x="93.98" y="114.3" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="C22" gate="G$1" pin="2"/>
+<wire x1="58.42" y1="117.348" x2="58.42" y2="121.92" width="0.1524" layer="91"/>
+<label x="58.42" y="121.92" size="1.778" layer="95" rot="R90"/>
+<pinref part="C21" gate="G$1" pin="1"/>
+<wire x1="58.42" y1="121.92" x2="58.42" y2="125.476" width="0.1524" layer="91"/>
+<wire x1="48.514" y1="117.348" x2="48.514" y2="121.92" width="0.1524" layer="91"/>
+<wire x1="58.42" y1="121.92" x2="48.514" y2="121.92" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="SIM_DATA" class="0">
