@@ -2,31 +2,34 @@
 
 PCB files for Avionics Module
 
-Derived from Adafruit M0 Proto and Adalogger
 
-Compatible with Adafruit Feather products 
-* Same pinout and format - all pins available
-* MicroSD wired similar to Adalogger M0, but chip-select is on D7 not D4
-* Voltage is 3.0 instead of 3.3
-* Cut JP2 to free up D5
+# Components/Features 
 
- All routed out pins are available for use by FeatherWing except D5. If you don't need hardware handshaking on the GSM UART, that pin also can be freed by cutting JP2 on the back of the board.    
-
-
-Components:
+* Adafruit Feather-compatible
 * ATSAMD21G18
   * ARM Cortex-M0 at 32MHz
 * MicroSD
 * SIM868
-  * GPS 
-  * GSP/GPRS
+  * GPS positioning
+  * GSP/GPRS (nanoSIM)
 * MPU-9250
   * 3D Acellerometer
   * 3D Gyroscope
   * 3D Magnetometer
-* BMP180
+* BMP280
   * Pressure
   * Temperature
+
+
+# Adafruit Feather compatibility
+
+* Same pinout as Adafruit Feather M0. An on-board component interfers with D5 (see note).
+* MicroSD wired similar to Adalogger M0, but chip-select is on D7 not D4
+* Voltage is 3.0 instead of 3.3
+* I2C pull-ups are present
+
+Note: If you don't need hardware handshaking on the GSM UART, the D5 pin can be freed up by cutting JP2 on the back of the board.
+
 
 # Status
 
