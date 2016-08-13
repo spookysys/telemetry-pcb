@@ -37,7 +37,7 @@ UNTESTED
 
 Currently sourcing PCB production and assembly
 
-# Credit / License
+# Credit
 
 Design derived from Adafruit M0 
 
