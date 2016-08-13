@@ -4364,7 +4364,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="U3" library="microbuilder" deviceset="MCP73831/2" device="" value="MCP73831T-2ACI/OT"/>
 <part name="L3" library="Seeed-LED-2016" deviceset="SMD-LED-CLEAR-BLUE(0805)" device="" value="CLEAR-BLUE-0805"/>
 <part name="R2" library="Seeed-Resistor-2016" deviceset="SMD-RES-1K-5%-1/10W(0603)" device="" value="1K 1/10W"/>
-<part name="C3" library="microbuilder" deviceset="CAP_CERAMIC" device="0805-NOOUTLINE" value="10uF"/>
+<part name="C3" library="Seeed-Capacitor-2016" deviceset="CERAMIC-10UF-10V-10%-X5R(0603)" device="" value="10uf"/>
 <part name="U$33" library="microbuilder" deviceset="GND" device=""/>
 <part name="R8" library="Seeed-Resistor-2016" deviceset="SMD-RES-10K-5%-1/10W(0603)" device="" value="10K 1/10W"/>
 <part name="U$36" library="microbuilder" deviceset="GND" device=""/>
@@ -4381,7 +4381,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="U$8" library="microbuilder" deviceset="GND" device=""/>
 <part name="U$10" library="microbuilder" deviceset="GND" device=""/>
 <part name="X2" library="adafruit2" deviceset="XTAL" device="-3.2X1.5" value="32.768"/>
-<part name="C5" library="microbuilder" deviceset="CAP_CERAMIC" device="0805-NOOUTLINE" value="10uF"/>
+<part name="C5" library="Seeed-Capacitor-2016" deviceset="CERAMIC-10UF-10V-10%-X5R(0603)" device="" value="10uf"/>
 <part name="+3V2" library="Custom" deviceset="+3V" device=""/>
 <part name="U$11" library="microbuilder" deviceset="GND" device=""/>
 <part name="TP1" library="microbuilder" deviceset="TESTPOINT" device="ROUND1.5MM"/>
@@ -4435,7 +4435,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="U$46" library="microbuilder" deviceset="VBAT" device=""/>
 <part name="U$47" library="microbuilder" deviceset="VBAT" device=""/>
 <part name="TP13" library="microbuilder" deviceset="TESTPOINT" device="ROUND1.5MM"/>
-<part name="X4" library="SimSdCombo" deviceset="MOLEX-SD+SIM-104239" device="" value="VSHO-21-3301"/>
+<part name="X4" library="SimSdCombo" deviceset="MOLEX-SD+SIM-104239" device="" value="104239-1430"/>
 <part name="U$4" library="microbuilder" deviceset="GND" device=""/>
 <part name="+3V11" library="Custom" deviceset="+3V" device=""/>
 <part name="U$43" library="microbuilder" deviceset="GND" device=""/>
@@ -4527,7 +4527,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="U3" gate="G$1" x="187.96" y="144.78"/>
 <instance part="L3" gate="G$1" x="154.94" y="142.24"/>
 <instance part="R2" gate="G$1" x="165.1" y="142.24"/>
-<instance part="C3" gate="G$1" x="220.98" y="139.7"/>
+<instance part="C3" gate="G$1" x="220.98" y="139.7" rot="R270"/>
 <instance part="U$33" gate="G$1" x="220.98" y="129.54"/>
 <instance part="R8" gate="G$1" x="210.82" y="144.78"/>
 <instance part="U$36" gate="G$1" x="214.63" y="119.38"/>
@@ -4544,7 +4544,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="U$8" gate="G$1" x="109.22" y="114.3" rot="R180"/>
 <instance part="U$10" gate="G$1" x="119.38" y="114.3" rot="R180"/>
 <instance part="X2" gate="G$1" x="114.3" y="99.06"/>
-<instance part="C5" gate="G$1" x="93.98" y="137.16"/>
+<instance part="C5" gate="G$1" x="93.98" y="139.7" rot="R270"/>
 <instance part="+3V2" gate="G$1" x="93.98" y="152.4" rot="MR0"/>
 <instance part="U$11" gate="G$1" x="93.98" y="127"/>
 <instance part="TP1" gate="G$1" x="121.92" y="17.78" rot="R270"/>
@@ -4620,7 +4620,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <segment>
 <pinref part="C3" gate="G$1" pin="2"/>
 <pinref part="U$33" gate="G$1" pin="GND"/>
-<wire x1="220.98" y1="137.16" x2="220.98" y2="132.08" width="0.1524" layer="91"/>
+<wire x1="220.98" y1="135.89" x2="220.98" y2="132.08" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="R8" gate="G$1" pin="2"/>
@@ -4660,7 +4660,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <segment>
 <pinref part="C5" gate="G$1" pin="2"/>
 <pinref part="U$11" gate="G$1" pin="GND"/>
-<wire x1="93.98" y1="129.54" x2="93.98" y2="134.62" width="0.1524" layer="91"/>
+<wire x1="93.98" y1="129.54" x2="93.98" y2="135.89" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="R9" gate="G$1" pin="2"/>
@@ -4865,7 +4865,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <segment>
 <pinref part="C5" gate="G$1" pin="1"/>
 <pinref part="+3V2" gate="G$1" pin="+3V"/>
-<wire x1="93.98" y1="142.24" x2="93.98" y2="149.86" width="0.1524" layer="91"/>
+<wire x1="93.98" y1="143.51" x2="93.98" y2="149.86" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="VBUS" class="0">
@@ -4926,7 +4926,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="U3" gate="G$1" pin="VBAT"/>
 <pinref part="C3" gate="G$1" pin="1"/>
 <wire x1="220.98" y1="147.32" x2="200.66" y2="147.32" width="0.1524" layer="91"/>
-<wire x1="220.98" y1="144.78" x2="220.98" y2="147.32" width="0.1524" layer="91"/>
+<wire x1="220.98" y1="143.51" x2="220.98" y2="147.32" width="0.1524" layer="91"/>
 <wire x1="220.98" y1="147.32" x2="228.6" y2="147.32" width="0.1524" layer="91"/>
 <junction x="220.98" y="147.32"/>
 <pinref part="U$39" gate="G$1" pin="VBAT"/>
@@ -5400,7 +5400,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="NAME" x="134.112" y="96.52" size="1.27" layer="95" rot="R180" align="center-left"/>
 <attribute name="VALUE" x="134.112" y="98.171" size="1.27" layer="95" rot="R180" align="center-left"/>
 </instance>
-<instance part="X4" gate="G$1" x="106.68" y="86.36"/>
+<instance part="X4" gate="G$1" x="106.68" y="86.36" smashed="yes">
+<attribute name="NAME" x="93.98" y="110.49" size="1.27" layer="95" ratio="10"/>
+<attribute name="VALUE" x="125.984" y="72.136" size="1.27" layer="96" ratio="10" rot="R90"/>
+</instance>
 <instance part="U$4" gate="G$1" x="68.58" y="86.36" smashed="yes">
 <attribute name="VALUE" x="64.516" y="87.63" size="1.27" layer="96"/>
 </instance>
