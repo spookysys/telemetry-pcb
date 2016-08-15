@@ -1623,9 +1623,10 @@ design rules under a new name.</description>
 <attribute name="VALUE" x="64.389" y="21.5265" size="0.635" layer="27" ratio="10" rot="R270"/>
 <attribute name="NAME" x="65.7225" y="21.5265" size="0.635" layer="33" ratio="10" rot="R270"/>
 </element>
-<element name="X3" library="Deegou-Connectors" package="MICRO-USB5+6P-SMD-0.65-AB" value="" x="2.286" y="11.43" rot="R270">
+<element name="X3" library="Deegou-Connectors" package="MICRO-USB5+6P-SMD-0.65-AB" value="ZX62-B-5PA" x="2.286" y="11.43" rot="R270">
 <attribute name="MFR" value="Generic" x="2.286" y="11.43" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="AO1SB141B1-067" x="2.286" y="11.43" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="SEEED" value="ZX62-B-5PA" x="2.286" y="11.43" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
 </elements>
 <signals>

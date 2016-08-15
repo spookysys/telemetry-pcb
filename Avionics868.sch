@@ -4026,7 +4026,9 @@ SMD type&lt;br&gt;</description>
 <part name="U$12" library="microbuilder" deviceset="GND" device=""/>
 <part name="U$13" library="microbuilder" deviceset="VBAT" device=""/>
 <part name="U$14" library="microbuilder" deviceset="GND" device=""/>
-<part name="X3" library="Deegou-Connectors" deviceset="AO1SB141B1-067" device=""/>
+<part name="X3" library="Deegou-Connectors" deviceset="AO1SB141B1-067" device="" value="ZX62-B-5PA">
+<attribute name="SEEED" value="ZX62-B-5PA"/>
+</part>
 </parts>
 <sheets>
 <sheet>
@@ -4155,7 +4157,9 @@ SMD type&lt;br&gt;</description>
 <attribute name="NAME" x="120.142" y="148.59" size="1.27" layer="95" ratio="10" rot="R180"/>
 <attribute name="VALUE" x="126.492" y="148.844" size="1.27" layer="96" ratio="10" rot="R270"/>
 </instance>
-<instance part="X3" gate="G$1" x="154.94" y="106.68"/>
+<instance part="X3" gate="G$1" x="154.94" y="106.68">
+<attribute name="SEEED" x="154.94" y="106.68" size="1.778" layer="96" display="off"/>
+</instance>
 </instances>
 <busses>
 </busses>
