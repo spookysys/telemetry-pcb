@@ -3909,7 +3909,7 @@ SMD type&lt;br&gt;</description>
 <part name="L1" library="Seeed-LED-2016" deviceset="SMD-LED-CLEAR-RED(0805)" device="" value="RED-0805"/>
 <part name="GND7" library="supply1" deviceset="GND" device=""/>
 <part name="C14" library="Seeed-Capacitor-2016" deviceset="CERAMIC-1UF-25V-10%-X7R(0603)" device="" value="1uf"/>
-<part name="R7" library="Seeed-Resistor-2016" deviceset="SMD-RES-1K-5%-1/10W(0603)" device="" value="1K 1/10W"/>
+<part name="R7" library="Seeed-Resistor-2016" deviceset="SMD-RES-1K-5%-1/10W(0603)" device="" value="1K"/>
 <part name="GND10" library="supply1" deviceset="GND" device=""/>
 <part name="U$34" library="microbuilder" deviceset="FIDUCIAL" device="&quot;&quot;"/>
 <part name="U$31" library="microbuilder" deviceset="MOUNTINGHOLE" device="2.5"/>
@@ -3931,10 +3931,10 @@ SMD type&lt;br&gt;</description>
 <part name="JP3" library="microbuilder" deviceset="HEADER-1X12" device=""/>
 <part name="U3" library="microbuilder" deviceset="MCP73831/2" device="" value="MCP73831T-2ACI/OT"/>
 <part name="L3" library="Seeed-LED-2016" deviceset="SMD-LED-CLEAR-BLUE(0805)" device="" value="CLEAR-BLUE-0805"/>
-<part name="R2" library="Seeed-Resistor-2016" deviceset="SMD-RES-1K-5%-1/10W(0603)" device="" value="1K 1/10W"/>
+<part name="R2" library="Seeed-Resistor-2016" deviceset="SMD-RES-1K-5%-1/10W(0603)" device="" value="1K"/>
 <part name="C3" library="Seeed-Capacitor-2016" deviceset="CERAMIC-10UF-10V-10%-X5R(0603)" device="" value="10uf"/>
 <part name="U$33" library="microbuilder" deviceset="GND" device=""/>
-<part name="R8" library="Seeed-Resistor-2016" deviceset="SMD-RES-10K-5%-1/10W(0603)" device="" value="10K 1/10W"/>
+<part name="R8" library="Seeed-Resistor-2016" deviceset="SMD-RES-10K-5%-1/10W(0603)" device="" value="10K"/>
 <part name="U$36" library="microbuilder" deviceset="GND" device=""/>
 <part name="U$38" library="microbuilder" deviceset="VBUS" device=""/>
 <part name="U$39" library="microbuilder" deviceset="VBAT" device=""/>
@@ -3954,7 +3954,7 @@ SMD type&lt;br&gt;</description>
 <part name="U$11" library="microbuilder" deviceset="GND" device=""/>
 <part name="TP1" library="microbuilder" deviceset="TESTPOINT" device="ROUND1.5MM"/>
 <part name="TP2" library="microbuilder" deviceset="TESTPOINT" device="ROUND1.5MM"/>
-<part name="R1" library="Seeed-Resistor-2016" deviceset="SMD-RES-100K-5%-1/10W(0603)" device="" value="100K 1/10W"/>
+<part name="R1" library="Seeed-Resistor-2016" deviceset="SMD-RES-100K-5%-1/10W(0603)" device="" value="100K"/>
 <part name="FRAME2" library="microbuilder" deviceset="FRAME_A4" device=""/>
 <part name="U4" library="misc" deviceset="MPU-9250" device=""/>
 <part name="C13" library="Seeed-Capacitor-2016" deviceset="CERAMIC-100NF-50V-10%-X7R(0603)" device="" value="100nf"/>
@@ -3995,7 +3995,7 @@ SMD type&lt;br&gt;</description>
 <part name="JP2" library="SparkFun-Passives" deviceset="JUMPER-PAD-2-NC_BY_TRACE" device=""/>
 <part name="TP5" library="microbuilder" deviceset="TESTPOINT" device="ROUND1.5MM"/>
 <part name="L2" library="Seeed-LED-2016" deviceset="SMD-LED-CLEAR-GREEN(0805)" device="" value="GREEN-0805"/>
-<part name="R6" library="Seeed-Resistor-2016" deviceset="SMD-RES-1K-5%-1/10W(0603)" device="" value="1K 1/10W"/>
+<part name="R6" library="Seeed-Resistor-2016" deviceset="SMD-RES-1K-5%-1/10W(0603)" device="" value="1K"/>
 <part name="GND9" library="supply1" deviceset="GND" device=""/>
 <part name="R3" library="Seeed-Resistor-2016" deviceset="SMD-RES-100K-1%-1/10W(0603)" device="" value="100K"/>
 <part name="R9" library="Seeed-Resistor-2016" deviceset="SMD-RES-100K-1%-1/10W(0603)" device="" value="100K"/>
