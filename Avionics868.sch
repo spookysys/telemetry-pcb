@@ -5403,6 +5403,7 @@ SMD type&lt;br&gt;</description>
 <wire x1="104.648" y1="42.926" x2="104.648" y2="35.306" width="0.1524" layer="91"/>
 <wire x1="104.648" y1="26.416" x2="104.648" y2="35.306" width="0.1524" layer="91"/>
 <junction x="104.648" y="35.306"/>
+<junction x="104.648" y="42.926"/>
 </segment>
 <segment>
 <pinref part="R4" gate="G$1" pin="2"/>
@@ -5743,6 +5744,7 @@ SMD type&lt;br&gt;</description>
 </sheets>
 <errors>
 <approved hash="102,1,48.26,147.32,OUT,+3V,,,,"/>
+<approved hash="102,1,165.1,99.06,SHIELD,GND,,,,"/>
 <approved hash="104,1,27.94,147.32,U2,IN,VBUS,,,"/>
 <approved hash="104,1,175.26,147.32,U3,VDD,VBUS,,,"/>
 <approved hash="104,1,200.66,142.24,U3,VSS,GND,,,"/>
@@ -5762,6 +5764,7 @@ SMD type&lt;br&gt;</description>
 <approved hash="202,2,165.1,101.6,U5,UART2_RXD,,,,"/>
 <approved hash="204,2,236.22,109.22,U5,SIM2_VDD,,,,"/>
 <approved hash="202,2,236.22,99.06,U5,SIM2_DET,,,,"/>
+<approved hash="106,2,165.1,119.38,GSM_RI,,,,,"/>
 <approved hash="106,2,236.22,149.86,NETLIGHT,,,,,"/>
 <approved hash="113,1,195.275,19.7358,FRAME1,,,,,"/>
 <approved hash="113,1,213.123,60.8288,JP1,,,,,"/>
