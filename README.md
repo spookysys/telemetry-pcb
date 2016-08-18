@@ -1,9 +1,9 @@
-# FAR / Shitfaced Clowns Avionics Module
+# Greetings from Space
 
-PCB files for Avionics Module
+Avionics Base PCB
 
 
-# Components/Features 
+## Features 
 
 * Adafruit Feather-compatible
 * ATSAMD21G18
@@ -21,7 +21,7 @@ PCB files for Avionics Module
   * Temperature
 
 
-# Adafruit Feather compatibility
+## Adafruit Feather compatibility
 
 * Same pinout as Adafruit Feather M0. An on-board component interfers with D5 (see note).
 * MicroSD wired similar to Adalogger M0, but chip-select is on D7 not D4
@@ -31,11 +31,9 @@ PCB files for Avionics Module
 Note: If you don't need hardware handshaking on the GSM UART, the D5 pin can be freed up by cutting JP2 on the back of the board.
 
 
-# Status
+## Status
 
-UNTESTED
-
-Currently sourcing PCB production and assembly
+Just ordered first batch, not yet tested
 
 # Credit
 
