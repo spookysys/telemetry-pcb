@@ -1,4 +1,4 @@
-# Greetings from Space
+# Greetings from PCB
 
 Avionics Base PCB
 
