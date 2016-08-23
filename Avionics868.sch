@@ -2519,19 +2519,15 @@ DIN A4, landscape with location and doc. field</description>
 <text x="-0.254" y="1.27" size="0.635" layer="33" ratio="10" rot="R270">&gt;name</text>
 <rectangle x1="-1.27" y1="-0.508" x2="1.27" y2="0.508" layer="39" rot="R270"/>
 </package>
-<package name="AVX-B">
-<wire x1="-2.2225" y1="1.397" x2="2.2225" y2="1.397" width="0.1016" layer="21"/>
-<wire x1="2.2225" y1="1.397" x2="2.2225" y2="-1.397" width="0.1016" layer="21"/>
-<wire x1="2.2225" y1="-1.397" x2="-2.2225" y2="-1.397" width="0.1016" layer="21"/>
-<wire x1="-2.2225" y1="-1.397" x2="-2.2225" y2="1.397" width="0.1016" layer="21"/>
-<wire x1="-0.6985" y1="0" x2="-0.1905" y2="0" width="0.127" layer="21"/>
-<wire x1="-0.4445" y1="-0.254" x2="-0.4445" y2="0.254" width="0.127" layer="21"/>
-<smd name="+" x="-1.4605" y="0" dx="1.143" dy="2.286" layer="1"/>
-<smd name="-" x="1.4605" y="0" dx="1.143" dy="2.286" layer="1" rot="R180"/>
-<text x="-1.905" y="1.524" size="0.889" layer="25" ratio="11">&gt;NAME</text>
-<text x="-1.905" y="-2.159" size="0.635" layer="27" ratio="10">&gt;VALUE</text>
-<text x="-0.635" y="0" size="0.4064" layer="33" ratio="10">&gt;NAME</text>
-<rectangle x1="-2.2225" y1="-1.397" x2="2.2225" y2="1.397" layer="39"/>
+<package name="C1206">
+<wire x1="-2.4638" y1="1.2192" x2="2.4638" y2="1.2192" width="0.127" layer="21"/>
+<wire x1="2.4638" y1="1.2192" x2="2.4638" y2="-1.2192" width="0.127" layer="21"/>
+<wire x1="2.4638" y1="-1.2192" x2="-2.4638" y2="-1.2192" width="0.127" layer="21"/>
+<wire x1="-2.4638" y1="-1.2192" x2="-2.4638" y2="1.2192" width="0.127" layer="21"/>
+<smd name="1" x="-1.651" y="0" dx="1.27" dy="2.032" layer="1"/>
+<smd name="2" x="1.651" y="0" dx="1.27" dy="2.032" layer="1"/>
+<text x="-2.54" y="1.524" size="0.889" layer="25" ratio="11">&gt;NAME</text>
+<text x="-1.27" y="-2.286" size="0.635" layer="27" ratio="10">&gt;VALUE</text>
 </package>
 </packages>
 <symbols>
@@ -2546,17 +2542,6 @@ DIN A4, landscape with location and doc. field</description>
 <text x="-3.81" y="-2.54" size="1.27" layer="96" ratio="10">&gt;VALUE</text>
 <pin name="1" x="-3.81" y="0" visible="off" length="short" direction="pas" swaplevel="1"/>
 <pin name="2" x="3.81" y="0" visible="off" length="short" direction="pas" swaplevel="1" rot="R180"/>
-</symbol>
-<symbol name="CAP-POLAR">
-<wire x1="-1.27" y1="2.54" x2="-1.27" y2="-2.54" width="0.508" layer="94"/>
-<wire x1="1.27" y1="2.54" x2="1.27" y2="-2.54" width="0.508" layer="94" curve="47.924978"/>
-<wire x1="1.27" y1="0" x2="0.635" y2="0" width="0.1524" layer="94"/>
-<text x="-2.54" y="0" size="1.27" layer="93" ratio="10">+</text>
-<text x="-6.35" y="3.81" size="1.27" layer="95" ratio="10">&gt;NAME</text>
-<text x="1.27" y="3.81" size="1.27" layer="96" ratio="10">&gt;VALUE</text>
-<text x="1.27" y="0" size="1.27" layer="93" ratio="10">-</text>
-<pin name="+" x="-3.81" y="0" visible="off" length="short" direction="pas"/>
-<pin name="-" x="3.81" y="0" visible="off" length="short" direction="pas" rot="R180"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -2640,20 +2625,20 @@ DIN A4, landscape with location and doc. field</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="TANTALUM-SMD-100UF-10V(AVX-B)" prefix="C" uservalue="yes">
-<description>302020015</description>
+<deviceset name="CERAMIC-100UF-6.3V-20%-X5R(1206)" prefix="C" uservalue="yes">
+<description>302010183</description>
 <gates>
-<gate name="G$1" symbol="CAP-POLAR" x="0" y="0"/>
+<gate name="G$1" symbol="C" x="0" y="0"/>
 </gates>
 <devices>
-<device name="" package="AVX-B">
+<device name="" package="C1206">
 <connects>
-<connect gate="G$1" pin="+" pad="+"/>
-<connect gate="G$1" pin="-" pad="-"/>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
 </connects>
 <technologies>
 <technology name="">
-<attribute name="MPN" value="TAJB107M010#NJ" constant="no"/>
+<attribute name="MPN" value="GRM31CR60J107ME39L" constant="no"/>
 <attribute name="VALUE" value="100uf"/>
 </technology>
 </technologies>
@@ -3964,7 +3949,7 @@ SMD type&lt;br&gt;</description>
 <part name="D2" library="Deegou-Diodes" deviceset="MMSZ5231BT1G" device="" value="MMSZ5231BT1G"/>
 <part name="C12" library="Seeed-Capacitor-2016" deviceset="CERAMIC-10PF-50V-5%-NPO(0603)" device="" value="10pf"/>
 <part name="C15" library="Custom" deviceset="CERAMIC-33PF-50V-5%-NPO(0603)" device="" value="33pf"/>
-<part name="C16" library="Seeed-Capacitor-2016" deviceset="TANTALUM-SMD-100UF-10V(AVX-B)" device="" value="100uf"/>
+<part name="C16" library="Seeed-Capacitor-2016" deviceset="CERAMIC-100UF-6.3V-20%-X5R(1206)" device="" value="100uf"/>
 <part name="C17" library="Seeed-Capacitor-2016" deviceset="CERAMIC-10UF-10V-10%-X5R(0603)" device="" value="10uf"/>
 <part name="U5" library="SIM868" deviceset="SIM868" device=""/>
 <part name="U$23" library="microbuilder" deviceset="GND" device=""/>
@@ -3991,7 +3976,7 @@ SMD type&lt;br&gt;</description>
 <part name="+3V11" library="Custom" deviceset="+3V" device=""/>
 <part name="U$43" library="microbuilder" deviceset="GND" device=""/>
 <part name="U$48" library="microbuilder" deviceset="GND" device=""/>
-<part name="C18" library="Seeed-Capacitor-2016" deviceset="TANTALUM-SMD-100UF-10V(AVX-B)" device="" value="100uf"/>
+<part name="C18" library="Seeed-Capacitor-2016" deviceset="CERAMIC-100UF-6.3V-20%-X5R(1206)" device="" value="100uf"/>
 <part name="JP2" library="SparkFun-Passives" deviceset="JUMPER-PAD-2-NC_BY_TRACE" device=""/>
 <part name="TP5" library="microbuilder" deviceset="TESTPOINT" device="ROUND1.5MM"/>
 <part name="L2" library="Seeed-LED-2016" deviceset="SMD-LED-CLEAR-GREEN(0805)" device="" value="GREEN-0805"/>
@@ -5081,7 +5066,7 @@ SMD type&lt;br&gt;</description>
 <segment>
 <pinref part="U$37" gate="G$1" pin="GND"/>
 <wire x1="155.194" y1="144.78" x2="149.86" y2="144.78" width="0.1524" layer="91"/>
-<pinref part="C18" gate="G$1" pin="-"/>
+<pinref part="C18" gate="G$1" pin="2"/>
 </segment>
 <segment>
 <pinref part="U4" gate="G$1" pin="FSYNC"/>
@@ -5207,7 +5192,7 @@ SMD type&lt;br&gt;</description>
 </segment>
 <segment>
 <wire x1="185.928" y1="14.478" x2="185.928" y2="17.78" width="0.1524" layer="91"/>
-<pinref part="C16" gate="G$1" pin="-"/>
+<pinref part="C16" gate="G$1" pin="2"/>
 <wire x1="196.088" y1="14.478" x2="185.928" y2="14.478" width="0.1524" layer="91"/>
 <pinref part="C17" gate="G$1" pin="2"/>
 <wire x1="196.088" y1="18.288" x2="196.088" y2="14.478" width="0.1524" layer="91"/>
@@ -5435,7 +5420,7 @@ SMD type&lt;br&gt;</description>
 <segment>
 <pinref part="U5" gate="G$1" pin="VRTC"/>
 <wire x1="165.1" y1="144.78" x2="162.814" y2="144.78" width="0.1524" layer="91"/>
-<pinref part="C18" gate="G$1" pin="+"/>
+<pinref part="C18" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="GPS_ANT" class="0">
@@ -5596,7 +5581,7 @@ SMD type&lt;br&gt;</description>
 <junction x="165.1" y="149.86"/>
 </segment>
 <segment>
-<pinref part="C16" gate="G$1" pin="+"/>
+<pinref part="C16" gate="G$1" pin="1"/>
 <wire x1="185.928" y1="25.4" x2="185.928" y2="29.718" width="0.1524" layer="91"/>
 <wire x1="185.928" y1="29.718" x2="196.088" y2="29.718" width="0.1524" layer="91"/>
 <wire x1="196.088" y1="29.718" x2="203.708" y2="29.718" width="0.1524" layer="91"/>
