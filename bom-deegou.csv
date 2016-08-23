@@ -6,7 +6,7 @@
 5,"C9,C11,C13,C21,C23,C25",Generic,6,Ceramic Capacitor,100nF,0603,,
 6,"C1,C7,C14",Generic,3,Ceramic Capacitor,1uF,0603,,
 7,"C3,C5,C6,C8,C17,C20,C28,C29",Generic,8,Ceramic Capacitor,10uF,0603,,
-8,"C16,C18",Generic,2,Tantalum Capacitor,100uF,AVX-B,,
+8,"C16,C18",CL31A107MQHNNNE,2,Ceramic Capacitor,100uF,1206,,
 9,D1,MBR120ESFT3G,1,Schottky Diode,,SOD-123,Digikey,MBR120ESFT3GOSCT-ND
 10,D2,MMSZ5231BT1G,1,DIODE ZENER,5.1V 500MW,SOD-123,Digikey,MBR120ESFT3GOSCT-ND
 11,D3,SMF05CT2G,1,Voltage Transient Suppressor Array,,SOT363,Digikey,SMF05CT2GOSCT-ND
