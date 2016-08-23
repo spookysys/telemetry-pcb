@@ -1,0 +1,3950 @@
+#usage "<b>Bill Of Material And More - Release: BOM-AM-17 - Date: May 12, 2009</b>\n"
+       "<p>"
+       "A database with additional information like order codes, manufacturers or prices can be created and managed."
+       "Other features include board statistics, etc."
+       "<p>"
+       "<author>Author: Robert A. Rioja (Robert@Unison-Travel.com)</author>"
+
+string Release;
+string ReleaseDate;
+
+string HelpText = "<html>" + usage +
+  "<p>"
+  "Please report all bugs to the author as soon as possible.  This program is provided AS IS and without "
+  "warranty of any kind, expressed or implied.  This program was developed in Windows XP(SP3), and Eagle 5.2."
+  "<p>"
+  "<hr>"
+
+  "<font color=red>All text in red shows differences with the previous version of this program.</font>"
+  "<hr>"
+
+  "<h3>Summary</h3>"
+  "This program generates a Parts List from your schematic, and can generate a Bill Of Materials by combining "
+  "the Parts Lists with data extracted from a user defined database.  For each part, this database can contain, "
+  "for example, name of manufacturer, costs for different quantities, operating temperature range, etc.  "
+  "It is up to you to decide what to put into your databases.  Other parts lists can be imported from "
+  "other projects.  Different Bills Of Material can then be produced containing whatever information you want to "
+  "include from the projects and database."
+  "<p>"
+  "This program's user interface is divided into eight tabs labeled \"Schematic\", \"Board\", \"Import/export\", "
+  "\"Database\", \"Output\", \"Options\", \"Help\" and \"History\".  Since you are reading this, you "
+  "have found the \"Help\" tab on your own.  Each tab contains standard controls such as push buttons, radio "
+  "buttons, list boxes, listview boxes, text boxes, etc.  This documentation lists controls with graphical "
+  "representations as follows:"
+  "<p>"
+  "<ul type=disc><li> &lt; == disc means push button.</li></ul>"
+  "<ul type=circle><li> &lt; == circle means radio button.</li></ul>"
+  "<ul type=square><li> &lt; == square means text box, list box, listview box, or check box.</li></ul>"
+  "<p>"
+  "<hr>"
+
+  "<h2>Schematic</h2>"
+
+  "A parts list is extracted from a project's schematic.  Every part from the schematic has the following data: "
+  "Part (name), Value, Device, Package, Description, and Sheet number.  If the Device name or value contain the "
+  "\"^\" character, everything from the \"^\" to the end is ignored.  This allows you to have devices which Eagle "
+  "treats as different entities, but which are considered as one by this program.  <b>This is a departure from "
+  "Eagle specifications.</b>  Also, all parts with values equal to \"don't show\" are treated in a special way by "
+  "this program.  <b>This is a departure from Eagle specifications.</b>"
+
+  "<h3>Parts list</h3>"
+
+  "The data is displayed in columns in this list box.  In the list's header, you can click on the name of any "
+  "column to sort the list by this column in either ascending or descending order.  This list is only shown on "
+  "the screen.  You have to use this \"Schematic\" tab as well as the \"Database\" and \"Output\" tabs to "
+  "generate a report that can be saved or printed."
+
+  "<h3>Grouped by</h3>"
+
+  "Two radio buttons select how the parts are grouped:"
+
+  "<ul type=circle>"
+  "<li><b>Individual</b> - list of parts, where every part is listed on a line of its own.</li>"
+  "<li><b>Same values</b> - list of values, where all parts with the same value, device and package are grouped "
+  "together in one line.  In this format, sheet numbers will not be displayed.</li>"
+  "</ul>"
+
+  "<h3>Values to display</h3>"
+
+  "Three radio buttons control the contents of the list depending on the value field.  This is usefull for things "
+  "that may be in the schematic but you don't want in the Bill of Materials.  Typically, you set the part's value "
+  "to \"don't show\" (case insensitive, apostrophe not necessary) so that it will not be listed in the parts list.  "
+  "This is useful for excluding things like test points, fiducials, or anything else that might appear in the PCB "
+  "but are not important for a Bill of Materials."
+
+  "<ul type=circle>"
+  "<li><b>Real values only</b> - any part whose <b>value</b> is set to \"don't show\" in the schematic "
+  "will be ignored, and the part will not appear.</li>"
+  "<li><b>\"Don't Show\" values only</b> - only parts whose <b>value</b> is set to \"don't show\" will appear.</li>"
+  "<li><b>All values</b> - all parts will appear.</li>"
+  "</ul>"
+
+  "<h3>Packages to display</h3>"
+
+  "Three radio buttons control the contents of the list depending on the existance of a device package.  This "
+  "is usefull for things that appear only in the schematic but not in the PCB, like title blocks, etc.  "
+  "If you want to have a part that appears in the schematic and the BOM but not in the PCB, "
+  "create a symbol for it, create a package that has nothing in it (you can call it something like NOPACKAGE), "
+  "then create a device with the symbol and empty package.  A package with nothing in it is still a package but "
+  "will not appear in the PCB.  If you want to have a part that appears in the schematic but not in the PCB nor "
+  "BOM, create a device that has the symbol but no package."
+
+  "<ul type=circle>"
+  "<li><b>With package only</b> - all parts that have a device package.</li>"
+  "<li><b>Without package only</b> - all parts with no device package.</li>"
+  "<li><b>With and without package</b> - all parts will appear.</li>"
+  "</ul>"
+
+  "<h3>Editing a database record</h3>"
+
+  "If a database has been opened (in the <b>Database</b> tab), you can double click a line in the parts list "
+  "to bring up a dialog in which you can edit the database record for this part.  The name of each field "
+  "will be listed along with the contents of the field.  You can then edit the contents.  "
+  "Details can be found in the <b>Database</b> section of this Help text."
+
+  "<h3>Exit this program</h3>"
+
+  "<ul type=disc>"
+  "<li><b>Exit</b> - Clicking on this button will terminate and exit this program.  If the optional database was "
+  "modified in any way, you will be prompted to save it before exiting."
+  "</ul>"
+
+  "<hr>"
+  "<h2>Board</h2>"
+
+  "A parts list is extracted from a project's board with the following data:  Part name, Side (top or bottom), "
+  "X and Y coordinates in inches and millimeters, and angle."
+
+  "<h3>Parts list</h3>"
+
+  "The data is displayed in columns in this list box.  In the list's header, you can click on the name of any "
+  "column to sort the list by this column in either ascending or descending order.  This list is only shown on "
+  "the screen."
+
+  "<hr>"
+  "<h2>Import/Export</h2>"
+
+  "When this program is run, it always makes parts lists out of the parts in the current schematic and board.  "
+  "If you want to add to it the parts from other projects, you can import parts list files exported from "
+  "the other projects.  When this is done, the name of the imported project must be associated with the "
+  "parts that came from it.  When the parts list is \"Grouped by\" indivudual parts, a new column is added to "
+  "the parts list which contains the name of the project that each part is from.  If the parts list is "
+  "\"Grouped by\" same values, then the project name is appended to the part names with a \"@\" separator.  "
+  "It is important to understand that project names will appear only when one or more parts lists have been "
+  "imported.  If nothing has been imported, then all of the parts that appear in the parts list must be from the "
+  "current project only and it is not necessary to have a project name shown."
+
+  "<h3>Import</h3>"
+  "Two push buttons control the importing of parts lists.  As a list is imported, its file name is added to a list "
+  "of imported files."
+
+  "<ul type=disc>"
+  "<li><b>Import parts list</b> - push button to import a parts list.  The user will be prompted for the "
+  "file name.  After the file has been read and the parts have been added to the parts list, the name of the "
+  "file wil be added to the list of parts list file names.</li>"
+  "<li><b>Remove parts list</b> - push button to remove an already imported parts list.  First you have to "
+  "select a parts list from the list.  Then press this button to remove it from the list, and all parts that "
+  "were imported will be removed from the parts list.</li>"
+  "</ul>"
+  "<ul type=square>"
+  "<li><b>Imported parts list files</b> - This list contains the names of parts list files that were imported.</li>"
+  "</ul>"
+
+  "<h3>Name of parts list from current schematic</h3>"
+  "By default, the parts list from the current schematic is given the name of the schematic.  Two push buttons "
+  "and a text box control this name."
+
+  "<ul type=disc>"
+  "<li><b>Default</b> - push button to reset the parts list name to that of the current schematic.</li>"
+  "</ul>"
+  "<ul type = square>"
+  "<li><b>Name</b> - text box containing the current name.  You can overwrite it or set it to the default "
+  "value with the above push button.  This is the name that will appear next to every part taken from the "
+  "current schematic, but only if other schematic parts lists have been imported.</li>"
+  "</ul>"
+  "<ul type=disc>"
+  "<li><b>Update</b> - changing the contents of the Name text box above does not change the actual name "
+  "shown in the parts list listview in the \"Parts list\" tab.  Pressing this button updates the listview.</li>"
+  "</ul>"
+
+  "<h3>Export</h3>"
+
+  "Exporting is controlled by two push buttons."
+  "<ul type=disc>"
+  "<li><b>Export parts list from this project only</b> - this is normally used to then import to another parts list.</li>"
+  "<li><b>Export parts list including imported lists</b> - this exports the sum total of all parts lists.</li>"
+  "</ul>"
+
+  "<hr>"
+  "<h2>Database</h2>"
+
+  "You can also maintain a database with additional data about the parts.  A database file can be "
+  "maintained for parts found in several projects.  This way, one database can grow as you add new parts to "
+  "various projects.  Also, many databases can be maintained but only one can be used at a time.  A "
+  "database could be used to keep parts data such as name of manufacturer, cost, availability, etc."
+  "<p>"
+  "The keys for looking up records in the database are built from the parts' device names and values.  If a part's "
+  "device has defined \"value on\", it means that the user has to specify a particular value for this part, for example "
+  "with a resistor.  In such a case the key consists of the device name and the user defined value, separated by a colon "
+  "(':').  If the device has \"value off\", only the device name is used as key (if the user has edited the value of "
+  "such a part and insisted on changing it, the edited value will be used).  The keys can be displayed as the last "
+  "column of the Parts List in the \"Schematic\" tab if you check the \"Display keys\" check box in the \"Options\" tab."
+  "<p>"
+  "Under the <b>Database operations</b> heading, there are several buttons as follows:"
+
+  "<ul type=disc>"
+  "<li><b>New Database</b> - Click this button to create a new database.  If a database was already open, and "
+  "changes were made to it, you will be prompted to save it.  The open database will then be closed.  You will then "
+  "see a dialog in which you can define the names of the fields of the new database.  You will see a list box on the "
+  "left which will contain the field names as you enter them.  On the right, you will see a list of buttons as "
+  "follows:"
+
+  "<ul type=disc>"
+  "<li><b>Append</b> - this push button will prompt you for the name of a new field to append to the database "
+  "structure.</li>"
+  "<li><b>Delete</b> - Select a field name from the list box and press this button to delete it.</li>"
+  "<li><b>Edit</b> - Select a field name from the list box and press this button to edit its name.</li>"
+  "<li><b>Move Down</b> - Select a field name from the list box and press this button to move the name down.  This "
+  "is done to change the order of the fields in the database.</li>"
+  "<li><b>Move Up</b> - Select a field name from the list box and press this button to move the name up.  This "
+  "is done to change the order of the fields in the database.</li>"
+  "</ul>"
+  "You will then be asked for the new database file name.</li>"
+
+  "<li><b>Open Database</b> - push button to open an existing database file.  If a database was already open "
+  "and changes were made to it, you will be prompted to save it.  The open database will then be closed.  You "
+  "will then see a dialog to select the file to open.</li>"
+  "<li><b>Edit Structure</b> - a dialog similar to the one used to create a database will appear.  This will "
+  "allow you to modify the database structure.</li>"
+  "<li><b>Delete Record</b> - click on a line in the list to select a record.  Then click this push button and you "
+  "will be prompted for permission to delete it.</li>"
+  "<li><b>Save Database</b> - If an existing database was opened, this push button will write it back to the file "
+  "and the database will remain open.  If a new database was created and no file yet exists for it, you will be "
+  "prompted for a file name.</li>"
+  "<li><b>Save Database As</b> - Whether an existing database was opened or a new database was created, you will "
+  "be prompted for a file name.  You may enter an existing name or a new one.  The database will then be written to "
+  "this file and the database will remain open.</li>"
+  "<li><b>Close Database</b> - If an existing database was opened, this push button will write it back to the file and "
+  "the database will be closed.  If a new database was created and no file yet exists for it, you will be prompted "
+  "for a file name.</li>"
+  "<li><b>New From Schematic</b> - this push button will prompt you for the name of a new database to create.  "
+  "The file will then be created with a new database which will be identical to the current database but will "
+  "only contain records pertaining to the parts of the current schematic.  This is a way of filtering out parts "
+  "that are no longer used.  Note that this only creates and saves the new database, the database that was "
+  "originally opened remains the current database.  Make sure that all of the parts of interest are shown in the "
+  "parts list by first properly setting the \"Values to display\" and \"Packages to display\" radio buttons.</li>"
+  "<li><b>Merge From</b> - This push button will prompt you for the name of a database to merge into the current "
+  "database.  This allows you to build a combined database from individual ones.</li>"
+  "<li><b>Import CSV</b> - push button to open an existing database which is in Comma-Separated-Values "
+  "(CSV) format.  If a database was already open and changes were made to it, you will be prompted to save it.  The "
+  "open database will then be closed.  You will then see a dialog to select the file to open.  The purpose of this "
+  "function is to import a database that was edited with a spreadsheet program.</li>"
+  "<li><b>Export CSV</b> - Whether an existing database was opened or a new database was created, you will "
+  "be prompted for a file name.  You may enter an existing name or a new one.  The database will then be written to "
+  "this file in CSV format and the database will remain open.  The purpose of this function is to create a database "
+  "file that can be read by a spreadsheet program.</li>"
+  "</ul>"
+
+  "<h3>Database name</h3>"
+
+  "If a database is in use, its name (with full path) will appear under this heading."
+
+  "<h3>Database</h3>"
+
+  "If a database is in use, its contents will appear in the list box under this heading.  In the list's header, "
+  "you can click on the name of any column to sort the list by this column in either ascending or descending order.  "
+  "The last column is named \"In Sch\".  It will contain \"Yes\" for each part that appears in the schematic."
+  "<p>"
+  "<b>Editing a database record</b> - if a database has been opened, you can double click a line in the "
+  "<b>Database</b> to bring up a dialog in which you can edit the database record for this part.  The name of "
+  "each field will be listed along with the contents of the field."
+  "<p>"
+  "Five push buttons control the editing operation as follows."
+  "<ul type=disc>"
+  "<li><b>Edit</b> - The highlighted field will be edited.</li>"
+  "<li><b>Copy</b> - The contents of all of the fields are copied to a Copy/Paste buffer.  This is used in "
+  "association with the Paste button described below.  This way, you can copy the data from a record and paste "
+  "it into another record.  This is useful if you have different records with similar data.  For example, you "
+  "might have a record for a part, such as a resistor, that contains a lot of data including manufacturer, cost, "
+  "and a part number.  You might then want to copy and paste this data to the record of another resistor that "
+  "contains similar data.  You can then edit it to make necessary changes, such as a different part number, while "
+  "leaving the rest.</li>"
+  "<li><b>Paste</b> - The contents of all of the fields are copied from a Copy/Paste buffer.  See description "
+  "of <b>Copy</b> button above for details.</li>"
+  "<li><b>OK</b> - The contents of all of the fields are used to update the database record.</li>"
+  "<li><b>Cancel</b> - The editing is cancelled and the database record remains unchanged.</li>"
+
+  "</ul>"
+  "<p>"
+
+  "<b>Database structure</b> - The following information in the rest of this section is not necessary for the operation "
+  "of this program.  It is presented here only for those of you who want to know the innards of the database file.  "
+  "Its structure is somewhat constrained by Eagle's file handling and data processing abilities."
+  "<p>"
+  "The database is a text file consisting of a line of text for each part.  Each line contains one or more "
+  "\"fields\"."
+  "<p>"
+  "The first field, which <b>must</b> be present at the beginning of the line, is called the \"key\".  "
+  "This key is what uniquely identifies each part in the database, and is extracted from an Eagle schematic."
+  "<p>"
+  "Generally speaking, there are two types of keys.  The first key type consists of the part's device name only.  "
+  "This is usefull for parts that don't require you to enter a value in the schematic.  In this case, when the "
+  "device is created in a library, you activate the \"Off\" radio button for the Value, and you usually do not enter "
+  "a \">value\" text in the tValue or bValue layers of the symbol.  For this type of part, the key will then "
+  "consist only of the name of the device as it was entered in the library.  An example would be a standard DB-9 "
+  "connector where the device name could be \"DB-9\" and no value is needed.  The key would then be \"DB-9\"."
+  "<p>"
+  "The second key type consists of the part's device name and the part's value (usually entered in the schematic) "
+  "separated by a colon.  This is used for parts that do require a value, such as resistors, capacitors, etc.  "
+  "An example is a resistor in a surface mount 0805 package with a value of 100 ohms.  The device name might be "
+  "\"R0805\" and you entered \"100\" as the value in the schematic.  The key would then be \"R0805:100\".  "
+  "If the schematic had another identical device for which you entered a value of \"200\", the key would then "
+  "be \"R0805:200\"."
+  "<p>"
+  "The key field is generated automatically by this program when you double click a line in the Schematic Parts List "
+  "for a part that did not already have a corresponding record in the database.  See <b>Editing a database record</b> "
+  "above."
+  "<p>"
+  "All other fields are optional.  You define the fields when you create the database.  See <b>New Database</b> above.  "
+  "All of these fields are automatically preceded by a tab character.  Therefore, each line of text in the "
+  "database file consists of the key, a tab, a user defined field, etc. and it is terminated by a \"newline\" "
+  "(carriage-return/line-feed)."
+  "<p>"
+  "The very first text line in the database file is special.  It contains the names of the fields that you "
+  "specified when you created the fields.  See <b>New Database</b> above.  It start with the name of the key field "
+  "which is always \"Key\",  As an example, if you had created three fields called \"Manufacturer\", "
+  "\"Order number\", and \"Price\", the first line of the database file would be"
+  "<pre>Key	Manufacturer	Order number	Price</pre>"
+  "The following lines would then contain the actual parts records such as"
+  "<pre>DB-9	Amphenol	Am-DB9-1234	2.49\n"
+  "R0805:100	Venkel	CR0805-10W1000FT	0.10\n"
+  "R0805:200	Venkel	CR0805-10W2000FT	0.11</pre>"
+  "<p>"
+
+  "<hr>"
+  "<h2>Output</h2>"
+
+  "The parameters in this tab allow you to prepare and output a report based on the data processed in the "
+  "\"Parts list\" and \"Database\" tabs.  This is usually performed in the following manner:"
+  "<ol>"
+  "<li>Enter a title for the report.</li>"
+  "<li>Pick the columns of data to place in the report, and specify the order in which they will appear.</li>"
+  "<li>Pick the columns used for sorting.</li>"
+  "<li>Pick the output format.</li>"
+  "<li>Either save the output in a file, or print it.</li>"
+  "</ol>"
+
+  "<h3>Output title</h3>"
+
+  "Two push buttons and a text box control whatever title you want to have appear at the top of the output."
+
+  "<ul type=disc>"
+  "<li><b>Default</b> - click this push button if you changed the title and wish to revert it back to the default "
+  "(name of the file and todays date).</li>"
+  "</ul>"
+  "<ul type=square>"
+  "<li><b>Title</b> - text of the title.</li>"
+  "</ul>"
+  "<ul type=disc>"
+  "<li><b>Update</b> - if you change the title, you have to press this button to update the actual output.</li>"
+  "</ul>"
+
+  "<h3>Columns available</h3>"
+
+  "<ul type=square>"
+  "<li> - list containing all of the column names that are available.  This will vary depending of the field "
+  "names from the database (if used).</li>"
+  "</ul>"
+  "<ul type=disc>"
+  "<li><b>Add to output</b> - select a column name from the <b>Columns available</b> list and press this push button "
+  "to add it to the <b>Columns in output</b> list.  This can also be accomplished by double-clicking the column name.</li>"
+  "<li><b>Add to sort</b> - select a column name from the <b>Columns available</b> list and press this "
+  "push button to add it to the <b>Sort order</b> list.</li>"
+  "<li><b>Blank line</b> - select a column name from the <b>Columns available</b> list and press this push button to "
+  "specify that a blank line should be added to the output every time the value of this column changes.  This is "
+  "useful for formatting purposes.  Note that it only applies to Text or HTML formats, not Spreadsheet format.</li>"
+  "</ul>"
+
+  "<h3>Columns in output</h3>"
+  "<ul type=square>"
+  "<li> - list containing all of the column names that you have selected for the output.</li>"
+  "</ul>"
+  "<ul type=disc>"
+  "<li><b>Move Up</b> - select a column name from the <b>Columns in output</b> list and press this button to move "
+  "the name up.  This is done to change the order of the columns in the output.</li>"
+  "<li><b>Move Down</b> - select a column name from the <b>Columns in output</b> list and press this button to move "
+  "the name down.  This is done to change the order of the coulmns in the output.</li>"
+  "<li><b>Remove</b> - select a column from the <b>Columns in output</b> list and press this push button to remove it.  "
+  ">This can also be accomplished by double-clicking the column name.</li>"
+  "</ul>"
+
+  "<h3>Sort order</h3>"
+  "<ul type=square>"
+  "<li> - list containing all of the column names that you have selected for sorting the output.  The column name at "
+  "the top of this list will be the primary sort parameter.  If you add a second column name it will be the secondary "
+  "sort parameter, etc.  If you do not specify any sort parameters, the output will be sorted by part number by "
+  "default.  Note that the sort columns are independent of the output columns.  This means that you can sort the output "
+  "by columns that are not necessarily in the output.  NOTE: You can use a column that came from a database.  "
+  "You can have one or more fields in your database that are specifically for sorting.</li>"
+  "</ul>"
+  "<ul type=disc>"
+  "<li><b>Move Up</b> - select a column name from the <b>Sort order</b> list and press this button to move "
+  "the name up.  This is done to change the sort order of the output.</li>"
+  "<li><b>Move Down</b> - select a column name from the <b>Sort order</b> list and press this button to move "
+  "the name down.  This is done to change the sort order of the output.</li>"
+  "<li><b>Remove</b> - select a column from the <b>Sort order</b> list and press this push button to remove it.</li>"
+  "</ul>"
+  "<ul type=square>"
+  "<li><b>Blank line</b> - this text box shows the name of a column that was chosen from the <b>Columns available</b> "
+  "list.  A blank line will be added to the output every time the value of this column changes.  This is useful for "
+  "formatting purposes.  Note that it only applies to Text or HTML formats, not Spreadsheet format.</li>"
+  "</ul>"
+  "<ul type=disc>"
+  "<li><b>No blank line</b> - This push button clears the above text box so that no blank lines will be added.</li>"
+  "</ul>"
+
+  "<h3>Format</h3>"
+
+  "Three radio buttons and a check box control the format of the output:"
+
+  "<ul type=circle>"
+  "<li><b>Text</b> - Radio button to produce pure ASCII text ready for printing.</li>"
+  "<li><b>HTML</b> - Radio button to produce a format can be read by web browsers, or placed in web pages.</li>"
+  "<li><b>Spreadsheet (CSV)</b> - Radio button to produce a comma delimited file with each field surrounded by quotes.</li>"
+  "</ul>"
+  "If you picked the <b>Text</b> format radio button, then the following controls are relevant.  For either the "
+  "<b>HTML</b> or <b>Spreadsheet</b> formats, the following are not used."
+
+  "<ul type=square>"
+  "<li><b>If grouped by same values, put each value in separate lines.</b> - This check box can only be used when the "
+  "<b>Same values</b> radio button was selected in the <b>Grouped by</b> area of the <b>Schematic</b> tab, as well "
+  "as the <b>Text</b> format radio button above.  It is disabled for all other selections.</li>"
+  "</ul>"
+  "<ul type=circle>"
+  "<li><b>Use spaces</b> - The columns in the output can be separated by either spaces or tab characters.  This "
+  "radio button selects spaces.</li>"
+  "<li><b>Use tabs</b> - This radio button selects tabs.</li>"
+  "</ul>"
+  "<ul type=square>"
+  "<li><b>Tab width</b> - This combo box allows you to select the number of spaces that a tab character represents.  "
+  "This is used to calculate how many tab characters must be used to ensure that the columns line up correctly.  "
+  "Usually, tabs are interpreted as eight spaces and that is the default for this combo box.  You can choose a "
+  "different number if you are generating a text that will be used by software that interprets tabs differently.  The "
+  "allowed range is 2 to 20.</li>"
+  "</ul>"
+  "<p>"
+  "If you picked the <b>Spreadsheet (CSV)</b> format radio button, then the following control is "
+  "relevant.  For either the <b>Text</b> or <b>HTML</b> formats, the following is not used."
+  "<ul type=square>"
+  "<li><b>Add header</b> - This check box enables adding the title and column headers at the top of the output.</li>"
+  "</ul>"
+
+  "<h3>Setup</h3>"
+
+  "The setup is defined as a collection of the following settings:"
+  "<ol>"
+  "<li>Parts list tab - Grouped by</li>"
+  "<li>Parts list tab - Values to display</li>"
+  "<li>Parts list tab - Packages to display</li>"
+  "<li>Import/export tab - Imported parts list file names</li>"
+  "<li>Import/export tab - Name of parts list from current schematic</li>"
+  "<li>Output tab - Output title</li>"
+  "<li>Output tab - Columns in output</li>"
+  "<li>Output tab - Sort columns and order</li>"
+  "<li>Output tab - Output format</li>"
+  "</ol>"
+  "<p>"
+  "The setup can be saved in files with user defined file names.  This way, you can set up the parameters for a "
+  "specific report and save the settings in a file of your choice.  You can then recreate the report by retrieving "
+  "the setup for that report."
+  "<p>"
+  "Two push buttons control the setup:"
+
+  "<ul type=disc>"
+  "<li><b>Get setup...</b> - to get the setup from a file.  You will then see a dialog to enter the file name.  "
+    "Please note that any setup files that were created by earlier versions of this program will "
+    " not be compatible with this version.</li>"
+  "<li><b>Save setup...</b> - to save the setup to a file.  You will then see a dialog to enter the file name.</li>"
+  "</ul>"
+
+  "<h3>Create output</h3>"
+
+  "Two buttons create the output:"
+
+  "<ul>"
+  "<li><b>Save...</b> - to save the list to a file.  You will then see a dialog to enter the file name.</li>"
+  "<li><b>Print</b> - to send the list to the printer.  Previous versions of this program used the default system "
+  "printer.  However, version 5 of Eagle stopped supporting this feature.  Instead, Eagle 5 supports running an external "
+  "application.  Therefore, the author wrote a program called EaglePrint.exe which can be run by a ULP to access any "
+  "printer.  <b>Note:  EaglePrint.exe MUST be in the same directory as this ULP in order to be able to print.</b></li>"
+  "</ul>"
+
+  "<h3>Output preview</h3>"
+
+  "The text box at the bottom of the screen shows a preview of the output.  It is formated according "
+  "to all of the settings in the \"Parts list\" and \"Output\" tabs."
+  "<p>"
+
+  "<hr>"
+  "<h2>Options</h2>"
+
+  "<h3>Save options</h3>"
+
+  "Two radio buttons determine if the options are saved in a file.  Every time this program is run, it looks "
+  "in your current project's directory for a file called \"Options.BOMop\".  If it does not exist, it assumes "
+  "that you do not want to save options and it picks the <b>No</b> radio button.  If it does exist, it "
+  "assumes that you want to continue to save the options so it picks the <b>Yes</b> radio button.  You can "
+  "override these assumptions and set the radio buttons to your preference.  If the options are saved, the "
+  "\"Options.BOMop\" file will be created if it did not already exist.  NOTE - once the file is created, this program "
+  "will never delete it even if you pick the <b>No</b> radio button.  If you want the file deleted you will "
+  "have to delete it yourself."
+
+  "<ul type=circle>"
+  "<li><b>No</b> - do not save the options.</li>"
+  "<li><b>Yes</b> - save the options.</li>"
+  "</ul>"
+
+  "<h3>Minimum screen size</h3>"
+  "This is a little confusing.  When any ULP runs, it wants to set the size of the dialog boxes according to the "
+  "resolution of your screen and the dialog's contents.  We can call this the \"built-in\" size and we have no "
+  "control over it.  However, we can specify a \"preferred\" size and the ULP will then use the largest of "
+  "the two.  Therefore, specifying your own screen size will only be significant if you specify a width or "
+  "height that is larger than what the ULP would use.  In other words, what you specify will become the new "
+  "minimum size.  You will have to experiment with these values to get the best results for your hardware."
+  "<p>"
+  "The <b>Resize</b> push button closes the dialogs and restarts them with the new minimum sizes that you "
+  "specified.  This allows you to experiment with your minimum screen values."
+
+  "<h3>Default database</h3>"
+
+  "Two radio buttons control the automatic opening of a data base.  This is useful if you tend to use a "
+  "specific database for a project:"
+
+  "<ul type=circle>"
+  "<li><b>No</b> - do not open a database.</li>"
+  "<li><b>Yes</b> - open a database as soon as this program runs.</li>"
+  "</ul>"
+
+  "If you do want a database automatically opened, you have to specify its path and name.  You can also "
+  "pick one from the last (up to) 10 databases you used."
+
+  "<h3>Default setup</h3>"
+
+  "Two radio buttons control the automatic opening of a setup.  This is useful if you tend to use a "
+  "specific setup for a project:"
+
+  "<ul type=circle>"
+  "<li><b>No</b> - do not open a setup.</li>"
+  "<li><b>Yes</b> - open a setup as soon as this program runs.</li>"
+  "</ul>"
+
+  "If you do want a setup automatically opened, you have to specify its path and name.  You can also "
+  "pick one from the last (up to) 10 setups you used."
+
+  "<h3>Display keys</h3>"
+
+  "This check box determines if the key associated with each part is displayed in the schematic list.  This "
+  "is not normally used and this is NOT saved in the options file.  Every time this program is run, this "
+  "check box is cleared.  This feature was used by the author for testing and debugging purposes only.  "
+  "<u>Please do not do any data manipulations with this box checked.  Doing so could have destructive effects.</u>"
+  "\"Display keys\" was called \"Debugging\" in previous versions of this program."
+
+  "<h3>CSV Separator</h3>"
+
+  "When reading or writing CSV (spreadsheet) files, each field is enclosed in quotes, and separated by a "
+  "single character.  Usually, this character is a comma.  Thus the name <i>Comma Separated Values</i>.  However, "
+  "you can enter a different character into this text box to be used as your CSV separator.  Please note that if "
+  "you leave it blank, it will revert to the comma."
+
+  "<p>"
+  "REMEMBER that the options are saved only if you check the appropriate radio button."
+  "<p>"
+  "REMEMBER that the options are saved in a file that is kept in your project directory.  Each project "
+  "directory will have its own options file so that you can have different options for each of your projects."
+  "<p>"
+  "<hr>"
+
+  "<h2>Help</h2>"
+
+  "If you need an explanation of <b>Help</b>, maybe you have been working too much ..."
+  "<ul type=disc><li><b>Save Help</b> - this button opens a dialog to save the Help text to a file.  "
+  "Since the Help text in this ULP is in HTML format, once the file is saved you can view it and print it with "
+  "any HTML browser.</li></ul>"
+
+  "<hr>"
+  "<h2>History</h2>"
+
+  "This tab shows a history of the development of this program."
+  "<br>"
+  "</html>"
+;
+
+string HistoryText1 = 
+  "<p>"
+  "This program was written by Robert A. Rioja (Robert@Unison-Travel.com)"
+  "<p>"
+  "The following is a history of this program."
+  "<p>"
+  "Version BOM-BIO"
+  "<ul>"
+  "<li>Initial version based on BOM supplied with Eagle.  Released on February 10, 2004.</li>"
+  "<li>Added the ability to select \"What to show\" (Real values only, \"Don't Show\" only, Everything).</li>"
+  "<li>Added the ability to select what columns to have in the output.</li>"
+  "</ul>"
+  "Version BOM-BIO2"
+  "<ul>"
+  "<li>Released on May 12, 2004 .</li>"
+  "<li>Added \"Create Output\" buttons (Preview, Save, Print).</li>"
+  "</ul>"
+  "Version BOM-BIO3"
+  "<ul>"
+  "<li>Released on March 7, 2005 .</li>"
+  "<li>Major rework of user interface, added Tabs.</li>"
+  "<li>Added Import/Export ability to merge parts lists from different projects.</li>"
+  "<li>Added ability to completely edit the structure of the external database.</li>"
+  "<li>Added ability to not only pick what coulmns to output but also to sort the output by any column.</li>"
+  "<li>Added \"real time\" preview.</li>"
+  "<li>Added ability to save and retrieve a \"setup\" file to save setup parameters.</li>"
+  "<li>Added options such as screen resizing and automatically selecting a database.</li>"
+  "<li>Added history combo-box to keep track of last databases used.</li>"
+  "<li>Added ability to save options in a file.</li>"
+  "<li>Added extensive Help text.</li>"
+  "</ul>"
+  "Version BOM-BIO4"
+  "<ul>"
+  "<li>Released on May 4, 2005.</li>"
+  "<li>In the Help tab, all text different from the previous version of this program is in <font color=red>red</font>.</li>"
+  "<li>Changed the Exit push button definition.  This was suggested by Rene Koenig of Germany.  <b>Thanks Rene !!!</b></li>"
+  "<li>Added the History tab.</li>"
+  "<li>Added better description of \"Packages to display\" in the Help screen.</li>"
+  "<li>In the Database and Help tabs, added the \"New From Schematic\" push button.</li>"
+  "<li>In the Database and Help tabs, added the \"Merge From\" push button.</li>"
+  "<li>Added MessageBoxes to tell you if you are trying to use database functions without a database opened first.</li>"
+  "<li>Added a MessageBox to tell you if you are trying to delete a database record without first selecting one "
+      "(<b>Thanks Rene !!!</b>).</li>"
+  "<li>Changed position of Move Up and Move Down buttons in the Output tab (<b>Thanks Rene !!!</b>).</li>"
+  "</ul>"
+  "Version BOM-BIO5"
+  "<ul>"
+  "<li>Released on May 26, 2005.</li>"
+  "<li>Corrected a bug in the Output tab, \"Get setup ...\" push button.  This bug was found by Knut Kaald of Norway.  "
+      "<b>Thanks Knut !!!</b>  Unfortunately, any Setup files that were created by earlier versions of this program "
+      "will not be compatible with this version.</li>"
+  "</ul>"
+  "Version BOM-BIO6"
+  "<ul>"
+  "<li>Released on May 31, 2005.</li>"
+  "<li>Corrected another bug in the Output tab, \"Get setup ...\" push button.  This bug was found by "
+      "Knut Kaald of Norway.  <b>Thanks Knut !!!</b></li>"
+  "</ul>"
+  "Version BOM-BIO7"
+  "<ul>"
+  "<li>Released on September 30, 2005.</li>"
+  "<li>Changed format of History text.</li>"
+  "<li>Added more comments to source.</li>"
+  "<li>Added more to the Help text.</li>"
+  "<li>Changed name of \"Parts List\" tab to \"Schematic\".</li>"
+  "<li>Added Sheet number column to Parts List in \"Schematic\" tab.</li>"
+  "<li>The author thanks Carsten Kögler of Germany for helping with the following items.  <b>Thanks Carsten !!!</b></li>"
+  "<li>Added \"Board\" tab which shows a Parts List with part position data.</li>"
+  "<li>Fixed bug which caused program to crash if the \"Remove parts list\" button was pressed before any "
+      "lists were imported.</li>"
+  "<li>Fixed bug which sometimes created corrupted database records.</li>"
+  "<li>Removed trailing spaces from lines in text output.</li>"
+  "<li>Changed name of \"Debugging\" check box to \"Display keys\" in the \"Options\" tab.</li>"
+  "<li>Changed the width of all dialogs so they are always half of the main dialog width.</li>"
+  "<li>Changed export file format to include parts position data from the board.</li>"
+  "</ul>"
+  "Version BOM-BIO8"
+  "<ul>"
+  "<li>Released on February 8, 2006.</li>"
+  "<li>NOTE that the author's e-mail address has changed.</li>"
+  "<li>The author found and fixed a bug which would incorrectly display the parts list when <b>Same values</b> and "
+      "<b>\"Don't Show\" values only</b> were selected but there are no parts meeting this criteria.</li>"
+  "<li>The author thanks Stefan Kleck of Austria for finding a bug which would not allow exporting to a file if "
+      "there was a percent sign in any of the fields.  <b>Thanks Stefan !!!</b></li>"
+  "<li>The author thanks Guy Daurelle from France for suggesting the following changes.  <b>Thanks Guy !!!</b></li>"
+  "<li>In the <b>Options</b> tab, there is now the ability to automatically open a previously saved setup file.</li>"
+  "<li>The following changes all apply to the <b>Output</b> tab.</li>"
+  "<li>The <b>Add</b> button was removed.  Instead, there are two new buttons called <b>Add to output</b> and "
+      "<b>Add to sort</b>.</li>"
+  "<li>A new button was added called <b>Blank line</b>.  It allows you to specify if you want a blank line "
+      "added to the output whenever the value of a specific column changes.</li>"
+  "<li>Double-clicking a column name in the <b>Columns available</b> list no longer adds it to the "
+      "<b>Columns in output</b> list.</li>"
+  "<li>The <b>Remove</b> button was moved from the <b>Columns available</b> list to the <b>Columns in output</b> list.</li>"
+  "<li>Double-clicking a column name in the <b>Columns in output</b> list no longer removes it from the list.</li>"
+  "<li>A new <b>Sort order</b> list was added.  It allows you to pick column names from the <b>Columns available</b> list "
+      "to establish which columns will determine the sort order of the output.</li>"
+  "<li>A new <b>No blank line</b> button was added.  It cancels the <b>Blank line</b> feature.</li>"
+  "<li>A bug was fixed to better sort the output when using numeric values.</li>"
+  "</ul>"
+  "Version BOM-AM-9"
+  "<ul>"
+  "<li>Released on July 5, 2006.</li>"
+  "<li>Changed name of program to Bill Of Material And More (BOM-AM).</li>"
+  "<li>Made spelling and formatting corrections to the Help text.</li>"
+  "<li>Added \"Script\" tab for the creation of a script file from the schematic.</li>"
+  "</ul>"
+  "Version BOM-AM-10"
+  "<ul>"
+  "<li>Released on July 10, 2006.</li>"
+  "<li>Changed \"Delete\", \"Delete all\", \"Undelete\" and \"Undelete all\" buttons in the \"Script\" tab to "
+  "\"Skip\", \"Skip all\", \"Don't skip\" and \"Don't skip all\".</li>"
+  "<li>Added \"Insert blank\", \"Append blank\" and \"Delete Blank\" buttons to the \"Script\" tab.</li>"
+  "</ul>"
+  "Version BOM-AM-11" 
+  "<ul>"
+  "<li>Released on August 21, 2006.</li>"
+  "<li>Changed the title line of the main dialog to the first line of the usage string.</li>"
+  "<li>In the <b>Output</b> tab, added the ability to double-click a column name in the <b>Columns available</b> list "
+  "to add it to the <b>Columns in output</b> list.</li>"
+  "<li>In the <b>Output</b> tab, added the ability to double-click a column name in the <b>Columns in output</b> list "
+  "to remove it.</li>"
+  "<li>Fixed a bug in the <b>Merge From</b> button of the <b>Database</b> tab.  It would make the program crash if "
+  "the <b>Cancel</b> button was pressed, or a blank file name was specified.</li>"
+  "<li>The author thanks Daniele Taiocchi from Italy for suggesting the following changes.  <b>Thanks Daniele !!!</b></li>"
+  "<li>Added <b>If grouped by same values, put each value in separate lines.</b> check box in the <b>Output</b> tab "
+  "to produce a different format.</li>"
+  "<li>Added <b>Use spaces</b>, <b>Use tabs</b>, and <b>Tab width</b> controls in the <b>Output</b> tab for better "
+  "format of text output.</li>"
+  "<li>The author thanks Jon Taylor for suggesting the following changes.  <b>Thanks Jon !!!</b></li>"
+  "<li>Added <b>Import CSV</b> push button to the <b>Database</b> tab.</li>"
+  "<li>Added <b>Export CSV</b> push button to the <b>Database</b> tab.</li>"
+  "</ul>"
+  "Version BOM-AM-12"
+  "<ul>"
+  "<li>Released on July 9, 2008.</li>"
+  "<li>Guy Daurelle from France found the following three bugs.  <b>Thanks Guy !!!</b></li>"
+  "<li>Fixed a bug which would not allow exporting the database to a CSV file if there was a percent sign or a "
+  "quote in any of the fields.</li>"
+  "<li>Fixed a bug which would prevent editing the structure of a CSV imported database.</li>"
+  "<li>There is a bug in Eagle so that it does not handle tabs correctly in text boxes.  This makes the text "
+      "line up incorrectly, and often prevents the horizontal scroll bar from appearing.  A work-around was "
+      "developed to correct these problems.</li>" 
+  "<li>Guy Daurelle from France suggested the following two new features.  <b>Thanks Guy !!!</b></li>"
+  "<li>Added a CSV Separator option which allows the user to specify the separator used in CSV files.</li>"
+  "<li>Added the \"In Sch\" column in the database.</li>"
+  "<li>There were several reports of problems with the screen width and height options.  Much of it is related to "
+      "problems with Eagle's screen handling.  Some work arounds were implemented with the hope than they solve "
+      "most of the problems.</li>"
+  "<li>The <b>Script</b> tab was removed.  It was obsoleted by new features found in Eagle Version 5.</li>"
+  "</ul>"
+  "Version BOM-AM-13"
+  "<ul>"
+  "<li>Released on July 22, 2008.</li>"
+  "<li>Corrected bugs related to the \"In Sch\" column in the database.</li>"
+  "<li>Corrected bug in adding new records to database.</li>"
+  "</ul>"
+  "Version BOM-AM-14"
+  "<ul>"
+  "<li>Released on August 11, 2008.</li>"
+  "<li>Robert Oppenheimer from USA found a bug in the reading of the Output Format parameter in a Setup file."
+  "  <b>Thanks Robert !!!</b></li>"
+  "<li>Robert also suggested adding a way of printing the Help text.  A \"Save Help\" button was added to the "
+  "<b>Help</b> tab so that the Help text can be saved to a file.  Since the Help text in this ULP is in HTML "
+  "format, once the file is saved you can view it and print it with any HTML browser.</li>"
+  "<li>Guy Daurelle from France suggested a new feature.  When editing a record, new Copy and Paste buttons "
+  "can be used to easily pass data from one record to another.  <b>Thanks Guy !!!</b></li>"
+  "<li>Corrected bug in <b>Edit Structure</b> that was found by Guy.</li>"
+  "<li>Corrected more bugs related to the \"In Sch\" column in the database.</li>"
+  "<li>Updated HTML tags in Help and History texts from old Rich Text tags.</li>"
+  "<li>Previous versions of this program used the default system printer.  However, version 5 of Eagle stopped "
+  "supporting this feature.  Instead, Eagle 5 supports running an external application.  Therefore, the author "
+  "wrote a program called EaglePrint.exe which can be run by a ULP to access any printer.  <b>Note:  EaglePrint.exe "
+  "MUST be in the same directory as this ULP in order to be able to print.</b></li>"
+  "<li>The dialog boxes for editing a record from the database were revamped, and now include scroll bars.</li>"
+  "</ul>"
+  "Version BOM-AM-15"
+  "<ul>"
+  "<li>Released on September 9, 2008.</li>"
+  "<li>Corrected a bug in creating a new database from the schematic.</li>"
+  "<li>Corrected a bug in editing database records from the schematic listview.</li>"
+  "<li>Removed an extraneous message box from EaglePrint.exe.</li>"
+  "</ul>"
+  "Version BOM-AM-16"
+  "<ul>"
+  "<li>Released March 17, 2009.</li>"
+  "<li><b>Thanks to abdAllah MEZITI</b> for implementing a way to add a header (title and column headers) "
+  "at the top of Spreadsheet output.  This is now controlled by a new checkbox in the <b>Output</b> tab.</li>"
+  "<li>Corrected a bug found by Richard Hammerl which prevented non-English characters from appearing correctly.  "
+  "<b>Thanks Richard !!!</b></li>"
+  "</ul>"
+  "Version ";
+string HistoryText2 = 
+  "<ul>"
+  "<li>Released on ";
+string HistoryText3 =
+  "<li>Fixed an error which prevented a new database from being used until after this ULP was exited and rerun."
+  "</ul>"
+  "Have a nice day!<br>"
+;
+
+
+/********************************************************************************/
+/*	Definition of variables and constants				*/
+/********************************************************************************/
+
+string		UlpPath;			// ULP path
+string		DialogTitle;		// Title line for main dialog
+int		MainTemp;			// Temp variable for main program
+string		SchematicName;		// Schematic file name
+string		SchematicPath;		// Project path
+int		BoardExists;		// Flag = 1 if there is a board
+
+/********************************************************************************/
+/*	These arrays contain the data collected from the schematic.		*/
+/********************************************************************************/
+numeric string	PartName[];		// Part name
+string		PartsListName[];		// Name of parts list file
+numeric string	PartValue[];		// Part value
+numeric string	PartDevice[];		// Device name
+numeric string	PartPackage[];		// Package name
+numeric string	PartDescription[];		// Description
+int		PartValueOn[];		// Flag=1 if part.value=On
+numeric string	PartSheet[];		// Sheet number
+numeric string	PartKey[];		// Key for lookup in Database
+int		NumberOfParts;		// Number of parts (number of array elements)
+
+/********************************************************************************/
+/*	These arrays contain the data collected from the board.		*/
+/********************************************************************************/
+numeric string	ElementName[];
+string		ElementsListName[];		// Name of parts list file
+string		ElementSide[];
+numeric string	ElementInchX[];
+numeric string	ElementInchY[];
+numeric string	ElementMmX[];
+numeric string	ElementMmY[];
+numeric string	ElementAngle[];		// Part angle
+
+/********************************************************************************/
+/*	These variables are associated with the schematic parts list	*/
+/*	dialog listview.						*/
+/********************************************************************************/
+numeric string	Lines[];			// String array of lines in listview
+int		NumberOfLines;		// Number of lines in listview
+int		LineSelected = 0;		// Number of line selected in the listview dialog
+int		LineSort = 1;		// Listview sort parameter
+
+/********************************************************************************/
+/*	These variables are associated with the board parts list		*/
+/*	dialog listview.						*/
+/********************************************************************************/
+numeric string	BoardLines[];		// String array of lines in listview
+int		BoardNumberOfLines;		// Number of lines in listview
+int		BoardLineSelected = 0;	// Number of line selected in the listview dialog
+int		BoardLineSort = 1;		// Listview sort parameter
+
+/********************************************************************************/
+/*	These variables pick and control the grouping of the parts list.	*/
+/********************************************************************************/
+int		GroupedBy = 0;		// 0 = by part name, 1 = by value
+enum		{ltParts, ltValues};
+int		Individual = 0;		// For dialog checkbox, individual lines if by values
+
+/********************************************************************************/
+/*	These variables pick and control what values to show in the schematic	*/
+/*	parts list.						*/
+/********************************************************************************/
+int		ValuesToShow = 0;		// 0 = exclude values = DON'T SHOW
+					// 1 = only values = DON'T SHOW
+					// 2 = all values
+enum		{regularValues, dontShowValues, allValues};
+
+/********************************************************************************/
+/*	These variables pick and control if parts without packages are shown.	*/
+/********************************************************************************/
+int	DisplayPackage = 0;			// 0 = only with packages
+					// 1 = only without packages
+					// 2 = with and without packages
+enum	{WithPackage, WithoutPackage, AllPackages};
+
+/********************************************************************************/
+/*	These variables are associated with the Import/export dialog.	*/
+/********************************************************************************/
+string	DlgSchematicName;			// Name of main parts list
+string	PartsLists[];			// List of parts list files to import
+int	NumberOfPartsLists = 0;		// Number of parts list files imported
+int	PartsListSelected = -1;		// To select a parts list from listview
+string	ExportFileName;			// Name of file to export to
+
+/********************************************************************************/
+/*	These variables are used for the optional database.		*/
+/********************************************************************************/
+string	DatabaseFileName;			// Name of database file
+int	DatabaseModified = 0;		// Flag that the database has been modified
+string	Database[];			// String array contains the database.
+					// First element [0] contains field names
+int	NumberOfData;			// Number of records in the database
+string	DatabaseFields[];			// Array containing the names of the fields
+int	NumberOfFields;			// Number of fields
+string	DatabaseTitle;			// String containing the names of the fields formatted
+int	SelectedField;			// Field selected for editing
+int	DatabaseSelected = -1;		// Selected from database list view
+int	DatabaseSort = 1;			// To sort database list view
+string	InSchematic = "\tYes";		// Flag that a part in in schematic
+string	InSchematicTitle ="\tIn Sch";		// Title for the flag 
+string	CopyPasteBuffer;			// Buffer for copy and paste operations
+
+/********************************************************************************/
+/*	These variables are associated with the input and output list boxes	*/
+/*	and buttons for choosing output columns and sort order.		*/
+/********************************************************************************/
+string	Title = " ";			// Title to be used at the top of the output
+string	InputColumns[];			// Array of column names from the sch parts list and database
+int	NumberOfInputColumns;		// Number of elements in the input array
+int	InputColumnPicked = 0;		// Points to input column picked by user
+string	OutputColumns[];			// Array of column names for the output
+int	NumberOfOutputColumns = 0;		// Number of elements in the output array
+int	OutputColumnPicked = -1;		// Points to ouput column picked by user
+string	SortColumns[];			// Array of column names for sorting the output
+int	NumberOfSortColumns = 0;		// Number of elements in the sort array
+int	SortColumnPicked = -1;		// Points to sort column picked by user
+int	OutputIndex[];			// Array pointer of output columns
+int	SortIndex[];			// Array pointer of sort columns
+string	BlankLineColumn;			// Text for Blank Line label in dialog
+int	BlankLineIndex = -1;		// Point to column that must change to add blank line
+int	IndexArray[];			// This array is used to set the sort order
+string	Preview;				// Output preview for textview box
+string	PreviewOutput;			// Output to file
+int	OutputFormat = 0;			// 0 = plain text, 1 = HTML, 2 = comma separated values
+enum	{ofText, ofHTML, ofSpreadsheet};
+string	SetupFileName = "";			// Name of setup file
+int	SpacesOrTabs = 1;			// Flag to use spaces or tabs to separate text columns
+enum	{UseSpaces, UseTabs};
+int	TabWidth = 8;			// Number of spaces per tab
+int	TabWidthCurrent = 8;
+int	SpreadsheetHeader = 0;		// Flag to add header to spreadsheet output
+
+/********************************************************************************/
+/*	These variables are used for the options dialog.			*/
+/********************************************************************************/
+int	SaveOptions = 0;			// Flag to save the options in a file
+int	DlgSaveOptions = 0;			// Dialog version of above
+
+int	MinimumScreenWidth = 700;
+int	ScreenWidth = 800;			// Desired minimum width, defaults to 800
+int	ScreenHeight = 600;			// Desired minimum height, defaults to 600
+enum	{ResizeNow = 5}			// Flag to tell Eagle to redisplay dialog with new sizes
+
+string	AutoOpen = "N";			// Flag to automatically open a database
+int	DlgAutoOpen = 0;			// Dialog version of above
+string	AutoDatabase = "";			// Name of automatic database
+string	DlgAutoDatabase = "";		// Dialog version of above
+string	Databases[];			// List of databases recently used
+enum	{MaxDatabases = 10};		//   but only up to 10
+int	NumberOfDatabases = 0;		// Number of databases recently used
+int	DatabasePicked = 0;			// Database picked from the list
+
+string	AutoOpenSetup = "N";		// Flag to automatically open a setup
+int	DlgAutoOpenSetup = 0;		// Dialog version of above
+string	AutoSetup = "";			// Name of automatic setup
+string	DlgAutoSetup = "";			// Dialog version of above
+string	Setups[];				// List of setups recently used
+enum	{MaxSetups = 10};			//   but only up to 10
+int	NumberOfSetups = 0;			// Number of setups recently used
+int	SetupPicked = 0;			// Setup picked from the list
+
+int	DlgShowKeys, ShowKeys = 0;		// Flag to display the keys in the parts list
+
+string	CsvSeparator = ",";			// Separator character for CSV
+
+/********************************************************************************/
+/*	These variables contain the default file names and extensions.	*/
+/********************************************************************************/
+string	OptionsFileName	= "Options.BOMop";
+string	OptionsExt	= ".BOMop";
+string	PartsListExt	= ".BOMpl";
+string	OutputExt		= ".txt";
+string	OutputExtText	= ".txt";
+string	OutputExtHTML	= ".htm";
+string	OutputExtSpreadsheet= ".csv";
+string	SetupExt		= ".BOMsu";
+string	DatabaseExt	= ".BOMdb";
+
+
+/******************************************************************************************/
+/*									*/
+/*	Name:		IntegerToString					*/
+/*	Description:	Function to convert an integer to a string.		*/
+/*	Called by:							*/
+/*	Parameters:	Integer to process					*/
+/*	Calls:								*/
+/*	Returns:		Processed string					*/
+/*									*/
+/******************************************************************************************/
+string IntegerToString(int i)
+{
+  string s;
+
+  sprintf(s, "%d", i);
+  return s;
+}
+
+
+/******************************************************************************************/
+/*									*/
+/*	Name:		Trim						*/
+/*	Description:	Function to trim non-printable characters from the start	*/
+/*			and end of a string.				*/
+/*	Called by:	GenerateOutput, AddDefaultName, EditStructure,		*/
+/*			GetOptions, OpenSetup, AddDefaultSetup			*/
+/*	Parameters:	String to process					*/
+/*	Calls:								*/
+/*	Returns:		Processed string					*/
+/*									*/
+/******************************************************************************************/
+string Trim(string s)
+{
+  while (s && isspace(s[0])) s = strsub(s, 1);
+  while (s && isspace(s[strlen(s) - 1])) s = strsub(s, 0, strlen(s) - 1);
+  return s;
+}
+
+
+/******************************************************************************************/
+/*									*/
+/*	Name:		RightTrim						*/
+/*	Description:	Function to trim non-printable characters from the	*/
+/*			of a string.					*/
+/*	Called by:	GenerateOutputText					*/
+/*	Parameters:	String to process					*/
+/*	Calls:								*/
+/*	Returns:		Processed string					*/
+/*									*/
+/******************************************************************************************/
+string RightTrim(string s)
+{
+  while (s && !isgraph(s[strlen(s) - 1])) s = strsub(s, 0, strlen(s) - 1);
+  return s;
+}
+
+
+/******************************************************************************************/
+/*									*/
+/*	Name:		TrimSpace						*/
+/*	Description:	Function to trim non-printable characters from the start	*/
+/*			and end of a string.  If the result is an empty string,	*/
+/*			it returns a single space.  This is needed because of a bug	*/
+/*			in Eagle's ULP treatment of empty strings.  When		*/
+/*			alphabetizing, Eagle does not realize that an empty string	*/
+/*			goes before anything else, so it thinks that "a" goes before*/
+/*			"".  This function fixes the problem by turning "" into " ".*/
+/*	Called by:	GenerateOutput, EditStructure, GetOptions		*/
+/*	Parameters:	String to process					*/
+/*	Calls:		Trim						*/
+/*	Returns:		Processed string					*/
+/*									*/
+/******************************************************************************************/
+string TrimSpace(string s)
+{
+  s = Trim(s);
+  if (!s) s = " ";
+  return s;
+}
+
+
+/******************************************************************************************/
+/*									*/
+/*	Name:		GetRelease					*/
+/*	Description:	Routine to extract the Release and ReleaseDate from #usage.	*/
+/*			They are used in the History text.			*/
+/*	Called by:	Main program					*/
+/*	Parameters:							*/
+/*	Calls:								*/
+/*	Returns:								*/
+/*									*/
+/******************************************************************************************/
+void GetRelease(void)
+{
+  int i, j;
+
+  Release = "Release: ";		// Strings to look for in #usage string
+  ReleaseDate = "Date: ";
+
+  i = strstr(usage, Release);		// Look for the release string
+  if (i < 0) {			// If not found, make everything
+    Release = "?";			// question marks.
+    ReleaseDate = "?";
+    return;
+  }
+  i = i + strlen(Release);		// i points to character past the word "Release: "
+  j = strstr(usage, " ", i);		// j points to the next blank
+  Release = strsub(usage, i, j - i);	// Release is between i and j
+
+  i = strstr(usage, ReleaseDate);	// Look for the release date string
+  if (i < 0) {			// If not found, make it question mark
+    ReleaseDate = "?";
+    return;
+  }
+  i = i + strlen(ReleaseDate);	// i points to character past the word "Date: "
+  j = strstr(usage, "<", i);		// j points to the next <
+  ReleaseDate = strsub(usage, i, j - i);// Release date is between i and j
+}
+
+
+/******************************************************************************************/
+/*									*/
+/*	Name:		GetOptions					*/
+/*	Description:	Routine to read a options file.			*/
+/*	Called by:	Main program					*/
+/*	Parameters:							*/
+/*	Calls:		Trim						*/
+/*	Returns:								*/
+/*									*/
+/******************************************************************************************/
+void GetOptions(void)
+{
+  int i, lines, equal;
+  string options[];
+  string name, value;
+
+  OptionsFileName = SchematicPath + OptionsFileName;	// Get directory of schematic file
+  i = fileglob(options, OptionsFileName);		// See if options file exists
+  if (i == 1) {					// Do this if it exists
+    fileerror();					// Reset error status
+    lines = fileread(options, OptionsFileName);		// Read the options file and get # of lines
+    if (fileerror()) exit (EXIT_FAILURE);		// Exit if file error
+
+    for (i = 0; i < lines; i++) {			// Scan the options one line at a time
+      equal = strchr(options[i],'=');			// Look for an equals sign
+      if (equal > 1) {				// Do this if it exists
+        name = Trim(strupr(strsub(options[i],0,equal)));	// Get the name of the option (before the =)
+        value = Trim(strsub(options[i],equal + 1));	// Get the value of the option (after the =)
+
+        if (name == "SCREENWIDTH") {			// Look for screen width
+          ScreenWidth = strtol(value);
+        }
+        else if (name == "SCREENHEIGHT") {		// Look for screen height
+          ScreenHeight = strtol(value);
+        }
+        else if (name == "AUTOOPEN") {			// Look for the flag to automatically open a database
+          AutoOpen = strupr(value);
+          if (AutoOpen == "Y") DlgAutoOpen = 1;		// If yes, set a flag
+          else DlgAutoOpen = 0;			// Else clear the flag
+        }
+        else if (name == "AUTODATABASE") {		// Look for the name of a database to auto open
+          AutoDatabase = value;
+          DlgAutoDatabase = value;
+        }
+        else if (name == "DATABASE") {			// Look for recently used database names
+          Databases[NumberOfDatabases] = value;		// Put them into an array
+          NumberOfDatabases++;			// And increment the counter
+        }
+        else if (name == "AUTOOPENSETUP") {		// Look for the flag to automatically open a setup
+          AutoOpenSetup = strupr(value);
+          if (AutoOpenSetup == "Y") DlgAutoOpenSetup = 1;	// If yes, set a flag
+          else DlgAutoOpenSetup = 0;			// Else clear the flag
+        }
+        else if (name == "AUTOSETUP") {			// Look for the name of a setup to auto open
+          AutoSetup = value;
+          DlgAutoSetup = value;
+        }
+        else if (name == "SETUP") {			// Look for recently used setup names
+          Setups[NumberOfSetups] = value;		// Put them into an array
+          NumberOfSetups++;				// And increment the counter
+        }
+        else if (name == "CSVSEPARATOR") {		// Look for CSV separator
+          if (value == "") CsvSeparator = ",";
+          else CsvSeparator = value;
+        }
+      }
+    }
+    if (ScreenWidth < 1) ScreenWidth = MinimumScreenWidth;	// Fix incorrect numbers
+    if (ScreenHeight < 1) ScreenHeight = 600;
+
+    if (AutoDatabase == "" && NumberOfDatabases)    	// If an auto database was not found but there are recently
+      AutoDatabase = Databases[0];			// used databases, make the auto database the last recently
+						// used database.
+
+    if (AutoDatabase) {				// Make sure that the auto database exists
+        if (fileglob(options, AutoDatabase) == 0) AutoDatabase = "";
+    }
+
+    if (!AutoDatabase) {				// If no auto database name, clear the flags
+      AutoOpen = "N";
+      DlgAutoOpen = 0;
+    }
+
+    if (AutoSetup == "" && NumberOfSetups)	    	// If an auto setup was not found but there are recently
+      AutoSetup = Setups[0];				// used setups, make the auto setup the last recently
+						// used setup.
+
+    if (AutoSetup) {				// Make sure that the auto setup exists
+        if (fileglob(options, AutoSetup) == 0) AutoSetup = "";
+    }
+
+    if (!AutoSetup) {				// If no auto setup name, clear the flags
+      AutoOpenSetup = "N";
+      DlgAutoOpenSetup = 0;
+    }
+
+    DlgSaveOptions = 1;
+    SaveOptions = 1;
+  }
+  else {
+    DlgSaveOptions = 0;
+    SaveOptions = 0;
+  }
+}
+
+
+/******************************************************************************************/
+/*									*/
+/*	Name:		CollectPartData					*/
+/*	Description:	Routine to collect parts data from the schematic into	*/
+/*			arrays.  It then collects elements data from the board (if	*/
+/*			present) into arrays.				*/
+/*			It then reads parts list files (if any have been specified).*/
+/*	Called by:	Main program, "Values to display" radio buttons (3),	*/
+/*			"Packages to display" radio buttons (3).		*/
+/*	Parameters:							*/
+/*	Calls:								*/
+/*	Returns:								*/
+/*									*/
+/******************************************************************************************/
+void CollectPartData(void)
+{
+  int    i, j, k, l;
+  string value;
+  string fileName;
+  string newParts[];
+  string a[];
+  string Sheet;
+
+  NumberOfParts = 0;
+  project.schematic(SCH) {						// Scan the schematic
+    SCH.sheets(SHT) {						// Scan all sheets
+      SHT.parts(P) {						// Scan all parts in each sheet
+
+        value = TrimSpace(strupr(P.value));				// Get the part's value
+        if (value == "DON'T SHOW") value = "DONT SHOW";			// Remove unnecessary apostrophe 
+	// Allow only parts that meet criteria for values and packages.
+        if (
+            (
+             (ValuesToShow == regularValues  && value != "DONT SHOW") ||
+             (ValuesToShow == dontShowValues && value == "DONT SHOW") ||
+             (ValuesToShow == allValues)
+            ) && (
+             (DisplayPackage == WithPackage && P.device.package) ||
+             (DisplayPackage == WithoutPackage && !P.device.package) ||
+             (DisplayPackage == AllPackages)
+            )
+           ) {
+
+          Sheet = "";						// Initialize sheet string
+          for (i = 0; i < NumberOfParts; i++) {				// If part already found
+            if (PartName[i] == TrimSpace(P.name)) {			// in a previous sheet,
+              sprintf(Sheet, ", %d", SHT.number);				// add new sheet number.
+              PartSheet[i] = PartSheet[i] + Sheet;
+              break;
+            }
+          }
+
+          if (Sheet == "") {	// If no new sheet #, then this is the first time this part was found
+            PartName[NumberOfParts] = TrimSpace(P.name);			// Get part name
+
+            PartsListName[NumberOfParts] = TrimSpace(DlgSchematicName);	// Get list name
+
+            PartValue[NumberOfParts] = TrimSpace(P.value);			// Get value but drop 
+            i = strrchr(PartValue[NumberOfParts], '^');			// anything past ^.
+            if (i > -1) PartValue[NumberOfParts] = strsub(PartValue[NumberOfParts], 0, i);
+
+            PartDevice[NumberOfParts] = TrimSpace(P.device.name);		// Get device but drop
+            i = strrchr(PartDevice[NumberOfParts], '^');			// anything past ^
+            if (i > -1) PartDevice[NumberOfParts] = strsub(PartDevice[NumberOfParts], 0, i);
+
+            if (P.device.package) PartPackage[NumberOfParts] = TrimSpace(P.device.package.name);
+            else PartPackage[NumberOfParts] = " ";			// Get package
+
+            PartDescription[NumberOfParts] = TrimSpace(P.device.headline);	// Get description
+
+            PartValueOn[NumberOfParts] = P.device.value == "On";		// Get value ON flag
+
+            PartKey[NumberOfParts] = Trim(PartValue[NumberOfParts]);		// Make the key
+            if (PartValueOn[NumberOfParts]) PartKey[NumberOfParts] =
+              Trim(PartDevice[NumberOfParts]) + ':' + PartKey[NumberOfParts];
+
+            sprintf(PartSheet[NumberOfParts], "%d", SHT.number);		// Get sheet number
+
+            ElementName[NumberOfParts] = PartName[NumberOfParts];		// Get element name
+
+            ElementsListName[NumberOfParts] = PartsListName[NumberOfParts];	// Get list name
+
+            ElementSide[NumberOfParts] = " ";				// Initialize element data
+            ElementInchX[NumberOfParts] = " ";
+            ElementInchY[NumberOfParts] = " ";
+            ElementMmX[NumberOfParts] = " ";
+            ElementMmY[NumberOfParts] = " ";
+            ElementAngle[NumberOfParts] = " ";
+
+            NumberOfParts++;
+          } // if (Sheet == "")
+        } // if (ValuesToShow ...
+      } // SHT.parts(P)
+    } // SCH.sheets(SHT)
+  } // project.schematic(SCH)
+
+  if (BoardExists) {
+    project.board(BRD) {						// Scan the board
+      BRD.elements(E) {						// Scan elements on the board
+        value = TrimSpace(E.name);					// Get element name
+        for (i = 0; i < NumberOfParts; i++) {				// Scan parts from schematic
+          if (ElementName[i] == value) {				// Test for matching names.
+
+            if (E.mirror) ElementSide[i] = "Bottom";			// Get the side
+            else ElementSide[i] = "Top";
+
+            sprintf(ElementInchX[i], "%10.4f", u2inch(E.x));		// Get the coordinates
+            sprintf(ElementInchY[i], "%10.4f", u2inch(E.y));
+            sprintf(ElementMmX[i], "%10.4f", u2mm(E.x));
+            sprintf(ElementMmY[i], "%10.4f", u2mm(E.y));
+
+            sprintf(ElementAngle[i], "%7.2f", E.angle);			// Get the angle
+
+            break;							// Exit the for loop
+          } // if (ElementName[i] == TrimSpace(E.name))
+        } // for (i ...)
+      } // BRD.elements(E)
+    } // project.board(BRD)
+  } // if (BoardExists)
+
+
+  // Now we add parts from any other parts lists that have been imported.
+
+  for (i = 0; i < NumberOfPartsLists; i++) {			// Scan list of imported lists
+    fileerror();						// Reset error status
+    j = fileread(newParts, PartsLists[i]);			// Read the file into an array and get # of lines
+    if (fileerror()) exit (EXIT_FAILURE);			// Exit if file error
+
+    if (j == 0) {
+      dlgMessageBox("This file is empty!");
+      return;
+    }
+
+    for (k = 0; k < j; k++) {
+      l=strsplit(a, newParts[k], '\t');				// Split data into a temp array
+      value = strupr(a[2]);					// Get the part's value
+      if (value == "DON'T SHOW") value = "DONT SHOW";		// Remove unnecessary apostrophe 
+      if (((ValuesToShow == regularValues  && value != "DONT SHOW") ||// Allow only parts
+           (ValuesToShow == dontShowValues && value == "DONT SHOW") ||// that meet criteria
+           (ValuesToShow == allValues)) &&			// for values and packages.
+          ((DisplayPackage == WithPackage && a[4] == "Y") ||
+           (DisplayPackage == WithoutPackage && a[4] == "N") ||
+           (DisplayPackage == AllPackages))) {
+
+        PartName[NumberOfParts] = a[0];				// Get part name
+        ElementName[NumberOfParts] = a[0];			// Get element name
+
+        PartsListName[NumberOfParts] = a[1];			// Get list name
+        ElementsListName[NumberOfParts] = a[1];			// Get list name
+
+        PartValue[NumberOfParts] = a[2];			// Get value
+
+        PartDevice[NumberOfParts] = a[3];			// Get device
+
+        if (a[4] == "Y") PartPackage[NumberOfParts] = a[5];	// Get package
+        else PartPackage[NumberOfParts] = "";
+
+        PartDescription[NumberOfParts] = a[6];			// Get description
+
+        PartValueOn[NumberOfParts] = a[7] == "On";		// Get value ON flag
+
+        if (l > 8) {					// See if there is more
+          PartSheet[NumberOfParts] = a[8];			// Get sheet number,
+
+          ElementSide[NumberOfParts] = a[9];			// Get the board side
+							// Get coordinates
+          sprintf(ElementInchX[NumberOfParts], "%10.4f", u2inch(strtol(a[10])));
+          sprintf(ElementInchY[NumberOfParts], "%10.4f", u2inch(strtol(a[11])));
+          sprintf(ElementMmX[NumberOfParts], "%10.4f", u2mm(strtol(a[10])));
+          sprintf(ElementMmY[NumberOfParts], "%10.4f", u2mm(strtol(a[11])));
+
+          ElementAngle[NumberOfParts] = a[12];			// Get angle
+        }
+        else {						// If no more,
+          PartSheet[NumberOfParts] = " ";			// just blank everything
+          ElementSide[NumberOfParts] = " ";
+          ElementInchX[NumberOfParts] = " ";
+          ElementInchY[NumberOfParts] = " ";
+          ElementMmX[NumberOfParts] = " ";
+          ElementMmY[NumberOfParts] = " ";
+          ElementAngle[NumberOfParts] = " ";
+        }
+
+        NumberOfParts++;					// Increment number of parts
+      } // if (ValuesToShow ...
+    } // for ... k
+  } // for ... NumberOfPartsLists
+}
+
+
+/******************************************************************************************/
+/*									*/
+/*	Name:		MakeInputColumns					*/
+/*	Description:	Make a list of Input Columns for the Output tab.		*/
+/*	Called by:	GenerateList, UnpickAllColumns			*/
+/*	Parameters:							*/
+/*	Calls:								*/
+/*	Returns:								*/
+/*									*/
+/******************************************************************************************/
+void MakeInputColumns(void)
+{
+  int j, k;
+  string boardInputColumns[];
+
+  NumberOfInputColumns = strsplit(InputColumns,Lines[0],'\t');	// Split schematic titles into an array
+  j = strsplit(boardInputColumns,BoardLines[0],'\t');		// Split board titles into an array
+  for (k = 1; k < j; k++) {					// Add board titles to schematic titles
+    InputColumns[NumberOfInputColumns++] = boardInputColumns[k];
+  }
+}
+
+
+/******************************************************************************************/
+/*									*/
+/*	Name:		GeneratePartList					*/
+/*	Description:	Routine to generate the schematic list by parts.  The list	*/
+/*			will be in a string array called Lines which is associated	*/
+/*			with the main dialog schematic listview.  Also generates	*/
+/*			the board list in a string array called BoardLines	*/
+/*			associated with the main dialog board listview.  These	*/
+/*			listviews are only seen on the screen and are not the final	*/
+/*			output.						*/
+/*	Called by:	GenerateList					*/
+/*	Parameters:							*/
+/*	Calls:								*/
+/*	Returns:								*/
+/*									*/
+/******************************************************************************************/
+void GeneratePartList(void)
+{
+  int i, f;
+
+  for (i = 0; i <= NumberOfLines; i++) {
+    Lines[i] = "";							// Clear the Lines array
+    BoardLines[i] = "";						// Clear the BoardLines array
+  }
+
+  Lines[0] = "Part";						// Lines[0] is the title line.
+  if (NumberOfPartsLists) Lines[0] += "\tSchematic";			// If imported lists add Schematic
+
+  Lines[0] += "\tValue\tDevice\tPackage\tDescription\tSheet" + DatabaseTitle;	// Finish title
+
+  if (ShowKeys) Lines[0] += "\tKey";					// Add key title if Display keys set
+
+  if (BoardExists) {						// If there is a board
+    BoardLines[0] = "Part";						// First line is the title line
+    if (NumberOfPartsLists) BoardLines[0] += "\tSchematic";			// If imported lists add Schematic
+    BoardLines[0] += "\tSide\tX (inch)\tY (inch)\tX (mm)\tY (mm)\tAngle";	// Finish title
+  }
+  else BoardLines[0] = "No board file loaded.";				// If no board, say so
+
+  NumberOfLines = 1;						// Title line is line 1
+
+  for (i = 0; i < NumberOfParts; i++) {					// Scan all parts
+    Lines[NumberOfLines] = PartName[i];					// Get part name
+    if (NumberOfPartsLists) Lines[NumberOfLines] += "\t" + PartsListName[i];	// Maybe add List Name
+    Lines[NumberOfLines] += "\t" + PartValue[i] + "\t" + PartDevice[i] +
+      "\t" + PartPackage[i] + "\t" + PartDescription[i] + "\t" + PartSheet[i];	// Add rest of data
+    if (Database[0]) {						// If there is a database add the fields
+      for (f = 0; f < NumberOfFields; f++)
+        Lines[NumberOfLines] += "\t" + TrimSpace(lookup(Database, PartKey[i], DatabaseFields[f], '\t'));
+    }
+    Lines[NumberOfLines] += "\t" + PartKey[i]; 				// key field not shown in listview
+
+    if (BoardExists) {
+      BoardLines[NumberOfLines] = ElementName[i];				// Get element name
+      if (NumberOfPartsLists) BoardLines[NumberOfLines] += "\t" + ElementsListName[i];// Maybe add List Name
+      BoardLines[NumberOfLines] += "\t" + ElementSide[i] + "\t" +
+        ElementInchX[i] + "\t" + ElementInchY[i] + "\t" + ElementMmX[i] + "\t" +
+        ElementMmY[i] + "\t" + ElementAngle[i];				// Add rest of data
+    }
+
+    NumberOfLines++;
+  }
+}
+
+
+/******************************************************************************************/
+/*									*/
+/*	Name:		GenerateValueList					*/
+/*	Description:	Routine to generate the list by value so that all parts of	*/
+/*			the same value will be on the same line.  The list will be	*/
+/*			in a string array called Lines which is associated with the	*/
+/*			main dialog listview.  It is only seen on the screen and is	*/
+/*			not the final output.				*/
+/*	Called by:	GenerateList					*/
+/*	Parameters:							*/
+/*	Calls:								*/
+/*	Returns:								*/
+/*									*/
+/******************************************************************************************/
+void GenerateValueList(void)
+{
+  int index[];
+  int i1, i2, n1, n2, howmany, f;
+  string value;
+  string quantity;
+
+  for (f = 0; f <= NumberOfLines; f++) {
+    Lines[f] = "";							// Clear the Lines array
+    BoardLines[f] = "";						// Clear the BoardLines array
+  }
+
+  if (NumberOfPartsLists) Lines[0] = "Part@Schematic\tValue\tDevice\tPackage\tDescription\tQty" + DatabaseTitle;
+  else Lines[0] = "Part\tValue\tDevice\tPackage\tDescription\tQty" + DatabaseTitle;
+
+  if (BoardExists) BoardLines[0] = "Cannot group by same values.";
+  else BoardLines[0] = "No board file loaded.";
+
+  if (ShowKeys) Lines[0] += "\tKey";
+  NumberOfLines = 1;
+
+  if (NumberOfParts == 0) return;
+
+  sort(NumberOfParts, index, PartValue, PartDevice, PartName, PartPackage);
+
+  n1 = 0;
+  i1 = index[n1];
+  Lines[1] = PartName[i1];
+  if (NumberOfPartsLists) Lines[1] += "@" + PartsListName[i1];
+  howmany = 1;
+
+  for (n2 = 1; n2 < NumberOfParts; n2++) {
+    i2 = index[n2];
+
+    if (PartValue[i1] == PartValue[i2] && PartDevice[i1] == PartDevice[i2] && PartPackage[i1] == PartPackage[i2]) {
+      Lines[NumberOfLines] += ", " + PartName[i2];
+      if (NumberOfPartsLists) Lines[NumberOfLines] += "@" + PartsListName[i2];
+      howmany++;
+    }
+    else {
+      sprintf(quantity, "%d", howmany);
+      Lines[NumberOfLines] += "\t" + PartValue[i1] + "\t" + PartDevice[i1] + "\t" + 
+        PartPackage[i1] + "\t" + PartDescription[i1] + "\t" + quantity;
+      if (Database[0]) {
+        for (f = 0; f < NumberOfFields; f++)
+          Lines[NumberOfLines] += "\t" + TrimSpace(lookup(Database, PartKey[i1], DatabaseFields[f], '\t'));
+      }
+      Lines[NumberOfLines] += "\t" + PartKey[i1]; 		// key field not shown in listview
+      NumberOfLines++;
+      n1 = n2;
+      i1 = index[n1];
+      Lines[NumberOfLines] = PartName[i1];
+      if (NumberOfPartsLists) Lines[NumberOfLines] += "@" + PartsListName[i1];
+      howmany = 1;
+    }
+  }
+  sprintf(quantity, "%d", howmany);
+  Lines[NumberOfLines] += "\t" + PartValue[i1] + "\t" + PartDevice[i1] + "\t" + 
+    PartPackage[i1] + "\t" + PartDescription[i1] + "\t" + quantity;
+  if (Database[0]) {
+    for (f = 0; f < NumberOfFields; f++)
+      Lines[NumberOfLines] += "\t" + TrimSpace(lookup(Database, PartKey[i1], DatabaseFields[f], '\t'));
+  }
+  Lines[NumberOfLines] += "\t" + PartKey[i1]; 			// key field not shown in listview
+  NumberOfLines++;
+}
+
+
+/******************************************************************************************/
+/*									*/
+/*	Name:		GenerateList					*/
+/*	Description:	Routine to generate the list, either by parts or by value.	*/
+/*			The list will be in a string array called Lines which is	*/
+/*			associated with the main dialog listview.  It is only seen	*/
+/*			on the screen and is not the final output.		*/
+/*	Called by:	Main program, "Parts list" listview, "Grouped by" radio	*/
+/*			buttons (2), "Values to display" radio buttons (3),	*/
+/*			"Packages to display" radio buttons (3), "New database"	*/
+/*			push button, "Open database" push button, "Edit structure"	*/
+/*			push button, "Delete record" push button, "Save database	*/
+/*			as" push button, "Database" listview, "Show keys" check box.*/
+/*	Parameters:							*/
+/*	Calls:		GeneratePartList, GenerateValueList, MakeInputColumns	*/
+/*	Returns:								*/
+/*									*/
+/******************************************************************************************/
+void GenerateList(void)
+{
+  LineSelected = 0;
+  switch (GroupedBy) {
+    case ltParts:  GeneratePartList(); break;
+    case ltValues: GenerateValueList(); break;
+  }
+  MakeInputColumns();
+}
+
+
+/******************************************************************************************/
+/*									*/
+/*	Name:		EditValue						*/
+/*	Description:	Routine to edit the value of a field.			*/
+/*	Called by:	EditLine						*/
+/*	Parameters:	String containing the name of the field and the value	*/
+/*			separated by a tab.					*/
+/*	Calls:		TrimSpace						*/
+/*	Returns:		The edited string.					*/
+/*									*/
+/******************************************************************************************/
+string EditValue(string Line)
+{
+  string	Parms[];
+  int	Result;
+
+  strsplit(Parms, Line, '\t');
+
+  Result = dlgDialog("Edit " + Parms[0]) {
+    dlgStringEdit(Parms[1]);
+    dlgPushButton("+Ok") dlgAccept();			// Display OK button
+    dlgPushButton("-Cancel") dlgReject();		// Display Cancel button
+  };
+  Parms[1] = TrimSpace(Parms[1]);
+  Line = strjoin(Parms, '\t');			// Put data back into record
+  return(Line);
+}
+
+
+/******************************************************************************************/
+/*									*/
+/*	Name:		EditLine						*/
+/*	Description:	Routine to edit a selected database record.		*/
+/*	Called by:	"Part list" listview.				*/
+/*	Parameters:							*/
+/*	Calls:		EditValue						*/
+/*	Returns:								*/
+/*									*/
+/******************************************************************************************/
+void EditLine(void)
+{
+  string		Key;
+  int		i, result, record;
+  numeric string	RecordData[];
+  int		found = 0;
+  int		SelectedField = 0;
+  int		SortField = 0;
+  string		a[];
+
+  if (!Database[0]) {				// Make sure a database was opened
+    dlgMessageBox("No database open!");
+    return;
+  }
+
+  i = strsplit(RecordData, Lines[LineSelected], '\t');	// Split the line selected from the
+						// schematic listview into an array
+  Key = RecordData[i - 1];				// The key is the last datum
+
+  if (NumberOfData > 0) {
+    for (record = 1; Database[record]; record++) {	// Go through the database
+      strsplit(RecordData, Database[record], '\t');	// Split the record into an array
+      if (RecordData[0] == Key) {			// Look for the key from the schematic listview
+        found = 1;					// Exit if found
+        break;
+      }
+    }
+  }
+
+  for (i = 0; i < NumberOfFields; i++) {
+    if (found) RecordData[i] = DatabaseFields[i] + "\t" + RecordData[i + 1];
+    else RecordData[i] = DatabaseFields[i] + "\t" + " ";
+    RecordData[i + 1] = "";
+  }
+
+  result = dlgDialog("Edit Record") {			// Display dialog
+    dlgHBoxLayout {
+      dlgSpacing(ScreenWidth / 2);			// Establish width
+    }
+    dlgHBoxLayout {
+      dlgVBoxLayout {
+        dlgListView("Field name\tValue", RecordData, SelectedField, SortField)
+          RecordData[SelectedField] = EditValue(RecordData[SelectedField]);
+        dlgHBoxLayout {
+          dlgPushButton("+Ok") dlgAccept();		// Display OK button
+          dlgPushButton("-Cancel") dlgReject();		// Display Cancel button
+        }
+      }
+      dlgVBoxLayout {
+        dlgPushButton("Edit") RecordData[SelectedField] = EditValue(RecordData[SelectedField]);
+        dlgPushButton("Copy") CopyPasteBuffer = strjoin(RecordData, '\n');	// Display Copy button
+        dlgPushButton("Paste") {			// Display Paste button
+          strsplit(RecordData, CopyPasteBuffer, '\n');
+          dlgRedisplay();
+        }
+      }
+    }
+  };
+  if (result) {					// If dialog accepted
+    Database[record] = Key;
+    for (i = 0; RecordData[i]; i++) {
+      strsplit(a, RecordData[i], '\t');
+      Database[record] += "\t" + a[1];
+    }
+    Database[record] += InSchematic;			// Put data back into record
+    DatabaseModified = 1;				// Flag that database was modified
+  }
+}
+
+
+/******************************************************************************************/
+/*									*/
+/*	Name:		ImportList					*/
+/*	Description:	Prompts for a new parts list file.			*/
+/*	Called by:	"Import part list" push button			*/
+/*	Parameters:							*/
+/*	Calls:								*/
+/*	Returns:								*/
+/*									*/
+/******************************************************************************************/
+void ImportList(void)
+{
+  int i, j;
+  string fileName;
+  string newParts[];
+  string a[];
+
+  fileName = dlgFileOpen("Choose part list file", SchematicPath, "Database files (*" + PartsListExt + ");;All files (*)");
+  if (!fileName) return;
+
+  if (!fileext(fileName)) fileName += PartsListExt;
+  PartsLists[NumberOfPartsLists++] = fileName;
+}
+
+
+/******************************************************************************************/
+/*									*/
+/*	Name:		RemoveList					*/
+/*	Description:	Removes selected parts list file name from list box.	*/
+/*	Called by:	"Remove part list" push button			*/
+/*	Parameters:							*/
+/*	Calls:								*/
+/*	Returns:								*/
+/*									*/
+/******************************************************************************************/
+void RemoveList(void)
+{
+  int i;
+
+  if (PartsListSelected == NumberOfPartsLists - 1) PartsLists[PartsListSelected] = "";
+  else for (i = PartsListSelected; i < NumberOfPartsLists; i++) PartsLists[i] = PartsLists[i + 1];
+  NumberOfPartsLists--;
+}
+
+/******************************************************************************************/
+/*									*/
+/*	Name:		FixFormat						*/
+/*	Description:	Scans a string and replaces % sings by %%, and " by \".	*/
+/*			This is necessary so as not to confuse printf statements.	*/
+/*	Called by:	ExportListSchematic, ExportListImported, SaveSetup	*/
+/*	Parameters:	The string to be scanned.				*/
+/*	Calls:								*/
+/*	Returns:		The string with any % changed to %%,			*/
+/*			and any " changed to \".				*/
+/*									*/
+/******************************************************************************************/
+string FixFormat(string s)
+{
+  int	i = 0;
+
+  do {
+    i = strchr(s, '%', i) + 1;
+    if (i == 0) break;
+    s = strsub(s,0,i) + "%" + strsub(s,i);
+    i = i + 2;
+  } while(i > 0);
+
+  do {
+    i = strchr(s, '"', i);
+    if (i < 0) break;
+    s = strsub(s,0,i) + "\\" + strsub(s,i);
+    i = i + 2;
+  } while(i > 0);
+
+  return s;
+}
+
+/******************************************************************************************/
+/*									*/
+/*	Name:		ExportListSchematic					*/
+/*	Description:	Saves the schematic and board parts list to a user	*/
+/*			selected file.					*/
+/*	Called by:	"Export part list" push button			*/
+/*	Parameters:							*/
+/*	Calls:		FixFormat						*/
+/*	Returns:								*/
+/*									*/
+/******************************************************************************************/
+void ExportListSchematic(void)
+{
+  int			i;
+  string		a[];
+  numeric string	partName[];
+  numeric string	partValue[];
+  numeric string	partDevice[];
+  string		flag[];
+  numeric string	partPackage[];
+  numeric string	partDescription[];
+  string		partValueOn[];
+  string		sheetNumbers;
+  numeric string	partSheet[];
+  int			numberOfParts;
+  string		elementName;
+  string		elementSide[];
+  numeric string	elementX[];
+  numeric string	elementY[];
+  numeric string	elementAngle[];
+
+  ExportFileName = dlgFileSave("Export part list", SchematicPath, "Part list files (*" + PartsListExt + ");;All files (*)");
+  if (!ExportFileName) return;
+
+  if (!fileext(ExportFileName)) ExportFileName += PartsListExt;
+  if (fileglob(a, ExportFileName) && dlgMessageBox("File '" + ExportFileName + "' exists\n\nOverwrite?", "+&Yes", "-&No"))
+    return;
+
+  numberOfParts = 0;
+  project.schematic(SCH) {
+    SCH.sheets(SHT) {
+      SHT.parts(P) {
+
+        sheetNumbers="";
+        for (i = 0; i < numberOfParts; i++) {
+          if (partName[i] == TrimSpace(P.name)) {
+            sprintf(sheetNumbers, ", %d", SHT.number);
+            partSheet[i] = partSheet[i] + sheetNumbers;
+            break;
+          }
+        }
+
+        if (sheetNumbers == "") {
+          partName[numberOfParts] = TrimSpace(P.name);
+
+          partValue[numberOfParts] = TrimSpace(P.value);
+          i = strrchr(partValue[numberOfParts], '^');
+          if (i > -1) partValue[numberOfParts] = strsub(partValue[numberOfParts], 0, i);
+
+          partDevice[numberOfParts] = TrimSpace(P.device.name);
+          i = strrchr(partDevice[numberOfParts], '^');
+          if (i > -1) partDevice[numberOfParts] = strsub(partDevice[numberOfParts], 0, i);
+
+          if (P.device.package) {
+            flag[numberOfParts] = "Y";
+            partPackage[numberOfParts] = TrimSpace(P.device.package.name);
+          }
+          else {
+            flag[numberOfParts] = "N";
+            partPackage[numberOfParts] = " ";
+          }
+
+          partDescription[numberOfParts] = TrimSpace(P.device.headline);
+
+          partValueOn[numberOfParts] = TrimSpace(P.device.value);
+
+          sprintf(partSheet[numberOfParts], "%d", SHT.number);
+
+          elementSide[numberOfParts] = " ";
+          elementX[numberOfParts] = " ";
+          elementY[numberOfParts] = " ";
+          elementAngle[numberOfParts] = " ";
+
+          numberOfParts++;
+        }
+      }
+    }
+  }
+
+  if (BoardExists) {
+    project.board(BRD) {						// Scan the board
+      BRD.elements(E) {						// Scan elements on the board
+        elementName = TrimSpace(E.name);				// Get element name
+        for (i = 0; i < numberOfParts; i++) {				// Test for matching name
+          if (partName[i] == elementName) {
+
+            if (E.mirror) elementSide[i] = "Bottom";			// Get the side
+            else elementSide[i] = "Top";
+
+            sprintf(elementX[i], "%d", E.x);				// Get the coordinates
+            sprintf(elementY[i], "%d", E.y);
+
+            sprintf(elementAngle[i], "%f", E.angle);			// Get the angle
+
+            break;
+          } // if (partName[i] == x)
+        } // for (i = 0 ...
+      } // BRD.elements(E)
+    } // project.board(BRD)
+  } // if (BoardExists)
+
+  output(ExportFileName, "wt") {
+    for (i = 0; i < numberOfParts; i++) {
+      printf(FixFormat(partName[i] + "\t" + TrimSpace(DlgSchematicName) + "\t" + partValue[i] + "\t" +
+        partDevice[i] + "\t" + flag[i] + "\t" + partPackage[i] + "\t" +
+        partDescription[i] + "\t" + partValueOn[i] + "\t" + partSheet[i] +  "\t" +
+        elementSide[i] + "\t" + elementX[i] + "\t" + elementY[i] + "\t" + elementAngle[i] + "\n"));
+    }
+  }
+}
+
+
+/******************************************************************************************/
+/*									*/
+/*	Name:		ExportListImported					*/
+/*	Description:	Saves the parts list to a user selected file.		*/
+/*	Called by:	"Export part list" push button			*/
+/*	Parameters:							*/
+/*	Calls:		FixFormat						*/
+/*	Returns:								*/
+/*									*/
+/******************************************************************************************/
+void ExportListImported(void)
+{
+  int i;
+  string a;
+  string flag, packageName;
+
+  if (!ExportFileName) return;
+
+  output(ExportFileName, "at") {
+    for (i = 0; i < NumberOfPartsLists; i++) {
+      fileerror();						// Reset error status
+      fileread(a, PartsLists[i]);				// Read the file into a string
+      if (fileerror()) exit (EXIT_FAILURE);			// Exit if file error
+      printf(FixFormat(a));					// Write the string to the output file
+    }
+  }
+}
+
+
+/******************************************************************************************/
+/*									*/
+/*	Name:		DefaultTitle					*/
+/*	Description:	Sets the output title string to a default value.		*/
+/*	Called by:	Main program, "Grouped by" radio buttons (2),		*/
+/*			"Values to display" radio buttons (3), "Packages to display"*/
+/*			radio buttons (3), "New database" push button,		*/
+/*			"Open database" push button, "Close database" push button,	*/
+/*			"Default" push button				*/
+/*	Parameters:							*/
+/*	Calls:								*/
+/*	Returns:								*/
+/*									*/
+/******************************************************************************************/
+void DefaultTitle(void)
+{
+  string Plural;
+  string By;
+
+  if (NumberOfParts != 1) Plural = "s";
+  else Plural = "";
+  if (GroupedBy == ltParts) By = "";
+  else By = ", grouped by values";
+
+  project.schematic(SCH) sprintf(Title, "Bill of Material from %s, %d part%s%s, as of %s",
+    filename(SCH.name), NumberOfParts, Plural, By, t2string(time()));
+}
+
+
+/******************************************************************************************/
+/*									*/
+/*	Name:		UnPickAllColumns					*/
+/*	Description:	Routine to remove all column names from the output list.	*/
+/*	Called by:	Main program, "Grouped by" radio buttons (2), "New database"*/
+/*			push button, "Open database" push button, "Edit structure"	*/
+/*			push button, "Close database" push button.		*/
+/*	Parameters:							*/
+/*	Calls:		MakeInputColumns					*/
+/*	Returns:								*/
+/*									*/
+/******************************************************************************************/
+void UnPickAllColumns(void)
+{
+  int n;
+
+  MakeInputColumns();
+  for (n = 0; n < NumberOfOutputColumns; n++) {
+    OutputColumns[n] = "";
+    OutputIndex[n]=-1;
+  }
+  NumberOfOutputColumns=0;
+}
+
+
+/******************************************************************************************/
+/*									*/
+/*	Name:		CheckPicked					*/
+/*	Description:	Function to check if any output columns have been picked.	*/
+/*	Called by:	"Save output..." push button, "Print..." push button.	*/
+/*	Parameters:							*/
+/*	Calls:								*/
+/*	Returns:	0 = no columns picked yet, not 0 = columns picked.		*/
+/*									*/
+/******************************************************************************************/
+int CheckPicked(void)
+{
+  if (!NumberOfOutputColumns) dlgMessageBox("You must pick columns first.");
+  return NumberOfOutputColumns;
+}
+
+
+/******************************************************************************************/
+/*									*/
+/*	Name:		GenerateOutputText					*/
+/*	Description:	Function to read the parts list and generate a list ready	*/
+/*			for saving or printing in text format.  It uses the	*/
+/*			OutputColumns array to pick the columns, and the IndexArray	*/
+/*			to sort.  The list is placed in the PreviewOutput string.	*/
+/*			The Preview string contains the same thing but with tags to	*/
+/*			control dialog font.				*/
+/*	Called by:	GenerateOutput					*/
+/*	Parameters:							*/
+/*	Calls:		Trim						*/
+/*	Returns:								*/
+/*									*/
+/******************************************************************************************/
+void GenerateOutputText(void)
+{
+  int	i, j, k, l, m;
+
+  string	columnTitles[];
+  int	numberOfColumnTitles;
+
+  int	width[];						// Array to hold widths of text columns
+  string	a[], b[];						// String array for splitting strings
+  string	s, t;						// Temporary strings
+  string	oldSort;						// To tell when the sort has changed
+							// The following are used only if grouped
+							// by values and listed individually
+  string	PartsOfSameValue[];					// Array of parts of the same value
+  int		NumberOfPartsOfSameValue;			// Number of parts in array
+  enum		{PartsColumn = 0};				// Number of values column
+  enum		{QuantityColumn = 5};			// Number of quantity column
+
+  // Make an array with all of the column titles
+  numberOfColumnTitles = strsplit(columnTitles, Lines[0], '\t');	// Put schematic column titles into an array
+  j = strsplit(b, BoardLines[0], '\t');	// Split board titles into an array
+  for (i = 1; i < j; i++) columnTitles[numberOfColumnTitles++] = b[i];// Add board titles to schematic titles
+
+  // Make an array with column widths
+  for (j = 0; j < numberOfColumnTitles; j++) {
+    columnTitles[j] = Trim(columnTitles[j]);			// Trim titles just in case
+    width[j] = strlen(columnTitles[j]);				// Get starting width of each column
+  }
+
+  // Go through schematic and board and calculate maximum widths for all columns
+  for (l = 1; Lines[l]; l++) {				// Go through all lines
+    i = strsplit(a, Lines[l], '\t');				// Get schematic columns for this line
+    if (ShowKeys == 0) i--;					// Adjust for key column if not displayed
+    j = strsplit(b, BoardLines[l], '\t');			// Get board columns for this line
+    for (k = 1; k < j; k++) a[i++] = b[k];			// Add board columns to schematic columns
+    for (j = 0; j < i; j++) width[j] = max(width[j], strlen(a[j]));	// Calculate max width of each column
+  }
+
+  // See if grouped by values and listed individually
+  if (GroupedBy == ltValues && Individual == 1) {
+    width[PartsColumn] = 0;
+    for (l = 0; l < NumberOfLines - 1; l++) {			// Scan lines from Parts List
+      strsplit(a, Lines[l], '\t');				// Split the line into an array
+      NumberOfPartsOfSameValue = strsplit(b, a[PartsColumn], ',');	// Split parts into another array
+      for (i = 0; i < NumberOfPartsOfSameValue; i++) {
+        width[PartsColumn] = max(width[PartsColumn], strlen(b[i]));	// Calculate max width of each part
+      }
+    }
+  }
+
+  for (i = 0; i < numberOfColumnTitles; i++) width[i]++;		// Add one blank to every column
+
+  if (SpacesOrTabs == UseTabs) {
+    for (j = 0; j < numberOfColumnTitles; j++) {
+      width[j] = (((width[j] / TabWidth) + 1) * TabWidth) - 1;	// Make widths multiple of tabs
+    }
+  }
+
+  PreviewOutput = RightTrim(Title) + "\n\n";			// Start with the title
+  Preview = "<pre>" + RightTrim(Title) + "\n\n";
+
+  t="";							// Initialize temporary string
+  for (i = 0; OutputColumns[i]; i++) {				// Left justify titles in predetermined widths.
+    if (SpacesOrTabs == UseTabs) {				// Make column widths
+      s = columnTitles[OutputIndex[i]];
+      j = ((width[OutputIndex[i]] - strlen(s)) / TabWidth) + 1;
+      for (k = 0; k < j; k++) s += "\t";
+    }
+    else sprintf(s, "%-*s", width[OutputIndex[i]] + 1, columnTitles[OutputIndex[i]]);
+    t += s;						// Build string of column titles
+  }
+  PreviewOutput += RightTrim(t) + "\n";				// End with new line
+
+  t="";							// Initialize temporary string
+  for (i = 0; OutputColumns[i]; i++) {				// Left justify titles in predetermined widths.
+    sprintf(s, "%-*s", width[OutputIndex[i]] + 1, columnTitles[OutputIndex[i]]);
+    t += s;						// Build string of column titles
+  }
+  Preview += RightTrim(t) + "\n";
+
+  for (l = 0; l < NumberOfLines - 1; l++) {			// Scan lines from Parts List
+    i = strsplit(a, Lines[IndexArray[l] + 1], '\t');		// Split the line into an array
+    if (ShowKeys == 0) i--;					// Adjust for key column if not displayed
+    j = strsplit(b,BoardLines[IndexArray[l] + 1],'\t');		// Split board line into an array
+    for (k = 1; k < j; k++) a[i++] = b[k];			// Add board to schematic
+
+    if (GroupedBy == ltValues && Individual == 1)			// See if grouped by values and
+      NumberOfPartsOfSameValue = strsplit(PartsOfSameValue, a[PartsColumn], ','); // if listed individually or not
+    else NumberOfPartsOfSameValue = 1;
+
+    if (BlankLineIndex >= 0) {				// See if need to add a blank line
+      if (l == 0) oldSort = a[BlankLineIndex];			// if first line setup oldSort
+      else if (oldSort != a[BlankLineIndex]) {			// else look for change in sort column value
+        PreviewOutput += "\n";				// if so add a blank line
+        Preview += "\n";
+        oldSort = a[BlankLineIndex];				// and setup oldSort for new value
+      }
+    }
+
+    t="";							// Initialize temporary string
+    for (m = 0; m < NumberOfPartsOfSameValue; m++) {
+      for (i = 0; OutputColumns[i]; i++) {			// Scan the columns to output
+        s = a[OutputIndex[i]];				// Get the next output datum
+
+        if (GroupedBy == ltValues && Individual == 1) {
+          if (OutputIndex[i] == PartsColumn) s = Trim(PartsOfSameValue[m]);
+          else if (m > 0 && OutputIndex[i] == QuantityColumn) s = "";
+        }
+
+        if (SpacesOrTabs == UseTabs) {				// Make column width
+          j = ((width[OutputIndex[i]] - strlen(s)) / TabWidth) + 1;
+          for (k = 0; k < j; k++) s += "\t";
+        }
+        else sprintf(s, "%-*s", width[OutputIndex[i]] + 1, s);
+
+        t += s;						// Build string of columns
+      }
+      if (GroupedBy == ltValues && Individual == 1) t += "\n";	// If grouped by values and listed
+							// individually then terminate line
+    }
+    PreviewOutput += RightTrim(t) + "\n";			// End with new line
+
+    t="";							// Initialize temporary string
+    for (m = 0; m < NumberOfPartsOfSameValue; m++) {
+      for (i = 0; OutputColumns[i]; i++) {			// Scan the columns to output
+        s = a[OutputIndex[i]];				// Get the next output datum
+
+        if (GroupedBy == ltValues && Individual == 1) {
+          if (OutputIndex[i] == PartsColumn) s = Trim(PartsOfSameValue[m]);
+          else if (m > 0 && OutputIndex[i] == QuantityColumn) s = "";
+        }
+
+        sprintf(s, "%-*s", width[OutputIndex[i]] + 1, s);
+        t += s;						// Build string of columns
+      }
+      if (GroupedBy == ltValues && Individual == 1) t += "\n";	// If grouped by values and listed
+							// individually then terminate line
+    }
+    Preview += RightTrim(t) + "\n";
+  }
+ PreviewOutput += "\n\n";
+ Preview += "\n\n</pre>";
+}
+
+
+/******************************************************************************************/
+/*									*/
+/*	Name:		GenerateOutputHTML					*/
+/*	Description:	Function to read the Lines array and generate a list ready	*/
+/*			for saving or printing in HTML format.  It uses the	*/
+/*			OutputColumns array to pick the columns, and the IndexArray	*/
+/*			to sort.  The list is placed in the Preview string.	*/
+/*	Called by:	GenerateOutput					*/
+/*	Parameters:							*/
+/*	Calls:								*/
+/*	Returns:								*/
+/*									*/
+/******************************************************************************************/
+void GenerateOutputHTML(void)
+{
+  int i, j, k, l;
+  string a[], b[];						// String array for splitting strings
+  string oldSort;						// To tell when the sort has changed
+
+  Preview = "<b>" + Title + "</b>\n<p>\n";			// Start with the title
+  Preview += "<table>\n";					// Start the table
+
+  Preview += "<tr>";					// Add a row for the column names
+  i = strsplit(a, Lines[0], '\t');				// Split column names into an array
+  j = strsplit(b, BoardLines[0], '\t');				// Split board titles into an array
+  for (k = 1; k < j; k++) a[i++] = b[k];			// Add board titles to schematic titles
+
+  for (i = 0; OutputColumns[i]; i++) {				// Format titles in the output
+    Preview += "<td><b>" + a[OutputIndex[i]] + "</b></td>";
+  }
+  Preview += "</tr>\n";					// End the row
+
+  for (l = 0; l < NumberOfLines - 1; l++) {			// Scan lines from Parts List
+    i = strsplit(a, Lines[IndexArray[l] + 1], '\t');		// Split the line into an array
+    if (ShowKeys == 0) i--;					// Adjust for key column if not displayed
+    j = strsplit(b,BoardLines[IndexArray[l] + 1],'\t');		// Split board line into an array
+    for (k = 1; k < j; k++) a[i++] = b[k];			// Add board to schematic
+
+    if (BlankLineIndex >= 0) {				// See if need to add a blank line
+      if (l == 0) oldSort = a[BlankLineIndex];			// if first line setup oldSort
+      else if (oldSort != a[BlankLineIndex]) {			// else look for change in sort column value
+        Preview += "<tr><td> </td></tr>\n";			// if so add a blank line
+        oldSort = a[BlankLineIndex];				// and setup oldSort for new value
+      }
+    }
+    Preview += "<tr>";					// Add a new row to the output
+    for (i = 0; OutputColumns[i]; i++) {			// Scan the columns to output
+      Preview += "<td>" + a[OutputIndex[i]] + "</td>";		// Get the next output datum
+    }
+    Preview += "</tr>\n";					// End the row
+  }
+
+  Preview += "</table>\n";					// End the table
+}
+
+
+/******************************************************************************************/
+/*									*/
+/*	Name:		GenerateOutputSpreadsheet				*/
+/*	Description:	Function to read the Lines array and generate a list ready	*/
+/*			for saving or printing in spreadsheet format.  It uses the	*/
+/*			OutputColumns array to pick the columns, and the IndexArray	*/
+/*			to sort.  The list is placed in the Preview string.	*/
+/*	Called by:	GenerateOutput					*/
+/*	Parameters:							*/
+/*	Calls:								*/
+/*	Returns:								*/
+/*									*/
+/******************************************************************************************/
+void GenerateOutputSpreadsheet(void)
+{
+  int	i, j, k, l, n;
+  string	a[], b[];
+
+  if (SpreadsheetHeader) {
+    /* abdAllah MEZITI : START MODIFICATIONS */
+    Preview = "\"" + Title + "\"\n";				// Start with the title
+
+    i = strsplit(a, Lines[0], '\t');				// Split column names into an array
+    j = strsplit(b, BoardLines[0], '\t');			// Split board titles into an array
+    for (k = 1; k < j; k++) a[i++] = b[k];			// Add board titles to schematic titles
+
+    for (i = 0; OutputColumns[i]; i++) {			// Format titles in the output
+      Preview += "\"" + a[OutputIndex[i]] + "\",";
+    }
+    Preview += "\n";					// End the row
+    /* abdAllah MEZITI : END MODIFICATIONS */
+  }
+
+  for (l = 0; l < NumberOfLines - 1; l++) {			// Scan lines from Parts List
+    n = strsplit(a, Lines[IndexArray[l] + 1], '\t');		// Split the line into an array
+    if (ShowKeys == 0) n--;					// Adjust for key column if not displayed
+    j = strsplit(b,BoardLines[IndexArray[l] + 1],'\t');		// Split board line into an array
+    for (k = 1; k < j; k++) a[n++] = b[k];			// Add board to schematic
+
+    for (i = 0; OutputColumns[i]; i++) {			// Scan the columns to output
+      if (i > 0) Preview += CsvSeparator;			// If not the last one add a separator
+      Preview += "\"" + a[OutputIndex[i]] + "\"";			// Get the next output datum
+    }
+    Preview += "\n";					// End with new line
+  }
+}
+
+
+/******************************************************************************************/
+/*									*/
+/*	Name:		GenerateOutput					*/
+/*	Description:	Function to generate a list ready for saving or printing in	*/
+/*			the user selected type and format.  It uses the Index Array	*/
+/*			to sort.  The list is placed in the Preview string.	*/
+/*	Called by:	Main program, "Parts list" listview, "Grouped by" radio	*/
+/*			buttons (2), "Values to display" radio buttons (3),	*/
+/*			"Packages to display" radio buttons (3), "New database"	*/
+/*			push button, "Open database" push button, "Edit structure"	*/
+/*			push button, "Delete record" push button, "Close database"	*/
+/*			push button, "Database" listview, "Update" title push	*/
+/*			button, "Add >" push button, "< Remove" push button, 	*/
+/*			"Sort ascending" push button, "Sort descending" push button,*/
+/*			"Move down" push button, "Move up" push button, "Format"	*/
+/*			radio buttons (3).					*/
+/*	Parameters:							*/
+/*	Calls:		GenerateOutputText, GenerateOutputHTML,			*/
+/*			GenerateOutputSpreadsheet				*/
+/*	Returns:								*/
+/*									*/
+/******************************************************************************************/
+void GenerateOutput(void)
+{
+  int			i, j, k, l, m;
+  string		s;
+  string		a[], b[];
+  numeric string	sortArray[];
+
+  Preview = "";						// Initialize preview
+  PreviewOutput = "";
+
+  for (l = 1; l < NumberOfLines; l++) {				// Scan all lines
+    i = strsplit(a,Lines[l], '\t');				// Split a line into an array
+    if (ShowKeys == 0) i--;
+    j = strsplit(b,BoardLines[l],'\t');
+    for (k = 1; k < j; k++) a[i++] = b[k];			// Add board to schematic
+
+    if (NumberOfSortColumns == 0) {
+      sortArray[l - 1] = a[0];
+    }
+    else {
+      sortArray[l - 1] = "";
+      for (m = 0; m < NumberOfSortColumns; m++) {
+        sprintf(s, "%-20s", strupr(a[SortIndex[m]]));
+        sortArray[l - 1] += s;
+      }
+    }
+  }
+  sortArray[l] = "";
+
+  sort(l - 1, IndexArray, sortArray);
+
+  switch (OutputFormat) {
+    case ofText: GenerateOutputText(); break;
+    case ofHTML: GenerateOutputHTML(); break;
+    case ofSpreadsheet: GenerateOutputSpreadsheet(); break;
+  }
+}
+
+
+/******************************************************************************************/
+/*									*/
+/*	Name:		AddToOutput					*/
+/*	Description:	Routine to add to the "Columns in Output" listbox the field	*/
+/*			that was picked from the "Columns Available" listbox.	*/
+/*	Called by:	"Columns Available" listbox, "Add to Output" button.	*/
+/*	Parameters:							*/
+/*	Calls:		GenerateOutput					*/
+/*	Returns:								*/
+/*									*/
+/******************************************************************************************/
+void AddToOutput(void) {
+
+  if (InputColumnPicked < 0) return;
+
+  OutputColumns[NumberOfOutputColumns] = InputColumns[InputColumnPicked];
+  OutputIndex[NumberOfOutputColumns] = InputColumnPicked;
+  NumberOfOutputColumns++;
+  if (OutputColumnPicked < 0) OutputColumnPicked = 0;
+  GenerateOutput();
+}
+
+
+/******************************************************************************************/
+/*									*/
+/*	Name:		RemoveFromOutput					*/
+/*	Description:	Routine to remove from the "Columns in Output" listbox a	*/
+/*			field.						*/
+/*	Called by:	"Columns in Output" listbox, "Remove" button.		*/
+/*	Parameters:							*/
+/*	Calls:		GenerateOutput					*/
+/*	Returns:								*/
+/*									*/
+/*****************************************************************************************/
+void RemoveFromOutput(void) {
+  if (OutputColumnPicked >= 0 && NumberOfOutputColumns > 0) {
+    NumberOfOutputColumns--;
+    if (NumberOfOutputColumns == OutputColumnPicked) {
+      OutputColumns[OutputColumnPicked] = "";
+      OutputIndex[OutputColumnPicked] = -1;
+      OutputColumnPicked--;
+      dlgRedisplay();
+    }
+    else {
+      int i;
+      i = OutputColumnPicked;
+      while (OutputColumns[i]) {
+        OutputColumns[i] = OutputColumns[i + 1];
+        OutputIndex[i] = OutputIndex[i + 1];
+        i++;
+      }
+    }
+    GenerateOutput();
+  }
+}
+
+
+/******************************************************************************************/
+/*									*/
+/*	Name:		SaveOutput					*/
+/*	Description:	Routine saves the output list from Preview string to a file.*/
+/*	Called by:	"Save output..." push button				*/
+/*	Parameters:							*/
+/*	Calls:								*/
+/*	Returns:								*/
+/*									*/
+/******************************************************************************************/
+void SaveOutput(void)
+{
+  string filePath;
+  string fileName;
+  string a[];
+
+  fileName=filesetext(SchematicName,OutputExt);
+  filePath = SchematicPath + "\\" + fileName;
+  fileName = dlgFileSave("Save Output", filePath, "Output files (*" + OutputExt + ");;All files (*)");
+  if (!fileName) return;
+
+  if (!fileglob(a, fileName) || dlgMessageBox("File '" + fileName + "' exists\n\nOverwrite?", "+&Yes", "-&No") == 0)
+    output(fileName, "wt") {
+    if (OutputFormat == ofText) printf("%s", PreviewOutput);
+    else printf("%s", Preview);
+  }
+}
+
+
+/******************************************************************************************/
+/*									*/
+/*	Name:		PrintList						*/
+/*	Description:	Routine to print the output list from the Preview string.	*/
+/*	Called by:	"Print..." push button				*/
+/*	Parameters:							*/
+/*	Calls:		External EaglePrint.exe through system() function.	*/
+/*	Returns:								*/
+/*									*/
+/******************************************************************************************/
+void PrintList(void)
+{
+  string CommandString;
+  string a[];
+  int i;
+
+  if (fileglob(a, UlpPath + "EaglePrint.exe") != 1) {
+    dlgMessageBox("EaglePrint.exe not found.  Make sure that EaglePrint.exe is in " + UlpPath);
+    return;
+  }
+  CommandString = UlpPath + "BOMtemp.txt";
+  output(CommandString, "wt") {
+    if (OutputFormat == ofText) printf("%s", PreviewOutput);
+    else printf("%s", Preview);
+  }
+  CommandString = UlpPath + "EaglePrint.exe " + CommandString;
+  if (system(CommandString) != 0) dlgMessageBox("Printing failed.");
+}
+
+/******************************************************************************************/
+/*									*/
+/*	Name:		AddDefaultSetup					*/
+/*	Description:	Routine to add the setup name to the defaults list.	*/
+/*	Called by:	OpenSetup, SaveSetup				*/
+/*	Calls:		Trim						*/
+/*	Parameters:							*/
+/*	Returns:								*/
+/*									*/
+/******************************************************************************************/
+void AddDefaultSetup(void)
+{
+  int i;
+
+  if (!SetupFileName) return;
+
+  if (NumberOfSetups == 0) {
+    Setups[NumberOfSetups++] = SetupFileName;
+    return;
+  }
+
+  for (i = 0; i < NumberOfSetups; i++) if (Trim(strupr(SetupFileName)) == Trim(strupr(Setups[i]))) return;
+
+  for (i = NumberOfSetups; i > 0; i--) Setups[i] = Setups[i - 1];
+  Setups[0] = SetupFileName;
+  if (NumberOfSetups < MaxSetups) NumberOfSetups++;
+}
+
+/******************************************************************************************/
+/*									*/
+/*	Name:		SaveSetup						*/
+/*	Description:	Routine to save the setup to a file.			*/
+/*	Called by:	"Save setup..." push button				*/
+/*	Parameters:							*/
+/*	Calls:		FixFormat, AddDefaultSetup				*/
+/*	Returns:								*/
+/*									*/
+/******************************************************************************************/
+void SaveSetup(void)
+{
+  int i;
+  string filePath;
+  string fileName;
+  string a[];
+
+  fileName = filesetext(ExportFileName,SetupExt);
+  filePath = SchematicPath + "\\" + fileName;
+  fileName = dlgFileSave("Save setup", filePath, "Setup files (*" + SetupExt + ");;All files (*)");
+  if (!fileName) return;
+
+  if (fileglob(a, fileName) &&
+    dlgMessageBox("File '" + fileName + "' exists\n\nOverwrite?", "+&Yes", "-&No") != 0)
+    return;
+
+  output(fileName, "wt") {
+    printf("Version=" + Release + "\n");
+    printf("GroupedBy=%d\n", GroupedBy);
+    printf("ValuesToShow=%d\n", ValuesToShow);
+    printf("DisplayPackage=%d\n", DisplayPackage);
+    for (i=0; i < NumberOfPartsLists; i++) {
+      printf("PartsList=" + FixFormat(Trim(PartsLists[i])) + "\n");
+    }
+    printf("SchematicName=" + FixFormat(Trim(DlgSchematicName)) + "\n");
+    printf("Title=" + FixFormat(Trim(Title)) + "\n");
+    for (i = 0; i < NumberOfOutputColumns; i++) {
+       printf("OutputColumn=%d\n", OutputIndex[i]);
+    }
+    for (i = 0; i < NumberOfSortColumns; i++) {
+       printf("SortColumn=%d\n", SortIndex[i]);
+    }
+    printf("BlankLineIndex=%d\n", BlankLineIndex);
+    printf("OutputFormat=%d\n", OutputFormat);
+    printf("SeparateValues=%d\n", Individual);
+    printf("SpacesOrTabs=%d\n", SpacesOrTabs);
+    printf("TabWidth=%d\n", TabWidth);
+    printf("SpreadsheetHeader=%d\n", SpreadsheetHeader);
+  }
+  SetupFileName=fileName;
+  AddDefaultSetup();
+}
+
+/******************************************************************************************/
+/*									*/
+/*	Name:		AddDefaultName					*/
+/*	Description:	Routine to add the database name to the defaults list.	*/
+/*	Called by:	Main program, "Exit" push button, "Open database" push	*/
+/*			button.						*/
+/*	Calls:		Trim						*/
+/*	Parameters:							*/
+/*	Returns:								*/
+/*									*/
+/******************************************************************************************/
+void AddDefaultName(void)
+{
+  int i;
+
+  if (!DatabaseFileName) return;
+
+  if (NumberOfDatabases == 0) {
+    Databases[NumberOfDatabases++] = DatabaseFileName;
+    return;
+  }
+
+  for (i = 0; i < NumberOfDatabases; i++) if (Trim(strupr(DatabaseFileName)) == Trim(strupr(Databases[i]))) return;
+
+  for (i = NumberOfDatabases; i > 0; i--) Databases[i] = Databases[i - 1];
+  Databases[0] = DatabaseFileName;
+  if (NumberOfDatabases < MaxDatabases) NumberOfDatabases++;
+}
+
+/******************************************************************************************/
+/*									*/
+/*	Name:		SaveDatabase					*/
+/*	Description:	Function to save the database in the original file.	*/
+/*	Called by:	SaveAsDatabase, OkToClose, "SaveDatabase" push button.	*/
+/*	Parameters:							*/
+/*	Calls:								*/
+/*	Returns:		1 if OK, 0 if error.				*/
+/*									*/
+/******************************************************************************************/
+int SaveDatabase(void)
+{
+  int i, j;
+  string a[];
+  string Line;
+
+  fileerror();
+
+  output(DatabaseFileName, "wt") {
+    for (i = 0; Database[i]; i++) {
+      j = strsplit(a, Database[i], '\t') - 1;
+      if (j == NumberOfFields) printf("%s\n", Database[i]);
+      else {
+        a[j] = "";
+        Line = strjoin(a, '\t');
+        Line = strsub(Line, 0, strlen(Line) - 1);
+        printf("%s\n", Line);
+      }
+    }
+  };
+  if (fileerror()) {
+    dlgMessageBox(">> Error writing to file <<");
+    return 0;
+  }
+  else {
+    DatabaseModified = 0;
+    return 1;
+  }
+}
+
+/******************************************************************************************/
+/*									*/
+/*	Name:		SaveAsDatabase					*/
+/*	Description:	Function to save the database in a file chosen by user.	*/
+/*	Called by:	OkToClose, "Save database" push button, "Save database as.."*/
+/*			push button.					*/
+/*	Parameters:							*/
+/*	Calls:		SaveDatabase					*/
+/*	Returns:	1 if OK, else return 0.					*/
+/*									*/
+/******************************************************************************************/
+int SaveAsDatabase(void)
+{
+  string FileName;
+
+  FileName = dlgFileSave("Save database file", SchematicPath, "Database files (*" + DatabaseExt + ");;All files (*)");
+
+  if (!FileName) return 1;
+
+  if (fileext(FileName) != DatabaseExt) FileName += DatabaseExt;
+  DatabaseFileName = FileName;
+  return SaveDatabase();
+}
+
+/******************************************************************************************/
+/*									*/
+/*	Name:		NewFromSchematic					*/
+/*	Description:	Function to save a database containing the parts found in	*/
+/*			the current schematic in a file chosen by user.		*/
+/*	Called by:	"NewFromSchematic" push button.			*/
+/*	Parameters:							*/
+/*	Calls:								*/
+/*	Returns:								*/
+/*									*/
+/******************************************************************************************/
+void NewFromSchematic(void)
+{
+  int i, j, k, l;
+  string fileName;
+  string a[];
+  string newLine;
+  string newDatabase[];
+
+  if (!Database[0]) {
+    dlgMessageBox("No database open!");
+    return;
+  }
+
+  fileName = dlgFileSave("Choose database file", SchematicPath, "Database files (*" + DatabaseExt + ");;All files (*)");
+
+  if (!fileName) return;
+  if (fileext(fileName) != DatabaseExt) fileName += DatabaseExt;
+  fileerror();
+  if (!fileglob(a, fileName) || dlgMessageBox("File '" + fileName + "' exists\n\nOverwrite?", "+&Yes", "-&No") == 0)
+    output(fileName, "wt") {
+    newDatabase[0] = Database[0];
+    printf (newDatabase[0] + "\n");
+    l = 1;
+    for (i = 1; i < NumberOfLines; i++) {
+      j = strsplit(a, Lines[i], '\t') - 1;
+      newLine = a[j];
+      if (lookup(newDatabase, newLine, 1) == "" && lookup(Database, newLine, 1) != "") {
+        j = j - NumberOfFields;
+        for (k = 0; k < NumberOfFields; k++) newLine += "\t" + a[j++];
+        newDatabase[l++] = newLine;
+        printf (newLine + "\n");
+      }
+    }
+  };
+  if (fileerror()) dlgMessageBox("Error writing to file.  Operation cancelled.");
+  else {
+    sprintf(fileName, "File successfuly created with %d records", l);
+    dlgMessageBox(fileName);
+  }
+}
+
+/******************************************************************************************/
+/*									*/
+/*	Name:		MergeFrom						*/
+/*	Description:	Function to merge a database into the currect database. 	*/
+/*	Called by:	"Merge From" push button.				*/
+/*	Parameters:							*/
+/*	Calls:								*/
+/*	Returns:								*/
+/*									*/
+/******************************************************************************************/
+void MergeFrom(void)
+{
+  string fileName;
+  string a[];
+  string newDatabase[];
+  int i, j, k;
+
+  if (!Database[0]) {
+    dlgMessageBox("No database open!");
+    return;
+  }
+
+  fileName = dlgFileOpen("Choose database file", SchematicPath, "Database files (*" + DatabaseExt + ");;All files (*)");
+  if (!fileName) return;
+
+  fileerror();						// Reset error status
+  i = fileread(newDatabase, fileName);				// Read the file and get # of lines
+  if (fileerror()) {
+    dlgMessageBox("Error reading database file!  Operation cancelled.");
+    return;
+  }
+  if (i == 0) {
+    dlgMessageBox("Database file is empty!  Operation cancelled.");
+    return;
+  }
+  if (Database[0] != newDatabase[0]) {
+    dlgMessageBox("Database fields not same!  Operation cancelled.");
+    return;
+  }
+  k = 0;
+  for (j = 1; j < i; j++) {
+    strsplit(a, newDatabase[j], '\t');				// Split a record into a temp array
+    if (lookup(Database, a[0], 1) == "") {
+      Database[NumberOfData++] = newDatabase[j];
+      k++;
+    }
+  }
+  sprintf(fileName, "Merge completed, %d new records added.", k);
+  dlgMessageBox(fileName);
+}
+
+/******************************************************************************************/
+/*									*/
+/*	Name:		NoDatabase					*/
+/*	Description:	Routine to reset all variables for operation without a	*/
+/*			database.						*/
+/*	Called by:	Main program, "New Database" push button, "Open Database"	*/
+/*			push button, "Close database" push button.		*/
+/*	Parameters:							*/
+/*	Calls:								*/
+/*	Returns:								*/
+/*									*/
+/******************************************************************************************/
+void NoDatabase(void)
+{
+  int i;
+
+  DatabaseFileName = "";				// Start with a blank file name
+  for (i = 0; i < NumberOfData; i++) Database[i] = "";	// Start with an empty database
+  NumberOfData = 0;
+  DatabaseFields[0] = "";				// Start with no field names
+  NumberOfFields = 0;				// Start with 0 fields
+  DatabaseTitle = "";
+  DatabaseModified = 0;
+  SelectedField = -1;				// Start with no field selected
+}
+
+/******************************************************************************************/
+/*									*/
+/*	Name:		OkToClose						*/
+/*	Description:	Function to save and close the database if it was ever	*/
+/*			modified.						*/
+/*	Called by:	"Exit" push button, "New database" push button,		*/
+/*			"Open database"					*/
+/*			push button, "Close database" push button.		*/
+/*	Parameters:							*/
+/*	Calls:		SaveDatabase, SaveAsDatabase				*/
+/*	Returns:	1 if OK, else return 0.					*/
+/*									*/
+/******************************************************************************************/
+int OkToClose(void)
+{
+  int i;
+
+  if (DatabaseModified) {
+    switch (dlgMessageBox("Database has been modified\n\nSave?", "+&Yes", "&No", "-Cancel")) {
+      case 0: if (DatabaseFileName) i = SaveDatabase();
+              else i = SaveAsDatabase();
+              return i;
+      case 1: return 1;
+      case 2: return 0;
+    }
+  }
+  return 1;
+}
+
+/******************************************************************************************/
+/*									*/
+/*	Name:		ImportDatabaseCsv					*/
+/*	Description:	Routine to open a database.  The file is read into a	*/
+/*			temporary string which is then split into lines placed in	*/
+/*			the string array called "Database".  The first element of	*/
+/*			"Database" contains the names of the fields.  These names	*/
+/*			are placed in the string array called "DatabaseFields" and	*/
+/*			into the string called "DatabaseTitle" separated by tabs.	*/
+/*			The string "DatabaseFileName" is set to the file name and	*/
+/*			the "DatabaseModified" flag is cleared.  The dialog	*/
+/*			listview is then regenerated.				*/
+/*	Called by:	Main program, "Open database" push button.		*/
+/*	Parameters:	Name of file to open.				*/
+/*	Calls:								*/
+/*	Returns:								*/
+/*									*/
+/******************************************************************************************/
+void ImportDatabaseCsv(void)
+{
+  string	FileName;
+  int		i, j, start, end;
+  string	a[];
+  string	Separator;
+
+  Separator = "\"" + CsvSeparator + "\"";
+							// Ask for input file name
+  FileName = dlgFileOpen("Choose database CSV file", SchematicPath,
+    "Database files (*" + OutputExtSpreadsheet + ");;All files (*)");
+
+  if (FileName == "") return;					// Cancel if no file name
+
+  if (!OkToClose()) return;					// If old db modified, ask if OK to close it
+
+  NoDatabase();						// Clear old database data
+
+  fileerror();						// Reset error status
+  NumberOfData = fileread(Database, FileName);			// Read the file and get # of lines
+  if (fileerror()) exit (EXIT_FAILURE);				// Exit if file error
+
+  if (NumberOfData == 0) {
+    dlgMessageBox("Database file is empty!");
+    return;
+  }
+
+  for (i = 0; i < NumberOfData; i++) {				// Loop through all of the input lines
+    Database[i] = strsub(Database[i], 1);			// Get rid of first quote character
+    Database[i] = strsub(Database[i], 0, strlen(Database[i])-1);	// Get rid of last quote character
+    start = 0;						// Start at the beginning of the line
+    end = strstr(Database[i], Separator, 0);			// Look for the first "," combination
+    j = 0;
+    while (end > 0) {
+      a[j++] = strsub(Database[i], start, end - start);		// Put a datum into array
+      start = end + 3;					// Skip over next separator combination
+      end = strstr(Database[i], Separator, start);		// Look for the next separator combination
+    }
+    a[j] = strsub(Database[i], start);				// Put last datum into array
+    Database[i] = strjoin(a, '\t');				// Put data back into database separated by tabs
+    if (lookup(PartKey, a[0], 0)) Database[i] += InSchematic;
+  }
+
+  i = strsplit(a, Database[0], '\t');				// Split headers into a temp array
+  DatabaseTitle = "";					// Clear headers title
+  for (NumberOfFields = 1; NumberOfFields < i; NumberOfFields++) {	// Put headers into array and title
+    DatabaseTitle += "\t" + a[NumberOfFields];
+    DatabaseFields[NumberOfFields - 1] = a[NumberOfFields];
+  }
+  Database[0] += InSchematicTitle;
+
+  NumberOfFields = NumberOfFields - 1;
+  DatabaseFileName = FileName;
+  DatabaseModified = 0;
+
+  GenerateList();
+}
+
+/******************************************************************************************/
+/*									*/
+/*	Name:		ExportDatabaseCsv					*/
+/*	Description:	Routine to save the database in a CSV file.		*/
+/*	Called by:	"Export CSV" push button.				*/
+/*	Parameters:							*/
+/*	Calls:								*/
+/*	Returns:								*/
+/*									*/
+/******************************************************************************************/
+void ExportDatabaseCsv(void)
+{
+  string FileName;
+  string Line;
+  string a[];
+  int i, j, k;
+
+  if (!Database[0]) {
+    dlgMessageBox("No database open!");
+    return;
+  }
+
+  FileName = dlgFileSave("Save database as CSV file", SchematicPath,
+    "Spreadsheet files (*" + OutputExtSpreadsheet + ");;All files (*)");
+
+  if (!FileName) return;
+
+  if (fileext(FileName) != OutputExtSpreadsheet) FileName += OutputExtSpreadsheet;
+
+  if ((fileglob(a, FileName) > 0) && (dlgMessageBox("File '" + FileName + "' exists\n\nOverwrite?", "Yes", "No") > 0))
+    return;
+
+  fileerror();
+  output(FileName, "wt") {
+    for (i = 0; Database[i]; i++) {				// Scan lines from database
+      Line = FixFormat(Database[i]);				// Fix percents if necessary
+      j = strsplit(a, Line, '\t') - 2;				// Split the line into an array
+							// Print each datum in quotes and a separator
+      for (k = 0; k < j; k++) printf("\"" + a[k] + "\"" + CsvSeparator);
+      printf("\"" + a[k] + "\"\n");				// Print last one with a newline
+    }
+  }
+}
+
+/******************************************************************************************/
+/*									*/
+/*	Name:		NewFieldNameOK					*/
+/*	Description:	Function to check if a field name has already been used.	*/
+/*	Called by:	EditStructure					*/
+/*	Parameters:	Name of field name to check for.			*/
+/*	Calls:								*/
+/*	Returns:	0 if name already used, 1 if never used.			*/
+/*									*/
+/******************************************************************************************/
+int NewFieldNameOK(string Name)
+{
+  for (int i = 0; i < NumberOfFields; i++) {
+    if (Name == DatabaseFields[i]) {
+      dlgMessageBox("Name already used!");
+      return 0;
+    }
+  }
+  return 1;
+}
+
+/******************************************************************************************/
+/*									*/
+/*	Name:		EditStructure					*/
+/*	Description:	Routine to edit the database structure.			*/
+/*	Called by:	"New database" push button, "Edit structure" push button	*/
+/*	Parameters:							*/
+/*	Calls:		Trim, NewFieldNameOK				*/
+/*	Returns:								*/
+/*									*/
+/******************************************************************************************/
+void EditStructure(void)
+{
+  string s;						// Temporary string
+  int i, j;						// Temporary integer
+  int result;						// Result of dialog
+  string FieldNames[];					// Names of fields
+  int FieldNumbers[];					// Original field numbers
+  int NewNumberOfFields;					// New number of fields
+  string a[];
+
+  SelectedField = 0;
+
+  NewNumberOfFields = NumberOfFields;				// Current number of fields
+  for (i = 0; i < NumberOfFields; i++) {
+    FieldNames[i] = DatabaseFields[i];				// Current fields
+    FieldNumbers[i] = i;					// Original field numbers
+  }
+
+  result = dlgDialog("Edit Database Structure") {			// Open dialog
+    dlgHBoxLayout dlgSpacing(ScreenWidth / 2);			// Establish width
+    dlgHBoxLayout {
+      dlgVBoxLayout {					// Show the field names
+        dlgLabel("Field Names");
+        dlgListBox(FieldNames, SelectedField);
+      }
+      dlgVBoxLayout {
+        dlgPushButton("+Append") {				// Add a new field name
+          s = "";						// Clear new field name
+          dlgDialog("Append A New Field") {			// Show dialog
+            dlgHBoxLayout dlgSpacing(ScreenWidth / 2);		// Establish width
+            dlgLabel("Name:");				// Show title
+            dlgStringEdit(s);					// Show and edit name of new field
+            dlgHBoxLayout {
+              dlgStretch(1);
+              dlgPushButton("+Ok") {				// Display OK button
+                s = Trim(s);					// Trim off white space
+                if (s) {					// Must not be empty
+                  if (NewFieldNameOK(s)) {			// Must not already exist
+                    FieldNames[NewNumberOfFields] = s;		// Add new field name to end of array
+                    FieldNumbers[NewNumberOfFields] =-1;		// Flag that it is new
+                    SelectedField = NewNumberOfFields;		// Select this field in listview
+                    NewNumberOfFields++;			// Increment number of fields
+                    dlgAccept();				// Exit dialog successfuly
+                  }
+                }
+                else dlgMessageBox("Name can't be blank!");		// If empty field name, complain
+              }
+              dlgPushButton("-Cancel") dlgReject();		// Display Cancel button
+            }
+          };
+        }
+
+        dlgPushButton("Delete") {				// Delete a field name
+          for (i = SelectedField; i < NewNumberOfFields - 1; i++) {	// Move down the arrays
+            FieldNames[i] = FieldNames[i + 1];
+            FieldNumbers[i] = FieldNumbers[i + 1];
+          }
+          FieldNames[--NewNumberOfFields] = "";			// Delete the last array element		
+          if (SelectedField >= NewNumberOfFields) SelectedField = NewNumberOfFields - 1;
+        }
+
+        dlgPushButton("Edit") {				// Edit a field name
+          s = FieldNames[SelectedField];
+          dlgDialog("Edit Field") {
+            dlgHBoxLayout dlgSpacing(ScreenWidth / 2);
+            dlgLabel("Name:");
+            dlgStringEdit(s);
+            dlgHBoxLayout {
+              dlgStretch(1);
+              dlgPushButton("+Ok") {
+                s = Trim(s);
+                if (s) {
+                  if (NewFieldNameOK(s)) {
+                    FieldNames[SelectedField] = s;
+                    dlgAccept();
+                  }
+                }
+                else dlgMessageBox("Name can't be blank!");
+              }
+              dlgPushButton("-Cancel") dlgReject();
+            }
+          };
+        }
+
+        dlgPushButton("Move down") {				// Move a field name down
+          if (SelectedField < (NewNumberOfFields - 1)) {		// Only if not already at the bottom
+            s = FieldNames[SelectedField];			// Save selected field
+            FieldNames[SelectedField] = FieldNames[SelectedField + 1]; // Move next field down
+            FieldNames[SelectedField + 1] = s;			// Make next field the old selected field
+            i = FieldNumbers[SelectedField];
+            FieldNumbers[SelectedField] = FieldNumbers[SelectedField + 1];
+            SelectedField++;
+            FieldNumbers[SelectedField] = i;
+          }
+        }
+
+        dlgPushButton("Move up") {				// Move a field name up
+          if (SelectedField > 0) {				// Only if not already at the top
+            s = FieldNames[SelectedField];			// Save selected field
+            FieldNames[SelectedField] = FieldNames[SelectedField - 1]; // Move next field up
+            FieldNames[SelectedField - 1] = s;			// Make previous field the old selected field
+            i = FieldNumbers[SelectedField];
+            FieldNumbers[SelectedField] = FieldNumbers[SelectedField - 1];
+            SelectedField--;
+            FieldNumbers[SelectedField] = i;
+          }
+        }
+      }
+    }
+    dlgHBoxLayout {
+      dlgStretch(1);
+      dlgPushButton("+Ok") {
+        if (NewNumberOfFields > 0) dlgAccept();
+        else dlgMessageBox("Please add at least one field!");
+      }
+      dlgPushButton("-Cancel") dlgReject();
+    }
+  };
+
+  if (result) {
+    for (i = 1; i < NumberOfData; i++) {
+      strsplit(a,Database[i],'\t');
+      Database[i] = a[0];
+      for (j = 0; j < NewNumberOfFields; j++) {
+        Database[i] += "\t";
+        if (FieldNumbers[j] != -1) Database[i] += a[FieldNumbers[j] + 1];
+      }
+      if (lookup(PartKey, a[0], 0)) Database[i] += InSchematic;
+    }
+
+    NumberOfFields = NewNumberOfFields;
+    for (i = 0; i < NumberOfFields; i++) DatabaseFields[i] = FieldNames[i];
+
+    DatabaseTitle = "";
+    for (i = 0; i < NumberOfFields; i++) {
+      DatabaseTitle += "\t" + DatabaseFields[i];
+    }
+    Database[0] = "Key" + DatabaseTitle + InSchematicTitle;
+    DatabaseModified = 1;
+  }
+}
+
+
+/****************************************************************************************************/
+/*										*/
+/*	Name:		OpenDatabase						*/
+/*	Description:	Routine to open a database.  The file is read into a temporary	*/
+/*			string which is then split into lines placed in the string array	*/
+/*			called "Database".  The first element of "Database" contains the	*/
+/*			names of the fields.  These names are placed in the string array	*/
+/*			called "DatabaseFields" and into the string called "DatabaseTitle"	*/
+/*			separated by tabs.  The string "DatabaseFileName" is set to the file	*/
+/*			name and the "DatabaseModified" flag is cleared.  The dialog listview	*/
+/*			is then regenerated.					*/
+/*	Called by:	Main program, "Open database" push button.			*/
+/*	Parameters:	Name of file to open.					*/
+/*	Calls:									*/
+/*	Returns:									*/
+/*										*/
+/****************************************************************************************************/
+void OpenDatabase(string FileName)
+{
+  int	i, j;
+  int	NumberOfHeaders;
+  string	a[];
+  string	b[];
+
+  if (!FileName) return;					// If no file was opened then return
+
+  fileerror();						// Reset error status
+  NumberOfData = fileread(Database, FileName);			// Read the file and get # of lines
+  if (fileerror()) exit (EXIT_FAILURE);				// Exit if file error
+
+  if (NumberOfData == 0) {					// See if the file is empty
+    dlgMessageBox("Database file is empty!");
+    return;
+  }
+
+  NumberOfHeaders = strsplit(a, Database[0], '\t');		// Split headers into a temp array
+  DatabaseTitle = "";					// Clear headers title
+  for (NumberOfFields = 1; NumberOfFields < NumberOfHeaders; NumberOfFields++) {// Put headers into array and title
+    DatabaseTitle += "\t" + a[NumberOfFields];
+    DatabaseFields[NumberOfFields - 1] = a[NumberOfFields];
+  }
+  NumberOfFields = NumberOfFields - 1;
+  DatabaseFileName = FileName;
+  DatabaseModified = 0;
+
+  for (i = 1; i < NumberOfData; i++) {
+    if (strsplit(a, Database[i], '\t') > NumberOfHeaders) {
+      for (j = 0; j < NumberOfHeaders; j++) b[j] = a[j];
+      Database[i] = strjoin(b, '\t');
+    }
+    if (lookup(PartKey, a[0], 0)) Database[i] += InSchematic;
+  }
+
+  Database[0] += InSchematicTitle;
+}
+
+/****************************************************************************************************/
+/*										*/
+/*	Name:		EditRecord						*/
+/*	Description:	Dialog for editing a record in the database.			*/
+/*	Called by:	"Database" listview						*/
+/*	Parameters:								*/
+/*	Calls:		EditValue							*/
+/*	Returns:									*/
+/*										*/
+/****************************************************************************************************/
+void EditRecord(void)
+{
+  string		Key;
+  int		i, result;
+  numeric string	RecordData[];
+  int		SelectedField = 0;
+  int		Sorted = 0;
+  string		a[];
+
+  i = strsplit(RecordData, Database[DatabaseSelected], '\t');// Split the listview line into an array
+
+  RecordData[0] = "Key" + "\t" + RecordData[0];
+  for (i = 0; i < NumberOfFields; i++) RecordData[i + 1] = DatabaseFields[i] + "\t" + RecordData[i + 1];
+  RecordData[NumberOfFields + 1] = "";
+
+  result = dlgDialog("Edit Record") {			// Display dialog
+    dlgHBoxLayout {
+      dlgSpacing(ScreenWidth / 2);			// Establish width
+    }
+    dlgHBoxLayout {
+      dlgVBoxLayout {
+        dlgListView("Field name\tValue", RecordData, SelectedField, Sorted)
+          RecordData[SelectedField] = EditValue(RecordData[SelectedField]);
+        dlgHBoxLayout {
+          dlgPushButton("+Ok") dlgAccept();		// Display OK button
+          dlgPushButton("-Cancel") dlgReject();		// Display Cancel button
+        }
+      }
+      dlgVBoxLayout {
+        dlgPushButton("Edit") RecordData[SelectedField] = EditValue(RecordData[SelectedField]);
+        dlgPushButton("Copy") CopyPasteBuffer = strjoin(RecordData, '\n');	// Display Copy button
+        dlgPushButton("Paste") {			// Display Paste button
+          strsplit(RecordData, CopyPasteBuffer, '\n');
+          dlgRedisplay();
+        }
+      }
+    }
+  };
+  if (result) {					// If dialog accepted
+    strsplit(a, RecordData[0], '\t');
+    Database[DatabaseSelected] = a[1];
+    for (i = 1; RecordData[i]; i++) {
+      strsplit(a, RecordData[i], '\t');
+      Database[DatabaseSelected] += "\t" + a[1];
+    }
+//    Database[record] += InSchematic;			// Put data back into record
+    DatabaseModified = 1;				// Flag that database was modified
+  }
+}
+
+/****************************************************************************************************/
+/*										*/
+/*	Name:		DeleteRecord						*/
+/*	Description:	Dialog for deleting a record in the database.			*/
+/*	Called by:	"Delete Record" button					*/
+/*	Parameters:								*/
+/*	Calls:									*/
+/*	Returns:									*/
+/*										*/
+/****************************************************************************************************/
+void DeleteRecord(void)
+{
+  string key;
+  int i, result;
+  string data[];
+
+  if (!Database[0]) {
+    dlgMessageBox("No database open!");
+    return;
+  }
+  if (DatabaseSelected < 0) {
+    dlgMessageBox("Please select a record first.");
+    return;
+  }
+
+  strsplit(data, Database[DatabaseSelected], '\t');
+  key = data[0];
+
+  for (i = 0; i < NumberOfFields; i++) data[i] = data[i + 1];
+  data[i] = "";
+
+
+  result = dlgDialog("Delete Record") {
+    dlgHBoxLayout dlgSpacing(ScreenWidth / 2);
+    dlgGridLayout {
+      for (i = 0; i < NumberOfFields; i++) {
+        dlgCell(i, 0) dlgLabel(DatabaseFields[i]);
+        dlgCell(i, 1) dlgLabel(data[i]);
+      }
+    }
+    dlgHBoxLayout {
+      dlgStretch(1);
+      dlgPushButton("Delete") dlgAccept();
+      dlgPushButton("Cancel") dlgReject();
+    }
+  };
+
+  if (result) {
+    if (dlgMessageBox("Are you sure?", "Yes", "No") == 0) {
+      for (i = DatabaseSelected; i < NumberOfData; i++) Database[i] = Database[i + 1];
+      Database[i] = "";
+      NumberOfData--;
+      DatabaseModified = 1;
+    }
+  }
+}
+
+/****************************************************************************************************/
+/*										*/
+/*	Name:		DoGroupedBy						*/
+/*	Description:	Routine to process a new Grouped By request.			*/
+/*	Called by:	"Individual" radio button, "Same value" radio buttons.		*/
+/*	Parameters:								*/
+/*	Calls:		GenerateList, UnPickAllColumns, DefaultTitle, GenerateOutput.	*/
+/*	Returns:									*/
+/*										*/
+/****************************************************************************************************/
+void DoGroupedBy(void)
+{
+  GenerateList();
+  UnPickAllColumns();
+  DefaultTitle();
+  GenerateOutput();
+}
+
+/****************************************************************************************************/
+/*										*/
+/*	Name:		AddList							*/
+/*	Description:	Function to test if a parts list file exists, and if so add it	*/
+/*			to the list.						*/
+/*	Called by:	OpenSetup							*/
+/*	Parameters:	string containing the file path				*/
+/*	Calls:									*/
+/*	Returns:									*/
+/*										*/
+/****************************************************************************************************/
+void AddList(string value)
+{
+  string a[];
+
+  if (fileglob(a, value)) PartsLists[NumberOfPartsLists++] = value;
+  else dlgMessageBox("Import file " + value + " does not exist.");
+}
+
+/****************************************************************************************************/
+/*										*/
+/*	Name:		OpenSetup							*/
+/*	Description:	Function to get the setup from a file.				*/
+/*	Called by:	Main program, GetSetup					*/
+/*	Parameters:	string containing the file path				*/
+/*	Calls:		Trim, AddList						*/
+/*	Returns:	0 = error, 1 = OK							*/
+/*										*/
+/****************************************************************************************************/
+int OpenSetup(string fileName)
+{
+  int i, lines, equal;
+  int newNumberOfOutputColumns = 0;
+  int newNumberOfSortColumns = 0;
+  string a[];
+  string name, value;
+
+  fileerror();					// Reset error status
+  lines = fileread(a, fileName);			// Read the file and get # of lines
+
+  if (fileerror()) exit (EXIT_FAILURE);			// Exit if file error
+
+  for (i = 0; i < lines; i++) {
+    equal = strchr(a[i],'=');
+    if (equal > 1) {
+      name = Trim(strupr(strsub(a[i],0,equal)));
+      value = Trim(strupr(strsub(a[i],equal + 1)));
+
+      if (i == 0 && (name != "VERSION" || ((value != "BOM-BIO5") && (value != "BOM-BIO6") &&
+        (value != "BOM-BIO7") && (value != "BOM-BIO8") && (value != "BOM-AM-14")&& (value != "BOM-AM-15") &&
+        (value != strupr(Release))))) {
+        dlgMessageBox("The setup file is from an earlier version and cannot be read.");
+        return 0;
+      }
+      else if ((name == "GROUPEDBY") && (GroupedBy != strtol(value))) GroupedBy = strtol(value);
+      else if (name == "VALUESTOSHOW") ValuesToShow = strtol(value);
+      else if (name == "DISPLAYPACKAGE") DisplayPackage = strtol(value);
+      else if (name == "PARTSLIST") AddList(value);
+      else if (name == "SCHEMATICNAME") DlgSchematicName = value;
+      else if (name == "TITLE") Title = value;
+      else if (name == "OUTPUTCOLUMN") {
+        OutputColumns[newNumberOfOutputColumns] = InputColumns[strtol(value)];
+        OutputIndex[newNumberOfOutputColumns] = strtol(value);
+        newNumberOfOutputColumns++;
+        NumberOfOutputColumns = newNumberOfOutputColumns;
+	OutputColumns[NumberOfOutputColumns] = "";
+        if (OutputColumnPicked < 0) OutputColumnPicked = 0;
+      }
+      else if (name == "SORTCOLUMN") {
+        SortColumns[newNumberOfSortColumns] = InputColumns[strtol(value)];
+        SortIndex[newNumberOfSortColumns] = strtol(value);
+        newNumberOfSortColumns++;
+        NumberOfSortColumns = newNumberOfSortColumns;
+	SortColumns[NumberOfSortColumns] = "";
+        if (SortColumnPicked < 0) SortColumnPicked = 0;
+      }
+      else if (name == "OUTPUTFORMAT") {
+        OutputFormat = strtol(value);
+        switch (OutputFormat) {
+          case ofText:        OutputExt = OutputExtText; break;
+          case ofHTML:        OutputExt = OutputExtHTML; break;
+          case ofSpreadsheet: OutputExt = OutputExtSpreadsheet; break;
+        }
+      }
+      else if (name == "BLANKLINEINDEX") BlankLineIndex = strtol(value);
+      else if (name == "SEPARATEVALUES") Individual = strtol(value);
+      else if (name == "SPACESORTABS") SpacesOrTabs = strtol(value);
+      else if (name == "TABWIDTH") {
+        TabWidth = strtol(value);
+        TabWidthCurrent = TabWidth;
+      }
+      else if (name == "SPREADSHEETHEADER") SpreadsheetHeader = strtol(value);
+    }
+  }
+  if (BlankLineIndex >= 0 && BlankLineIndex <= NumberOfInputColumns) BlankLineColumn = InputColumns[BlankLineIndex];
+  SetupFileName = fileName;
+  AddDefaultSetup();
+  return 1;
+}
+
+/******************************************************************************************/
+/*									*/
+/*	Name:		GetSetup						*/
+/*	Description:	Function to ask for a setup file name and then get the	*/
+/*			setup from the file.				*/
+/*	Called by:	"Get setup..." push button				*/
+/*	Parameters:							*/
+/*	Calls:		OpenSetup						*/
+/*	Returns:	0 = cancel, 1 = OK						*/
+/*									*/
+/******************************************************************************************/
+int GetSetup(void)
+{
+  string filePath, fileName;
+
+  fileName = filesetext(ExportFileName,SetupExt);
+  filePath = SchematicPath + "\\" + fileName;
+  fileName = dlgFileOpen("Get setup", filePath, "Setup files (*" + SetupExt + ");;All files (*)");
+  if (!fileName) return 0;
+
+  return OpenSetup(fileName);
+}
+
+/******************************************************************************************/
+/*									*/
+/*	Name:		SaveHelp						*/
+/*	Description:	Routine to save the Help text.			*/
+/*	Called by:	"SaveHelp" push button				*/
+/*	Parameters:							*/
+/*	Calls:								*/
+/*	Returns:								*/
+/*									*/
+/******************************************************************************************/
+void SaveHelp(void)
+{
+  string HelpFileName;
+
+  if (dlgMessageBox("This will save the Help text to a file in HTML format.  Continue?", "Yes", "No") > 0) return;
+  HelpFileName = dlgFileSave("Save Help", UlpPath+"Help.html", "HTML files (*.html);;All files (*)");
+  if (!HelpFileName) return;
+
+  output(HelpFileName, "wt") printf("%s", HelpText);
+  dlgMessageBox("File saved.");
+}
+
+/******************************************************************************************/
+/*									*/
+/*	This is the main program						*/
+/*									*/
+/******************************************************************************************/
+if (!project.schematic) {
+  dlgMessageBox("You must open a schematic first.");
+  exit(1);
+}
+
+UlpPath = filedir(argv[0]);				// Get path of this ULP
+
+BoardExists = project.board;				// Flag if a board file exists
+
+project.schematic(SCH) {				// Get the path and file name of the schematic
+  SchematicPath = filedir(SCH.name);
+  SchematicName = filename(SCH.name);
+}
+DlgSchematicName = SchematicName;			// Set file name for dialog
+
+UnPickAllColumns();					// No output columns picked
+GetRelease();					// Get Release and Date for History text
+GetOptions();					// Read the options file
+NoDatabase();					// Start with no database
+CollectPartData();					// Get the parts from the schematic
+DefaultTitle();					// Initialize the output title
+GenerateList();					// Make the list shown in the listview
+GenerateOutput();					// Initialize the output preview
+if (AutoOpen == "Y") {				// Check for automatic database
+  OpenDatabase(AutoDatabase);
+  AddDefaultName();
+  GenerateList();					// Make the list shown in the listview
+  GenerateOutput();					// Initialize the output preview
+}
+if (AutoOpenSetup == "Y") {				// Check for automatic setup
+  if (OpenSetup(AutoSetup) == 0) dlgMessageBox("Error opening default setup file.");
+  else {
+    GenerateList();					// Make the list shown in the listview
+    GenerateOutput();				// Initialize the output preview
+  }
+}
+
+DialogTitle = usage;				// Set up the title of the main dialog by
+DialogTitle = strsub(DialogTitle, 3);			// extracting it from usage string
+DialogTitle = strsub(DialogTitle, 0, strstr(DialogTitle, "</b>"));
+
+MainTemp = 5;
+while (MainTemp == 5) 
+MainTemp = dlgDialog(DialogTitle) {
+  dlgHBoxLayout {
+    dlgTabWidget {
+
+      dlgTabPage("Schematic") {
+        dlgVBoxLayout {
+          dlgGroup("Parts list") {
+            dlgListView("", Lines, LineSelected, LineSort) {
+              EditLine();
+              GenerateList();
+              GenerateOutput();
+            }
+          }
+          dlgHBoxLayout {
+            dlgGroup("Grouped by") {
+              dlgRadioButton("Part", GroupedBy) {
+                DoGroupedBy();
+                dlgRedisplay();
+              }
+              dlgRadioButton("Same values", GroupedBy) {
+                DoGroupedBy();
+                dlgRedisplay();
+              }
+            }
+            dlgGroup("Values to display") {
+              dlgRadioButton("Real values only", ValuesToShow) {
+                CollectPartData();
+                GenerateList();
+                DefaultTitle();
+                GenerateOutput();
+                dlgRedisplay();
+              }
+              dlgRadioButton("\"Don't Show\" values only", ValuesToShow) {
+                CollectPartData();
+                GenerateList();
+                DefaultTitle();
+                GenerateOutput();
+                dlgRedisplay();
+              }
+              dlgRadioButton("All values", ValuesToShow) {
+                CollectPartData();
+                GenerateList();
+                DefaultTitle();
+                GenerateOutput();
+                dlgRedisplay();
+              }
+            }
+            dlgGroup("Packages to display") {
+              dlgRadioButton("With package only", DisplayPackage) {
+                CollectPartData();
+                GenerateList();
+                DefaultTitle();
+                GenerateOutput();
+                dlgRedisplay();
+              }
+              dlgRadioButton("Without package only", DisplayPackage) {
+                CollectPartData();
+                GenerateList();
+                DefaultTitle();
+                GenerateOutput();
+                dlgRedisplay();
+              }
+              dlgRadioButton("With and without package", DisplayPackage) {
+                CollectPartData();
+                GenerateList();
+                DefaultTitle();
+                GenerateOutput();
+                dlgRedisplay();
+              }
+            }
+            dlgGroup("Exit this program") {
+              dlgPushButton("-Exit") if (OkToClose()) {
+                if (DatabaseFileName) AddDefaultName();
+                dlgAccept();
+              }
+            }
+          }
+        }
+      }
+
+      dlgTabPage("Board") {
+        dlgGroup("Parts list") {
+          dlgListView("", BoardLines, BoardLineSelected, BoardLineSort);
+        }
+      }
+
+      dlgTabPage("Import/export") {
+        dlgGroup("Import") {
+          dlgHBoxLayout {
+            dlgVBoxLayout {
+              dlgPushButton("Import parts list") {
+                ImportList();
+                CollectPartData();
+                GenerateList();
+                GenerateOutput();
+              }
+              dlgPushButton("Remove parts list") {
+                if (NumberOfPartsLists > 0) {
+                  RemoveList();
+                  CollectPartData();
+                  GenerateList();
+                  GenerateOutput();
+                }
+              }
+            }
+            dlgGroup("Imported parts list files") {
+              dlgListBox(PartsLists,PartsListSelected);
+            }
+          }
+        }
+        dlgGroup("Name of parts list from current schematic") {
+          dlgHBoxLayout {
+           dlgPushButton("Default") DlgSchematicName = SchematicName;
+            dlgLabel("Name: ");
+            dlgStringEdit(DlgSchematicName);
+            dlgPushButton("Update") {
+              CollectPartData();
+              GenerateList();
+              GenerateOutput();
+            }
+          }
+        }
+        dlgGroup("Export parts list") {
+          dlgHBoxLayout {
+           dlgPushButton("Export parts list from this project only") ExportListSchematic();
+            dlgPushButton("Export parts list including imported lists") {
+              ExportListSchematic();
+              ExportListImported();
+            }
+          }
+        }
+      }
+
+      dlgTabPage("Database") {
+        dlgGroup("Database operations") {
+          dlgHBoxLayout {
+            dlgPushButton("New Database")  if (OkToClose()) {
+              NoDatabase();
+              EditStructure();
+              SaveAsDatabase();
+              OpenDatabase(DatabaseFileName);
+              GenerateList();
+              UnPickAllColumns();
+              DefaultTitle();
+              GenerateOutput();
+            }
+            dlgPushButton("Open Database") if (OkToClose()) {
+              NoDatabase();
+              string fileName =
+                dlgFileOpen("Choose database file", SchematicPath, "Database files (*" + DatabaseExt + ");;All files (*)");
+              OpenDatabase(fileName);
+              GenerateList();
+              UnPickAllColumns();
+              DefaultTitle();
+              GenerateOutput();
+              AddDefaultName();
+            }
+            dlgPushButton("Edit Structure") {
+              if (!Database[0]) dlgMessageBox("No database open!");
+              else {
+                EditStructure();
+                GenerateList();
+                UnPickAllColumns();
+                GenerateOutput();
+              }
+            }
+            dlgPushButton("Delete Record") {
+              DeleteRecord();
+              GenerateList();
+              GenerateOutput();
+              dlgRedisplay();
+            }
+            dlgPushButton("Save Database") {
+              if (!Database[0]) dlgMessageBox("No database open!");
+              else {
+                if (DatabaseFileName) SaveDatabase();
+                else SaveAsDatabase();
+              }
+            }
+            dlgPushButton("Save Database As") {
+              if (!Database[0]) dlgMessageBox("No database open!");
+              else SaveAsDatabase();
+            }
+            dlgPushButton("Close Database") {
+              if (OkToClose()) {
+                NoDatabase();
+                GenerateList();
+                UnPickAllColumns();
+                DefaultTitle();
+                GenerateOutput();
+              }
+            }
+          }
+          dlgHBoxLayout {
+            dlgPushButton("New From Schematic") NewFromSchematic();
+            dlgPushButton("Merge From") MergeFrom();
+            dlgPushButton("Import CSV") {
+              ImportDatabaseCsv();
+              UnPickAllColumns();
+              DefaultTitle();
+              GenerateOutput();
+            }
+            dlgPushButton("Export CSV") ExportDatabaseCsv();
+          }
+        }
+        dlgGroup("Database name") {
+          dlgLabel(DatabaseFileName, 1);
+        }
+        dlgGroup("Database") {
+          dlgListView("", Database, DatabaseSelected, DatabaseSort) {
+            EditRecord();
+            GenerateList();
+            GenerateOutput();
+          }
+        }
+      }
+
+      dlgTabPage("Output") {
+        dlgGroup("Output title") {
+          dlgHBoxLayout {
+            dlgPushButton("Default") DefaultTitle();
+            dlgLabel("Title:");
+            dlgStringEdit(Title);
+            dlgPushButton("Update") GenerateOutput();
+          }
+        }
+        dlgHBoxLayout {
+          dlgGroup("Columns available") {
+            dlgHBoxLayout {
+              dlgListBox(InputColumns,InputColumnPicked) AddToOutput();
+              dlgVBoxLayout {
+                dlgPushButton("Add to output") {
+                  AddToOutput();
+                }
+                dlgPushButton("Add to sort") if (InputColumnPicked >= 0) {
+                  SortColumns[NumberOfSortColumns] = InputColumns[InputColumnPicked];
+                  SortIndex[NumberOfSortColumns] = InputColumnPicked;
+                  NumberOfSortColumns++;
+                  if (SortColumnPicked < 0) SortColumnPicked = 0;
+                  GenerateOutput();
+                }
+                dlgPushButton("Blank line") if (InputColumnPicked >= 0) {
+                  BlankLineColumn = InputColumns[InputColumnPicked];
+                  BlankLineIndex = InputColumnPicked;
+                  GenerateOutput();
+                }
+              }
+            }
+          }
+          dlgGroup("Columns in output") {
+            dlgHBoxLayout {
+              dlgListBox(OutputColumns,OutputColumnPicked) RemoveFromOutput();
+              dlgVBoxLayout {
+                dlgPushButton("Move up") if (OutputColumnPicked > 0) {
+                  string s = OutputColumns[OutputColumnPicked];
+                  OutputColumns[OutputColumnPicked] = OutputColumns[OutputColumnPicked - 1];
+                  OutputColumns[OutputColumnPicked - 1] = s;
+                  int p = OutputIndex[OutputColumnPicked];
+                  OutputIndex[OutputColumnPicked] = OutputIndex[OutputColumnPicked - 1];
+                  OutputIndex[--OutputColumnPicked] = p;
+                  GenerateOutput();
+                }
+                dlgPushButton("Move down") if (OutputColumnPicked < (NumberOfOutputColumns - 1)) {
+                  string s = OutputColumns[OutputColumnPicked];
+                  OutputColumns[OutputColumnPicked] = OutputColumns[OutputColumnPicked + 1];
+                  OutputColumns[OutputColumnPicked + 1] = s;
+                  int p = OutputIndex[OutputColumnPicked];
+                  OutputIndex[OutputColumnPicked] = OutputIndex[OutputColumnPicked + 1];
+                  OutputIndex[++OutputColumnPicked] = p;
+                  GenerateOutput();
+                }
+                dlgPushButton("Remove") RemoveFromOutput();
+              }
+            }
+          }
+          dlgGroup("Sort order") {
+            dlgHBoxLayout {
+              dlgListBox(SortColumns,SortColumnPicked);
+              dlgVBoxLayout {
+                dlgPushButton("Move up") if (SortColumnPicked > 0) {
+                  string s = SortColumns[SortColumnPicked];
+                  SortColumns[SortColumnPicked] = SortColumns[SortColumnPicked - 1];
+                  SortColumns[SortColumnPicked - 1] = s;
+                  int p = SortIndex[SortColumnPicked];
+                  SortIndex[SortColumnPicked] = SortIndex[SortColumnPicked - 1];
+                  SortIndex[--SortColumnPicked] = p;
+                  GenerateOutput();
+                }
+                dlgPushButton("Move down") if (SortColumnPicked < (NumberOfSortColumns - 1)) {
+                  string s = SortColumns[SortColumnPicked];
+                  SortColumns[SortColumnPicked] = SortColumns[SortColumnPicked + 1];
+                  SortColumns[SortColumnPicked + 1] = s;
+                  int p = SortIndex[SortColumnPicked];
+                  SortIndex[SortColumnPicked] = SortIndex[SortColumnPicked + 1];
+                  SortIndex[++SortColumnPicked] = p;
+                  GenerateOutput();
+                }
+                dlgPushButton("Remove") if (SortColumnPicked >= 0 && NumberOfSortColumns > 0) {
+                  NumberOfSortColumns--;
+                  if (NumberOfSortColumns == SortColumnPicked) {
+                    SortColumns[SortColumnPicked] = "";
+                    SortIndex[SortColumnPicked] = -1;
+                    SortColumnPicked--;
+                    dlgRedisplay();
+                  }
+                  else {
+                    int i;
+                    i = SortColumnPicked;
+                    while (SortColumns[i]) {
+                      SortColumns[i] = SortColumns[i + 1];
+                      SortIndex[i] = SortIndex[i + 1];
+                      i++;
+                    }
+                  }
+                  GenerateOutput();
+                }
+                dlgGroup("Blank line") {
+                  dlgLabel("Add a blank line");
+                  dlgLabel("in the output");
+                  dlgLabel("when the");
+                  dlgLabel("following column");
+                  dlgLabel("changes:");
+                  dlgGroup("") {
+                    dlgLabel(BlankLineColumn,1);
+                  }
+                  dlgPushButton("No blank line") {
+                    BlankLineColumn = "";
+                    BlankLineIndex= -1;
+                    GenerateOutput();
+                  }
+                }
+              }
+            }
+          }
+          dlgVBoxLayout {
+            dlgGroup("Format") {
+              dlgRadioButton("Text", OutputFormat) {
+                SpreadsheetHeader = 0;
+                OutputExt = OutputExtText;
+                GenerateOutput();
+              }
+              dlgHBoxLayout {
+                dlgLabel("  ");
+                dlgGroup("") {
+                  dlgCheckBox("If grouped by same values,", Individual) {
+                    if (GroupedBy == ltValues && OutputFormat == ofText) GenerateOutput();
+                    else Individual = 0;
+                  }
+                  dlgLabel("put each value in separate lines.");
+                  dlgRadioButton("Use tabs", SpacesOrTabs) GenerateOutput();
+                  dlgRadioButton("Use spaces", SpacesOrTabs) GenerateOutput();
+                  dlgLabel("Tab width");
+                  dlgSpinBox(TabWidth, 2, 20);
+                }
+              }
+              dlgRadioButton("HTML", OutputFormat) {
+                Individual = 0;
+                SpreadsheetHeader = 0;
+                OutputExt = OutputExtHTML;
+                GenerateOutput();
+              }
+              dlgRadioButton("Spreadsheet (CSV)", OutputFormat) {
+                Individual = 0;
+                OutputExt = OutputExtSpreadsheet;
+                GenerateOutput();
+              }
+              dlgHBoxLayout {
+                dlgLabel("  ");
+                dlgCheckBox("Add header", SpreadsheetHeader) {
+                  if (OutputFormat == ofSpreadsheet) GenerateOutput();
+                  else SpreadsheetHeader = 0;
+                }
+                dlgStretch(1); 
+              }
+              dlgStretch(1); 
+            }
+            dlgHBoxLayout {
+              dlgGroup("Setup") {
+                dlgPushButton("Get setup...") {
+                  if (GetSetup()) {
+                    CollectPartData();
+                    GenerateList();
+                    GenerateOutput();
+                  }
+                }
+                dlgPushButton("Save setup...") SaveSetup();
+              }
+              dlgGroup("Create output") {
+                dlgPushButton("Save output...") if (CheckPicked()) SaveOutput();
+                dlgPushButton("Print") if (CheckPicked()) PrintList();
+              }
+            }
+          }
+        }
+        dlgGroup("Output preview") dlgTextView(Preview);
+      }
+
+      dlgTabPage("Options") {
+        dlgGroup("Save options") {
+          dlgHBoxLayout{
+            dlgLabel("   Do you want these options to be saved in a file?");
+            dlgRadioButton("No", DlgSaveOptions) SaveOptions = 0;
+            dlgRadioButton("Yes", DlgSaveOptions) SaveOptions = 1;
+          }
+          dlgLabel("   The file name is always Options.BOMop and is saved in your project's directory: " +
+            OptionsFileName);
+        }
+        dlgGroup("Minimum screen size") {
+          dlgLabel("   Choose the minimum values for screen width and height.");
+          dlgLabel("   Until you enter values of your own, default values of 800 and 600 will be used.");
+          dlgLabel("   Regardless of the values entered, "
+            "the actual values used will never be less than the minimums needed to display this dialog.");
+          dlgHBoxLayout{
+            dlgLabel("   Minimum screen width   ");
+            dlgIntEdit(ScreenWidth);
+          }
+          dlgHBoxLayout{
+            dlgLabel("   Minimum screen height  ");
+            dlgIntEdit(ScreenHeight);
+          }
+          dlgLabel("   The screen size will not be updated until you either re-run this program, "
+            "or press the Resize button.");
+          dlgHBoxLayout{
+            dlgPushButton("Resize") {
+              dlgAccept(ResizeNow);
+            }
+          }
+        }
+        dlgHBoxLayout {
+          dlgGroup("Default database") {
+            dlgLabel("Do you want a database to be opened automatically?");
+            dlgRadioButton("No", DlgAutoOpen) AutoOpen = "N";
+            dlgRadioButton("Yes", DlgAutoOpen) AutoOpen = "Y";
+            dlgLabel("If so, enter a full name or pick a file name from the last databases used:");
+            dlgHBoxLayout {
+              dlgLabel("Database path/name:  ");
+              dlgStringEdit(DlgAutoDatabase);
+            }
+            dlgHBoxLayout {
+              dlgLabel("Last databases used: ");
+              dlgComboBox(Databases, DatabasePicked) {
+                AutoDatabase = Databases[DatabasePicked];
+                DlgAutoDatabase=AutoDatabase;
+              }
+            }
+          }
+          dlgGroup("Default output setup") {
+            dlgLabel("Do you want a setup to be opened automatically?");
+            dlgRadioButton("No", DlgAutoOpenSetup) AutoOpenSetup = "N";
+            dlgRadioButton("Yes", DlgAutoOpenSetup) AutoOpenSetup = "Y";
+            dlgLabel("   If so, enter a full name or pick a file name from the last setups used:");
+            dlgHBoxLayout {
+              dlgLabel("   Setup path/name:  ");
+              dlgStringEdit(DlgAutoSetup);
+            }
+            dlgHBoxLayout {
+              dlgLabel("   Last setups used: ");
+              dlgComboBox(Setups, SetupPicked) {
+                AutoSetup = Setups[SetupPicked];
+                DlgAutoSetup=AutoSetup;
+              }
+            }
+          }
+        }
+        dlgHBoxLayout {
+          dlgGroup("Display keys") {
+            dlgCheckBox("Check this box to display keys in the schematics list", DlgShowKeys) {
+              ShowKeys = DlgShowKeys;
+              GenerateList();
+            }
+          }
+          dlgGroup("CSV separator") {
+            dlgHBoxLayout {
+              dlgLabel("The default CSV separator is a comma (,)");
+              dlgStringEdit(CsvSeparator);
+            }
+          }
+        }
+      }
+
+      dlgTabPage("Help") {
+        dlgTextView(HelpText);
+        dlgPushButton("Save Help to a file.  You can then view/print it with any HTML browser.") SaveHelp();
+      }
+
+      dlgTabPage("History") {
+        dlgTextView(HistoryText1 + Release + HistoryText2 + ReleaseDate + HistoryText3);
+      }
+
+    }
+  }
+};
+
+/******************************************************************************************/
+/*									*/
+/*	Before exiting, save the options in the options file if needed.		*/
+/*									*/
+/******************************************************************************************/
+if (SaveOptions) {
+  output (OptionsFileName) {
+    printf("ScreenWidth=%d\n", ScreenWidth);
+    printf("ScreenHeight=%d\n", ScreenHeight);
+    printf("AutoOpen=" + AutoOpen + "\n");
+    printf("AutoDatabase=" + AutoDatabase + "\n");
+    for (MainTemp=0; MainTemp < NumberOfDatabases; MainTemp++) printf("Database=" + Databases[MainTemp] + "\n");
+    printf("AutoOpenSetup=" + AutoOpenSetup + "\n");
+    printf("AutoSetup=" + AutoSetup + "\n");
+    for (MainTemp=0; MainTemp < NumberOfSetups; MainTemp++) printf("Setup=" + Setups[MainTemp] + "\n");
+    printf("CsvSeparator=" + CsvSeparator + "\n");
+  }
+}
