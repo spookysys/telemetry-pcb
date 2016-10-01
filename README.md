@@ -1,7 +1,4 @@
-# Greetings from PCB
-
-Avionics Base PCB
-
+# A brain for my rocket
 
 ## Features 
 
@@ -35,7 +32,7 @@ Note: If you don't need hardware handshaking on the GSM UART, the D5 pin can be 
 
 Just ordered first batch, not yet tested
 
-# Credit
+## Credit
 
 Design derived from Adafruit M0 Feather Proto and Adalogger
 
