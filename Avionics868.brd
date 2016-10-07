@@ -1681,7 +1681,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="13.97" y1="3.048" x2="5.461" y2="3.048" width="1.4224" layer="16"/>
 <wire x1="44.45" y1="3.048" x2="46.0375" y2="3.048" width="1.4224" layer="16"/>
 <via x="54.5465" y="5.207" extent="1-16" drill="0.5"/>
-<via x="50.4825" y="3.8735" extent="1-16" drill="0.5"/>
 <via x="0.6985" y="4.5085" extent="1-16" drill="0.5"/>
 <via x="4.699" y="0.8255" extent="1-16" drill="0.5"/>
 <via x="0.6985" y="18.3515" extent="1-16" drill="0.5"/>
@@ -1818,14 +1817,13 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <via x="56.261" y="18.415" extent="1-16" drill="0.5"/>
 <via x="50.4825" y="1.4605" extent="1-16" drill="0.5"/>
 <via x="52.324" y="1.7145" extent="1-16" drill="0.5"/>
-<via x="45.2755" y="3.8735" extent="1-16" drill="0.5"/>
+<via x="44.3865" y="4.191" extent="1-16" drill="0.5"/>
 <via x="45.339" y="13.97" extent="1-16" drill="0.5"/>
 <via x="47.244" y="14.4145" extent="1-16" drill="0.5"/>
 <via x="41.275" y="3.2385" extent="1-16" drill="0.5"/>
 <via x="43.18" y="3.175" extent="1-16" drill="0.5"/>
 <via x="44.3865" y="3.175" extent="1-16" drill="0.5"/>
 <via x="40.4495" y="18.161" extent="1-16" drill="0.5"/>
-<via x="51.435" y="4.0005" extent="1-16" drill="0.5"/>
 <wire x1="13.843" y1="9.0471" x2="13.843" y2="8.3185" width="0.254" layer="1"/>
 <wire x1="13.843" y1="8.3185" x2="13.462" y2="7.9375" width="0.254" layer="1"/>
 <via x="18.7325" y="18.2245" extent="1-16" drill="0.5"/>
@@ -1908,10 +1906,13 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <via x="79.248" y="21.2725" extent="1-16" drill="0.5"/>
 <via x="76.581" y="18.6055" extent="1-16" drill="0.5"/>
 <via x="82.2325" y="21.2725" extent="1-16" drill="0.5"/>
-<wire x1="42.4815" y1="11.684" x2="42.4815" y2="11.6205" width="0" layer="19" extent="1-1"/>
 <via x="79.121" y="11.2395" extent="1-16" drill="0.5"/>
 <via x="76.327" y="11.2395" extent="1-16" drill="0.5"/>
 <via x="79.121" y="14.732" extent="1-16" drill="0.5"/>
+<via x="45.974" y="4.2545" extent="1-16" drill="0.5"/>
+<via x="50.419" y="3.937" extent="1-16" drill="0.5"/>
+<wire x1="50.4825" y1="1.4605" x2="50.419" y2="3.937" width="0" layer="19" extent="1-1"/>
+<wire x1="42.4815" y1="11.684" x2="42.4815" y2="11.6205" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="MOSI">
 <contactref element="JP1" pad="5"/>
@@ -2903,8 +2904,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <signal name="GPS_ANT">
 <contactref element="X6" pad="D"/>
 <contactref element="U5" pad="68_"/>
-<wire x1="49.403" y1="2.667" x2="50.859" y2="2.667" width="0.94" layer="1"/>
-<wire x1="50.859" y1="2.667" x2="53.263" y2="5.071" width="0.94" layer="1" curve="90"/>
+<wire x1="52.07" y1="3.7465" x2="49.403" y2="2.667" width="0.8128" layer="1" curve="-51.907764"/>
+<wire x1="52.07" y1="3.7465" x2="53.263" y2="5.071" width="0.8128" layer="1"/>
 </signal>
 <signal name="GSM_ANT">
 <contactref element="X5" pad="D"/>
@@ -3789,8 +3790,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <approved hash="4,16,211d61636123215d"/>
 <approved hash="4,16,10e48e865a26ebc2"/>
 <approved hash="19,16,8168b9e30cbb78f0"/>
-<approved hash="19,16,1b59dbd6570425b9"/>
 <approved hash="19,16,d793342c8942d8cf"/>
+<approved hash="19,16,1b59dbd6570425b9"/>
 <approved hash="19,16,d24c92a48c4640ec"/>
 <approved hash="4,16,8e0c362207381367"/>
 <approved hash="4,16,88376961bc12ad8e"/>
