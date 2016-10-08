@@ -5515,7 +5515,7 @@ SMD type&lt;br&gt;</description>
 <approved hash="113,2,139.639,116.84,TP6,,,,,"/>
 <approved hash="113,2,139.055,121.92,TP13,,,,,"/>
 <approved hash="113,2,249.235,145.512,TP5,,,,,"/>
-<approved hash="113,2,18.9892,127,TP3,,,,,"/>
+<approved hash="113,2,139.639,81.28,TP3,,,,,"/>
 </errors>
 </schematic>
 </drawing>
