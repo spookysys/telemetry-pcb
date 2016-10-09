@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.6.0">
+<eagle version="7.7.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="yes"/>
@@ -3881,6 +3881,8 @@ SMD type&lt;br&gt;</description>
 <attribute name="SEEED" value="ZX62-B-5PA"/>
 </part>
 <part name="TP3" library="microbuilder" deviceset="TESTPOINT" device="ROUND1.5MM"/>
+<part name="JP4" library="SparkFun-Passives" deviceset="JUMPER-PAD-2-NC_BY_TRACE" device=""/>
+<part name="TP7" library="microbuilder" deviceset="TESTPOINT" device="ROUND1.5MM"/>
 </parts>
 <sheets>
 <sheet>
@@ -4715,6 +4717,7 @@ SMD type&lt;br&gt;</description>
 <text x="102.108" y="96.266" size="1.778" layer="94">I2C PULLUPS</text>
 <text x="167.894" y="169.672" size="1.778" layer="94">GPS+GSM MODULE</text>
 <text x="57.912" y="100.076" size="1.778" layer="94">ANTENNAS</text>
+<text x="108.966" y="153.924" size="1.778" layer="94">NØDLØSNING</text>
 </plain>
 <instances>
 <instance part="FRAME2" gate="G$1" x="0" y="0"/>
@@ -4862,6 +4865,13 @@ SMD type&lt;br&gt;</description>
 <instance part="U$13" gate="G$1" x="227.584" y="32.258"/>
 <instance part="U$14" gate="G$1" x="175.768" y="11.938"/>
 <instance part="TP3" gate="G$1" x="142.24" y="81.28" rot="R90"/>
+<instance part="JP4" gate="G$1" x="116.84" y="149.86" smashed="yes">
+<attribute name="NAME" x="115.316" y="147.066" size="1.27" layer="95"/>
+</instance>
+<instance part="TP7" gate="G$1" x="248.412" y="157.48" smashed="yes" rot="R270">
+<attribute name="NAME" x="250.444" y="159.766" size="1.27" layer="95" align="center-left"/>
+<attribute name="VALUE" x="254" y="155.829" size="1.27" layer="95" align="center-left"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -5400,6 +5410,11 @@ SMD type&lt;br&gt;</description>
 <label x="142.24" y="81.28" size="1.778" layer="95"/>
 <pinref part="TP3" gate="G$1" pin="P$1"/>
 </segment>
+<segment>
+<pinref part="JP4" gate="G$1" pin="1"/>
+<wire x1="111.76" y1="149.86" x2="105.41" y2="149.86" width="0.1524" layer="91"/>
+<label x="105.156" y="150.114" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="GSM_RI" class="0">
 <segment>
@@ -5476,6 +5491,19 @@ SMD type&lt;br&gt;</description>
 <pinref part="X4" gate="G$1" pin="SD_SWITCH"/>
 <wire x1="35.56" y1="127" x2="21.59" y2="127" width="0.1524" layer="91"/>
 <label x="19.05" y="127" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="VDD_EXT_2V8" class="0">
+<segment>
+<pinref part="JP4" gate="G$1" pin="2"/>
+<wire x1="121.92" y1="149.86" x2="125.73" y2="149.86" width="0.1524" layer="91"/>
+<label x="124.46" y="149.86" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="U5" gate="G$1" pin="VDD_EXT(2.8VOUT)"/>
+<wire x1="236.22" y1="157.48" x2="248.412" y2="157.48" width="0.1524" layer="91"/>
+<label x="238.76" y="157.48" size="1.778" layer="95"/>
+<pinref part="TP7" gate="G$1" pin="P$1"/>
 </segment>
 </net>
 </nets>
