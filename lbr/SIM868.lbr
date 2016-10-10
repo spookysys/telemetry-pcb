@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.6.0">
+<eagle version="7.7.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -25,7 +25,7 @@
 <layer number="29" name="tStop" color="7" fill="3" visible="yes" active="yes"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="yes" active="yes"/>
 <layer number="31" name="tCream" color="7" fill="4" visible="yes" active="yes"/>
-<layer number="32" name="bCream" color="7" fill="5" visible="yes" active="yes"/>
+<layer number="32" name="bCream" color="7" fill="5" visible="no" active="yes"/>
 <layer number="33" name="tFinish" color="6" fill="3" visible="yes" active="yes"/>
 <layer number="34" name="bFinish" color="6" fill="6" visible="yes" active="yes"/>
 <layer number="35" name="tGlue" color="7" fill="4" visible="yes" active="yes"/>
@@ -252,6 +252,29 @@
 <smd name="1_" x="-7.85" y="6.05" dx="0.6" dy="1.6" layer="1" roundness="100" rot="R270"/>
 <smd name="33_" x="7.85" y="6.05" dx="0.6" dy="1.6" layer="1" roundness="100" rot="R90"/>
 </package>
+<package name="SAFEB1G57KE0F00">
+<wire x1="-0.675" y1="0.525" x2="-0.675" y2="-0.525" width="0.127" layer="21"/>
+<wire x1="0.675" y1="-0.525" x2="0.675" y2="0.525" width="0.127" layer="21"/>
+<wire x1="0.675" y1="0.525" x2="-0.675" y2="0.525" width="0.127" layer="21"/>
+<wire x1="-0.675" y1="-0.525" x2="0.675" y2="-0.525" width="0.127" layer="21"/>
+<smd name="1" x="-0.59" y="0" dx="0.425" dy="0.325" layer="1"/>
+<smd name="5" x="0" y="0.388" dx="0.525" dy="0.25" layer="1" rot="R90"/>
+<smd name="2" x="0" y="-0.388" dx="0.525" dy="0.25" layer="1" rot="R90"/>
+<smd name="4" x="0.587" y="0.289" dx="0.425" dy="0.325" layer="1"/>
+<smd name="3" x="0.587" y="-0.288" dx="0.425" dy="0.325" layer="1"/>
+</package>
+<package name="SAFFB1G57KE0F0A">
+<wire x1="-0.55" y1="0.45" x2="-0.55" y2="-0.45" width="0.127" layer="21"/>
+<wire x1="0.55" y1="-0.45" x2="0.55" y2="0.45" width="0.127" layer="21"/>
+<wire x1="0.55" y1="0.45" x2="-0.55" y2="0.45" width="0.127" layer="21"/>
+<wire x1="-0.55" y1="-0.45" x2="0.55" y2="-0.45" width="0.127" layer="21"/>
+<smd name="1" x="-0.425" y="0" dx="0.25" dy="0.25" layer="1"/>
+<smd name="5" x="0" y="0.2875" dx="0.2" dy="0.325" layer="1"/>
+<smd name="2" x="0" y="-0.2875" dx="0.2" dy="0.325" layer="1"/>
+<smd name="4" x="0.425" y="0.2875" dx="0.25" dy="0.325" layer="1"/>
+<smd name="3" x="0.425" y="-0.2875" dx="0.25" dy="0.325" layer="1"/>
+<wire x1="0.55" y1="-0.65" x2="-0.55" y2="-0.65" width="0" layer="20"/>
+</package>
 </packages>
 <symbols>
 <symbol name="SIM868">
@@ -353,6 +376,19 @@
 <text x="30.48" y="66.04" size="1.27" layer="94" align="center-right">Power supply</text>
 <text x="30.48" y="-20.32" size="1.27" layer="94" align="center-right">SD interface</text>
 </symbol>
+<symbol name="SAWFILTERFORGPS">
+<pin name="IN" x="-7.62" y="7.62" visible="pin" length="short" direction="in"/>
+<pin name="2" x="-2.54" y="-2.54" visible="pin" length="short" direction="pwr" rot="R90"/>
+<pin name="3" x="0" y="-2.54" visible="pin" length="short" direction="pwr" rot="R90"/>
+<pin name="OUT" x="7.62" y="5.08" visible="pin" length="short" direction="out" rot="R180"/>
+<pin name="5" x="2.54" y="-2.54" visible="pin" length="short" direction="pwr" rot="R90"/>
+<wire x1="-5.08" y1="10.16" x2="-5.08" y2="0" width="0.254" layer="94"/>
+<wire x1="-5.08" y1="0" x2="5.08" y2="0" width="0.254" layer="94"/>
+<wire x1="5.08" y1="0" x2="5.08" y2="10.16" width="0.254" layer="94"/>
+<wire x1="5.08" y1="10.16" x2="-5.08" y2="10.16" width="0.254" layer="94"/>
+<text x="-5.08" y="10.668" size="1.27" layer="95">&gt;NAME</text>
+<text x="-5.08" y="-5.08" size="1.27" layer="96">&gt;VALUE</text>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="SIM868" prefix="U">
@@ -439,6 +475,37 @@
 <connect gate="G$1" pin="VBAT" pad="35_"/>
 <connect gate="G$1" pin="VDD_EXT(2.8VOUT)" pad="40_"/>
 <connect gate="G$1" pin="VRTC" pad="28_"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="SAWFILTERFORGPS" prefix="U">
+<gates>
+<gate name="G$1" symbol="SAWFILTERFORGPS" x="-5.08" y="-2.54"/>
+</gates>
+<devices>
+<device name="RECOMMENDED" package="SAFEB1G57KE0F00">
+<connects>
+<connect gate="G$1" pin="2" pad="2"/>
+<connect gate="G$1" pin="3" pad="3"/>
+<connect gate="G$1" pin="5" pad="5"/>
+<connect gate="G$1" pin="IN" pad="1"/>
+<connect gate="G$1" pin="OUT" pad="4"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="AVAILABLE" package="SAFFB1G57KE0F0A">
+<connects>
+<connect gate="G$1" pin="2" pad="2"/>
+<connect gate="G$1" pin="3" pad="3"/>
+<connect gate="G$1" pin="5" pad="5"/>
+<connect gate="G$1" pin="IN" pad="1"/>
+<connect gate="G$1" pin="OUT" pad="4"/>
 </connects>
 <technologies>
 <technology name=""/>

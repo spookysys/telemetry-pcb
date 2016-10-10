@@ -1,5 +1,5 @@
 [Eagle]
-Version="07 06 00"
+Version="07 07 00"
 Platform="Windows"
 Serial="62191E841E-LSR-WLM-1EL"
 Globals="Globals"
@@ -39,11 +39,13 @@ UsedLibrary="lbr/MacroFab/MF_Discrete_Semiconductor.lbr"
 UsedLibrary="lbr/MacroFab/MF_Aesthetics.lbr"
 UsedLibrary="lbr/MacroFab/MF_Connectors.lbr"
 UsedLibrary="lbr/SparkFun/SparkFun-Sensors.lbr"
+UsedLibrary="lbr/alvaroferran.lbr"
+UsedLibrary="lbr/SparkFun/SparkFun-Passives.lbr"
 
 [Win_1]
 Type="Control Panel"
 Loc="0 0 1919 1016"
-State=3
+State=1
 Number=0
 
 [Desktop]
