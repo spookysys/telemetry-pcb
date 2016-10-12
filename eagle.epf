@@ -41,6 +41,7 @@ UsedLibrary="lbr/MacroFab/MF_Connectors.lbr"
 UsedLibrary="lbr/SparkFun/SparkFun-Sensors.lbr"
 UsedLibrary="lbr/alvaroferran.lbr"
 UsedLibrary="lbr/SparkFun/SparkFun-Passives.lbr"
+UsedLibrary="C:/Users/spook/Documents/Eagle/libs/sparkfun/SparkFun-Electromechanical.lbr"
 
 [Win_1]
 Type="Control Panel"
