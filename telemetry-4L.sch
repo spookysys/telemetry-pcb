@@ -3666,117 +3666,6 @@ ADDR -&gt; GND  = 0x76</description>
 </deviceset>
 </devicesets>
 </library>
-<library name="alvaroferran">
-<packages>
-<package name="BNO055">
-<circle x="-3.048" y="2.286" radius="0.127" width="0.254" layer="21"/>
-<wire x1="-2.904259375" y1="2.233559375" x2="2.866328125" y2="2.228096875" width="0.1524" layer="21"/>
-<wire x1="2.866328125" y1="2.228096875" x2="2.87179375" y2="-2.109840625" width="0.1524" layer="21"/>
-<wire x1="2.87179375" y1="-2.109840625" x2="-2.909728125" y2="-2.111615625" width="0.1524" layer="21"/>
-<wire x1="-2.909728125" y1="-2.111615625" x2="-2.904259375" y2="2.233559375" width="0.1524" layer="21"/>
-<smd name="1" x="-2.2790625" y="1.71965" dx="0.25" dy="0.68" layer="1" rot="R180"/>
-<smd name="2" x="-2.386596875" y="0.809484375" dx="0.25" dy="0.68" layer="1" rot="R90"/>
-<smd name="3" x="-2.386596875" y="0.309484375" dx="0.25" dy="0.68" layer="1" rot="R90"/>
-<smd name="4" x="-2.386596875" y="-0.190515625" dx="0.25" dy="0.68" layer="1" rot="R90"/>
-<smd name="5" x="-2.386596875" y="-0.690515625" dx="0.25" dy="0.68" layer="1" rot="R90"/>
-<smd name="6" x="-2.2790625" y="-1.605640625" dx="0.25" dy="0.68" layer="1" rot="R180"/>
-<smd name="7" x="-1.7790625" y="-1.605640625" dx="0.25" dy="0.68" layer="1" rot="R180"/>
-<smd name="8" x="-1.2790625" y="-1.605640625" dx="0.25" dy="0.68" layer="1" rot="R180"/>
-<smd name="9" x="-0.7790625" y="-1.605640625" dx="0.25" dy="0.68" layer="1" rot="R180"/>
-<smd name="10" x="-0.2790625" y="-1.605640625" dx="0.25" dy="0.68" layer="1" rot="R180"/>
-<smd name="11" x="0.2209375" y="-1.605640625" dx="0.25" dy="0.68" layer="1" rot="R180"/>
-<smd name="12" x="0.7209375" y="-1.605640625" dx="0.25" dy="0.68" layer="1" rot="R180"/>
-<smd name="13" x="1.2209375" y="-1.605640625" dx="0.25" dy="0.68" layer="1" rot="R180"/>
-<smd name="14" x="1.7209375" y="-1.605640625" dx="0.25" dy="0.68" layer="1" rot="R180"/>
-<smd name="15" x="2.2209375" y="-1.605640625" dx="0.25" dy="0.68" layer="1" rot="R180"/>
-<smd name="16" x="2.33234375" y="-0.691765625" dx="0.25" dy="0.68" layer="1" rot="R90"/>
-<smd name="17" x="2.33234375" y="-0.191765625" dx="0.25" dy="0.68" layer="1" rot="R90"/>
-<smd name="18" x="2.33234375" y="0.308234375" dx="0.25" dy="0.68" layer="1" rot="R90"/>
-<smd name="19" x="2.33234375" y="0.808234375" dx="0.25" dy="0.68" layer="1" rot="R90"/>
-<smd name="20" x="2.2209375" y="1.71965" dx="0.25" dy="0.68" layer="1" rot="R180"/>
-<smd name="21" x="1.7209375" y="1.71965" dx="0.25" dy="0.68" layer="1" rot="R180"/>
-<smd name="22" x="1.2209375" y="1.71965" dx="0.25" dy="0.68" layer="1" rot="R180"/>
-<smd name="23" x="0.7209375" y="1.71965" dx="0.25" dy="0.68" layer="1" rot="R180"/>
-<smd name="24" x="0.2209375" y="1.71965" dx="0.25" dy="0.68" layer="1" rot="R180"/>
-<smd name="25" x="-0.2790625" y="1.71965" dx="0.25" dy="0.68" layer="1" rot="R180"/>
-<smd name="26" x="-0.7790625" y="1.71965" dx="0.25" dy="0.68" layer="1" rot="R180"/>
-<smd name="27" x="-1.2790625" y="1.71965" dx="0.25" dy="0.68" layer="1" rot="R180"/>
-<smd name="28" x="-1.7790625" y="1.71965" dx="0.25" dy="0.68" layer="1" rot="R180"/>
-<text x="-2.95" y="3.3" size="1.27" layer="25">&gt;NAME</text>
-<text x="-3.5" y="-4.15" size="1.27" layer="27">&gt;VALUE</text>
-</package>
-</packages>
-<symbols>
-<symbol name="BNO055">
-<wire x1="-7.62" y1="10.16" x2="7.62" y2="10.16" width="0.254" layer="94"/>
-<wire x1="7.62" y1="10.16" x2="7.62" y2="-10.16" width="0.254" layer="94"/>
-<wire x1="7.62" y1="-10.16" x2="-7.62" y2="-10.16" width="0.254" layer="94"/>
-<wire x1="-7.62" y1="-10.16" x2="-7.62" y2="10.16" width="0.254" layer="94"/>
-<pin name="BOOT" x="-12.7" y="2.54" visible="off" length="middle"/>
-<pin name="CAP" x="-5.08" y="-15.24" visible="off" length="middle" rot="R90"/>
-<pin name="GND" x="5.08" y="-15.24" visible="off" length="middle" direction="pwr" rot="R90"/>
-<pin name="ID" x="12.7" y="0" visible="off" length="middle" rot="R180"/>
-<pin name="INT" x="-12.7" y="0" visible="off" length="middle"/>
-<pin name="PS0" x="12.7" y="-2.54" visible="off" length="middle" rot="R180"/>
-<pin name="PS1" x="12.7" y="-5.08" visible="off" length="middle" rot="R180"/>
-<pin name="RST" x="-12.7" y="5.08" visible="off" length="middle"/>
-<pin name="SCL/RX" x="12.7" y="5.08" visible="off" length="middle" rot="R180"/>
-<pin name="SDA/TX" x="12.7" y="2.54" visible="off" length="middle" rot="R180"/>
-<pin name="VCC" x="0" y="15.24" visible="off" length="middle" rot="R270"/>
-<pin name="XIN" x="-12.7" y="-2.54" visible="off" length="middle"/>
-<pin name="XOUT" x="-12.7" y="-5.08" visible="off" length="middle"/>
-<text x="-7.112" y="4.318" size="1.4224" layer="97">!RST</text>
-<text x="-7.112" y="1.778" size="1.4224" layer="97">!BOOT</text>
-<text x="-7.112" y="-0.762" size="1.4224" layer="97">INT</text>
-<text x="-7.112" y="-3.302" size="1.4224" layer="97">XIN</text>
-<text x="-7.112" y="-5.842" size="1.4224" layer="97">XOUT</text>
-<text x="7.112" y="-4.318" size="1.4224" layer="97" rot="R180">PS1</text>
-<text x="7.112" y="-1.778" size="1.4224" layer="97" rot="R180">PS0</text>
-<text x="7.112" y="0.762" size="1.4224" layer="97" rot="R180">ID</text>
-<text x="7.112" y="3.302" size="1.4224" layer="97" rot="R180">SDA/TX</text>
-<text x="7.112" y="5.842" size="1.4224" layer="97" rot="R180">SCL/RX</text>
-<text x="-2.032" y="7.874" size="1.4224" layer="97">VCC</text>
-<text x="3.048" y="-9.398" size="1.4224" layer="97">GND</text>
-<text x="-7.112" y="-9.398" size="1.4224" layer="97">CAP</text>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="BNO055" prefix="U">
-<description>The BNO055 is a System in Package (SiP), integrating a 
-triaxial 14-bit accelerometer, a triaxial 16-bit gyroscope 
-with a range of ±2000 degrees per second, a triaxial 
-geomagnetic sensor and a 32-bit microcontroller 
-running the companys BSX3.0 FusionLib software. At 
-just 5.2 x 3.8 x 1.1?mm3, it is significantly smaller than 
-comparable discrete or system-on-board solutions.</description>
-<gates>
-<gate name="G$1" symbol="BNO055" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="BNO055">
-<connects>
-<connect gate="G$1" pin="BOOT" pad="4"/>
-<connect gate="G$1" pin="CAP" pad="9"/>
-<connect gate="G$1" pin="GND" pad="2 10 15 16 18 25"/>
-<connect gate="G$1" pin="ID" pad="17"/>
-<connect gate="G$1" pin="INT" pad="14"/>
-<connect gate="G$1" pin="PS0" pad="6"/>
-<connect gate="G$1" pin="PS1" pad="5"/>
-<connect gate="G$1" pin="RST" pad="11"/>
-<connect gate="G$1" pin="SCL/RX" pad="19"/>
-<connect gate="G$1" pin="SDA/TX" pad="20"/>
-<connect gate="G$1" pin="VCC" pad="3 28"/>
-<connect gate="G$1" pin="XIN" pad="27"/>
-<connect gate="G$1" pin="XOUT" pad="26"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
 <library name="MF_Passives">
 <packages>
 <package name="C0402">
@@ -4306,6 +4195,121 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="misc">
+<packages>
+<package name="LEAD-QFN24">
+<circle x="-1.905" y="1.905" radius="0.381" width="0" layer="21"/>
+<wire x1="-1.5" y1="-1.5" x2="-1.5" y2="0.96413125" width="0.127" layer="21"/>
+<wire x1="-1.5" y1="0.96413125" x2="-0.96413125" y2="1.5" width="0.127" layer="21"/>
+<wire x1="-0.96413125" y1="1.5" x2="1.5" y2="1.5" width="0.127" layer="21"/>
+<wire x1="1.5" y1="1.5" x2="1.5" y2="-1.5" width="0.127" layer="21"/>
+<wire x1="1.5" y1="-1.5" x2="-1.5" y2="-1.5" width="0.127" layer="21"/>
+<smd name="1" x="-1.6" y="1" dx="0.6" dy="0.2" layer="1"/>
+<smd name="2" x="-1.6" y="0.6" dx="0.6" dy="0.2" layer="1"/>
+<smd name="3" x="-1.6" y="0.2" dx="0.6" dy="0.2" layer="1"/>
+<smd name="4" x="-1.6" y="-0.2" dx="0.6" dy="0.2" layer="1"/>
+<smd name="5" x="-1.6" y="-0.6" dx="0.6" dy="0.2" layer="1"/>
+<smd name="6" x="-1.6" y="-1" dx="0.6" dy="0.2" layer="1"/>
+<smd name="7" x="-1" y="-1.6" dx="0.6" dy="0.2" layer="1" rot="R90"/>
+<smd name="8" x="-0.6" y="-1.6" dx="0.6" dy="0.2" layer="1" rot="R90"/>
+<smd name="9" x="-0.2" y="-1.6" dx="0.6" dy="0.2" layer="1" rot="R90"/>
+<smd name="10" x="0.2" y="-1.6" dx="0.6" dy="0.2" layer="1" rot="R90"/>
+<smd name="11" x="0.6" y="-1.6" dx="0.6" dy="0.2" layer="1" rot="R90"/>
+<smd name="12" x="1" y="-1.6" dx="0.6" dy="0.2" layer="1" rot="R90"/>
+<smd name="13" x="1.6" y="-1" dx="0.6" dy="0.2" layer="1" rot="R180"/>
+<smd name="14" x="1.6" y="-0.6" dx="0.6" dy="0.2" layer="1" rot="R180"/>
+<smd name="15" x="1.6" y="-0.2" dx="0.6" dy="0.2" layer="1" rot="R180"/>
+<smd name="16" x="1.6" y="0.2" dx="0.6" dy="0.2" layer="1" rot="R180"/>
+<smd name="17" x="1.6" y="0.6" dx="0.6" dy="0.2" layer="1" rot="R180"/>
+<smd name="18" x="1.6" y="1" dx="0.6" dy="0.2" layer="1" rot="R180"/>
+<smd name="19" x="1" y="1.6" dx="0.6" dy="0.2" layer="1" rot="R270"/>
+<smd name="20" x="0.6" y="1.6" dx="0.6" dy="0.2" layer="1" rot="R270"/>
+<smd name="21" x="0.2" y="1.6" dx="0.6" dy="0.2" layer="1" rot="R270"/>
+<smd name="22" x="-0.2" y="1.6" dx="0.6" dy="0.2" layer="1" rot="R270"/>
+<smd name="23" x="-0.6" y="1.6" dx="0.6" dy="0.2" layer="1" rot="R270"/>
+<smd name="24" x="-1" y="1.6" dx="0.6" dy="0.2" layer="1" rot="R270"/>
+<smd name="25" x="0" y="0" dx="1.7" dy="1.54" layer="1" roundness="50"/>
+<text x="-1.27" y="2.159" size="0.889" layer="25" ratio="11">&gt;NAME</text>
+<text x="-1.27" y="-2.921" size="0.635" layer="27" ratio="11">&gt;VALUE</text>
+</package>
+</packages>
+<symbols>
+<symbol name="MPU-9250">
+<wire x1="-17.78" y1="20.32" x2="17.78" y2="20.32" width="0.254" layer="94"/>
+<wire x1="17.78" y1="20.32" x2="17.78" y2="-20.32" width="0.254" layer="94"/>
+<wire x1="17.78" y1="-20.32" x2="-17.78" y2="-20.32" width="0.254" layer="94"/>
+<wire x1="-17.78" y1="-20.32" x2="-17.78" y2="20.32" width="0.254" layer="94"/>
+<pin name="PAD" x="0" y="-25.4" length="middle" rot="R90"/>
+<pin name="VDD" x="22.86" y="-12.7" length="middle" rot="R180"/>
+<pin name="SDA/SDI" x="22.86" y="15.24" length="middle" rot="R180"/>
+<pin name="SCL/SCLK" x="22.86" y="12.7" length="middle" rot="R180"/>
+<pin name="INT" x="-22.86" y="-12.7" length="middle"/>
+<pin name="NC1" x="22.86" y="-10.16" length="middle" rot="R180"/>
+<pin name="NC2" x="22.86" y="-7.62" length="middle" rot="R180"/>
+<pin name="NC3" x="22.86" y="-5.08" length="middle" rot="R180"/>
+<pin name="NC4" x="22.86" y="-2.54" length="middle" rot="R180"/>
+<pin name="GND" x="22.86" y="0" length="middle" rot="R180"/>
+<pin name="RESV1" x="22.86" y="2.54" length="middle" rot="R180"/>
+<pin name="RESV2" x="22.86" y="5.08" length="middle" rot="R180"/>
+<pin name="AUX_DA" x="22.86" y="7.62" length="middle" rot="R180"/>
+<pin name="NCS" x="22.86" y="10.16" length="middle" rot="R180"/>
+<pin name="FSYNC" x="-22.86" y="-10.16" length="middle"/>
+<pin name="REGOUT" x="-22.86" y="-7.62" length="middle"/>
+<pin name="ADO/SDO" x="-22.86" y="-5.08" length="middle"/>
+<pin name="VDDIO" x="-22.86" y="-2.54" length="middle"/>
+<pin name="AUX_CL" x="-22.86" y="0" length="middle"/>
+<pin name="NC5" x="-22.86" y="2.54" length="middle"/>
+<pin name="NC6" x="-22.86" y="5.08" length="middle"/>
+<pin name="NC7" x="-22.86" y="7.62" length="middle"/>
+<pin name="NC8" x="-22.86" y="10.16" length="middle"/>
+<pin name="NC9" x="-22.86" y="12.7" length="middle"/>
+<pin name="RESV" x="-22.86" y="15.24" length="middle"/>
+<text x="-17.78" y="25.4" size="1.27" layer="95" ratio="11">&gt;NAME</text>
+<text x="-17.78" y="22.86" size="1.27" layer="96" ratio="11">&gt;VALUE</text>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="MPU-9250" prefix="U">
+<gates>
+<gate name="G$1" symbol="MPU-9250" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="LEAD-QFN24">
+<connects>
+<connect gate="G$1" pin="ADO/SDO" pad="9"/>
+<connect gate="G$1" pin="AUX_CL" pad="7"/>
+<connect gate="G$1" pin="AUX_DA" pad="21"/>
+<connect gate="G$1" pin="FSYNC" pad="11"/>
+<connect gate="G$1" pin="GND" pad="18"/>
+<connect gate="G$1" pin="INT" pad="12"/>
+<connect gate="G$1" pin="NC1" pad="2"/>
+<connect gate="G$1" pin="NC2" pad="3"/>
+<connect gate="G$1" pin="NC3" pad="4"/>
+<connect gate="G$1" pin="NC4" pad="5"/>
+<connect gate="G$1" pin="NC5" pad="6"/>
+<connect gate="G$1" pin="NC6" pad="14"/>
+<connect gate="G$1" pin="NC7" pad="15"/>
+<connect gate="G$1" pin="NC8" pad="16"/>
+<connect gate="G$1" pin="NC9" pad="17"/>
+<connect gate="G$1" pin="NCS" pad="22"/>
+<connect gate="G$1" pin="PAD" pad="25"/>
+<connect gate="G$1" pin="REGOUT" pad="10"/>
+<connect gate="G$1" pin="RESV" pad="1"/>
+<connect gate="G$1" pin="RESV1" pad="19"/>
+<connect gate="G$1" pin="RESV2" pad="20"/>
+<connect gate="G$1" pin="SCL/SCLK" pad="23"/>
+<connect gate="G$1" pin="SDA/SDI" pad="24"/>
+<connect gate="G$1" pin="VDD" pad="13"/>
+<connect gate="G$1" pin="VDDIO" pad="8"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 <attribute name="COMPANY" value="ADAFRUIT INDUSTRIES"/>
@@ -4361,10 +4365,7 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <part name="FRAME2" library="microbuilder" deviceset="FRAME_A4" device=""/>
 <part name="D2" library="Deegou-Diodes" deviceset="MMSZ5231BT1G" device="" value="MMSZ5231BT1G"/>
 <part name="U5" library="SIM868" deviceset="SIM868" device=""/>
-<part name="U$23" library="microbuilder" deviceset="GND" device=""/>
-<part name="U$24" library="microbuilder" deviceset="GND" device=""/>
 <part name="U$37" library="microbuilder" deviceset="GND" device=""/>
-<part name="+3V8" library="Custom" deviceset="+3V" device=""/>
 <part name="+3V6" library="Custom" deviceset="+3V" device=""/>
 <part name="X6" library="Seeed-Connector -2016" deviceset="ANTENNA-CONN-U-FL(3P)" device="" value="U.FL-R-SMT(10)"/>
 <part name="X5" library="Seeed-Connector -2016" deviceset="ANTENNA-CONN-U-FL(3P)" device="" value="U.FL-R-SMT(10)"/>
@@ -4385,14 +4386,6 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <part name="D4" library="MF_LEDs" deviceset="LED_SINGLE" device="-0603-GREEN" value="GREEN"/>
 <part name="SW1" library="MF_Switches" deviceset="TACT" device="_4.2MM" value="MF-SW-TACT-4.2MM"/>
 <part name="X3" library="MF_Connectors" deviceset="USB" device="_MICRO_RIGHT" value="MF-CON-MICROUSB-RIGHT"/>
-<part name="U7" library="alvaroferran" deviceset="BNO055" device=""/>
-<part name="U$7" library="microbuilder" deviceset="GND" device=""/>
-<part name="C22" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="0.1uF"/>
-<part name="C11" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="0.1uF"/>
-<part name="+3V9" library="Custom" deviceset="+3V" device=""/>
-<part name="U$26" library="microbuilder" deviceset="GND" device=""/>
-<part name="C23" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="120nF"/>
-<part name="C24" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="6.8nF"/>
 <part name="C25" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="0.1uF"/>
 <part name="C26" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="1uF"/>
 <part name="+3V12" library="Custom" deviceset="+3V" device=""/>
@@ -4402,7 +4395,6 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <part name="U$40" library="microbuilder" deviceset="GND" device=""/>
 <part name="+3V7" library="Custom" deviceset="+3V" device=""/>
 <part name="+3V13" library="Custom" deviceset="+3V" device=""/>
-<part name="U$41" library="microbuilder" deviceset="GND" device=""/>
 <part name="C9" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="0.1uF"/>
 <part name="U$17" library="microbuilder" deviceset="GND" device=""/>
 <part name="U$14" library="microbuilder" deviceset="GND" device=""/>
@@ -4447,8 +4439,18 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <part name="+3V5" library="Custom" deviceset="+3V" device=""/>
 <part name="U$13" library="microbuilder" deviceset="GND" device=""/>
 <part name="C18" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="1uF"/>
-<part name="R10" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="10K"/>
+<part name="U7" library="misc" deviceset="MPU-9250" device=""/>
+<part name="+3V8" library="Custom" deviceset="+3V" device=""/>
 <part name="+3V10" library="Custom" deviceset="+3V" device=""/>
+<part name="+3V9" library="Custom" deviceset="+3V" device=""/>
+<part name="C8" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="0.1uF"/>
+<part name="C11" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="0.1uF"/>
+<part name="C20" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="0.01uF"/>
+<part name="U$7" library="microbuilder" deviceset="GND" device=""/>
+<part name="U$23" library="microbuilder" deviceset="GND" device=""/>
+<part name="U$24" library="microbuilder" deviceset="GND" device=""/>
+<part name="U$25" library="microbuilder" deviceset="GND" device=""/>
+<part name="U$26" library="microbuilder" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -5318,15 +5320,15 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 </sheet>
 <sheet>
 <plain>
-<text x="73.66" y="62.484" size="1.778" layer="94">ALTIMETER</text>
-<text x="28.448" y="72.39" size="1.778" layer="94">MOTION SENSOR</text>
+<text x="96.52" y="65.024" size="1.778" layer="94">ALTIMETER</text>
 <text x="17.526" y="169.164" size="1.778" layer="94">SIM+SD COMBO SLOT</text>
-<text x="103.632" y="90.424" size="1.778" layer="94">I2C PULLUPS</text>
+<text x="106.172" y="115.824" size="1.778" layer="94">I2C PULLUPS</text>
 <text x="167.894" y="169.672" size="1.778" layer="94">GPS+GSM MODULE</text>
 <text x="131.572" y="44.196" size="1.778" layer="94">ANTENNAS</text>
 <text x="185.166" y="16.764" size="1.778" layer="94">GPS_ENABLE</text>
 <text x="48.26" y="92.964" size="1.778" layer="94">VBAT SWITCH</text>
 <text x="10.668" y="96.266" size="1.778" layer="94">DECOUPLING 3V</text>
+<text x="36.068" y="57.15" size="1.778" layer="94">MOTION SENSOR</text>
 </plain>
 <instances>
 <instance part="FRAME2" gate="G$1" x="0" y="0"/>
@@ -5335,14 +5337,9 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <attribute name="VALUE" x="180.34" y="23.0886" size="1.016" layer="96"/>
 </instance>
 <instance part="U5" gate="G$1" x="200.66" y="93.98"/>
-<instance part="U$23" gate="G$1" x="40.64" y="33.02"/>
-<instance part="U$24" gate="G$1" x="30.48" y="27.94"/>
 <instance part="U$37" gate="G$1" x="149.86" y="142.24"/>
-<instance part="+3V8" gate="G$1" x="35.56" y="68.58" smashed="yes" rot="MR0">
-<attribute name="VALUE" x="37.084" y="69.342" size="1.27" layer="96" rot="MR0"/>
-</instance>
-<instance part="+3V6" gate="G$1" x="116.84" y="86.36" smashed="yes" rot="MR0">
-<attribute name="VALUE" x="118.11" y="87.122" size="1.27" layer="96" rot="MR0"/>
+<instance part="+3V6" gate="G$1" x="119.38" y="111.76" smashed="yes" rot="MR0">
+<attribute name="VALUE" x="120.65" y="112.522" size="1.27" layer="96" rot="MR0"/>
 </instance>
 <instance part="X6" gate="G$1" x="149.86" y="22.86" smashed="yes">
 <attribute name="NAME" x="148.336" y="25.4" size="1.778" layer="95"/>
@@ -5368,45 +5365,34 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <instance part="JP2" gate="G$1" x="160.02" y="114.3" smashed="yes">
 <attribute name="NAME" x="154.94" y="114.3" size="1.27" layer="95"/>
 </instance>
-<instance part="U6" gate="G$1" x="81.28" y="40.64" rot="R90"/>
-<instance part="U$54" gate="G$1" x="86.36" y="25.4"/>
-<instance part="+3V15" gate="G$1" x="70.104" y="37.084" smashed="yes" rot="MR0">
-<attribute name="VALUE" x="72.898" y="37.846" size="1.778" layer="96" rot="MR0"/>
+<instance part="U6" gate="G$1" x="104.14" y="43.18" rot="R90"/>
+<instance part="U$54" gate="G$1" x="109.22" y="27.94"/>
+<instance part="+3V15" gate="G$1" x="92.964" y="39.624" smashed="yes" rot="MR0">
+<attribute name="VALUE" x="95.758" y="40.386" size="1.27" layer="96" rot="MR0"/>
 </instance>
 <instance part="U$12" gate="G$1" x="172.72" y="36.068"/>
 <instance part="JP4" gate="G$1" x="193.04" y="12.7" smashed="yes">
 <attribute name="NAME" x="191.516" y="14.224" size="1.27" layer="95"/>
 </instance>
-<instance part="U7" gate="G$1" x="35.56" y="50.8"/>
-<instance part="U$7" gate="G$1" x="48.26" y="40.64"/>
-<instance part="C22" gate="G$1" x="30.48" y="33.02"/>
-<instance part="C11" gate="G$1" x="25.4" y="15.24"/>
-<instance part="+3V9" gate="G$1" x="35.56" y="20.32" smashed="yes" rot="MR0">
-<attribute name="VALUE" x="37.084" y="21.336" size="1.27" layer="96" rot="MR0"/>
+<instance part="C25" gate="G$1" x="99.06" y="17.78"/>
+<instance part="C26" gate="G$1" x="109.22" y="17.78"/>
+<instance part="+3V12" gate="G$1" x="104.14" y="22.86" smashed="yes" rot="MR0">
+<attribute name="VALUE" x="105.664" y="24.13" size="1.27" layer="96" rot="MR0"/>
 </instance>
-<instance part="U$26" gate="G$1" x="35.56" y="10.16"/>
-<instance part="C23" gate="G$1" x="35.56" y="15.24"/>
-<instance part="C24" gate="G$1" x="45.72" y="15.24"/>
-<instance part="C25" gate="G$1" x="76.2" y="15.24"/>
-<instance part="C26" gate="G$1" x="86.36" y="15.24"/>
-<instance part="+3V12" gate="G$1" x="81.28" y="20.32" smashed="yes" rot="MR0">
-<attribute name="VALUE" x="82.804" y="21.59" size="1.27" layer="96" rot="MR0"/>
+<instance part="U$35" gate="G$1" x="104.14" y="12.7"/>
+<instance part="JP5" gate="G$1" x="13.97" y="43.18" smashed="yes" rot="R90">
+<attribute name="NAME" x="15.494" y="46.101" size="1.27" layer="95" rot="R180"/>
 </instance>
-<instance part="U$35" gate="G$1" x="81.28" y="10.16"/>
-<instance part="JP5" gate="G$1" x="55.88" y="50.8" smashed="yes">
-<attribute name="NAME" x="58.42" y="51.181" size="1.778" layer="95"/>
+<instance part="JP6" gate="G$1" x="114.3" y="55.88" smashed="yes">
+<attribute name="NAME" x="116.84" y="56.261" size="1.27" layer="95"/>
 </instance>
-<instance part="JP6" gate="G$1" x="91.44" y="53.34" smashed="yes">
-<attribute name="NAME" x="93.98" y="53.721" size="1.778" layer="95"/>
+<instance part="U$40" gate="G$1" x="114.3" y="48.26"/>
+<instance part="+3V7" gate="G$1" x="114.3" y="63.5" smashed="yes" rot="MR0">
+<attribute name="VALUE" x="115.824" y="64.262" size="1.27" layer="96" rot="MR0"/>
 </instance>
-<instance part="U$40" gate="G$1" x="91.44" y="45.72"/>
-<instance part="+3V7" gate="G$1" x="91.44" y="60.96" smashed="yes" rot="MR0">
-<attribute name="VALUE" x="92.964" y="61.722" size="1.27" layer="96" rot="MR0"/>
+<instance part="+3V13" gate="G$1" x="8.89" y="45.72" smashed="yes" rot="MR0">
+<attribute name="VALUE" x="10.668" y="46.482" size="1.27" layer="96" rot="MR0"/>
 </instance>
-<instance part="+3V13" gate="G$1" x="55.88" y="58.42" smashed="yes" rot="MR0">
-<attribute name="VALUE" x="57.658" y="59.182" size="1.27" layer="96" rot="MR0"/>
-</instance>
-<instance part="U$41" gate="G$1" x="55.88" y="43.18"/>
 <instance part="C9" gate="G$1" x="76.2" y="116.84"/>
 <instance part="U$17" gate="G$1" x="76.2" y="111.76"/>
 <instance part="U$14" gate="G$1" x="205.74" y="22.86"/>
@@ -5418,13 +5404,13 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <attribute name="NAME" x="159.004" y="147.066" size="1.016" layer="95" font="vector" rot="R180" align="top-left"/>
 <attribute name="VALUE" x="160.02" y="142.494" size="1.016" layer="96" font="vector" rot="R180"/>
 </instance>
-<instance part="R4" gate="G$1" x="111.76" y="81.28" smashed="yes" rot="R90">
-<attribute name="NAME" x="113.538" y="82.55" size="1.016" layer="95" font="vector" rot="R180" align="top-left"/>
-<attribute name="VALUE" x="114.046" y="80.01" size="1.016" layer="96" font="vector" rot="R180"/>
+<instance part="R4" gate="G$1" x="114.3" y="106.68" smashed="yes" rot="R90">
+<attribute name="NAME" x="116.078" y="107.95" size="1.016" layer="95" font="vector" rot="R180" align="top-left"/>
+<attribute name="VALUE" x="116.586" y="105.41" size="1.016" layer="96" font="vector" rot="R180"/>
 </instance>
-<instance part="R5" gate="G$1" x="111.76" y="73.66" smashed="yes" rot="R90">
-<attribute name="NAME" x="113.538" y="74.93" size="1.016" layer="95" font="vector" rot="R180" align="top-left"/>
-<attribute name="VALUE" x="114.046" y="72.39" size="1.016" layer="96" font="vector" rot="R180"/>
+<instance part="R5" gate="G$1" x="114.3" y="99.06" smashed="yes" rot="R90">
+<attribute name="NAME" x="116.078" y="100.33" size="1.016" layer="95" font="vector" rot="R180" align="top-left"/>
+<attribute name="VALUE" x="116.586" y="97.79" size="1.016" layer="96" font="vector" rot="R180"/>
 </instance>
 <instance part="C17" gate="G$1" x="7.62" y="88.9"/>
 <instance part="R9" gate="G$1" x="193.04" y="7.62" smashed="yes" rot="R90">
@@ -5439,13 +5425,36 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 </instance>
 <instance part="U$13" gate="G$1" x="15.24" y="83.82"/>
 <instance part="C18" gate="G$1" x="15.24" y="88.9"/>
-<instance part="R10" gate="G$1" x="12.7" y="58.42" smashed="yes" rot="R180">
-<attribute name="NAME" x="11.176" y="58.928" size="1.016" layer="95" font="vector" rot="R180" align="top-left"/>
-<attribute name="VALUE" x="11.176" y="58.166" size="1.016" layer="96" font="vector" rot="R180"/>
+<instance part="U7" gate="G$1" x="45.72" y="35.56" smashed="yes">
+<attribute name="NAME" x="29.21" y="56.896" size="1.27" layer="95" ratio="11"/>
+<attribute name="VALUE" x="28.448" y="13.208" size="1.27" layer="96" ratio="11"/>
 </instance>
-<instance part="+3V10" gate="G$1" x="12.7" y="66.04" smashed="yes" rot="MR0">
-<attribute name="VALUE" x="14.224" y="66.802" size="1.27" layer="96" rot="MR0"/>
+<instance part="+3V8" gate="G$1" x="77.47" y="51.054" smashed="yes" rot="MR0">
+<attribute name="VALUE" x="79.248" y="51.562" size="1.27" layer="96" rot="MR0"/>
 </instance>
+<instance part="+3V10" gate="G$1" x="21.59" y="55.88" smashed="yes" rot="MR0">
+<attribute name="VALUE" x="23.114" y="56.642" size="1.27" layer="96" rot="MR0"/>
+</instance>
+<instance part="+3V9" gate="G$1" x="77.724" y="28.956" smashed="yes" rot="MR0">
+<attribute name="VALUE" x="79.248" y="29.972" size="1.27" layer="96" rot="MR0"/>
+</instance>
+<instance part="C8" gate="G$1" x="75.184" y="20.32" smashed="yes" rot="R90">
+<attribute name="NAME" x="73.66" y="20.828" size="1.016" layer="95" font="vector" rot="R180" align="top-left"/>
+<attribute name="VALUE" x="73.914" y="19.812" size="1.016" layer="96" font="vector" rot="R180"/>
+</instance>
+<instance part="C11" gate="G$1" x="13.97" y="27.94" smashed="yes" rot="R90">
+<attribute name="NAME" x="18.288" y="28.448" size="1.016" layer="95" font="vector" rot="R180" align="top-left"/>
+<attribute name="VALUE" x="19.812" y="27.432" size="1.016" layer="96" font="vector" rot="R180"/>
+</instance>
+<instance part="C20" gate="G$1" x="13.97" y="33.02" smashed="yes" rot="R90">
+<attribute name="NAME" x="18.288" y="33.528" size="1.016" layer="95" font="vector" rot="R180" align="top-left"/>
+<attribute name="VALUE" x="20.574" y="32.512" size="1.016" layer="96" font="vector" rot="R180"/>
+</instance>
+<instance part="U$7" gate="G$1" x="45.72" y="7.62"/>
+<instance part="U$23" gate="G$1" x="71.628" y="33.02"/>
+<instance part="U$24" gate="G$1" x="69.088" y="17.78"/>
+<instance part="U$25" gate="G$1" x="8.636" y="22.86"/>
+<instance part="U$26" gate="G$1" x="19.05" y="40.64"/>
 </instances>
 <busses>
 </busses>
@@ -5587,37 +5596,8 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <wire x1="172.72" y1="40.64" x2="172.72" y2="38.608" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="U7" gate="G$1" pin="GND"/>
-<pinref part="U$23" gate="G$1" pin="GND"/>
-</segment>
-<segment>
-<pinref part="U7" gate="G$1" pin="PS0"/>
-<pinref part="U7" gate="G$1" pin="PS1"/>
-<wire x1="48.26" y1="48.26" x2="48.26" y2="45.72" width="0.1524" layer="91"/>
-<wire x1="48.26" y1="45.72" x2="48.26" y2="43.18" width="0.1524" layer="91"/>
-<pinref part="U$7" gate="G$1" pin="GND"/>
-</segment>
-<segment>
-<pinref part="C22" gate="G$1" pin="P$2"/>
-<pinref part="U$24" gate="G$1" pin="GND"/>
-</segment>
-<segment>
-<pinref part="C11" gate="G$1" pin="P$2"/>
-<wire x1="25.4" y1="12.7" x2="35.56" y2="12.7" width="0.1524" layer="91"/>
-<pinref part="U$26" gate="G$1" pin="GND"/>
-<junction x="35.56" y="12.7"/>
-<pinref part="C24" gate="G$1" pin="P$2"/>
-<wire x1="35.56" y1="12.7" x2="45.72" y2="12.7" width="0.1524" layer="91"/>
-<pinref part="C23" gate="G$1" pin="P$2"/>
-<junction x="35.56" y="12.7"/>
-</segment>
-<segment>
 <pinref part="JP6" gate="G$1" pin="3"/>
 <pinref part="U$40" gate="G$1" pin="GND"/>
-</segment>
-<segment>
-<pinref part="JP5" gate="G$1" pin="3"/>
-<pinref part="U$41" gate="G$1" pin="GND"/>
 </segment>
 <segment>
 <pinref part="C9" gate="G$1" pin="P$2"/>
@@ -5642,10 +5622,10 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <segment>
 <pinref part="C25" gate="G$1" pin="P$2"/>
 <pinref part="C26" gate="G$1" pin="P$2"/>
-<wire x1="81.28" y1="12.7" x2="86.36" y2="12.7" width="0.1524" layer="91"/>
-<junction x="81.28" y="12.7"/>
+<wire x1="104.14" y1="15.24" x2="109.22" y2="15.24" width="0.1524" layer="91"/>
+<junction x="104.14" y="15.24"/>
 <pinref part="U$35" gate="G$1" pin="GND"/>
-<wire x1="81.28" y1="12.7" x2="76.2" y2="12.7" width="0.1524" layer="91"/>
+<wire x1="104.14" y1="15.24" x2="99.06" y2="15.24" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="C19" gate="G$1" pin="P$2"/>
@@ -5656,39 +5636,74 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <pinref part="C17" gate="G$1" pin="P$2"/>
 <wire x1="7.62" y1="86.36" x2="15.24" y2="86.36" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="U7" gate="G$1" pin="PAD"/>
+<pinref part="U$7" gate="G$1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="U7" gate="G$1" pin="GND"/>
+<wire x1="68.58" y1="35.56" x2="71.628" y2="35.56" width="0.1524" layer="91"/>
+<wire x1="71.628" y1="40.64" x2="68.58" y2="40.64" width="0.1524" layer="91"/>
+<pinref part="U7" gate="G$1" pin="RESV2"/>
+<wire x1="71.628" y1="40.64" x2="71.628" y2="35.56" width="0.1524" layer="91"/>
+<pinref part="U$23" gate="G$1" pin="GND"/>
+<junction x="71.628" y="35.56"/>
+</segment>
+<segment>
+<wire x1="72.644" y1="20.32" x2="69.088" y2="20.32" width="0.1524" layer="91"/>
+<pinref part="C8" gate="G$1" pin="P$1"/>
+<pinref part="U$24" gate="G$1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="U7" gate="G$1" pin="FSYNC"/>
+<wire x1="8.636" y1="25.4" x2="22.86" y2="25.4" width="0.1524" layer="91"/>
+<wire x1="8.636" y1="33.02" x2="11.43" y2="33.02" width="0.1524" layer="91"/>
+<wire x1="8.636" y1="27.94" x2="8.636" y2="33.02" width="0.1524" layer="91"/>
+<wire x1="11.43" y1="27.94" x2="8.636" y2="27.94" width="0.1524" layer="91"/>
+<wire x1="8.636" y1="25.4" x2="8.636" y2="27.94" width="0.1524" layer="91"/>
+<junction x="8.636" y="27.94"/>
+<pinref part="C20" gate="G$1" pin="P$1"/>
+<pinref part="C11" gate="G$1" pin="P$1"/>
+<pinref part="U$25" gate="G$1" pin="GND"/>
+<junction x="8.636" y="25.4"/>
+</segment>
+<segment>
+<pinref part="JP5" gate="G$1" pin="3"/>
+<pinref part="U$26" gate="G$1" pin="GND"/>
+</segment>
 </net>
 <net name="SCL" class="0">
 <segment>
-<wire x1="48.26" y1="53.34" x2="50.8" y2="53.34" width="0.1524" layer="91"/>
-<label x="47.244" y="53.594" size="1.778" layer="95"/>
-<pinref part="U7" gate="G$1" pin="SDA/TX"/>
-</segment>
-<segment>
-<wire x1="103.378" y1="81.28" x2="106.68" y2="81.28" width="0.1524" layer="91"/>
-<label x="103.378" y="81.534" size="1.778" layer="95"/>
+<wire x1="105.918" y1="106.68" x2="109.22" y2="106.68" width="0.1524" layer="91"/>
+<label x="105.918" y="106.934" size="1.778" layer="95"/>
 <pinref part="R4" gate="G$1" pin="P$1"/>
 </segment>
 <segment>
 <pinref part="U6" gate="G$1" pin="SCL"/>
-<wire x1="78.74" y1="53.34" x2="78.74" y2="58.42" width="0.1524" layer="91"/>
-<label x="78.74" y="53.34" size="1.778" layer="95" rot="R90"/>
+<wire x1="101.6" y1="55.88" x2="101.6" y2="60.96" width="0.1524" layer="91"/>
+<label x="101.6" y="55.88" size="1.778" layer="95" rot="R90"/>
+</segment>
+<segment>
+<pinref part="U7" gate="G$1" pin="SCL/SCLK"/>
+<wire x1="68.58" y1="48.26" x2="73.66" y2="48.26" width="0.1524" layer="91"/>
+<label x="70.104" y="48.514" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="SDA" class="0">
 <segment>
-<wire x1="48.26" y1="55.88" x2="50.8" y2="55.88" width="0.1524" layer="91"/>
-<label x="47.244" y="56.134" size="1.778" layer="95"/>
-<pinref part="U7" gate="G$1" pin="SCL/RX"/>
-</segment>
-<segment>
-<wire x1="103.124" y1="73.66" x2="106.68" y2="73.66" width="0.1524" layer="91"/>
-<label x="103.124" y="73.914" size="1.778" layer="95"/>
+<wire x1="105.664" y1="99.06" x2="109.22" y2="99.06" width="0.1524" layer="91"/>
+<label x="105.664" y="99.314" size="1.778" layer="95"/>
 <pinref part="R5" gate="G$1" pin="P$1"/>
 </segment>
 <segment>
 <pinref part="U6" gate="G$1" pin="SDA"/>
-<wire x1="76.2" y1="53.34" x2="76.2" y2="58.42" width="0.1524" layer="91"/>
-<label x="76.2" y="53.34" size="1.778" layer="95" rot="R90"/>
+<wire x1="99.06" y1="55.88" x2="99.06" y2="60.96" width="0.1524" layer="91"/>
+<label x="99.06" y="55.88" size="1.778" layer="95" rot="R90"/>
+</segment>
+<segment>
+<pinref part="U7" gate="G$1" pin="SDA/SDI"/>
+<wire x1="68.58" y1="50.8" x2="73.66" y2="50.8" width="0.1524" layer="91"/>
+<label x="70.104" y="51.308" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="+3V" class="0">
@@ -5700,23 +5715,9 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 </segment>
 <segment>
 <pinref part="U6" gate="G$1" pin="VCC"/>
-<wire x1="76.2" y1="27.94" x2="70.104" y2="27.94" width="0.1524" layer="91"/>
-<wire x1="70.104" y1="27.94" x2="70.104" y2="34.544" width="0.1524" layer="91"/>
+<wire x1="99.06" y1="30.48" x2="92.964" y2="30.48" width="0.1524" layer="91"/>
+<wire x1="92.964" y1="30.48" x2="92.964" y2="37.084" width="0.1524" layer="91"/>
 <pinref part="+3V15" gate="G$1" pin="+3V"/>
-</segment>
-<segment>
-<pinref part="U7" gate="G$1" pin="VCC"/>
-<pinref part="+3V8" gate="G$1" pin="+3V"/>
-</segment>
-<segment>
-<pinref part="C11" gate="G$1" pin="P$1"/>
-<wire x1="25.4" y1="17.78" x2="35.56" y2="17.78" width="0.1524" layer="91"/>
-<pinref part="+3V9" gate="G$1" pin="+3V"/>
-<junction x="35.56" y="17.78"/>
-<pinref part="C24" gate="G$1" pin="P$1"/>
-<wire x1="35.56" y1="17.78" x2="45.72" y2="17.78" width="0.1524" layer="91"/>
-<pinref part="C23" gate="G$1" pin="P$1"/>
-<junction x="35.56" y="17.78"/>
 </segment>
 <segment>
 <pinref part="JP6" gate="G$1" pin="1"/>
@@ -5729,18 +5730,18 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <segment>
 <pinref part="C26" gate="G$1" pin="P$1"/>
 <pinref part="C25" gate="G$1" pin="P$1"/>
-<wire x1="86.36" y1="17.78" x2="81.28" y2="17.78" width="0.1524" layer="91"/>
-<junction x="81.28" y="17.78"/>
+<wire x1="109.22" y1="20.32" x2="104.14" y2="20.32" width="0.1524" layer="91"/>
+<junction x="104.14" y="20.32"/>
 <pinref part="+3V12" gate="G$1" pin="+3V"/>
-<wire x1="81.28" y1="17.78" x2="76.2" y2="17.78" width="0.1524" layer="91"/>
+<wire x1="104.14" y1="20.32" x2="99.06" y2="20.32" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="R5" gate="G$1" pin="P$2"/>
 <pinref part="+3V6" gate="G$1" pin="+3V"/>
-<wire x1="116.84" y1="83.82" x2="116.84" y2="81.28" width="0.1524" layer="91"/>
+<wire x1="119.38" y1="109.22" x2="119.38" y2="106.68" width="0.1524" layer="91"/>
 <pinref part="R4" gate="G$1" pin="P$2"/>
-<wire x1="116.84" y1="81.28" x2="116.84" y2="73.66" width="0.1524" layer="91"/>
-<junction x="116.84" y="81.28"/>
+<wire x1="119.38" y1="106.68" x2="119.38" y2="99.06" width="0.1524" layer="91"/>
+<junction x="119.38" y="106.68"/>
 </segment>
 <segment>
 <pinref part="C19" gate="G$1" pin="P$1"/>
@@ -5752,15 +5753,32 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <wire x1="7.62" y1="91.44" x2="15.24" y2="91.44" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="R10" gate="G$1" pin="P$2"/>
+<pinref part="U7" gate="G$1" pin="RESV"/>
 <pinref part="+3V10" gate="G$1" pin="+3V"/>
+<wire x1="22.86" y1="50.8" x2="21.59" y2="50.8" width="0.1524" layer="91"/>
+<wire x1="21.59" y1="50.8" x2="21.59" y2="53.34" width="0.1524" layer="91"/>
+<pinref part="U7" gate="G$1" pin="VDDIO"/>
+<wire x1="22.86" y1="33.02" x2="21.59" y2="33.02" width="0.1524" layer="91"/>
+<wire x1="21.59" y1="33.02" x2="16.51" y2="33.02" width="0.1524" layer="91"/>
+<junction x="21.59" y="33.02"/>
+<wire x1="21.59" y1="33.02" x2="21.59" y2="50.8" width="0.1524" layer="91"/>
+<junction x="21.59" y="50.8"/>
+<pinref part="C20" gate="G$1" pin="P$2"/>
 </segment>
-</net>
-<net name="MPU_INT" class="0">
 <segment>
-<label x="15.24" y="50.8" size="1.778" layer="95"/>
-<wire x1="22.86" y1="50.8" x2="15.494" y2="50.8" width="0.1524" layer="91"/>
-<pinref part="U7" gate="G$1" pin="INT"/>
+<pinref part="+3V8" gate="G$1" pin="+3V"/>
+<wire x1="77.47" y1="48.514" x2="77.47" y2="45.72" width="0.1524" layer="91"/>
+<wire x1="77.47" y1="45.72" x2="68.58" y2="45.72" width="0.1524" layer="91"/>
+<pinref part="U7" gate="G$1" pin="NCS"/>
+</segment>
+<segment>
+<pinref part="U7" gate="G$1" pin="VDD"/>
+<wire x1="68.58" y1="22.86" x2="77.724" y2="22.86" width="0.1524" layer="91"/>
+<pinref part="+3V9" gate="G$1" pin="+3V"/>
+<wire x1="77.724" y1="22.86" x2="77.724" y2="26.416" width="0.1524" layer="91"/>
+<wire x1="77.724" y1="22.86" x2="77.724" y2="20.32" width="0.1524" layer="91"/>
+<junction x="77.724" y="22.86"/>
+<pinref part="C8" gate="G$1" pin="P$2"/>
 </segment>
 </net>
 <net name="N$29" class="0">
@@ -5820,11 +5838,6 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <pinref part="U5" gate="G$1" pin="PWRKEY"/>
 <wire x1="165.1" y1="157.48" x2="149.86" y2="157.48" width="0.1524" layer="91"/>
 <label x="149.86" y="157.48" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="U7" gate="G$1" pin="RST"/>
-<wire x1="22.86" y1="55.88" x2="15.24" y2="55.88" width="0.1524" layer="91"/>
-<label x="15.24" y="55.88" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="SIM_VDD" class="0">
@@ -6032,23 +6045,10 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <label x="238.76" y="157.48" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="N$2" class="0">
-<segment>
-<pinref part="U7" gate="G$1" pin="CAP"/>
-<pinref part="C22" gate="G$1" pin="P$1"/>
-</segment>
-</net>
 <net name="N$10" class="0">
 <segment>
 <pinref part="JP6" gate="G$1" pin="2"/>
 <pinref part="U6" gate="G$1" pin="ADDR"/>
-</segment>
-</net>
-<net name="N$9" class="0">
-<segment>
-<pinref part="JP5" gate="G$1" pin="2"/>
-<pinref part="U7" gate="G$1" pin="ID"/>
-<wire x1="50.8" y1="50.8" x2="48.26" y2="50.8" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="EN" class="0">
@@ -6093,11 +6093,27 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <wire x1="149.86" y1="149.86" x2="149.86" y2="152.4" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$14" class="0">
+<net name="MPU_INT" class="0">
 <segment>
-<pinref part="U7" gate="G$1" pin="BOOT"/>
-<pinref part="R10" gate="G$1" pin="P$1"/>
-<wire x1="22.86" y1="53.34" x2="12.7" y2="53.34" width="0.1524" layer="91"/>
+<pinref part="U7" gate="G$1" pin="INT"/>
+<wire x1="22.86" y1="22.86" x2="22.86" y2="18.288" width="0.1524" layer="91"/>
+<label x="22.86" y="20.32" size="1.778" layer="95" rot="R180"/>
+<wire x1="22.86" y1="18.288" x2="12.192" y2="18.288" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$23" class="0">
+<segment>
+<pinref part="U7" gate="G$1" pin="REGOUT"/>
+<wire x1="22.86" y1="27.94" x2="16.51" y2="27.94" width="0.1524" layer="91"/>
+<pinref part="C11" gate="G$1" pin="P$2"/>
+</segment>
+</net>
+<net name="N$2" class="0">
+<segment>
+<pinref part="U7" gate="G$1" pin="ADO/SDO"/>
+<pinref part="JP5" gate="G$1" pin="2"/>
+<wire x1="22.86" y1="30.48" x2="13.97" y2="30.48" width="0.1524" layer="91"/>
+<wire x1="13.97" y1="30.48" x2="13.97" y2="38.1" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
