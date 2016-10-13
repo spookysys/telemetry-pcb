@@ -4376,7 +4376,6 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <part name="U$43" library="microbuilder" deviceset="GND" device=""/>
 <part name="U$48" library="microbuilder" deviceset="GND" device=""/>
 <part name="JP2" library="SparkFun-Passives" deviceset="JUMPER-PAD-2-NC_BY_TRACE" device=""/>
-<part name="U$2" library="microbuilder" deviceset="VBAT" device=""/>
 <part name="U6" library="BMP280" deviceset="BMP280" device=""/>
 <part name="U$54" library="microbuilder" deviceset="GND" device=""/>
 <part name="+3V15" library="Custom" deviceset="+3V" device=""/>
@@ -4529,7 +4528,6 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <instance part="U$11" gate="G$1" x="93.98" y="127"/>
 <instance part="TP1" gate="G$1" x="121.92" y="17.78" rot="R270"/>
 <instance part="TP2" gate="G$1" x="121.92" y="15.24" rot="R270"/>
-<instance part="U$2" gate="G$1" x="246.38" y="121.92"/>
 <instance part="D3" gate="G$1" x="242.824" y="52.07" rot="R270"/>
 <instance part="D4" gate="G$1" x="162.306" y="142.24" smashed="yes">
 <attribute name="NAME" x="159.766" y="143.764" size="1.016" layer="95" font="vector" align="top-left"/>
@@ -4941,10 +4939,6 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <pinref part="C6" gate="G$1" pin="P$1"/>
 </segment>
 <segment>
-<pinref part="R3" gate="G$1" pin="P$1"/>
-<pinref part="U$2" gate="G$1" pin="VBAT"/>
-</segment>
-<segment>
 <pinref part="U$44" gate="G$1" pin="VBAT"/>
 <pinref part="JP8" gate="G$1" pin="1"/>
 <wire x1="186.69" y1="107.442" x2="186.182" y2="107.442" width="0.1524" layer="91"/>
@@ -5314,6 +5308,13 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <pinref part="SW2" gate="G$1" pin="S"/>
 <pinref part="JP8" gate="G$1" pin="2"/>
 <wire x1="196.85" y1="107.442" x2="197.358" y2="107.442" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="VBAT_ON" class="0">
+<segment>
+<pinref part="R3" gate="G$1" pin="P$1"/>
+<wire x1="246.38" y1="119.38" x2="246.38" y2="121.666" width="0.1524" layer="91"/>
+<label x="246.38" y="121.92" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
