@@ -42,6 +42,12 @@ UsedLibrary="lbr/SparkFun/SparkFun-Sensors.lbr"
 UsedLibrary="lbr/alvaroferran.lbr"
 UsedLibrary="lbr/SparkFun/SparkFun-Passives.lbr"
 UsedLibrary="C:/Users/spook/Documents/Eagle/libs/sparkfun/SparkFun-Electromechanical.lbr"
+UsedLibrary="lbr/SparkFun/SparkFun-PowerIC.lbr"
+UsedLibrary="lbr/SparkFun/SparkFun-DiscreteSemi.lbr"
+UsedLibrary="lbr/SparkFun/SparkFun-DigitalIC.lbr"
+UsedLibrary="lbr/SparkFun/SparkFun-Connectors.lbr"
+UsedLibrary="lbr/SparkFun/SparkFun-AnalogIC.lbr"
+UsedLibrary="lbr/SparkFun/SparkFun-Aesthetics.lbr"
 
 [Win_1]
 Type="Control Panel"

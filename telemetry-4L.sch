@@ -1050,19 +1050,6 @@ round, layers 1 + 16 + 21 + 39 + 49</description>
 <text x="1.143" y="-0.127" size="0.8128" layer="25" ratio="18">&gt;NAME</text>
 <text x="1.143" y="-0.635" size="0.4064" layer="27" ratio="10">&gt;VALUE</text>
 </package>
-<package name="TERMBLOCK_1X2-3.5MM">
-<wire x1="-3.4" y1="3.4" x2="-3.4" y2="-2.2" width="0.2032" layer="21"/>
-<wire x1="-3.4" y1="-2.2" x2="-3.4" y2="-3.6" width="0.2032" layer="21"/>
-<wire x1="-3.4" y1="-3.6" x2="3.6" y2="-3.6" width="0.2032" layer="21"/>
-<wire x1="3.6" y1="-3.6" x2="3.6" y2="-2.2" width="0.2032" layer="21"/>
-<wire x1="3.6" y1="-2.2" x2="3.6" y2="3.4" width="0.2032" layer="21"/>
-<wire x1="3.6" y1="3.4" x2="-3.4" y2="3.4" width="0.2032" layer="21"/>
-<wire x1="-3.4" y1="-2.2" x2="3.6" y2="-2.2" width="0.2032" layer="21"/>
-<pad name="1" x="1.8" y="0" drill="1" diameter="2.1844"/>
-<pad name="2" x="-1.7" y="0" drill="1" diameter="2.1844"/>
-<text x="-3" y="3.89" size="0.8128" layer="25" ratio="18">&gt;NAME</text>
-<text x="-3.048" y="-3.048" size="0.4064" layer="27" ratio="10">&gt;VALUE</text>
-</package>
 </packages>
 <symbols>
 <symbol name="FRAME_A4">
@@ -1325,16 +1312,6 @@ round, layers 1 + 16 + 21 + 39 + 49</description>
 <text x="0" y="5.588" size="1.27" layer="95" rot="R90" align="center-left">&gt;NAME</text>
 <text x="1.651" y="5.588" size="1.27" layer="95" rot="R90" align="center-left">&gt;VALUE</text>
 <pin name="P$1" x="0" y="0" visible="off" length="short" rot="R90"/>
-</symbol>
-<symbol name="1X2">
-<wire x1="-2.54" y1="5.08" x2="-2.54" y2="-2.54" width="0.254" layer="94"/>
-<wire x1="-2.54" y1="-2.54" x2="5.08" y2="-2.54" width="0.254" layer="94"/>
-<wire x1="5.08" y1="-2.54" x2="5.08" y2="5.08" width="0.254" layer="94"/>
-<wire x1="5.08" y1="5.08" x2="-2.54" y2="5.08" width="0.254" layer="94"/>
-<pin name="1" x="-5.08" y="2.54" visible="pin" length="middle" direction="pas"/>
-<pin name="2" x="-5.08" y="0" visible="pin" length="middle" direction="pas"/>
-<text x="-2.54" y="-5.08" size="1.27" layer="96">&gt;VALUE</text>
-<text x="-2.54" y="7.62" size="1.27" layer="95">&gt;NAME</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -2155,24 +2132,6 @@ DIN A4, landscape with location and doc. field</description>
 <device name="ROUND1.5MM" package="TESTPOINT_ROUND_1.5MM">
 <connects>
 <connect gate="G$1" pin="P$1" pad="P$1"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="TERMBLOCK_1X2" prefix="J" uservalue="yes">
-<description>3.5mm Terminal block
-&lt;p&gt;http://www.ladyada.net/library/pcb/eaglelibrary.html&lt;p&gt;</description>
-<gates>
-<gate name="G$1" symbol="1X2" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="TERMBLOCK_1X2-3.5MM">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -4491,7 +4450,7 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <part name="U$24" library="microbuilder" deviceset="GND" device=""/>
 <part name="U$25" library="microbuilder" deviceset="GND" device=""/>
 <part name="U$26" library="microbuilder" deviceset="GND" device=""/>
-<part name="J1" library="microbuilder" deviceset="TERMBLOCK_1X2" device=""/>
+<part name="X7" library="microbuilder" deviceset="CON_JST_PH_2PIN" device="" value="S2B-PH-SM4-TB(LF)(SN)"/>
 </parts>
 <sheets>
 <sheet>
@@ -5365,7 +5324,7 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <plain>
 <text x="96.52" y="65.024" size="1.778" layer="94">ALTIMETER</text>
 <text x="17.526" y="169.164" size="1.778" layer="94">SIM+SD COMBO SLOT</text>
-<text x="106.172" y="115.824" size="1.778" layer="94">I2C PULLUPS</text>
+<text x="103.632" y="100.584" size="1.778" layer="94">I2C PULLUPS</text>
 <text x="167.894" y="169.672" size="1.778" layer="94">GPS+GSM MODULE</text>
 <text x="131.572" y="44.196" size="1.778" layer="94">ANTENNAS</text>
 <text x="185.166" y="16.764" size="1.778" layer="94">GPS_ENABLE</text>
@@ -5381,8 +5340,8 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 </instance>
 <instance part="U5" gate="G$1" x="200.66" y="93.98"/>
 <instance part="U$37" gate="G$1" x="149.86" y="142.24"/>
-<instance part="+3V6" gate="G$1" x="119.38" y="111.76" smashed="yes" rot="MR0">
-<attribute name="VALUE" x="120.65" y="112.522" size="1.27" layer="96" rot="MR0"/>
+<instance part="+3V6" gate="G$1" x="116.84" y="96.52" smashed="yes" rot="MR0">
+<attribute name="VALUE" x="118.11" y="97.282" size="1.27" layer="96" rot="MR0"/>
 </instance>
 <instance part="X6" gate="G$1" x="149.86" y="22.86" smashed="yes">
 <attribute name="NAME" x="148.336" y="25.4" size="1.778" layer="95"/>
@@ -5447,13 +5406,13 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <attribute name="NAME" x="159.004" y="147.066" size="1.016" layer="95" font="vector" rot="R180" align="top-left"/>
 <attribute name="VALUE" x="160.02" y="142.494" size="1.016" layer="96" font="vector" rot="R180"/>
 </instance>
-<instance part="R4" gate="G$1" x="114.3" y="106.68" smashed="yes" rot="R90">
-<attribute name="NAME" x="116.078" y="107.95" size="1.016" layer="95" font="vector" rot="R180" align="top-left"/>
-<attribute name="VALUE" x="116.586" y="105.41" size="1.016" layer="96" font="vector" rot="R180"/>
+<instance part="R4" gate="G$1" x="111.76" y="91.44" smashed="yes" rot="R90">
+<attribute name="NAME" x="113.538" y="92.71" size="1.016" layer="95" font="vector" rot="R180" align="top-left"/>
+<attribute name="VALUE" x="114.046" y="90.17" size="1.016" layer="96" font="vector" rot="R180"/>
 </instance>
-<instance part="R5" gate="G$1" x="114.3" y="99.06" smashed="yes" rot="R90">
-<attribute name="NAME" x="116.078" y="100.33" size="1.016" layer="95" font="vector" rot="R180" align="top-left"/>
-<attribute name="VALUE" x="116.586" y="97.79" size="1.016" layer="96" font="vector" rot="R180"/>
+<instance part="R5" gate="G$1" x="111.76" y="83.82" smashed="yes" rot="R90">
+<attribute name="NAME" x="113.538" y="85.09" size="1.016" layer="95" font="vector" rot="R180" align="top-left"/>
+<attribute name="VALUE" x="114.046" y="82.55" size="1.016" layer="96" font="vector" rot="R180"/>
 </instance>
 <instance part="C17" gate="G$1" x="7.62" y="88.9"/>
 <instance part="R9" gate="G$1" x="193.04" y="7.62" smashed="yes" rot="R90">
@@ -5498,7 +5457,10 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <instance part="U$24" gate="G$1" x="69.088" y="17.78"/>
 <instance part="U$25" gate="G$1" x="8.636" y="22.86"/>
 <instance part="U$26" gate="G$1" x="19.05" y="40.64"/>
-<instance part="J1" gate="G$1" x="106.68" y="149.86"/>
+<instance part="X7" gate="G$1" x="101.6" y="144.78" smashed="yes" rot="R180">
+<attribute name="NAME" x="102.87" y="149.733" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="108.712" y="161.544" size="1.778" layer="96" rot="R270"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -5718,8 +5680,8 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 </net>
 <net name="SCL" class="0">
 <segment>
-<wire x1="105.918" y1="106.68" x2="109.22" y2="106.68" width="0.1524" layer="91"/>
-<label x="105.918" y="106.934" size="1.778" layer="95"/>
+<wire x1="103.378" y1="91.44" x2="106.68" y2="91.44" width="0.1524" layer="91"/>
+<label x="103.378" y="91.694" size="1.778" layer="95"/>
 <pinref part="R4" gate="G$1" pin="P$1"/>
 </segment>
 <segment>
@@ -5735,8 +5697,8 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 </net>
 <net name="SDA" class="0">
 <segment>
-<wire x1="105.664" y1="99.06" x2="109.22" y2="99.06" width="0.1524" layer="91"/>
-<label x="105.664" y="99.314" size="1.778" layer="95"/>
+<wire x1="103.124" y1="83.82" x2="106.68" y2="83.82" width="0.1524" layer="91"/>
+<label x="103.124" y="84.074" size="1.778" layer="95"/>
 <pinref part="R5" gate="G$1" pin="P$1"/>
 </segment>
 <segment>
@@ -5782,10 +5744,10 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <segment>
 <pinref part="R5" gate="G$1" pin="P$2"/>
 <pinref part="+3V6" gate="G$1" pin="+3V"/>
-<wire x1="119.38" y1="109.22" x2="119.38" y2="106.68" width="0.1524" layer="91"/>
+<wire x1="116.84" y1="93.98" x2="116.84" y2="91.44" width="0.1524" layer="91"/>
 <pinref part="R4" gate="G$1" pin="P$2"/>
-<wire x1="119.38" y1="106.68" x2="119.38" y2="99.06" width="0.1524" layer="91"/>
-<junction x="119.38" y="106.68"/>
+<wire x1="116.84" y1="91.44" x2="116.84" y2="83.82" width="0.1524" layer="91"/>
+<junction x="116.84" y="91.44"/>
 </segment>
 <segment>
 <pinref part="C19" gate="G$1" pin="P$1"/>
