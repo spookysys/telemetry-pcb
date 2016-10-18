@@ -4605,7 +4605,7 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <part name="R5" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="4.7K"/>
 <part name="C17" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="1uF"/>
 <part name="R9" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="10K"/>
-<part name="SW2" library="SparkFun-Electromechanical" deviceset="SWITCH_SPDT" device=""/>
+<part name="SW2" library="SparkFun-Electromechanical" deviceset="SWITCH_SPDT" device="" value="PCM12SMTR"/>
 <part name="U$45" library="microbuilder" deviceset="GND" device=""/>
 <part name="U$47" library="microbuilder" deviceset="GND" device=""/>
 <part name="U$49" library="microbuilder" deviceset="GND" device=""/>
@@ -4634,7 +4634,7 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <part name="U$26" library="microbuilder" deviceset="GND" device=""/>
 <part name="X7" library="microbuilder" deviceset="CON_JST_PH_2PIN" device="" value="S2B-PH-SM4-TB(LF)(SN)"/>
 <part name="U8" library="Custom" deviceset="TPS61253YFFT" device="" value="TPS61253"/>
-<part name="L1" library="MF_Passives" deviceset="INDUCTOR" device="_1210" value="DFE322512C"/>
+<part name="L1" library="MF_Passives" deviceset="INDUCTOR" device="_1210" value="1277AS-H-1R0M=P2"/>
 <part name="C22" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="1uF"/>
 <part name="U$2" library="microbuilder" deviceset="GND" device=""/>
 <part name="C23" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0603" value="10uF"/>

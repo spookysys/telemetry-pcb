@@ -24,8 +24,8 @@
 <layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="27" name="tValues" color="7" fill="1" visible="no" active="yes"/>
-<layer number="28" name="bValues" color="7" fill="1" visible="no" active="yes"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="28" name="bValues" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="yes" active="yes"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="yes" active="yes"/>
 <layer number="31" name="tCream" color="7" fill="4" visible="yes" active="yes"/>
@@ -1696,7 +1696,7 @@ This DRC check is for 4-Layer Standard Capability boards to be manufactured thro
 <attribute name="NAME" x="66.929" y="3.4925" size="0.6096" layer="34" font="vector" ratio="10" rot="MR270"/>
 <attribute name="VALUE" x="64.897" y="6.1595" size="0.889" layer="28" ratio="11" rot="MR180"/>
 </element>
-<element name="SW2" library="SparkFun-Electromechanical" package="KPS-1290" value="SWITCH_SPDT" x="1.778" y="11.43" rot="MR90">
+<element name="SW2" library="SparkFun-Electromechanical" package="KPS-1290" value="PCM12SMTR" x="1.778" y="11.43" rot="MR90">
 <attribute name="PROD_ID" value="SWCH-10651" x="1.778" y="11.43" size="1.778" layer="28" rot="MR90" display="off"/>
 </element>
 <element name="JP7" library="SparkFun-Passives" package="PAD-JUMPER-2-NO_YES_SILK" value="JUMPER-PAD-2-NOYES_SILK" x="4.572" y="7.62" rot="MR0"/>
@@ -1771,7 +1771,7 @@ This DRC check is for 4-Layer Standard Capability boards to be manufactured thro
 <attribute name="NAME" x="50.673" y="20.066" size="0.6096" layer="26" font="vector" ratio="18" rot="MR180" align="center"/>
 <attribute name="VALUE" x="50.673" y="23.1775" size="1.27" layer="28" font="vector" ratio="18" rot="MR180" align="center"/>
 </element>
-<element name="L1" library="MF_Passives" package="L1210" value="DFE322512C" x="47.6885" y="20.3835" smashed="yes" rot="MR90">
+<element name="L1" library="MF_Passives" package="L1210" value="1277AS-H-1R0M=P2" x="47.6885" y="20.3835" smashed="yes" rot="MR90">
 <attribute name="HOUSEPART" value="" x="47.6885" y="20.3835" size="1.778" layer="28" rot="MR90" display="off"/>
 <attribute name="POPULATE" value="" x="47.6885" y="20.3835" size="1.778" layer="28" rot="MR90" display="off"/>
 <attribute name="URL" value="" x="47.6885" y="20.3835" size="1.778" layer="28" rot="MR90" display="off"/>
