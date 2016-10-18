@@ -1701,7 +1701,7 @@ This DRC check is for 4-Layer Standard Capability boards to be manufactured thro
 </element>
 <element name="JP7" library="SparkFun-Passives" package="PAD-JUMPER-2-NO_YES_SILK" value="JUMPER-PAD-2-NOYES_SILK" x="4.572" y="7.62" rot="MR0"/>
 <element name="JP8" library="SparkFun-Passives" package="PAD-JUMPER-2-NC_BY_TRACE_YES_SILK" value="JUMPER-PAD-2-NC_BY_TRACE" x="4.572" y="15.24" rot="MR0"/>
-<element name="U4" library="MF_Discrete_Semiconductor" package="SOT-23-3" value="DMG6968U" x="66.421" y="16.002" smashed="yes" rot="R90">
+<element name="U4" library="MF_Discrete_Semiconductor" package="SOT-23-3" value="IRLML6344TRPBF" x="66.421" y="16.002" smashed="yes" rot="R90">
 <attribute name="MPN" value="" x="66.421" y="16.002" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="HOUSEPART" value="NO" x="66.421" y="16.002" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="POPULATE" value="1" x="66.421" y="16.002" size="1.778" layer="27" rot="R90" display="off"/>

@@ -4614,7 +4614,7 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <part name="U$44" library="microbuilder" deviceset="VBAT" device=""/>
 <part name="JP7" library="SparkFun-Passives" deviceset="JUMPER-PAD-2-NO" device="YES_SILK"/>
 <part name="JP8" library="SparkFun-Passives" deviceset="JUMPER-PAD-2-NC_BY_TRACE" device=""/>
-<part name="U4" library="MF_Discrete_Semiconductor" deviceset="N-CHANNEL_FET" device="_SOT-23-3" value="DMG6968U"/>
+<part name="U4" library="MF_Discrete_Semiconductor" deviceset="N-CHANNEL_FET" device="_SOT-23-3" value="IRLML6344TRPBF"/>
 <part name="U$52" library="microbuilder" deviceset="VBAT" device=""/>
 <part name="C19" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="1uF"/>
 <part name="+3V5" library="Custom" deviceset="+3V" device=""/>
