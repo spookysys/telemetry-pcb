@@ -580,58 +580,6 @@
 <rectangle x1="12.746" y1="-0.254" x2="13.254" y2="0.254" layer="51"/>
 <rectangle x1="14.746" y1="-0.254" x2="15.254" y2="0.254" layer="51"/>
 </package>
-<package name="FIDUCIAL_1MM">
-<smd name="1" x="0" y="0" dx="1" dy="1" layer="1" roundness="100" cream="no"/>
-<wire x1="-0.75" y1="0" x2="0" y2="0.75" width="0.5" layer="29" curve="-90"/>
-<wire x1="0" y1="0.75" x2="0.75" y2="0" width="0.5" layer="29" curve="-90"/>
-<wire x1="0.75" y1="0" x2="0" y2="-0.75" width="0.5" layer="29" curve="-90"/>
-<wire x1="0" y1="-0.75" x2="-0.75" y2="0" width="0.5" layer="29" curve="-90"/>
-<wire x1="-0.75" y1="0" x2="0" y2="0.75" width="0.5" layer="41" curve="-90"/>
-<wire x1="0" y1="0.75" x2="0.75" y2="0" width="0.5" layer="41" curve="-90"/>
-<wire x1="0.75" y1="0" x2="0" y2="-0.75" width="0.5" layer="41" curve="-90"/>
-<wire x1="0" y1="-0.75" x2="-0.75" y2="0" width="0.5" layer="41" curve="-90"/>
-<wire x1="-0.75" y1="0" x2="0" y2="0.75" width="0.5" layer="39" curve="-90"/>
-<wire x1="0" y1="0.75" x2="0.75" y2="0" width="0.5" layer="39" curve="-90"/>
-<wire x1="0.75" y1="0" x2="0" y2="-0.75" width="0.5" layer="39" curve="-90"/>
-<wire x1="0" y1="-0.75" x2="-0.75" y2="0" width="0.5" layer="39" curve="-90"/>
-</package>
-<package name="FIDUCIAL-1X2.5">
-<circle x="0" y="0" radius="1.1" width="1.2" layer="29"/>
-<circle x="0" y="0" radius="1.1" width="1.2" layer="39"/>
-<circle x="0" y="0" radius="1.1" width="1.2" layer="41"/>
-<smd name="1" x="0" y="0" dx="1" dy="1" layer="1" roundness="100" cream="no"/>
-<text x="-0.508" y="-1.016" size="0.4064" layer="25">1mm</text>
-</package>
-<package name="PASS-ROUND">
-<description>&lt;b&gt;FIDUCIAL MARKER&lt;/b&gt;&lt;p&gt;
-round, layers 1 + 16 + 21 + 39 + 49</description>
-<wire x1="0" y1="0.508" x2="0.508" y2="0" width="1.4224" layer="49" curve="-90" cap="flat"/>
-<wire x1="-0.508" y1="0" x2="0" y2="-0.508" width="1.4224" layer="49" curve="90" cap="flat"/>
-<wire x1="0" y1="0.508" x2="0.508" y2="0" width="1.4224" layer="49" curve="-90" cap="flat"/>
-<wire x1="-0.508" y1="0" x2="0" y2="-0.508" width="1.4224" layer="49" curve="90" cap="flat"/>
-<wire x1="-2.54" y1="0" x2="-1.27" y2="0" width="0.1524" layer="49"/>
-<wire x1="0" y1="2.54" x2="0" y2="1.27" width="0.1524" layer="49"/>
-<wire x1="0" y1="-2.54" x2="0" y2="-1.27" width="0.1524" layer="49"/>
-<wire x1="2.54" y1="0" x2="1.27" y2="0" width="0.1524" layer="49"/>
-<wire x1="-2.54" y1="0" x2="-1.524" y2="0" width="0.1524" layer="1"/>
-<wire x1="0" y1="2.54" x2="0" y2="1.524" width="0.1524" layer="1"/>
-<wire x1="0" y1="-2.54" x2="0" y2="-1.524" width="0.1524" layer="1"/>
-<wire x1="2.54" y1="0" x2="1.524" y2="0" width="0.1524" layer="1"/>
-<wire x1="-2.54" y1="0" x2="-1.524" y2="0" width="0.1524" layer="16"/>
-<wire x1="0" y1="2.54" x2="0" y2="1.524" width="0.1524" layer="16"/>
-<wire x1="0" y1="-2.54" x2="0" y2="-1.524" width="0.1524" layer="16"/>
-<wire x1="2.54" y1="0" x2="1.524" y2="0" width="0.1524" layer="16"/>
-<wire x1="0.0254" y1="0.5842" x2="0.5842" y2="0.0254" width="1.1176" layer="16" curve="-90" cap="flat"/>
-<wire x1="0.0254" y1="0.5842" x2="0.5842" y2="0.0254" width="1.1176" layer="1" curve="-90" cap="flat"/>
-<wire x1="-0.5842" y1="-0.0254" x2="-0.0254" y2="-0.5842" width="1.1176" layer="16" curve="90" cap="flat"/>
-<wire x1="-0.5842" y1="-0.0254" x2="-0.0254" y2="-0.5842" width="1.1176" layer="1" curve="90" cap="flat"/>
-<circle x="0" y="0" radius="1.27" width="0.1524" layer="49"/>
-<circle x="0" y="0" radius="1.27" width="0.1524" layer="49"/>
-<circle x="0" y="0" radius="1.27" width="0.1524" layer="1"/>
-<circle x="0" y="0" radius="1.27" width="0.1524" layer="16"/>
-<circle x="0" y="0" radius="2.54" width="0" layer="29"/>
-<circle x="0" y="0" radius="2.54" width="0" layer="30"/>
-</package>
 <package name="JSTPH2">
 <description>2-Pin JST PH Series Right-Angle Connector (+/- for batteries)</description>
 <wire x1="-4" y1="3" x2="4" y2="3" width="0.2032" layer="51"/>
@@ -1193,11 +1141,6 @@ round, layers 1 + 16 + 21 + 39 + 49</description>
 <pin name="14" x="-2.54" y="-15.24" visible="pad" length="short" direction="pas" function="dot"/>
 <pin name="15" x="-2.54" y="-17.78" visible="pad" length="short" direction="pas" function="dot"/>
 <pin name="16" x="-2.54" y="-20.32" visible="pad" length="short" direction="pas" function="dot"/>
-</symbol>
-<symbol name="FIDUCIAL">
-<wire x1="-0.762" y1="0.762" x2="0.762" y2="-0.762" width="0.254" layer="94"/>
-<wire x1="0.762" y1="0.762" x2="-0.762" y2="-0.762" width="0.254" layer="94"/>
-<circle x="0" y="0" radius="1.27" width="0.254" layer="94"/>
 </symbol>
 <symbol name="PINHD2">
 <wire x1="-6.35" y1="-2.54" x2="1.27" y2="-2.54" width="0.4064" layer="94"/>
@@ -1805,36 +1748,6 @@ DIN A4, landscape with location and doc. field</description>
 </connects>
 <technologies>
 <technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="FIDUCIAL" prefix="FID">
-<description>&lt;b&gt;Fiducial Alignment Points&lt;/b&gt;
-&lt;p&gt;Various fiducial points for machine vision alignment.&lt;/p&gt;</description>
-<gates>
-<gate name="G$1" symbol="FIDUCIAL" x="0" y="0"/>
-</gates>
-<devices>
-<device name="1X2.5" package="FIDUCIAL-1X2.5">
-<technologies>
-<technology name="">
-<attribute name="BOM" value="EXCLUDE" constant="no"/>
-</technology>
-</technologies>
-</device>
-<device name="ROUND" package="PASS-ROUND">
-<technologies>
-<technology name="">
-<attribute name="BOM" value="EXCLUDE" constant="no"/>
-</technology>
-</technologies>
-</device>
-<device name="&quot;&quot;" package="FIDUCIAL_1MM">
-<technologies>
-<technology name="">
-<attribute name="BOM" value="EXCLUDE" constant="no"/>
-</technology>
 </technologies>
 </device>
 </devices>
@@ -4510,7 +4423,6 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <part name="U$28" library="microbuilder" deviceset="GND" device=""/>
 <part name="U$29" library="microbuilder" deviceset="GND" device=""/>
 <part name="U$30" library="microbuilder" deviceset="GND" device=""/>
-<part name="U$34" library="microbuilder" deviceset="FIDUCIAL" device="&quot;&quot;"/>
 <part name="U$31" library="microbuilder" deviceset="MOUNTINGHOLE" device="2.5"/>
 <part name="U$32" library="microbuilder" deviceset="MOUNTINGHOLE" device="2.5"/>
 <part name="+3V4" library="Custom" deviceset="+3V" device=""/>
@@ -4562,8 +4474,8 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <part name="+3V15" library="Custom" deviceset="+3V" device=""/>
 <part name="U$12" library="microbuilder" deviceset="GND" device=""/>
 <part name="JP4" library="SparkFun-Passives" deviceset="JUMPER-PAD-2-NO" device="YES_SILK"/>
-<part name="D3" library="MF_LEDs" deviceset="LED_SINGLE" device="-0603-RED" value="RED"/>
-<part name="D4" library="MF_LEDs" deviceset="LED_SINGLE" device="-0603-GREEN" value="GREEN"/>
+<part name="D3" library="MF_LEDs" deviceset="LED_SINGLE" device="-0603-RED" value="MF-LED-0603-RED"/>
+<part name="D4" library="MF_LEDs" deviceset="LED_SINGLE" device="-0603-GREEN" value="MF-LED-0603-GREEN"/>
 <part name="SW1" library="MF_Switches" deviceset="TACT" device="_4.2MM" value="MF-SW-TACT-4.2MM"/>
 <part name="X3" library="MF_Connectors" deviceset="USB" device="_MICRO_RIGHT" value="MF-CON-MICROUSB-RIGHT"/>
 <part name="C25" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="0.1uF"/>
@@ -4632,7 +4544,7 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <part name="U$25" library="microbuilder" deviceset="GND" device=""/>
 <part name="U$26" library="microbuilder" deviceset="GND" device=""/>
 <part name="X7" library="microbuilder" deviceset="CON_JST_PH_2PIN" device="" value="S2B-PH-SM4-TB(LF)(SN)"/>
-<part name="U8" library="Custom" deviceset="TPS61253YFFT" device="" value="TPS61253"/>
+<part name="U8" library="Custom" deviceset="TPS61253YFFT" device="" value="TPS61253YFFR"/>
 <part name="L1" library="MF_Passives" deviceset="INDUCTOR" device="_1210" value="1277AS-H-1R0M=P2"/>
 <part name="C22" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="1uF"/>
 <part name="U$2" library="microbuilder" deviceset="GND" device=""/>
@@ -4673,7 +4585,6 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <instance part="U$28" gate="G$1" x="58.42" y="127"/>
 <instance part="U$29" gate="G$1" x="50.8" y="127"/>
 <instance part="U$30" gate="G$1" x="27.94" y="127"/>
-<instance part="U$34" gate="G$1" x="210.82" y="17.78"/>
 <instance part="U$31" gate="G$1" x="205.74" y="12.7"/>
 <instance part="U$32" gate="G$1" x="210.82" y="12.7"/>
 <instance part="+3V4" gate="G$1" x="58.42" y="160.02" smashed="yes" rot="MR0">

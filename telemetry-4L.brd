@@ -397,21 +397,6 @@
 <circle x="0" y="0" radius="1" width="2.032" layer="42"/>
 <pad name="P$1" x="0" y="0" drill="2.5" diameter="3.2"/>
 </package>
-<package name="FIDUCIAL_1MM">
-<smd name="1" x="0" y="0" dx="1" dy="1" layer="1" roundness="100" cream="no"/>
-<wire x1="-0.75" y1="0" x2="0" y2="0.75" width="0.5" layer="29" curve="-90"/>
-<wire x1="0" y1="0.75" x2="0.75" y2="0" width="0.5" layer="29" curve="-90"/>
-<wire x1="0.75" y1="0" x2="0" y2="-0.75" width="0.5" layer="29" curve="-90"/>
-<wire x1="0" y1="-0.75" x2="-0.75" y2="0" width="0.5" layer="29" curve="-90"/>
-<wire x1="-0.75" y1="0" x2="0" y2="0.75" width="0.5" layer="41" curve="-90"/>
-<wire x1="0" y1="0.75" x2="0.75" y2="0" width="0.5" layer="41" curve="-90"/>
-<wire x1="0.75" y1="0" x2="0" y2="-0.75" width="0.5" layer="41" curve="-90"/>
-<wire x1="0" y1="-0.75" x2="-0.75" y2="0" width="0.5" layer="41" curve="-90"/>
-<wire x1="-0.75" y1="0" x2="0" y2="0.75" width="0.5" layer="39" curve="-90"/>
-<wire x1="0" y1="0.75" x2="0.75" y2="0" width="0.5" layer="39" curve="-90"/>
-<wire x1="0.75" y1="0" x2="0" y2="-0.75" width="0.5" layer="39" curve="-90"/>
-<wire x1="0" y1="-0.75" x2="-0.75" y2="0" width="0.5" layer="39" curve="-90"/>
-</package>
 <package name="TQFN48_7MM">
 <wire x1="-3.5" y1="3.5" x2="3.5" y2="3.5" width="0.127" layer="51"/>
 <wire x1="3.5" y1="3.5" x2="3.5" y2="-3.5" width="0.127" layer="51"/>
@@ -1494,14 +1479,14 @@ This DRC check is for 4-Layer Standard Capability boards to be manufactured thro
 <attribute name="NAME" x="67.119503125" y="17.20850625" size="0.6096" layer="26" font="vector" ratio="18" rot="MR180"/>
 <attribute name="VALUE" x="66.230496875" y="15.684503125" size="0.4064" layer="28" rot="MR90"/>
 </element>
-<element name="D3" library="MF_LEDs" package="LED0603" value="RED" x="1.778" y="17.526" smashed="yes">
+<element name="D3" library="MF_LEDs" package="LED0603" value="MF-LED-0603-RED" x="1.778" y="17.526" smashed="yes">
 <attribute name="MPN" value="MF-LED-0603-RED" x="1.778" y="17.526" size="1.778" layer="27" display="off"/>
 <attribute name="URL" value="https://factory.macrofab.com/part/MF-LED-0603-RED" x="1.778" y="17.526" size="1.778" layer="27" display="off"/>
 <attribute name="POPULATE" value="1" x="1.778" y="17.526" size="1.778" layer="27" display="off"/>
 <attribute name="HOUSEPART" value="YES" x="1.778" y="17.526" size="1.778" layer="27" display="off"/>
 <attribute name="NAME" x="0.0145" y="18.372" size="0.6096" layer="25" font="vector" ratio="18"/>
 </element>
-<element name="D4" library="MF_LEDs" package="LED0603" value="GREEN" x="1.778" y="5.334" smashed="yes" rot="R180">
+<element name="D4" library="MF_LEDs" package="LED0603" value="MF-LED-0603-GREEN" x="1.778" y="5.334" smashed="yes" rot="R180">
 <attribute name="MPN" value="MF-LED-0603-GREEN" x="1.778" y="5.334" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="URL" value="https://factory.macrofab.com/part/MF-LED-0603-GREEN" x="1.778" y="5.334" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="POPULATE" value="1" x="1.778" y="5.334" size="1.778" layer="27" rot="R180" display="off"/>
@@ -1643,9 +1628,6 @@ This DRC check is for 4-Layer Standard Capability boards to be manufactured thro
 <element name="U$32" library="microbuilder" package="MOUNTINGHOLE_2.5_PLATED" value="MOUNTINGHOLE2.5" x="2.54" y="2.54" smashed="yes">
 <attribute name="BOM" value="EXCLUDE" x="2.54" y="2.54" size="1.778" layer="27" display="off"/>
 </element>
-<element name="U$34" library="microbuilder" package="FIDUCIAL_1MM" value="FIDUCIAL&quot;&quot;" x="10.795" y="19.304" smashed="yes">
-<attribute name="BOM" value="EXCLUDE" x="10.795" y="19.304" size="1.778" layer="27" display="off"/>
-</element>
 <element name="U1" library="microbuilder" package="TQFN48_7MM" value="ATSAMD21G18A-MUT" x="35.56" y="11.43" smashed="yes">
 <attribute name="NAME" x="38.1411375" y="7.4745" size="0.6096" layer="25" font="vector" ratio="18" rot="R180"/>
 <attribute name="VALUE" x="32.56" y="6.73" size="0.4064" layer="27" ratio="10"/>
@@ -1763,7 +1745,7 @@ This DRC check is for 4-Layer Standard Capability boards to be manufactured thro
 <attribute name="NAME" x="19.388" y="8.933" size="0.6096" layer="25" font="vector" ratio="18" rot="R180"/>
 </element>
 <element name="X7" library="microbuilder" package="JSTPH2" value="S2B-PH-SM4-TB(LF)(SN)" x="50.165" y="19.304"/>
-<element name="U8" library="Custom" package="YFF9" value="TPS61253" x="50.673" y="21.2725" smashed="yes" rot="MR180">
+<element name="U8" library="Custom" package="YFF9" value="TPS61253YFFR" x="50.673" y="21.2725" smashed="yes" rot="MR180">
 <attribute name="COPYRIGHT" value="Copyright (C) 2015 Accelerated Designs. All rights reserved" x="50.673" y="21.2725" size="1.778" layer="28" rot="MR180" display="off"/>
 <attribute name="VENDOR" value="Texas Instruments" x="50.673" y="21.2725" size="1.778" layer="28" rot="MR180" display="off"/>
 <attribute name="3D_LIBRARY_NAME" value="TI_AllParts_2012-12-25" x="50.673" y="21.2725" size="1.778" layer="28" rot="MR180" display="off"/>
@@ -3715,8 +3697,8 @@ This DRC check is for 4-Layer Standard Capability boards to be manufactured thro
 <vertex x="53.2765" y="21.1455"/>
 <vertex x="49.022" y="21.1455"/>
 </polygon>
-<wire x1="32.47" y1="19.685" x2="44.958" y2="18.3515" width="0" layer="19" extent="1-1"/>
 <wire x1="51.7525" y1="20.1295" x2="51.073" y2="20.8725" width="0.3048" layer="16"/>
+<wire x1="44.958" y1="18.3515" x2="32.47" y2="19.685" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$9">
 <contactref element="U8" pad="B1"/>
