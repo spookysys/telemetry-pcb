@@ -3153,23 +3153,23 @@ This DRC check is for 4-Layer Standard Capability boards to be manufactured thro
 <wire x1="38.7985" y1="12.065" x2="40.1955" y2="13.462" width="0.254" layer="15"/>
 <wire x1="40.1955" y1="13.462" x2="45.0215" y2="13.462" width="0.254" layer="15"/>
 <wire x1="45.0215" y1="13.462" x2="45.6565" y2="12.827" width="0.254" layer="15"/>
-<wire x1="54.483" y1="12.827" x2="45.6565" y2="12.827" width="0.254" layer="15"/>
-<wire x1="54.737" y1="14.605" x2="54.0385" y2="14.605" width="0.254" layer="15"/>
+<wire x1="54.229" y1="12.827" x2="45.6565" y2="12.827" width="0.254" layer="15"/>
+<wire x1="54.483" y1="14.605" x2="54.0385" y2="14.605" width="0.254" layer="15"/>
 <wire x1="54.0385" y1="14.605" x2="52.8955" y2="15.748" width="0.254" layer="15"/>
 <via x="52.8955" y="15.748" extent="1-16" drill="0.3048"/>
 <wire x1="52.8955" y1="15.748" x2="55.372" y2="15.748" width="0.254" layer="16"/>
 <wire x1="55.372" y1="15.748" x2="55.8165" y2="15.3035" width="0.254" layer="16"/>
 <wire x1="55.8165" y1="15.3035" x2="55.8165" y2="14.559" width="0.254" layer="16"/>
 <wire x1="55.8165" y1="14.559" x2="55.818" y2="14.5575" width="0.254" layer="16"/>
-<wire x1="54.483" y1="12.827" x2="55.1815" y2="13.5255" width="0.254" layer="15"/>
-<wire x1="55.1815" y1="13.5255" x2="55.1815" y2="14.1605" width="0.254" layer="15"/>
-<wire x1="55.1815" y1="14.1605" x2="54.737" y2="14.605" width="0.254" layer="15"/>
+<wire x1="54.229" y1="12.827" x2="54.9275" y2="13.5255" width="0.254" layer="15"/>
+<wire x1="54.9275" y1="13.5255" x2="54.9275" y2="14.1605" width="0.254" layer="15"/>
+<wire x1="54.9275" y1="14.1605" x2="54.483" y2="14.605" width="0.254" layer="15"/>
 </signal>
 <signal name="RX5/GPS_TX">
 <contactref element="U1" pad="38"/>
 <contactref element="U5" pad="61_"/>
-<wire x1="54.418" y1="14.5575" x2="54.418" y2="13.843" width="0.254" layer="16"/>
-<via x="54.418" y="13.843" extent="1-16" drill="0.3048"/>
+<wire x1="54.418" y1="14.5575" x2="54.164" y2="13.843" width="0.254" layer="16"/>
+<via x="54.164" y="13.843" extent="1-16" drill="0.3048"/>
 <wire x1="32.085" y1="13.68" x2="31.278" y2="13.68" width="0.254" layer="1"/>
 <wire x1="31.278" y1="13.68" x2="31.115" y2="13.843" width="0.254" layer="1"/>
 <wire x1="31.115" y1="13.843" x2="30.353" y2="13.843" width="0.254" layer="1"/>
@@ -3185,10 +3185,10 @@ This DRC check is for 4-Layer Standard Capability boards to be manufactured thro
 <wire x1="45.2755" y1="13.97" x2="45.974" y2="13.335" width="0.254" layer="15"/>
 <wire x1="45.974" y1="13.335" x2="46.6725" y2="13.335" width="0.254" layer="15"/>
 <wire x1="46.6725" y1="13.335" x2="47.0535" y2="13.716" width="0.254" layer="15"/>
-<wire x1="54.291" y1="13.97" x2="54.418" y2="13.843" width="0.254" layer="15"/>
-<wire x1="47.0535" y1="13.716" x2="54.2925" y2="13.716" width="0.254" layer="15"/>
-<wire x1="54.2925" y1="13.716" x2="54.4195" y2="13.843" width="0.254" layer="15"/>
-<wire x1="54.4195" y1="13.843" x2="54.418" y2="13.843" width="0.254" layer="15"/>
+<wire x1="53.021" y1="13.97" x2="54.164" y2="13.843" width="0" layer="19" extent="1-16"/>
+<wire x1="47.0535" y1="13.716" x2="54.0385" y2="13.716" width="0.254" layer="15"/>
+<wire x1="54.0385" y1="13.716" x2="54.1655" y2="13.843" width="0.254" layer="15"/>
+<wire x1="54.1655" y1="13.843" x2="54.164" y2="13.843" width="0.254" layer="15"/>
 </signal>
 <signal name="GPS_EN_">
 <contactref element="U5" pad="59_"/>
@@ -3613,8 +3613,8 @@ This DRC check is for 4-Layer Standard Capability boards to be manufactured thro
 <signal name="N$12">
 <contactref element="SW2" pad="O"/>
 <contactref element="JP7" pad="2"/>
-<wire x1="4.028" y1="9.18" x2="4.122" y2="9.086" width="0.254" layer="16"/>
-<wire x1="4.122" y1="9.086" x2="4.064" y2="7.62" width="0.254" layer="16"/>
+<wire x1="4.028" y1="9.18" x2="4.0585" y2="9.1495" width="0.254" layer="16"/>
+<wire x1="4.0585" y1="9.1495" x2="4.064" y2="7.62" width="0.254" layer="16"/>
 </signal>
 <signal name="N$13">
 <contactref element="SW2" pad="S"/>
