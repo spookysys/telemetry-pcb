@@ -22,7 +22,7 @@
 <layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="25" name="tNames" color="7" fill="1" visible="no" active="yes"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="26" name="bNames" color="7" fill="1" visible="no" active="yes"/>
 <layer number="27" name="tValues" color="7" fill="1" visible="no" active="yes"/>
 <layer number="28" name="bValues" color="7" fill="1" visible="no" active="yes"/>
@@ -1357,7 +1357,7 @@ This DRC check is for 4-Layer Standard Capability boards to be manufactured thro
 <attribute name="DIELECTRIC" value="" x="55.711" y="20.193" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="POPULATE" value="1" x="55.711" y="20.193" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="HOUSEPART" value="" x="55.711" y="20.193" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="55.035" y="19.969" size="0.6096" layer="25" font="vector" ratio="18"/>
+<attribute name="NAME" x="54.9715" y="19.9055" size="0.6096" layer="25" font="vector" ratio="18"/>
 </element>
 <element name="C17" library="MF_Passives" package="C0402" value="1uF" x="22.1615" y="4.2545" smashed="yes" rot="MR180">
 <attribute name="TOLERANCE" value="" x="22.1615" y="4.2545" size="1.778" layer="28" rot="MR180" display="off"/>
@@ -1801,7 +1801,7 @@ This DRC check is for 4-Layer Standard Capability boards to be manufactured thro
 <attribute name="VALUE" x="42.9895" y="18.6055" size="0.4064" layer="27" rot="R270"/>
 <attribute name="POPULATE" value="0" x="44.8945" y="17.3355" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
-<element name="C24" library="MF_Passives" package="C1206" value="100uF" x="55.711" y="15.4305" rot="R270">
+<element name="C24" library="MF_Passives" package="C1206" value="100uF" x="55.711" y="15.4305" smashed="yes" rot="R270">
 <attribute name="VOLTAGE" value="" x="55.711" y="15.4305" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="HOUSEPART" value="" x="55.711" y="15.4305" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="DIELECTRIC" value="" x="55.711" y="15.4305" size="1.778" layer="27" rot="R270" display="off"/>
@@ -1809,6 +1809,7 @@ This DRC check is for 4-Layer Standard Capability boards to be manufactured thro
 <attribute name="MPN" value="CL31A107MQHNNNE" x="55.711" y="15.4305" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="TOLERANCE" value="" x="55.711" y="15.4305" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="POPULATE" value="1" x="55.711" y="15.4305" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="NAME" x="54.95" y="15.101" size="0.6096" layer="25" font="vector" ratio="18"/>
 </element>
 </elements>
 <signals>
