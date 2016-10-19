@@ -4535,6 +4535,9 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <part name="U$58" library="MF_Aesthetics" deviceset="POWER_RAIL" device=""/>
 <part name="U$59" library="MF_Aesthetics" deviceset="POWER_RAIL" device="" value="VBAT_ON"/>
 <part name="U$60" library="MF_Aesthetics" deviceset="POWER_RAIL" device="" value="VBAT_ON"/>
+<part name="C24" library="MF_Passives" deviceset="CAPACITOR_NP" device="_1206" value="100uF">
+<attribute name="MPN" value="CL31A107MQHNNNE"/>
+</part>
 </parts>
 <sheets>
 <sheet>
@@ -5586,6 +5589,7 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <instance part="U$56" gate="G$1" x="205.74" y="33.02"/>
 <instance part="U$57" gate="G$1" x="68.58" y="88.392"/>
 <instance part="U$58" gate="G$1" x="254" y="129.54"/>
+<instance part="C24" gate="G$1" x="88.9" y="152.4"/>
 </instances>
 <busses>
 </busses>
@@ -5827,8 +5831,13 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 </segment>
 <segment>
 <pinref part="X7" gate="G$1" pin="1"/>
-<wire x1="80.264" y1="150.114" x2="80.264" y2="143.256" width="0.1524" layer="91"/>
+<wire x1="80.264" y1="150.114" x2="80.264" y2="145.542" width="0.1524" layer="91"/>
 <pinref part="U$55" gate="G$1" pin="P$1"/>
+<pinref part="C24" gate="G$1" pin="P$2"/>
+<wire x1="80.264" y1="145.542" x2="80.264" y2="143.256" width="0.1524" layer="91"/>
+<wire x1="88.9" y1="149.86" x2="88.9" y2="145.542" width="0.1524" layer="91"/>
+<wire x1="88.9" y1="145.542" x2="80.264" y2="145.542" width="0.1524" layer="91"/>
+<junction x="80.264" y="145.542"/>
 </segment>
 </net>
 <net name="SCL" class="0">
@@ -6322,8 +6331,13 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 </segment>
 <segment>
 <pinref part="X7" gate="G$1" pin="2"/>
-<wire x1="80.264" y1="152.654" x2="80.264" y2="157.734" width="0.1524" layer="91"/>
+<wire x1="80.264" y1="152.654" x2="80.264" y2="156.972" width="0.1524" layer="91"/>
 <pinref part="5.0V_1" gate="G$1" pin="P$1"/>
+<pinref part="C24" gate="G$1" pin="P$1"/>
+<wire x1="80.264" y1="156.972" x2="80.264" y2="157.734" width="0.1524" layer="91"/>
+<wire x1="88.9" y1="154.94" x2="88.9" y2="156.972" width="0.1524" layer="91"/>
+<wire x1="88.9" y1="156.972" x2="80.264" y2="156.972" width="0.1524" layer="91"/>
+<junction x="80.264" y="156.972"/>
 </segment>
 </net>
 <net name="5V_EN" class="0">
