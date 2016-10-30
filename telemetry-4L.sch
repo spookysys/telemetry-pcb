@@ -4539,7 +4539,7 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <attribute name="MPN" value="CL31A107MQHNNNE"/>
 </part>
 <part name="R10" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="100K"/>
-<part name="U$61" library="MF_Aesthetics" deviceset="GND_RAIL" device=""/>
+<part name="GND" library="MF_Aesthetics" deviceset="GND_RAIL" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -5405,7 +5405,6 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <wire x1="246.38" y1="119.38" x2="246.38" y2="123.952" width="0.1524" layer="91"/>
 <label x="244.856" y="117.602" size="1.778" layer="95" rot="R90"/>
 <pinref part="U$59" gate="G$1" pin="P$1"/>
-<wire x1="246.38" y1="123.952" x2="246.38" y2="121.666" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <wire x1="149.86" y1="81.28" x2="177.8" y2="81.28" width="0.1524" layer="91"/>
@@ -5591,7 +5590,7 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <instance part="U$58" gate="G$1" x="254" y="129.54"/>
 <instance part="C24" gate="G$1" x="88.9" y="152.4"/>
 <instance part="R10" gate="G$1" x="94.488" y="85.09" rot="R180"/>
-<instance part="U$61" gate="G$1" x="94.488" y="74.93"/>
+<instance part="GND" gate="G$1" x="94.488" y="74.93"/>
 </instances>
 <busses>
 </busses>
@@ -5843,7 +5842,7 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 </segment>
 <segment>
 <pinref part="R10" gate="G$1" pin="P$1"/>
-<pinref part="U$61" gate="G$1" pin="P$1"/>
+<pinref part="GND" gate="G$1" pin="P$1"/>
 <wire x1="94.488" y1="77.47" x2="94.488" y2="80.01" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -6397,12 +6396,6 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <approved hash="104,1,164.846,142.24,D4,CATHODE,N$1,,,"/>
 <approved hash="104,1,162.56,116.84,X3,5V,VBUS,,,"/>
 <approved hash="204,1,162.56,104.14,X3,SLD,,,,"/>
-<approved hash="104,2,60.96,146.304,U8,GND_2,GND,,,"/>
-<approved hash="206,2,60.96,153.924,5.0V,,,,,"/>
-<approved hash="206,2,60.96,156.464,5.0V,,,,,"/>
-<approved hash="208,2,60.96,153.924,5.0V,out,,,,"/>
-<approved hash="208,2,68.58,153.924,5.0V,sup,,,,"/>
-<approved hash="208,2,60.96,156.464,5.0V,out,,,,"/>
 <approved hash="208,2,80.264,157.734,5.0V,sup,,,,"/>
 <approved hash="209,2,165.1,73.66,GPS_1PPS,,,,,"/>
 <approved hash="106,2,165.1,73.66,GPS_1PPS,,,,,"/>
@@ -6412,13 +6405,8 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <approved hash="106,2,165.1,119.38,GSM_RI,,,,,"/>
 <approved hash="106,2,236.22,149.86,NETLIGHT,,,,,"/>
 <approved hash="106,2,236.22,144.78,RF_SYNC,,,,,"/>
-<approved hash="110,2,30.226,146.304,5V_EN,GND,,,,"/>
-<approved hash="111,2,30.226,146.304,5V_EN,,,,,"/>
-<approved hash="113,1,195.275,19.7358,FRAME1,,,,,"/>
 <approved hash="113,1,213.123,60.8288,JP1,,,,,"/>
 <approved hash="113,1,178.037,68.7112,JP3,,,,,"/>
-<approved hash="113,1,124.521,17.78,TP1,,,,,"/>
-<approved hash="113,1,124.521,15.24,TP2,,,,,"/>
 <approved hash="113,2,130.071,89.431,FRAME2,,,,,"/>
 </errors>
 </schematic>
