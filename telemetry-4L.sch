@@ -4393,7 +4393,6 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <attribute name="CONSIGN" value="1"/>
 <attribute name="MPN" value="SIM868"/>
 </part>
-<part name="U$37" library="microbuilder" deviceset="GND" device=""/>
 <part name="+3V6" library="MF_Aesthetics" deviceset="POWER_RAIL" device="" value="3V"/>
 <part name="X6" library="Seeed-Connector -2016" deviceset="ANTENNA-CONN-U-FL(3P)" device="" value="U.FL-R-SMT(10)"/>
 <part name="X5" library="Seeed-Connector -2016" deviceset="ANTENNA-CONN-U-FL(3P)" device="" value="U.FL-R-SMT(10)"/>
@@ -4543,6 +4542,9 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <part name="R10" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="100K"/>
 <part name="GND" library="MF_Aesthetics" deviceset="GND_RAIL" device=""/>
 <part name="R11" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="100K"/>
+<part name="R12" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="10K"/>
+<part name="U$37" library="MF_Aesthetics" deviceset="GND_RAIL" device=""/>
+<part name="U$61" library="MF_Aesthetics" deviceset="GND_RAIL" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -5451,7 +5453,6 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <attribute name="CONSIGN" x="200.66" y="93.98" size="1.778" layer="96" display="off"/>
 <attribute name="MPN" x="200.66" y="93.98" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="U$37" gate="G$1" x="149.86" y="142.24"/>
 <instance part="+3V6" gate="G$1" x="24.13" y="166.878" smashed="yes" rot="MR0">
 <attribute name="VALUE" x="25.4" y="168.656" size="1.27" layer="96" rot="MR0"/>
 </instance>
@@ -5602,16 +5603,17 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <attribute name="NAME" x="91.694" y="150.876" size="1.016" layer="95" font="vector" align="top-left"/>
 <attribute name="VALUE" x="96.012" y="141.478" size="1.016" layer="96" font="vector" rot="R90"/>
 </instance>
+<instance part="R12" gate="G$1" x="137.16" y="121.92" smashed="yes" rot="R90">
+<attribute name="NAME" x="138.176" y="123.444" size="1.016" layer="95" font="vector" rot="R180" align="top-left"/>
+<attribute name="VALUE" x="138.43" y="120.396" size="1.016" layer="96" font="vector" rot="R180"/>
+</instance>
+<instance part="U$37" gate="G$1" x="130.556" y="119.38"/>
+<instance part="U$61" gate="G$1" x="149.86" y="142.24"/>
 </instances>
 <busses>
 </busses>
 <nets>
 <net name="GND" class="0">
-<segment>
-<pinref part="U$37" gate="G$1" pin="GND"/>
-<pinref part="C16" gate="G$1" pin="P$1"/>
-<wire x1="154.94" y1="144.78" x2="149.86" y2="144.78" width="0.1524" layer="91"/>
-</segment>
 <segment>
 <pinref part="X6" gate="G$1" pin="GND1"/>
 <pinref part="X6" gate="G$1" pin="GND2"/>
@@ -5859,6 +5861,16 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <pinref part="GND" gate="G$1" pin="P$1"/>
 <wire x1="94.488" y1="77.47" x2="94.488" y2="80.01" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="C16" gate="G$1" pin="P$1"/>
+<wire x1="154.94" y1="144.78" x2="149.86" y2="144.78" width="0.1524" layer="91"/>
+<pinref part="U$61" gate="G$1" pin="P$1"/>
+</segment>
+<segment>
+<pinref part="R12" gate="G$1" pin="P$1"/>
+<wire x1="130.556" y1="121.92" x2="132.08" y2="121.92" width="0.1524" layer="91"/>
+<pinref part="U$37" gate="G$1" pin="P$1"/>
+</segment>
 </net>
 <net name="SCL" class="0">
 <segment>
@@ -6105,6 +6117,7 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <pinref part="U5" gate="G$1" pin="UART1_DTR"/>
 <wire x1="142.24" y1="121.92" x2="165.1" y2="121.92" width="0.1524" layer="91"/>
 <label x="142.24" y="121.92" size="1.778" layer="95"/>
+<pinref part="R12" gate="G$1" pin="P$2"/>
 </segment>
 </net>
 <net name="MOSI" class="0">
