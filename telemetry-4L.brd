@@ -169,7 +169,7 @@
 <wire x1="0" y1="20.32" x2="0" y2="2.54" width="0" layer="20"/>
 <wire x1="0" y1="2.54" x2="2.54" y2="0" width="0" layer="20" curve="90"/>
 <hole x="67.31" y="20.32" drill="2.54"/>
-<dimension x1="69.85" y1="20.32" x2="0" y2="20.32" x3="34.925" y3="41.910003125" textsize="1.27" textratio="18" layer="21" unit="inch"/>
+<dimension x1="69.85" y1="20.32" x2="0" y2="20.32" x3="34.925" y3="28.575003125" textsize="1.27" textratio="18" layer="21" unit="inch"/>
 <text x="21.5265" y="19.812" size="1.016" layer="22" ratio="12" rot="SMR180" align="center">USB</text>
 <text x="24.13" y="19.812" size="1.016" layer="22" ratio="12" rot="SMR180" align="center">13</text>
 <text x="39.37" y="19.939" size="1.016" layer="22" ratio="12" rot="SMR270" align="center">5</text>
