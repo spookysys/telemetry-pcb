@@ -1776,7 +1776,7 @@ This DRC check is for 4-Layer Standard Capability boards to be manufactured thro
 <attribute name="DIELECTRIC" value="" x="52.6415" y="21.2725" size="1.778" layer="28" rot="MR90" display="off"/>
 <attribute name="POPULATE" value="1" x="52.6415" y="21.2725" size="1.778" layer="28" rot="MR90" display="off"/>
 <attribute name="URL" value="" x="52.6415" y="21.2725" size="1.778" layer="28" rot="MR90" display="off"/>
-<attribute name="MPN" value="" x="52.6415" y="21.2725" size="1.778" layer="28" rot="MR90" display="off"/>
+<attribute name="MPN" value="GRM155R60J475ME47D" x="52.6415" y="21.2725" size="1.778" layer="28" rot="MR90" display="off"/>
 <attribute name="VOLTAGE" value="" x="52.6415" y="21.2725" size="1.778" layer="28" rot="MR90" display="off"/>
 <attribute name="NAME" x="53.3605" y="20.49" size="0.6096" layer="26" font="vector" ratio="18" rot="MR90"/>
 </element>
@@ -1823,7 +1823,7 @@ This DRC check is for 4-Layer Standard Capability boards to be manufactured thro
 <attribute name="HOUSEPART" value="" x="52.451" y="15.748" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="POPULATE" value="1" x="52.451" y="15.748" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="WATTAGE" value="" x="52.451" y="15.748" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="53.551" y="16.848" size="0.6096" layer="25" font="vector" ratio="18" rot="R270"/>
+<attribute name="NAME" x="51.859" y="13.927" size="0.6096" layer="25" font="vector" ratio="18"/>
 </element>
 </elements>
 <signals>
