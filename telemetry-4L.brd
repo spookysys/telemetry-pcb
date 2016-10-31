@@ -1776,7 +1776,7 @@ This DRC check is for 4-Layer Standard Capability boards to be manufactured thro
 <attribute name="MPN" value="1277AS-H-1R0M=P2" x="47.6885" y="20.3835" size="1.778" layer="28" rot="MR90" display="off"/>
 <attribute name="NAME" x="47.203" y="20.6155" size="0.6096" layer="26" font="vector" ratio="18" rot="MR180"/>
 </element>
-<element name="C22" library="MF_Passives" package="C0402" value="1uF" x="52.6415" y="21.2725" smashed="yes" rot="MR90">
+<element name="C22" library="MF_Passives" package="C0402" value="4.7uF" x="52.6415" y="21.2725" smashed="yes" rot="MR90">
 <attribute name="TOLERANCE" value="" x="52.6415" y="21.2725" size="1.778" layer="28" rot="MR90" display="off"/>
 <attribute name="HOUSEPART" value="" x="52.6415" y="21.2725" size="1.778" layer="28" rot="MR90" display="off"/>
 <attribute name="DIELECTRIC" value="" x="52.6415" y="21.2725" size="1.778" layer="28" rot="MR90" display="off"/>

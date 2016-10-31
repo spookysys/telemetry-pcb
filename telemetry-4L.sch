@@ -4513,7 +4513,7 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <part name="L1" library="MF_Passives" deviceset="INDUCTOR" device="_1210" value="1uH">
 <attribute name="MPN" value="1277AS-H-1R0M=P2"/>
 </part>
-<part name="C22" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="1uF"/>
+<part name="C22" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="4.7uF"/>
 <part name="U$2" library="MF_Aesthetics" deviceset="GND_RAIL" device=""/>
 <part name="C23" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0603" value="10uF">
 <attribute name="MPN" value="GRM188R60J106ME47D"/>
@@ -5568,7 +5568,7 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 </instance>
 <instance part="C22" gate="G$1" x="86.106" y="103.124" smashed="yes">
 <attribute name="NAME" x="81.534" y="104.394" size="1.016" layer="95" font="vector" align="top-left"/>
-<attribute name="VALUE" x="81.788" y="101.854" size="1.016" layer="96" font="vector"/>
+<attribute name="VALUE" x="80.264" y="101.6" size="1.016" layer="96" font="vector"/>
 </instance>
 <instance part="U$2" gate="G$1" x="86.106" y="95.504"/>
 <instance part="C23" gate="G$1" x="124.46" y="108.204"/>
