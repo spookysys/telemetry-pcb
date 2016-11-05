@@ -12,7 +12,7 @@
 * Altimeter (BMP-280)
 * MicroSD for logging
 * Integrated usb-port, lipo-charger and power switch
-* 5-volt/2-amp power supply for driving motors and servos
+* Integrated 5-volt/2-amp supply for powering motors and servos
 
 
 ## Adafruit Feather compatibility
