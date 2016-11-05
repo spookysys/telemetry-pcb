@@ -2,20 +2,17 @@
 
 ## Features 
 
-* Adafruit Feather-compatible
-* ATSAMD21G18
-  * ARM Cortex-M0 at 32MHz
-* MicroSD
-* SIM868
-  * GPS positioning
-  * GSM/GPRS (nanoSIM)
-* MPU-9250
-  * 3D Acellerometer
-  * 3D Gyroscope
-  * 3D Magnetometer
-* BMP280
-  * Pressure
-  * Temperature
+* Arduino-compatible
+* Adafruit Feather M0 firmware and pinout
+* Small size - fits the smallest model rockets (e.g. 26mm diameter)
+* Powerful MCU (Atmel ARM M0 at 32MHz)
+* GSM/GPRS for telemetry (SIM868)
+* GPS for positioning (SIM868)
+* 9-DOF Inertial Motion Unit (MPU-9259)
+* Altimeter (BMP-280)
+* MicroSD for logging
+* Integrated usb-port, lipo-charger and power switch
+* 5-volt/2-amp power supply for driving motors and servos
 
 
 ## Adafruit Feather compatibility
@@ -30,7 +27,7 @@ Note: If you don't need hardware handshaking on the GSM UART, the D5 pin can be 
 
 ## Status
 
-Just ordered first batch, not yet tested
+Testing in progress
 
 ## Credit
 
