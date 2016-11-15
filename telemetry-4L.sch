@@ -4397,7 +4397,9 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <part name="X6" library="Seeed-Connector -2016" deviceset="ANTENNA-CONN-U-FL(3P)" device="" value="U.FL-R-SMT(10)"/>
 <part name="X5" library="Seeed-Connector -2016" deviceset="ANTENNA-CONN-U-FL(3P)" device="" value="U.FL-R-SMT(10)"/>
 <part name="U$9" library="MF_Aesthetics" deviceset="GND_RAIL" device=""/>
-<part name="X4" library="SimSdCombo" deviceset="MOLEX-SD+SIM-104239" device="" value="104239-1430"/>
+<part name="X4" library="SimSdCombo" deviceset="MOLEX-SD+SIM-104239" device="" value="104239-1430">
+<attribute name="MPN" value="104239-1430"/>
+</part>
 <part name="U$4" library="microbuilder" deviceset="GND" device=""/>
 <part name="+3V11" library="MF_Aesthetics" deviceset="POWER_RAIL" device="" value="3V"/>
 <part name="U$43" library="MF_Aesthetics" deviceset="GND_RAIL" device=""/>
