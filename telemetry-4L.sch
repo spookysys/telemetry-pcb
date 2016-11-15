@@ -4545,7 +4545,7 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <part name="R12" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="10K"/>
 <part name="U$37" library="MF_Aesthetics" deviceset="GND_RAIL" device=""/>
 <part name="U$61" library="MF_Aesthetics" deviceset="GND_RAIL" device=""/>
-<part name="JP10" library="SparkFun-Passives" deviceset="JUMPER-PAD-2-NC_BY_TRACE" device="">
+<part name="JP10" library="SparkFun-Passives" deviceset="JUMPER-PAD-2-NO" device="YES_SILK">
 <attribute name="POPULATE" value="0"/>
 </part>
 </parts>
