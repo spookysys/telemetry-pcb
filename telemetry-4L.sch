@@ -4545,6 +4545,9 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <part name="R12" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="10K"/>
 <part name="U$37" library="MF_Aesthetics" deviceset="GND_RAIL" device=""/>
 <part name="U$61" library="MF_Aesthetics" deviceset="GND_RAIL" device=""/>
+<part name="JP10" library="SparkFun-Passives" deviceset="JUMPER-PAD-2-NC_BY_TRACE" device="">
+<attribute name="POPULATE" value="0"/>
+</part>
 </parts>
 <sheets>
 <sheet>
@@ -5322,7 +5325,7 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <label x="190.5" y="45.72" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="D0/RX0/CTS2" class="0">
+<net name="D0/RX0" class="0">
 <segment>
 <wire x1="121.92" y1="66.04" x2="104.14" y2="66.04" width="0.1524" layer="91"/>
 <pinref part="U1" gate="G$1" pin="PA11/I11/AIN19/SERCOM0+2.3/I2SF0"/>
@@ -5603,12 +5606,16 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <attribute name="NAME" x="91.694" y="150.876" size="1.016" layer="95" font="vector" align="top-left"/>
 <attribute name="VALUE" x="96.012" y="141.478" size="1.016" layer="96" font="vector" rot="R90"/>
 </instance>
-<instance part="R12" gate="G$1" x="137.16" y="121.92" smashed="yes" rot="R90">
-<attribute name="NAME" x="138.176" y="123.444" size="1.016" layer="95" font="vector" rot="R180" align="top-left"/>
-<attribute name="VALUE" x="138.43" y="120.396" size="1.016" layer="96" font="vector" rot="R180"/>
+<instance part="R12" gate="G$1" x="138.176" y="121.92" smashed="yes" rot="R90">
+<attribute name="NAME" x="139.192" y="123.444" size="1.016" layer="95" font="vector" rot="R180" align="top-left"/>
+<attribute name="VALUE" x="139.446" y="120.396" size="1.016" layer="96" font="vector" rot="R180"/>
 </instance>
-<instance part="U$37" gate="G$1" x="130.556" y="119.38"/>
+<instance part="U$37" gate="G$1" x="130.556" y="121.92"/>
 <instance part="U$61" gate="G$1" x="149.86" y="142.24"/>
+<instance part="JP10" gate="G$1" x="139.7" y="116.84" smashed="yes">
+<attribute name="NAME" x="137.16" y="114.3" size="1.27" layer="95"/>
+<attribute name="POPULATE" x="139.7" y="116.84" size="1.778" layer="96" display="off"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -5868,7 +5875,7 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 </segment>
 <segment>
 <pinref part="R12" gate="G$1" pin="P$1"/>
-<wire x1="130.556" y1="121.92" x2="132.08" y2="121.92" width="0.1524" layer="91"/>
+<wire x1="130.556" y1="124.46" x2="133.096" y2="121.92" width="0.1524" layer="91"/>
 <pinref part="U$37" gate="G$1" pin="P$1"/>
 </segment>
 </net>
@@ -6101,8 +6108,9 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <net name="GSM_DCD" class="0">
 <segment>
 <pinref part="U5" gate="G$1" pin="UART1_DCD"/>
-<wire x1="165.1" y1="116.84" x2="142.24" y2="116.84" width="0.1524" layer="91"/>
+<wire x1="165.1" y1="116.84" x2="144.78" y2="116.84" width="0.1524" layer="91"/>
 <label x="142.24" y="116.84" size="1.778" layer="95"/>
+<pinref part="JP10" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="VBAT" class="0">
@@ -6115,7 +6123,7 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <net name="GSM_DTR" class="0">
 <segment>
 <pinref part="U5" gate="G$1" pin="UART1_DTR"/>
-<wire x1="142.24" y1="121.92" x2="165.1" y2="121.92" width="0.1524" layer="91"/>
+<wire x1="143.256" y1="121.92" x2="165.1" y2="121.92" width="0.1524" layer="91"/>
 <label x="142.24" y="121.92" size="1.778" layer="95"/>
 <pinref part="R12" gate="G$1" pin="P$2"/>
 </segment>
@@ -6392,6 +6400,13 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <pinref part="R10" gate="G$1" pin="P$2"/>
 <wire x1="94.488" y1="90.17" x2="81.026" y2="90.17" width="0.1524" layer="91"/>
 <junction x="94.488" y="90.17"/>
+</segment>
+</net>
+<net name="SWCLK" class="0">
+<segment>
+<pinref part="JP10" gate="G$1" pin="1"/>
+<wire x1="134.62" y1="116.84" x2="129.54" y2="116.84" width="0.1524" layer="91"/>
+<label x="129.54" y="116.84" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>

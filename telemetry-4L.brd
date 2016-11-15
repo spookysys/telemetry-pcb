@@ -1835,6 +1835,9 @@ This DRC check is for 4-Layer Standard Capability boards to be manufactured thro
 <attribute name="POPULATE" value="1" x="53.467" y="1.7145" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="NAME" x="52.6845" y="3.005" size="0.6096" layer="25" font="vector" ratio="18"/>
 </element>
+<element name="JP10" library="SparkFun-Passives" package="PAD-JUMPER-2-NC_BY_TRACE_YES_SILK" value="JUMPER-PAD-2-NC_BY_TRACE" x="-16.51" y="-12.7">
+<attribute name="POPULATE" value="0" x="-16.51" y="-12.7" size="1.778" layer="27" display="off"/>
+</element>
 </elements>
 <signals>
 <signal name="USB_VBUS">
@@ -3094,6 +3097,8 @@ This DRC check is for 4-Layer Standard Capability boards to be manufactured thro
 <wire x1="26.6065" y1="7.62" x2="26.797" y2="7.8105" width="0.127" layer="1"/>
 <wire x1="26.797" y1="7.8105" x2="27.432" y2="7.8105" width="0.127" layer="1"/>
 <wire x1="20.066" y1="7.62" x2="19.304" y2="6.7945" width="0.127" layer="1"/>
+<contactref element="JP10" pad="1"/>
+<wire x1="19.304" y1="6.7945" x2="-17.018" y2="-12.7" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="SWDIO">
 <contactref element="U1" pad="46"/>
@@ -3323,7 +3328,7 @@ This DRC check is for 4-Layer Standard Capability boards to be manufactured thro
 <wire x1="43.1165" y1="5.588" x2="43.1165" y2="6.985" width="0.254" layer="16"/>
 <wire x1="43.1165" y1="6.985" x2="42.9895" y2="7.112" width="0.254" layer="16"/>
 </signal>
-<signal name="D0/RX0/CTS2">
+<signal name="D0/RX0">
 <contactref element="U1" pad="16"/>
 <contactref element="JP1" pad="3"/>
 <via x="42.9895" y="8.89" extent="1-16" drill="0.3048"/>
@@ -3599,6 +3604,8 @@ This DRC check is for 4-Layer Standard Capability boards to be manufactured thro
 </signal>
 <signal name="GSM_DCD">
 <contactref element="U5" pad="5_"/>
+<contactref element="JP10" pad="2"/>
+<wire x1="-16.002" y1="-12.7" x2="56.768" y2="1.3575" width="0" layer="19" extent="1-16"/>
 </signal>
 <signal name="GSM_DTR">
 <contactref element="U5" pad="6_"/>
