@@ -5,7 +5,7 @@
 * Arduino-compatible
 * Adafruit Feather M0 firmware and pinout
 * Small size - fits the smallest model rockets (e.g. 26mm diameter)
-* Powerful MCU (Atmel ARM M0 at 32MHz)
+* Fairly powerful MCU (Atmel ARM M0 at 32MHz)
 * GSM/GPRS for telemetry (SIM868)
 * GPS for positioning (SIM868)
 * 9-DOF Inertial Motion Unit (MPU-9259)
