@@ -4404,7 +4404,7 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <part name="+3V11" library="MF_Aesthetics" deviceset="POWER_RAIL" device="" value="3V"/>
 <part name="U$43" library="MF_Aesthetics" deviceset="GND_RAIL" device=""/>
 <part name="U$48" library="microbuilder" deviceset="GND" device=""/>
-<part name="JP2" library="SparkFun-Passives" deviceset="JUMPER-PAD-2-NC_BY_TRACE" device="">
+<part name="JP2" library="SparkFun-Passives" deviceset="JUMPER-PAD-2-NO" device="YES_SILK">
 <attribute name="POPULATE" value="0"/>
 </part>
 <part name="U6" library="BMP280" deviceset="BMP280" device=""/>
@@ -4548,6 +4548,9 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <part name="U$37" library="MF_Aesthetics" deviceset="GND_RAIL" device=""/>
 <part name="U$61" library="MF_Aesthetics" deviceset="GND_RAIL" device=""/>
 <part name="JP10" library="SparkFun-Passives" deviceset="JUMPER-PAD-2-NO" device="YES_SILK">
+<attribute name="POPULATE" value="0"/>
+</part>
+<part name="JP11" library="SparkFun-Passives" deviceset="JUMPER-PAD-2-NO" device="YES_SILK">
 <attribute name="POPULATE" value="0"/>
 </part>
 </parts>
@@ -5618,6 +5621,10 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <attribute name="NAME" x="137.16" y="114.3" size="1.27" layer="95"/>
 <attribute name="POPULATE" x="139.7" y="116.84" size="1.778" layer="96" display="off"/>
 </instance>
+<instance part="JP11" gate="G$1" x="137.16" y="73.66" smashed="yes">
+<attribute name="NAME" x="134.62" y="71.12" size="1.27" layer="95"/>
+<attribute name="POPULATE" x="137.16" y="73.66" size="1.778" layer="96" display="off"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -6039,6 +6046,7 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <pinref part="U5" gate="G$1" pin="1PPS"/>
 <wire x1="165.1" y1="73.66" x2="142.24" y2="73.66" width="0.1524" layer="91"/>
 <label x="142.24" y="73.66" size="1.778" layer="95"/>
+<pinref part="JP11" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="PWRKEY" class="0">
@@ -6411,6 +6419,13 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <label x="129.54" y="116.84" size="1.778" layer="95"/>
 </segment>
 </net>
+<net name="SWDIO" class="0">
+<segment>
+<pinref part="JP11" gate="G$1" pin="1"/>
+<wire x1="132.08" y1="73.66" x2="127" y2="73.66" width="0.1524" layer="91"/>
+<label x="127" y="73.66" size="1.778" layer="95"/>
+</segment>
+</net>
 </nets>
 </sheet>
 </sheets>
@@ -6442,11 +6457,6 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <approved hash="104,1,164.846,142.24,D4,CATHODE,N$1,,,"/>
 <approved hash="104,1,162.56,116.84,X3,5V,VBUS,,,"/>
 <approved hash="204,1,162.56,104.14,X3,SLD,,,,"/>
-<approved hash="209,2,165.1,73.66,GPS_1PPS,,,,,"/>
-<approved hash="106,2,165.1,73.66,GPS_1PPS,,,,,"/>
-<approved hash="106,2,165.1,116.84,GSM_DCD,,,,,"/>
-<approved hash="209,2,165.1,121.92,GSM_DTR,,,,,"/>
-<approved hash="106,2,165.1,121.92,GSM_DTR,,,,,"/>
 <approved hash="106,2,165.1,119.38,GSM_RI,,,,,"/>
 <approved hash="106,2,236.22,149.86,NETLIGHT,,,,,"/>
 <approved hash="106,2,236.22,144.78,RF_SYNC,,,,,"/>
