@@ -211,7 +211,7 @@
 <text x="33.655" y="19.812" size="1.016" layer="22" ratio="12" rot="MR90" align="center">~</text>
 <text x="60.071" y="6.9215" size="7.62" layer="21" font="vector" ratio="12" rot="R180" align="center">FAR</text>
 <text x="54.5465" y="1.016" size="1.778" layer="21" font="vector" ratio="18" rot="R180" align="top-right">FROM HOME</text>
-<text x="69.469" y="11.43" size="0.4826" layer="21" font="vector" ratio="15" rot="SMR270" align="bottom-center">Forschungsgemeinschaft Alternative Raumfahrt</text>
+<text x="69.469" y="11.43" size="0.4826" layer="22" font="vector" ratio="15" rot="SMR270" align="bottom-center">Forschungsgemeinschaft Alternative Raumfahrt</text>
 <polygon width="0.4064" layer="31">
 <vertex x="22.225" y="12.192"/>
 <vertex x="22.225" y="10.668"/>
