@@ -4018,92 +4018,105 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 </deviceset>
 </devicesets>
 </library>
-<library name="adafruit">
+<library name="MF_Switches">
 <packages>
-<package name="EVQ-Q2">
-<wire x1="-3.3" y1="3" x2="3.3" y2="3" width="0.127" layer="21"/>
-<wire x1="3.3" y1="3" x2="3.3" y2="-3" width="0.127" layer="21"/>
-<wire x1="3.3" y1="-3" x2="-3.3" y2="-3" width="0.127" layer="21"/>
-<wire x1="-3.3" y1="-3" x2="-3.3" y2="3" width="0.127" layer="21"/>
-<circle x="0" y="0" radius="1.5033" width="0.127" layer="21"/>
-<circle x="0" y="0" radius="1" width="0.127" layer="21"/>
-<smd name="B" x="-3.4" y="2" dx="3.2" dy="1.2" layer="1"/>
-<smd name="B'" x="3.4" y="2" dx="3.2" dy="1.2" layer="1"/>
-<smd name="A'" x="3.4" y="-2" dx="3.2" dy="1.2" layer="1"/>
-<smd name="A" x="-3.4" y="-2" dx="3.2" dy="1.2" layer="1"/>
-<text x="-3" y="3.5" size="1.27" layer="25">&gt;NAME</text>
-<text x="-3.2" y="-4.8" size="1.27" layer="27">&gt;VALUE</text>
+<package name="TACT6MM">
+<description>&lt;b&gt;Description:&lt;/b&gt; Standard 6MM Tact Switch Package.&lt;br/&gt;</description>
+<smd name="P$1" x="-3.975" y="2.45" dx="1.55" dy="1.3" layer="1"/>
+<smd name="P$2" x="3.975" y="2.45" dx="1.55" dy="1.3" layer="1"/>
+<smd name="P$3" x="-3.975" y="-2.45" dx="1.55" dy="1.3" layer="1"/>
+<smd name="P$4" x="3.975" y="-2.45" dx="1.55" dy="1.3" layer="1"/>
+<wire x1="-5.2" y1="3.4" x2="-5.2" y2="-3.4" width="0.127" layer="21"/>
+<wire x1="-5.2" y1="-3.4" x2="5.2" y2="-3.4" width="0.127" layer="21"/>
+<wire x1="5.2" y1="-3.4" x2="5.2" y2="3.4" width="0.127" layer="21"/>
+<wire x1="5.2" y1="3.4" x2="-5.2" y2="3.4" width="0.127" layer="21"/>
+<wire x1="-2.67" y1="2.4" x2="0" y2="2.4" width="0.127" layer="21"/>
+<wire x1="0" y1="2.4" x2="2.67" y2="2.4" width="0.127" layer="21"/>
+<wire x1="-2.67" y1="-2.4" x2="0" y2="-2.4" width="0.127" layer="21"/>
+<wire x1="0" y1="-2.4" x2="2.67" y2="-2.4" width="0.127" layer="21"/>
+<wire x1="0" y1="2.4" x2="0" y2="1" width="0.127" layer="21"/>
+<wire x1="0" y1="-2.4" x2="0" y2="-1" width="0.127" layer="21"/>
+<wire x1="0" y1="-1" x2="-0.8" y2="0.8" width="0.127" layer="21"/>
+<text x="-5.2" y="3.6" size="1.016" layer="21" font="vector" ratio="16">&gt;NAME</text>
 </package>
-<package name="KMR2">
-<wire x1="-2.1" y1="1.4" x2="2.1" y2="1.4" width="0.127" layer="21"/>
-<wire x1="2.1" y1="1.4" x2="2.1" y2="-1.4" width="0.127" layer="21"/>
-<wire x1="2.1" y1="-1.4" x2="-2.1" y2="-1.4" width="0.127" layer="21"/>
-<wire x1="-2.1" y1="-1.4" x2="-2.1" y2="1.4" width="0.127" layer="21"/>
-<wire x1="-0.5" y1="-0.8" x2="-1.1" y2="-0.2" width="0.127" layer="21" curve="-90"/>
-<wire x1="-1.1" y1="-0.2" x2="-1.1" y2="0.2" width="0.127" layer="21"/>
-<wire x1="-1.1" y1="0.2" x2="-0.5" y2="0.8" width="0.127" layer="21" curve="-90"/>
-<wire x1="-0.5" y1="0.8" x2="0.5" y2="0.8" width="0.127" layer="21"/>
-<wire x1="0.5" y1="0.8" x2="1.1" y2="0.2" width="0.127" layer="21" curve="-90"/>
-<wire x1="1.1" y1="0.2" x2="1.1" y2="-0.2" width="0.127" layer="21"/>
-<wire x1="1.1" y1="-0.2" x2="0.5" y2="-0.8" width="0.127" layer="21" curve="-90"/>
-<wire x1="0.5" y1="-0.8" x2="-0.5" y2="-0.8" width="0.127" layer="21"/>
-<smd name="1" x="2" y="0.8" dx="1" dy="1" layer="1"/>
-<smd name="2" x="2" y="-0.8" dx="1" dy="1" layer="1"/>
-<smd name="4" x="-2" y="-0.8" dx="1" dy="1" layer="1"/>
-<smd name="3" x="-2" y="0.8" dx="1" dy="1" layer="1"/>
+<package name="TACT4.2MM">
+<description>&lt;b&gt;Description:&lt;/b&gt; Standard 4.2MM Tact Switch Package.Based off C&amp;K PTS 810 Series Tact Switch.&lt;br/&gt;</description>
+<smd name="P$3" x="-2.075" y="-1.075" dx="0.65" dy="1.05" layer="1" rot="R90"/>
+<smd name="P$4" x="2.075" y="-1.075" dx="0.65" dy="1.05" layer="1" rot="R90"/>
+<smd name="P$2" x="2.075" y="1.075" dx="0.65" dy="1.05" layer="1" rot="R90"/>
+<smd name="P$1" x="-2.075" y="1.075" dx="0.65" dy="1.05" layer="1" rot="R90"/>
+<wire x1="-2.8" y1="1.6" x2="2.8" y2="1.6" width="0.127" layer="21"/>
+<wire x1="2.8" y1="1.6" x2="2.8" y2="-1.6" width="0.127" layer="21"/>
+<wire x1="2.8" y1="-1.6" x2="-2.8" y2="-1.6" width="0.127" layer="21"/>
+<wire x1="-2.8" y1="-1.6" x2="-2.8" y2="1.6" width="0.127" layer="21"/>
+<text x="-2.8" y="2" size="1.016" layer="25" font="vector" ratio="16">&gt;NAME</text>
+<wire x1="-1.2" y1="1.2" x2="0" y2="1.2" width="0.127" layer="25"/>
+<wire x1="0" y1="1.2" x2="1.2" y2="1.2" width="0.127" layer="25"/>
+<wire x1="-1.2" y1="-1.2" x2="0" y2="-1.2" width="0.127" layer="25"/>
+<wire x1="0" y1="-1.2" x2="1.2" y2="-1.2" width="0.127" layer="25"/>
+<wire x1="0" y1="-1.2" x2="0" y2="-0.6" width="0.127" layer="25"/>
+<wire x1="0" y1="1.2" x2="0" y2="0.6" width="0.127" layer="25"/>
+<wire x1="0" y1="-0.6" x2="-0.4" y2="0.4" width="0.127" layer="25"/>
 </package>
 </packages>
 <symbols>
-<symbol name="TS2">
-<wire x1="0" y1="1.905" x2="0" y2="2.54" width="0.254" layer="94"/>
-<wire x1="-4.445" y1="1.905" x2="-3.175" y2="1.905" width="0.254" layer="94"/>
-<wire x1="-4.445" y1="-1.905" x2="-3.175" y2="-1.905" width="0.254" layer="94"/>
-<wire x1="-4.445" y1="1.905" x2="-4.445" y2="0" width="0.254" layer="94"/>
-<wire x1="-4.445" y1="0" x2="-4.445" y2="-1.905" width="0.254" layer="94"/>
-<wire x1="-2.54" y1="0" x2="-1.905" y2="0" width="0.1524" layer="94"/>
-<wire x1="-1.27" y1="0" x2="-0.635" y2="0" width="0.1524" layer="94"/>
-<wire x1="-4.445" y1="0" x2="-3.175" y2="0" width="0.1524" layer="94"/>
-<wire x1="2.54" y1="2.54" x2="0" y2="2.54" width="0.1524" layer="94"/>
+<symbol name="TACTSW">
+<description>&lt;b&gt;Description:&lt;/b&gt; Tact Switch Symbol.&lt;br/&gt;</description>
+<pin name="P$1" x="-2.54" y="2.54" visible="off" length="short"/>
+<pin name="P$2" x="2.54" y="2.54" visible="off" length="short" rot="R180"/>
+<pin name="P$3" x="-2.54" y="-2.54" visible="off" length="short"/>
+<pin name="P$4" x="2.54" y="-2.54" visible="off" length="short" rot="R180"/>
+<text x="-2.54" y="7.62" size="1.016" layer="95" font="vector" align="top-left">&gt;NAME</text>
+<text x="-2.54" y="5.08" size="1.016" layer="96" font="vector">&gt;VALUE</text>
+<wire x1="-2.54" y1="2.54" x2="0" y2="2.54" width="0.1524" layer="94"/>
+<wire x1="0" y1="2.54" x2="2.54" y2="2.54" width="0.1524" layer="94"/>
 <wire x1="2.54" y1="-2.54" x2="0" y2="-2.54" width="0.1524" layer="94"/>
-<wire x1="0" y1="-2.54" x2="-1.27" y2="1.905" width="0.254" layer="94"/>
-<circle x="0" y="-2.54" radius="0.127" width="0.4064" layer="94"/>
-<circle x="0" y="2.54" radius="0.127" width="0.4064" layer="94"/>
-<text x="-6.35" y="-2.54" size="1.778" layer="95" rot="R90">&gt;NAME</text>
-<text x="-3.81" y="3.175" size="1.778" layer="96" rot="R90">&gt;VALUE</text>
-<pin name="P" x="0" y="-5.08" visible="pad" length="short" direction="pas" swaplevel="2" rot="R90"/>
-<pin name="S" x="0" y="5.08" visible="pad" length="short" direction="pas" swaplevel="1" rot="R270"/>
-<pin name="S1" x="2.54" y="5.08" visible="pad" length="short" direction="pas" swaplevel="1" rot="R270"/>
-<pin name="P1" x="2.54" y="-5.08" visible="pad" length="short" direction="pas" swaplevel="2" rot="R90"/>
+<wire x1="0" y1="-2.54" x2="-2.54" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="0" y1="2.54" x2="0" y2="1.27" width="0.1524" layer="94"/>
+<wire x1="0" y1="-2.54" x2="0" y2="-1.27" width="0.1524" layer="94"/>
+<wire x1="0" y1="-1.27" x2="-1.016" y2="1.016" width="0.1524" layer="94"/>
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="SPST_TACT" prefix="SW">
-<description>SMT 6mm switch, EVQQ2 series
-&lt;p&gt;http://www.ladyada.net/library/eagle&lt;/p&gt;</description>
+<deviceset name="TACT" prefix="SW" uservalue="yes">
+<description>&lt;b&gt;Library:&lt;/b&gt;  MF_Switches&lt;br/&gt;
+&lt;b&gt;Description:&lt;/b&gt; Device for Tact Switches. Manufacture part number (MFG#) can be added via Attributes.&lt;br/&gt;</description>
 <gates>
-<gate name="G$1" symbol="TS2" x="0" y="0"/>
+<gate name="G$1" symbol="TACTSW" x="0" y="0"/>
 </gates>
 <devices>
-<device name="-EVQQ2" package="EVQ-Q2">
+<device name="_6MM" package="TACT6MM">
 <connects>
-<connect gate="G$1" pin="P" pad="A"/>
-<connect gate="G$1" pin="P1" pad="A'"/>
-<connect gate="G$1" pin="S" pad="B"/>
-<connect gate="G$1" pin="S1" pad="B'"/>
+<connect gate="G$1" pin="P$1" pad="P$1"/>
+<connect gate="G$1" pin="P$2" pad="P$2"/>
+<connect gate="G$1" pin="P$3" pad="P$3"/>
+<connect gate="G$1" pin="P$4" pad="P$4"/>
 </connects>
 <technologies>
-<technology name=""/>
+<technology name="">
+<attribute name="HOUSEPART" value="YES" constant="no"/>
+<attribute name="MPN" value="MF-SW-TACT-6MM" constant="no"/>
+<attribute name="POPULATE" value="1" constant="no"/>
+<attribute name="URL" value="https://factory.macrofab.com/part/MF-SW-TACT-6MM" constant="no"/>
+<attribute name="VALUE" value="MF-SW-TACT-6MM" constant="no"/>
+</technology>
 </technologies>
 </device>
-<device name="-KMR2" package="KMR2">
+<device name="_4.2MM" package="TACT4.2MM">
 <connects>
-<connect gate="G$1" pin="P" pad="1"/>
-<connect gate="G$1" pin="P1" pad="3"/>
-<connect gate="G$1" pin="S" pad="2"/>
-<connect gate="G$1" pin="S1" pad="4"/>
+<connect gate="G$1" pin="P$1" pad="P$1"/>
+<connect gate="G$1" pin="P$2" pad="P$2"/>
+<connect gate="G$1" pin="P$3" pad="P$3"/>
+<connect gate="G$1" pin="P$4" pad="P$4"/>
 </connects>
 <technologies>
-<technology name=""/>
+<technology name="">
+<attribute name="HOUSEPART" value="YES" constant="no"/>
+<attribute name="MPN" value="MF-SW-TACT-4.2MM" constant="no"/>
+<attribute name="POPULATE" value="1" constant="no"/>
+<attribute name="URL" value="https://factory.macrofab.com/part/MF-SW-TACT-4.2MM" constant="no"/>
+<attribute name="VALUE" value="MF-SW-TACT-4.2MM" constant="no"/>
+</technology>
 </technologies>
 </device>
 </devices>
@@ -4325,7 +4338,7 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <part name="5.0V" library="MF_Aesthetics" deviceset="POWER_RAIL" device="" value="5.0V"/>
 <part name="VDD_EXT_2V8" library="MF_Aesthetics" deviceset="POWER_RAIL" device="" value="VDD_EXT_2V8"/>
 <part name="VDD_EXT_2V1" library="MF_Aesthetics" deviceset="POWER_RAIL" device="" value="VDD_EXT_2V8"/>
-<part name="SW1" library="adafruit" deviceset="SPST_TACT" device="-KMR2"/>
+<part name="SW1" library="MF_Switches" deviceset="TACT" device="_4.2MM" value="MF-SW-TACT-4.2MM"/>
 </parts>
 <sheets>
 <sheet>
@@ -4457,7 +4470,7 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <instance part="U$60" gate="G$1" x="147.32" y="81.28" rot="R90"/>
 <instance part="JP3" gate="G$1" x="180.34" y="66.04"/>
 <instance part="5.0V" gate="G$1" x="147.32" y="50.8" rot="R90"/>
-<instance part="SW1" gate="G$1" x="121.666" y="145.542"/>
+<instance part="SW1" gate="G$1" x="124.206" y="144.526"/>
 </instances>
 <busses>
 </busses>
@@ -4554,9 +4567,11 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <pinref part="U$45" gate="G$1" pin="P$1"/>
 </segment>
 <segment>
-<wire x1="121.666" y1="140.462" x2="121.666" y2="137.16" width="0.1524" layer="91"/>
 <pinref part="U$47" gate="G$1" pin="P$1"/>
-<pinref part="SW1" gate="G$1" pin="P"/>
+<pinref part="SW1" gate="G$1" pin="P$4"/>
+<wire x1="121.666" y1="139.7" x2="121.666" y2="137.16" width="0.1524" layer="91"/>
+<wire x1="126.746" y1="141.986" x2="126.746" y2="139.7" width="0.1524" layer="91"/>
+<wire x1="126.746" y1="139.7" x2="121.666" y2="139.7" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <wire x1="242.824" y1="48.26" x2="242.824" y2="49.53" width="0.1524" layer="91"/>
@@ -4973,8 +4988,13 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 </segment>
 <segment>
 <label x="118.11" y="155.702" size="1.778" layer="95"/>
-<wire x1="121.666" y1="154.94" x2="121.666" y2="150.622" width="0.1524" layer="91"/>
-<pinref part="SW1" gate="G$1" pin="S"/>
+<wire x1="121.666" y1="154.94" x2="121.666" y2="148.59" width="0.1524" layer="91"/>
+<pinref part="SW1" gate="G$1" pin="P$2"/>
+<wire x1="126.746" y1="147.066" x2="126.746" y2="148.59" width="0.1524" layer="91"/>
+<wire x1="126.746" y1="148.59" x2="121.666" y2="148.59" width="0.1524" layer="91"/>
+<pinref part="SW1" gate="G$1" pin="P$1"/>
+<wire x1="121.666" y1="147.066" x2="121.666" y2="148.59" width="0.1524" layer="91"/>
+<junction x="121.666" y="148.59"/>
 </segment>
 <segment>
 <pinref part="JP1" gate="A" pin="16"/>
