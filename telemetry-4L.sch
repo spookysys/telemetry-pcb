@@ -882,36 +882,121 @@
 <text x="1.143" y="-0.127" size="0.8128" layer="25" ratio="18">&gt;NAME</text>
 <text x="1.143" y="-0.635" size="0.4064" layer="27" ratio="10">&gt;VALUE</text>
 </package>
-<package name="1X13_ROUND_70">
-<wire x1="-16.51" y1="0.635" x2="-16.51" y2="-0.635" width="0.2032" layer="51"/>
-<pad name="1" x="-15.24" y="0" drill="1" diameter="1.6764" rot="R90"/>
-<pad name="2" x="-12.7" y="0" drill="1" diameter="1.6764" rot="R90"/>
-<pad name="3" x="-10.16" y="0" drill="1" diameter="1.6764" rot="R90"/>
-<pad name="4" x="-7.62" y="0" drill="1" diameter="1.6764" rot="R90"/>
-<pad name="5" x="-5.08" y="0" drill="1" diameter="1.6764" rot="R90"/>
-<pad name="6" x="-2.54" y="0" drill="1" diameter="1.6764" rot="R90"/>
-<pad name="7" x="0" y="0" drill="1" diameter="1.6764" rot="R90"/>
-<pad name="8" x="2.54" y="0" drill="1" diameter="1.6764" rot="R90"/>
-<pad name="9" x="5.08" y="0" drill="1" diameter="1.6764" rot="R90"/>
-<pad name="10" x="7.62" y="0" drill="1" diameter="1.6764" rot="R90"/>
-<pad name="11" x="10.16" y="0" drill="1" diameter="1.6764" rot="R90"/>
-<pad name="12" x="12.7" y="0" drill="1" diameter="1.6764" rot="R90"/>
-<text x="-16.5862" y="1.8288" size="0.8128" layer="25" ratio="18">&gt;NAME</text>
-<text x="-16.51" y="-3.175" size="0.4064" layer="27" ratio="10">&gt;VALUE</text>
-<rectangle x1="4.826" y1="-0.254" x2="5.334" y2="0.254" layer="51"/>
-<rectangle x1="2.286" y1="-0.254" x2="2.794" y2="0.254" layer="51"/>
-<rectangle x1="-0.254" y1="-0.254" x2="0.254" y2="0.254" layer="51"/>
-<rectangle x1="-2.794" y1="-0.254" x2="-2.286" y2="0.254" layer="51"/>
-<rectangle x1="-5.334" y1="-0.254" x2="-4.826" y2="0.254" layer="51"/>
-<rectangle x1="-7.874" y1="-0.254" x2="-7.366" y2="0.254" layer="51"/>
-<rectangle x1="-10.414" y1="-0.254" x2="-9.906" y2="0.254" layer="51"/>
-<rectangle x1="-12.954" y1="-0.254" x2="-12.446" y2="0.254" layer="51"/>
-<rectangle x1="-15.494" y1="-0.254" x2="-14.986" y2="0.254" layer="51"/>
-<rectangle x1="7.366" y1="-0.254" x2="7.874" y2="0.254" layer="51"/>
-<rectangle x1="9.906" y1="-0.254" x2="10.414" y2="0.254" layer="51"/>
-<rectangle x1="12.446" y1="-0.254" x2="12.954" y2="0.254" layer="51"/>
-<pad name="13" x="15.24" y="0" drill="1" diameter="1.6764" rot="R90"/>
-<rectangle x1="14.986" y1="-0.254" x2="15.494" y2="0.254" layer="51"/>
+<package name="1X12_ROUND">
+<wire x1="-15.24" y1="0.635" x2="-15.24" y2="-0.635" width="0.2032" layer="51"/>
+<pad name="1" x="-13.97" y="0" drill="1" diameter="1.6764" rot="R90"/>
+<pad name="2" x="-11.43" y="0" drill="1" diameter="1.6764" rot="R90"/>
+<pad name="3" x="-8.89" y="0" drill="1" diameter="1.6764" rot="R90"/>
+<pad name="4" x="-6.35" y="0" drill="1" diameter="1.6764" rot="R90"/>
+<pad name="5" x="-3.81" y="0" drill="1" diameter="1.6764" rot="R90"/>
+<pad name="6" x="-1.27" y="0" drill="1" diameter="1.6764" rot="R90"/>
+<pad name="7" x="1.27" y="0" drill="1" diameter="1.6764" rot="R90"/>
+<pad name="8" x="3.81" y="0" drill="1" diameter="1.6764" rot="R90"/>
+<pad name="9" x="6.35" y="0" drill="1" diameter="1.6764" rot="R90"/>
+<pad name="10" x="8.89" y="0" drill="1" diameter="1.6764" rot="R90"/>
+<pad name="11" x="11.43" y="0" drill="1" diameter="1.6764" rot="R90"/>
+<pad name="12" x="13.97" y="0" drill="1" diameter="1.6764" rot="R90"/>
+<text x="-15.3162" y="1.8288" size="0.8128" layer="25" ratio="18">&gt;NAME</text>
+<text x="-15.24" y="-3.175" size="0.4064" layer="27" ratio="10">&gt;VALUE</text>
+<rectangle x1="6.096" y1="-0.254" x2="6.604" y2="0.254" layer="51"/>
+<rectangle x1="3.556" y1="-0.254" x2="4.064" y2="0.254" layer="51"/>
+<rectangle x1="1.016" y1="-0.254" x2="1.524" y2="0.254" layer="51"/>
+<rectangle x1="-1.524" y1="-0.254" x2="-1.016" y2="0.254" layer="51"/>
+<rectangle x1="-4.064" y1="-0.254" x2="-3.556" y2="0.254" layer="51"/>
+<rectangle x1="-6.604" y1="-0.254" x2="-6.096" y2="0.254" layer="51"/>
+<rectangle x1="-9.144" y1="-0.254" x2="-8.636" y2="0.254" layer="51"/>
+<rectangle x1="-11.684" y1="-0.254" x2="-11.176" y2="0.254" layer="51"/>
+<rectangle x1="-14.224" y1="-0.254" x2="-13.716" y2="0.254" layer="51"/>
+<rectangle x1="8.636" y1="-0.254" x2="9.144" y2="0.254" layer="51"/>
+<rectangle x1="11.176" y1="-0.254" x2="11.684" y2="0.254" layer="51"/>
+<rectangle x1="13.716" y1="-0.254" x2="14.224" y2="0.254" layer="51"/>
+</package>
+<package name="1X12_OVAL">
+<wire x1="-15.24" y1="0.635" x2="-15.24" y2="-0.635" width="0.2032" layer="51"/>
+<pad name="1" x="-13.97" y="0" drill="1" diameter="1.6764" shape="long" rot="R90"/>
+<pad name="2" x="-11.43" y="0" drill="1" diameter="1.6764" shape="long" rot="R90"/>
+<pad name="3" x="-8.89" y="0" drill="1" diameter="1.6764" shape="long" rot="R90"/>
+<pad name="4" x="-6.35" y="0" drill="1" diameter="1.6764" shape="long" rot="R90"/>
+<pad name="5" x="-3.81" y="0" drill="1" diameter="1.6764" shape="long" rot="R90"/>
+<pad name="6" x="-1.27" y="0" drill="1" diameter="1.6764" shape="long" rot="R90"/>
+<pad name="7" x="1.27" y="0" drill="1" diameter="1.6764" shape="long" rot="R90"/>
+<pad name="8" x="3.81" y="0" drill="1" diameter="1.6764" shape="long" rot="R90"/>
+<pad name="9" x="6.35" y="0" drill="1" diameter="1.6764" shape="long" rot="R90"/>
+<pad name="10" x="8.89" y="0" drill="1" diameter="1.6764" shape="long" rot="R90"/>
+<pad name="11" x="11.43" y="0" drill="1" diameter="1.6764" shape="long" rot="R90"/>
+<pad name="12" x="13.97" y="0" drill="1" diameter="1.6764" shape="long" rot="R90"/>
+<text x="-15.3162" y="1.8288" size="0.8128" layer="25" ratio="18">&gt;NAME</text>
+<text x="-15.24" y="-3.175" size="0.4064" layer="27" ratio="10">&gt;VALUE</text>
+<rectangle x1="6.096" y1="-0.254" x2="6.604" y2="0.254" layer="51"/>
+<rectangle x1="3.556" y1="-0.254" x2="4.064" y2="0.254" layer="51"/>
+<rectangle x1="1.016" y1="-0.254" x2="1.524" y2="0.254" layer="51"/>
+<rectangle x1="-1.524" y1="-0.254" x2="-1.016" y2="0.254" layer="51"/>
+<rectangle x1="-4.064" y1="-0.254" x2="-3.556" y2="0.254" layer="51"/>
+<rectangle x1="-6.604" y1="-0.254" x2="-6.096" y2="0.254" layer="51"/>
+<rectangle x1="-9.144" y1="-0.254" x2="-8.636" y2="0.254" layer="51"/>
+<rectangle x1="-11.684" y1="-0.254" x2="-11.176" y2="0.254" layer="51"/>
+<rectangle x1="-14.224" y1="-0.254" x2="-13.716" y2="0.254" layer="51"/>
+<rectangle x1="8.636" y1="-0.254" x2="9.144" y2="0.254" layer="51"/>
+<rectangle x1="11.176" y1="-0.254" x2="11.684" y2="0.254" layer="51"/>
+<rectangle x1="13.716" y1="-0.254" x2="14.224" y2="0.254" layer="51"/>
+</package>
+<package name="1X12_ROUND_80MIL">
+<wire x1="-15.24" y1="0.635" x2="-15.24" y2="-0.635" width="0.2032" layer="51"/>
+<pad name="1" x="-13.97" y="0" drill="1" diameter="2.032" rot="R90"/>
+<pad name="2" x="-11.43" y="0" drill="1" diameter="2.032" rot="R90"/>
+<pad name="3" x="-8.89" y="0" drill="1" diameter="2.032" rot="R90"/>
+<pad name="4" x="-6.35" y="0" drill="1" diameter="2.032" rot="R90"/>
+<pad name="5" x="-3.81" y="0" drill="1" diameter="2.032" rot="R90"/>
+<pad name="6" x="-1.27" y="0" drill="1" diameter="2.032" rot="R90"/>
+<pad name="7" x="1.27" y="0" drill="1" diameter="2.032" rot="R90"/>
+<pad name="8" x="3.81" y="0" drill="1" diameter="2.032" rot="R90"/>
+<pad name="9" x="6.35" y="0" drill="1" diameter="2.032" rot="R90"/>
+<pad name="10" x="8.89" y="0" drill="1" diameter="2.032" rot="R90"/>
+<pad name="11" x="11.43" y="0" drill="1" diameter="2.032" rot="R90"/>
+<pad name="12" x="13.97" y="0" drill="1" diameter="2.032" rot="R90"/>
+<text x="-15.3162" y="1.8288" size="0.8128" layer="25" ratio="18">&gt;NAME</text>
+<text x="-15.24" y="-3.175" size="0.4064" layer="27" ratio="10">&gt;VALUE</text>
+<rectangle x1="6.096" y1="-0.254" x2="6.604" y2="0.254" layer="51"/>
+<rectangle x1="3.556" y1="-0.254" x2="4.064" y2="0.254" layer="51"/>
+<rectangle x1="1.016" y1="-0.254" x2="1.524" y2="0.254" layer="51"/>
+<rectangle x1="-1.524" y1="-0.254" x2="-1.016" y2="0.254" layer="51"/>
+<rectangle x1="-4.064" y1="-0.254" x2="-3.556" y2="0.254" layer="51"/>
+<rectangle x1="-6.604" y1="-0.254" x2="-6.096" y2="0.254" layer="51"/>
+<rectangle x1="-9.144" y1="-0.254" x2="-8.636" y2="0.254" layer="51"/>
+<rectangle x1="-11.684" y1="-0.254" x2="-11.176" y2="0.254" layer="51"/>
+<rectangle x1="-14.224" y1="-0.254" x2="-13.716" y2="0.254" layer="51"/>
+<rectangle x1="8.636" y1="-0.254" x2="9.144" y2="0.254" layer="51"/>
+<rectangle x1="11.176" y1="-0.254" x2="11.684" y2="0.254" layer="51"/>
+<rectangle x1="13.716" y1="-0.254" x2="14.224" y2="0.254" layer="51"/>
+</package>
+<package name="1X12_ROUND_76MIL">
+<wire x1="-15.24" y1="0.635" x2="-15.24" y2="-0.635" width="0.2032" layer="51"/>
+<pad name="1" x="-13.97" y="0" drill="1" diameter="1.9304" rot="R90"/>
+<pad name="2" x="-11.43" y="0" drill="1" diameter="1.9304" rot="R90"/>
+<pad name="3" x="-8.89" y="0" drill="1" diameter="1.9304" rot="R90"/>
+<pad name="4" x="-6.35" y="0" drill="1" diameter="1.9304" rot="R90"/>
+<pad name="5" x="-3.81" y="0" drill="1" diameter="1.9304" rot="R90"/>
+<pad name="6" x="-1.27" y="0" drill="1" diameter="1.9304" rot="R90"/>
+<pad name="7" x="1.27" y="0" drill="1" diameter="1.9304" rot="R90"/>
+<pad name="8" x="3.81" y="0" drill="1" diameter="1.9304" rot="R90"/>
+<pad name="9" x="6.35" y="0" drill="1" diameter="1.9304" rot="R90"/>
+<pad name="10" x="8.89" y="0" drill="1" diameter="1.9304" rot="R90"/>
+<pad name="11" x="11.43" y="0" drill="1" diameter="1.9304" rot="R90"/>
+<pad name="12" x="13.97" y="0" drill="1" diameter="1.9304" rot="R90"/>
+<text x="-15.3162" y="1.8288" size="0.8128" layer="25" ratio="18">&gt;NAME</text>
+<text x="-15.24" y="-3.175" size="0.4064" layer="27" ratio="10">&gt;VALUE</text>
+<rectangle x1="6.096" y1="-0.254" x2="6.604" y2="0.254" layer="51"/>
+<rectangle x1="3.556" y1="-0.254" x2="4.064" y2="0.254" layer="51"/>
+<rectangle x1="1.016" y1="-0.254" x2="1.524" y2="0.254" layer="51"/>
+<rectangle x1="-1.524" y1="-0.254" x2="-1.016" y2="0.254" layer="51"/>
+<rectangle x1="-4.064" y1="-0.254" x2="-3.556" y2="0.254" layer="51"/>
+<rectangle x1="-6.604" y1="-0.254" x2="-6.096" y2="0.254" layer="51"/>
+<rectangle x1="-9.144" y1="-0.254" x2="-8.636" y2="0.254" layer="51"/>
+<rectangle x1="-11.684" y1="-0.254" x2="-11.176" y2="0.254" layer="51"/>
+<rectangle x1="-14.224" y1="-0.254" x2="-13.716" y2="0.254" layer="51"/>
+<rectangle x1="8.636" y1="-0.254" x2="9.144" y2="0.254" layer="51"/>
+<rectangle x1="11.176" y1="-0.254" x2="11.684" y2="0.254" layer="51"/>
+<rectangle x1="13.716" y1="-0.254" x2="14.224" y2="0.254" layer="51"/>
 </package>
 </packages>
 <symbols>
@@ -1092,13 +1177,13 @@
 <text x="1.651" y="5.588" size="1.27" layer="95" rot="R90" align="center-left">&gt;VALUE</text>
 <pin name="P$1" x="0" y="0" visible="off" length="short" rot="R90"/>
 </symbol>
-<symbol name="PINHD13">
-<wire x1="-6.35" y1="-17.78" x2="1.27" y2="-17.78" width="0.4064" layer="94"/>
-<wire x1="1.27" y1="-17.78" x2="1.27" y2="17.78" width="0.4064" layer="94"/>
+<symbol name="PINHD12">
+<wire x1="-6.35" y1="-15.24" x2="1.27" y2="-15.24" width="0.4064" layer="94"/>
+<wire x1="1.27" y1="-15.24" x2="1.27" y2="17.78" width="0.4064" layer="94"/>
 <wire x1="1.27" y1="17.78" x2="-6.35" y2="17.78" width="0.4064" layer="94"/>
-<wire x1="-6.35" y1="17.78" x2="-6.35" y2="-17.78" width="0.4064" layer="94"/>
+<wire x1="-6.35" y1="17.78" x2="-6.35" y2="-15.24" width="0.4064" layer="94"/>
 <text x="-6.35" y="18.415" size="1.778" layer="95">&gt;NAME</text>
-<text x="-6.35" y="-20.32" size="1.778" layer="96">&gt;VALUE</text>
+<text x="-6.35" y="-17.78" size="1.778" layer="96">&gt;VALUE</text>
 <pin name="1" x="-2.54" y="15.24" visible="pad" length="short" direction="pas" function="dot"/>
 <pin name="2" x="-2.54" y="12.7" visible="pad" length="short" direction="pas" function="dot"/>
 <pin name="3" x="-2.54" y="10.16" visible="pad" length="short" direction="pas" function="dot"/>
@@ -1111,7 +1196,6 @@
 <pin name="10" x="-2.54" y="-7.62" visible="pad" length="short" direction="pas" function="dot"/>
 <pin name="11" x="-2.54" y="-10.16" visible="pad" length="short" direction="pas" function="dot"/>
 <pin name="12" x="-2.54" y="-12.7" visible="pad" length="short" direction="pas" function="dot"/>
-<pin name="13" x="-2.54" y="-15.24" visible="pad" length="short" direction="pas" function="dot"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -1799,18 +1883,74 @@ DIN A4, landscape with location and doc. field</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="HEADER-1X13" prefix="JP" uservalue="yes">
+<deviceset name="HEADER-1X12" prefix="JP" uservalue="yes">
 <gates>
-<gate name="G$1" symbol="PINHD13" x="0" y="0"/>
+<gate name="G$1" symbol="PINHD12" x="2.54" y="-2.54"/>
 </gates>
 <devices>
-<device name="" package="1X13_ROUND_70">
+<device name="" package="1X12_ROUND">
 <connects>
 <connect gate="G$1" pin="1" pad="1"/>
 <connect gate="G$1" pin="10" pad="10"/>
 <connect gate="G$1" pin="11" pad="11"/>
 <connect gate="G$1" pin="12" pad="12"/>
-<connect gate="G$1" pin="13" pad="13"/>
+<connect gate="G$1" pin="2" pad="2"/>
+<connect gate="G$1" pin="3" pad="3"/>
+<connect gate="G$1" pin="4" pad="4"/>
+<connect gate="G$1" pin="5" pad="5"/>
+<connect gate="G$1" pin="6" pad="6"/>
+<connect gate="G$1" pin="7" pad="7"/>
+<connect gate="G$1" pin="8" pad="8"/>
+<connect gate="G$1" pin="9" pad="9"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="OVAL" package="1X12_OVAL">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="10" pad="10"/>
+<connect gate="G$1" pin="11" pad="11"/>
+<connect gate="G$1" pin="12" pad="12"/>
+<connect gate="G$1" pin="2" pad="2"/>
+<connect gate="G$1" pin="3" pad="3"/>
+<connect gate="G$1" pin="4" pad="4"/>
+<connect gate="G$1" pin="5" pad="5"/>
+<connect gate="G$1" pin="6" pad="6"/>
+<connect gate="G$1" pin="7" pad="7"/>
+<connect gate="G$1" pin="8" pad="8"/>
+<connect gate="G$1" pin="9" pad="9"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="80MIL" package="1X12_ROUND_80MIL">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="10" pad="10"/>
+<connect gate="G$1" pin="11" pad="11"/>
+<connect gate="G$1" pin="12" pad="12"/>
+<connect gate="G$1" pin="2" pad="2"/>
+<connect gate="G$1" pin="3" pad="3"/>
+<connect gate="G$1" pin="4" pad="4"/>
+<connect gate="G$1" pin="5" pad="5"/>
+<connect gate="G$1" pin="6" pad="6"/>
+<connect gate="G$1" pin="7" pad="7"/>
+<connect gate="G$1" pin="8" pad="8"/>
+<connect gate="G$1" pin="9" pad="9"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="76MIL" package="1X12_ROUND_76MIL">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="10" pad="10"/>
+<connect gate="G$1" pin="11" pad="11"/>
+<connect gate="G$1" pin="12" pad="12"/>
 <connect gate="G$1" pin="2" pad="2"/>
 <connect gate="G$1" pin="3" pad="3"/>
 <connect gate="G$1" pin="4" pad="4"/>
@@ -3981,9 +4121,6 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <part name="C15" library="MF_Passives" deviceset="CAPACITOR_NP" device="_1206" value="100uF">
 <attribute name="MPN" value="CL31A107MQHNNNE"/>
 </part>
-<part name="C16" library="MF_Passives" deviceset="CAPACITOR_NP" device="_1206" value="100uF">
-<attribute name="MPN" value="CL31A107MQHNNNE"/>
-</part>
 <part name="C7" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="1uF"/>
 <part name="C14" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="1uF"/>
 <part name="C21" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0603" value="10uF">
@@ -4037,11 +4174,8 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <part name="U$23" library="microbuilder" deviceset="GND" device=""/>
 <part name="U$24" library="microbuilder" deviceset="GND" device=""/>
 <part name="U$26" library="microbuilder" deviceset="GND" device=""/>
-<part name="U$42" library="MF_Aesthetics" deviceset="POWER_RAIL" device="" value="5.0V"/>
-<part name="U$46" library="MF_Aesthetics" deviceset="GND_RAIL" device=""/>
-<part name="5.0V_1" library="MF_Aesthetics" deviceset="POWER_RAIL" device="" value="5.0V"/>
+<part name="5.0V_1" library="MF_Aesthetics" deviceset="POWER_RAIL" device="" value="VBAT_ON"/>
 <part name="U$55" library="MF_Aesthetics" deviceset="GND_RAIL" device=""/>
-<part name="U$20" library="MF_Aesthetics" deviceset="POWER_RAIL" device="" value="VBAT_ON"/>
 <part name="U$34" library="MF_Aesthetics" deviceset="POWER_RAIL" device="" value="VBAT"/>
 <part name="U$52" library="MF_Aesthetics" deviceset="POWER_RAIL" device="" value="VBAT_ON"/>
 <part name="U$56" library="MF_Aesthetics" deviceset="POWER_RAIL" device="" value="VBAT_ON"/>
@@ -4062,11 +4196,13 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <part name="JP11" library="SparkFun-Passives" deviceset="JUMPER-PAD-2-NO" device="YES_SILK">
 <attribute name="POPULATE" value="0"/>
 </part>
-<part name="JP3" library="microbuilder" deviceset="HEADER-1X13" device=""/>
-<part name="5.0V" library="MF_Aesthetics" deviceset="POWER_RAIL" device="" value="5.0V"/>
+<part name="JP3" library="microbuilder" deviceset="HEADER-1X12" device=""/>
 <part name="VDD_EXT_2V8" library="MF_Aesthetics" deviceset="POWER_RAIL" device="" value="VDD_EXT_2V8"/>
 <part name="VDD_EXT_2V1" library="MF_Aesthetics" deviceset="POWER_RAIL" device="" value="VDD_EXT_2V8"/>
 <part name="SW1" library="MF_Switches" deviceset="TACT" device="_4.2MM" value="MF-SW-TACT-4.2MM"/>
+<part name="C16" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0603" value="10uF">
+<attribute name="MPN" value="GRM188R60J106ME47D"/>
+</part>
 </parts>
 <sheets>
 <sheet>
@@ -4197,7 +4333,6 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <instance part="U$59" gate="G$1" x="246.38" y="126.492"/>
 <instance part="U$60" gate="G$1" x="147.32" y="81.28" rot="R90"/>
 <instance part="JP3" gate="G$1" x="180.34" y="66.04"/>
-<instance part="5.0V" gate="G$1" x="147.32" y="50.8" rot="R90"/>
 <instance part="SW1" gate="G$1" x="124.206" y="144.526"/>
 </instances>
 <busses>
@@ -4921,14 +5056,6 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <label x="111.76" y="22.86" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="5.0V" class="0">
-<segment>
-<pinref part="JP3" gate="G$1" pin="13"/>
-<wire x1="177.8" y1="50.8" x2="149.86" y2="50.8" width="0.1524" layer="91"/>
-<label x="157.48" y="50.8" size="1.778" layer="95"/>
-<pinref part="5.0V" gate="G$1" pin="P$1"/>
-</segment>
-</net>
 </nets>
 </sheet>
 <sheet>
@@ -4942,8 +5069,7 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <text x="38.1" y="163.322" size="1.778" layer="94">SIM868 POWER</text>
 <text x="9.652" y="130.81" size="1.778" layer="94">DECOUPLING 3V</text>
 <text x="36.068" y="57.15" size="1.778" layer="94">MOTION SENSOR</text>
-<text x="93.472" y="121.158" size="1.778" layer="94">SERVO POWER 2</text>
-<text x="75.184" y="162.56" size="1.778" layer="94">SERVO POWER 1</text>
+<text x="82.042" y="162.814" size="1.778" layer="94">SERVO POWER 1</text>
 </plain>
 <instances>
 <instance part="FRAME2" gate="G$1" x="0" y="0">
@@ -5005,10 +5131,6 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <instance part="C12" gate="G$1" x="215.9" y="27.94"/>
 <instance part="C13" gate="G$1" x="205.74" y="27.94"/>
 <instance part="C15" gate="G$1" x="195.58" y="27.94"/>
-<instance part="C16" gate="G$1" x="157.48" y="144.78" smashed="yes" rot="R90">
-<attribute name="NAME" x="159.004" y="147.066" size="1.016" layer="95" font="vector" rot="R180" align="top-left"/>
-<attribute name="VALUE" x="160.02" y="142.494" size="1.016" layer="96" font="vector" rot="R180"/>
-</instance>
 <instance part="R4" gate="G$1" x="19.05" y="164.338" smashed="yes" rot="R90">
 <attribute name="NAME" x="20.828" y="165.608" size="1.016" layer="95" font="vector" rot="R180" align="top-left"/>
 <attribute name="VALUE" x="21.336" y="163.068" size="1.016" layer="96" font="vector" rot="R180"/>
@@ -5055,11 +5177,8 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <instance part="U$23" gate="G$1" x="71.628" y="33.02"/>
 <instance part="U$24" gate="G$1" x="69.088" y="17.78"/>
 <instance part="U$26" gate="G$1" x="8.636" y="22.86"/>
-<instance part="U$42" gate="G$1" x="109.22" y="113.284"/>
-<instance part="U$46" gate="G$1" x="103.886" y="103.124"/>
 <instance part="5.0V_1" gate="G$1" x="91.948" y="157.226"/>
 <instance part="U$55" gate="G$1" x="91.948" y="135.636"/>
-<instance part="U$20" gate="G$1" x="99.568" y="113.538"/>
 <instance part="U$34" gate="G$1" x="55.372" y="140.97"/>
 <instance part="U$52" gate="G$1" x="148.844" y="152.4"/>
 <instance part="U$56" gate="G$1" x="205.74" y="33.02"/>
@@ -5089,6 +5208,10 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 </instance>
 <instance part="VDD_EXT_2V8" gate="G$1" x="138.684" y="137.16"/>
 <instance part="VDD_EXT_2V1" gate="G$1" x="248.412" y="160.02"/>
+<instance part="C16" gate="G$1" x="157.48" y="144.78" smashed="yes" rot="R90">
+<attribute name="NAME" x="159.004" y="146.812" size="1.016" layer="95" font="vector" rot="R180" align="top-left"/>
+<attribute name="VALUE" x="159.512" y="142.748" size="1.016" layer="96" font="vector" rot="R180"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -5307,9 +5430,9 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <junction x="91.948" y="138.176"/>
 </segment>
 <segment>
-<pinref part="C16" gate="G$1" pin="P$1"/>
 <wire x1="154.94" y1="144.78" x2="149.86" y2="144.78" width="0.1524" layer="91"/>
 <pinref part="U$61" gate="G$1" pin="P$1"/>
+<pinref part="C16" gate="G$1" pin="P$1"/>
 </segment>
 <segment>
 <pinref part="R12" gate="G$1" pin="P$1"/>
@@ -5742,8 +5865,6 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <pinref part="VBAT" gate="G$1" pin="P$1"/>
 <wire x1="52.07" y1="153.67" x2="51.054" y2="153.67" width="0.1524" layer="91"/>
 </segment>
-</net>
-<net name="5.0V" class="0">
 <segment>
 <pinref part="5.0V_1" gate="G$1" pin="P$1"/>
 <pinref part="C24" gate="G$1" pin="P$1"/>
