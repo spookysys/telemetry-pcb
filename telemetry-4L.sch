@@ -4021,7 +4021,7 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <part name="U$51" library="MF_Aesthetics" deviceset="GND_RAIL" device=""/>
 <part name="U$44" library="MF_Aesthetics" deviceset="POWER_RAIL" device="" value="VBAT"/>
 <part name="U4" library="MF_Discrete_Semiconductor" deviceset="N-CHANNEL_FET" device="_SOT-23-3" value="IRLML6344TRPBF"/>
-<part name="VBAT" library="MF_Aesthetics" deviceset="POWER_RAIL" device="" value="VBAT"/>
+<part name="VBAT" library="MF_Aesthetics" deviceset="POWER_RAIL" device="" value="VBAT_ON"/>
 <part name="C19" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="1uF"/>
 <part name="+3V5" library="MF_Aesthetics" deviceset="POWER_RAIL" device="" value="3V"/>
 <part name="U$13" library="MF_Aesthetics" deviceset="GND_RAIL" device=""/>
@@ -4042,7 +4042,7 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <part name="5.0V_1" library="MF_Aesthetics" deviceset="POWER_RAIL" device="" value="5.0V"/>
 <part name="U$55" library="MF_Aesthetics" deviceset="GND_RAIL" device=""/>
 <part name="U$20" library="MF_Aesthetics" deviceset="POWER_RAIL" device="" value="VBAT_ON"/>
-<part name="U$34" library="MF_Aesthetics" deviceset="POWER_RAIL" device="" value="VBAT_ON"/>
+<part name="U$34" library="MF_Aesthetics" deviceset="POWER_RAIL" device="" value="VBAT"/>
 <part name="U$52" library="MF_Aesthetics" deviceset="POWER_RAIL" device="" value="VBAT_ON"/>
 <part name="U$56" library="MF_Aesthetics" deviceset="POWER_RAIL" device="" value="VBAT_ON"/>
 <part name="U$57" library="MF_Aesthetics" deviceset="POWER_RAIL" device=""/>
@@ -5022,9 +5022,9 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <attribute name="NAME" x="123.19" y="136.144" size="1.016" layer="95" font="vector" rot="R180" align="top-left"/>
 <attribute name="VALUE" x="126.746" y="137.16" size="1.016" layer="96" font="vector" rot="R180"/>
 </instance>
-<instance part="U4" gate="G$1" x="48.514" y="148.59"/>
-<instance part="VBAT" gate="G$1" x="51.054" y="159.258" smashed="yes">
-<attribute name="VALUE" x="51.054" y="161.798" size="1.016" layer="96" font="vector" align="center"/>
+<instance part="U4" gate="G$1" x="48.514" y="146.05"/>
+<instance part="VBAT" gate="G$1" x="52.07" y="156.21" smashed="yes">
+<attribute name="VALUE" x="52.07" y="158.75" size="1.016" layer="96" font="vector" align="center"/>
 </instance>
 <instance part="C19" gate="G$1" x="25.908" y="139.954"/>
 <instance part="+3V5" gate="G$1" x="18.288" y="145.034" smashed="yes" rot="MR0">
@@ -5060,7 +5060,7 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <instance part="5.0V_1" gate="G$1" x="91.948" y="157.226"/>
 <instance part="U$55" gate="G$1" x="91.948" y="135.636"/>
 <instance part="U$20" gate="G$1" x="99.568" y="113.538"/>
-<instance part="U$34" gate="G$1" x="58.674" y="143.51"/>
+<instance part="U$34" gate="G$1" x="55.372" y="140.97"/>
 <instance part="U$52" gate="G$1" x="148.844" y="152.4"/>
 <instance part="U$56" gate="G$1" x="205.74" y="33.02"/>
 <instance part="U$57" gate="G$1" x="68.58" y="88.392"/>
@@ -5551,13 +5551,6 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <pinref part="JP10" gate="G$1" pin="2"/>
 </segment>
 </net>
-<net name="VBAT" class="0">
-<segment>
-<pinref part="U4" gate="G$1" pin="DRAIN"/>
-<pinref part="VBAT" gate="G$1" pin="P$1"/>
-<wire x1="51.054" y1="156.718" x2="51.054" y2="156.21" width="0.1524" layer="91"/>
-</segment>
-</net>
 <net name="GSM_DTR" class="0">
 <segment>
 <pinref part="U5" gate="G$1" pin="UART1_DTR"/>
@@ -5698,8 +5691,8 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <net name="EN" class="0">
 <segment>
 <pinref part="U4" gate="G$1" pin="GATE"/>
-<wire x1="40.894" y1="148.59" x2="35.814" y2="148.59" width="0.1524" layer="91"/>
-<label x="35.306" y="149.098" size="1.778" layer="95"/>
+<wire x1="40.894" y1="146.05" x2="37.084" y2="146.05" width="0.1524" layer="91"/>
+<label x="37.592" y="146.558" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="MPU_INT" class="0">
@@ -5718,12 +5711,6 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 </segment>
 </net>
 <net name="VBAT_ON" class="0">
-<segment>
-<label x="49.53" y="138.684" size="1.778" layer="95"/>
-<wire x1="58.674" y1="140.97" x2="51.054" y2="140.97" width="0.1524" layer="91"/>
-<pinref part="U4" gate="G$1" pin="SOURCE"/>
-<pinref part="U$34" gate="G$1" pin="P$1"/>
-</segment>
 <segment>
 <pinref part="U5" gate="G$1" pin="VBAT"/>
 <pinref part="U5" gate="G$1" pin="GPS_VBAT"/>
@@ -5750,6 +5737,11 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <label x="207.264" y="31.75" size="1.778" layer="95"/>
 <pinref part="U$56" gate="G$1" pin="P$1"/>
 </segment>
+<segment>
+<pinref part="U4" gate="G$1" pin="DRAIN"/>
+<pinref part="VBAT" gate="G$1" pin="P$1"/>
+<wire x1="52.07" y1="153.67" x2="51.054" y2="153.67" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="5.0V" class="0">
 <segment>
@@ -5775,6 +5767,13 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <pinref part="JP11" gate="G$1" pin="1"/>
 <wire x1="132.08" y1="73.66" x2="127" y2="73.66" width="0.1524" layer="91"/>
 <label x="127" y="73.66" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="VBAT" class="0">
+<segment>
+<pinref part="U4" gate="G$1" pin="SOURCE"/>
+<pinref part="U$34" gate="G$1" pin="P$1"/>
+<wire x1="55.372" y1="138.43" x2="51.054" y2="138.43" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
