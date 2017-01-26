@@ -2409,81 +2409,6 @@ DIN A4, landscape with location and doc. field</description>
 </deviceset>
 </devicesets>
 </library>
-<library name="Custom">
-<packages>
-<package name="YFF9">
-<smd name="A1" x="-0.4" y="0.4" dx="0.3" dy="0.3" layer="1" roundness="100"/>
-<smd name="A2" x="0" y="0.4" dx="0.3" dy="0.3" layer="1" roundness="100"/>
-<smd name="A3" x="0.4" y="0.4" dx="0.3" dy="0.3" layer="1" roundness="100"/>
-<smd name="B1" x="-0.4" y="0" dx="0.3" dy="0.3" layer="1" roundness="100"/>
-<smd name="B2" x="0" y="0" dx="0.3" dy="0.3" layer="1" roundness="100"/>
-<smd name="B3" x="0.4" y="0" dx="0.3" dy="0.3" layer="1" roundness="100"/>
-<smd name="C1" x="-0.4" y="-0.4" dx="0.3" dy="0.3" layer="1" roundness="100"/>
-<smd name="C2" x="0" y="-0.4" dx="0.3" dy="0.3" layer="1" roundness="100"/>
-<smd name="C3" x="0.4" y="-0.4" dx="0.3" dy="0.3" layer="1" roundness="100"/>
-<wire x1="-1.0414" y1="-1.0414" x2="1.0414" y2="-1.0414" width="0.1524" layer="21"/>
-<wire x1="1.0414" y1="-1.0414" x2="1.0414" y2="1.0414" width="0.1524" layer="21"/>
-<wire x1="1.0414" y1="1.0414" x2="-1.0414" y2="1.0414" width="0.1524" layer="21"/>
-<wire x1="-1.0414" y1="1.0414" x2="-1.0414" y2="-1.0414" width="0.1524" layer="21"/>
-<wire x1="-0.7366" y1="0.9144" x2="-0.9144" y2="0.7366" width="0.1524" layer="51"/>
-<wire x1="-0.9144" y1="-0.9144" x2="0.9144" y2="-0.9144" width="0.1524" layer="51"/>
-<wire x1="0.9144" y1="-0.9144" x2="0.9144" y2="0.9144" width="0.1524" layer="51"/>
-<wire x1="0.9144" y1="0.9144" x2="-0.9144" y2="0.9144" width="0.1524" layer="51"/>
-<wire x1="-0.9144" y1="0.9144" x2="-0.9144" y2="-0.9144" width="0.1524" layer="51"/>
-<text x="0" y="1.905" size="1.27" layer="25" font="vector" ratio="18" align="center">&gt;NAME</text>
-<text x="0" y="-1.905" size="1.27" layer="27" font="vector" ratio="18" align="center">&gt;VALUE</text>
-</package>
-</packages>
-<symbols>
-<symbol name="TPS61253_YFF_9">
-<pin name="VOUT_2" x="15.24" y="2.54" length="short" direction="out" rot="R180"/>
-<pin name="VOUT" x="15.24" y="5.08" length="short" direction="out" rot="R180"/>
-<pin name="VIN" x="-10.16" y="0" length="short" direction="in"/>
-<pin name="SW_2" x="-10.16" y="2.54" length="short"/>
-<pin name="SW" x="-10.16" y="5.08" length="short"/>
-<pin name="EN" x="-10.16" y="-2.54" length="short" direction="in"/>
-<pin name="GND_2" x="15.24" y="-5.08" length="short" direction="pwr" rot="R180"/>
-<pin name="GND" x="15.24" y="-2.54" length="short" direction="pwr" rot="R180"/>
-<pin name="BP" x="15.24" y="0" length="short" direction="in" rot="R180"/>
-<wire x1="-7.62" y1="7.62" x2="-7.62" y2="-7.62" width="0.1524" layer="94"/>
-<wire x1="-7.62" y1="-7.62" x2="12.7" y2="-7.62" width="0.1524" layer="94"/>
-<wire x1="12.7" y1="-7.62" x2="12.7" y2="7.62" width="0.1524" layer="94"/>
-<wire x1="12.7" y1="7.62" x2="-7.62" y2="7.62" width="0.1524" layer="94"/>
-<text x="-7.5184" y="8.1026" size="2.0828" layer="95" ratio="6" rot="SR0">&gt;Name</text>
-<text x="-7.6454" y="-10.4394" size="2.0828" layer="96" ratio="6" rot="SR0">&gt;Value</text>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="TPS61253YFFT">
-<gates>
-<gate name="A" symbol="TPS61253_YFF_9" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="YFF9">
-<connects>
-<connect gate="A" pin="BP" pad="C3"/>
-<connect gate="A" pin="EN" pad="B3"/>
-<connect gate="A" pin="GND" pad="C2"/>
-<connect gate="A" pin="GND_2" pad="C1"/>
-<connect gate="A" pin="SW" pad="B2"/>
-<connect gate="A" pin="SW_2" pad="B1"/>
-<connect gate="A" pin="VIN" pad="A3"/>
-<connect gate="A" pin="VOUT" pad="A2"/>
-<connect gate="A" pin="VOUT_2" pad="A1"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="3D_LIBRARY_NAME" value="TI_AllParts_2012-12-25" constant="no"/>
-<attribute name="COPYRIGHT" value="Copyright (C) 2015 Accelerated Designs. All rights reserved" constant="no"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="TPS61253YFFT" constant="no"/>
-<attribute name="VENDOR" value="Texas Instruments" constant="no"/>
-</technology>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
 <library name="SimSdCombo">
 <packages>
 <package name="MOLEX-SD+SIM-104239">
@@ -2639,46 +2564,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <text x="-0.908" y="1.27" size="0.4064" layer="25">&gt;NAME</text>
 <text x="-0.908" y="-1.651" size="0.4064" layer="27">&gt;VALUE</text>
 </package>
-<package name="PAD-JUMPER-3-2OF3_NC_BY_TRACE_YES_SILK_FULL_BOX">
-<wire x1="1.27" y1="-1.016" x2="-1.27" y2="-1.016" width="0.1524" layer="21"/>
-<wire x1="1.27" y1="1.016" x2="1.524" y2="0.762" width="0.1524" layer="21" curve="-90"/>
-<wire x1="-1.524" y1="0.762" x2="-1.27" y2="1.016" width="0.1524" layer="21" curve="-90"/>
-<wire x1="-1.524" y1="-0.762" x2="-1.27" y2="-1.016" width="0.1524" layer="21" curve="90"/>
-<wire x1="1.27" y1="-1.016" x2="1.524" y2="-0.762" width="0.1524" layer="21" curve="90"/>
-<wire x1="1.524" y1="-0.762" x2="1.524" y2="0.762" width="0.1524" layer="21"/>
-<wire x1="-1.524" y1="-0.762" x2="-1.524" y2="0.762" width="0.1524" layer="21"/>
-<wire x1="-1.27" y1="1.016" x2="1.27" y2="1.016" width="0.1524" layer="21"/>
-<smd name="1" x="-0.8128" y="0" dx="0.635" dy="1.27" layer="1" cream="no"/>
-<smd name="2" x="0" y="0" dx="0.635" dy="1.27" layer="1" cream="no"/>
-<smd name="3" x="0.8128" y="0" dx="0.635" dy="1.27" layer="1" cream="no"/>
-<text x="-1.27" y="1.27" size="0.4064" layer="25">&gt;NAME</text>
-<text x="-1.27" y="-1.905" size="0.4064" layer="27">&gt;VALUE</text>
-<wire x1="0" y1="0" x2="0.635" y2="0" width="0.2032" layer="1"/>
-</package>
-<package name="PAD-JUMPER-3-2OF3_NC_BY_TRACE_YES_SILK_LARGE">
-<wire x1="2.159" y1="-1.016" x2="-2.159" y2="-1.016" width="0.1524" layer="21"/>
-<wire x1="2.159" y1="1.016" x2="2.413" y2="0.762" width="0.1524" layer="21" curve="-90"/>
-<wire x1="-2.413" y1="0.762" x2="-2.159" y2="1.016" width="0.1524" layer="21" curve="-90"/>
-<wire x1="-2.413" y1="-0.762" x2="-2.159" y2="-1.016" width="0.1524" layer="21" curve="90"/>
-<wire x1="2.159" y1="-1.016" x2="2.413" y2="-0.762" width="0.1524" layer="21" curve="90"/>
-<wire x1="2.413" y1="-0.762" x2="2.413" y2="0.762" width="0.1524" layer="21"/>
-<wire x1="-2.413" y1="-0.762" x2="-2.413" y2="0.762" width="0.1524" layer="21"/>
-<wire x1="-2.159" y1="1.016" x2="2.159" y2="1.016" width="0.1524" layer="21"/>
-<wire x1="1.778" y1="0" x2="2.286" y2="0" width="0.1524" layer="51"/>
-<wire x1="-1.778" y1="0" x2="-2.286" y2="0" width="0.1524" layer="51"/>
-<wire x1="0" y1="0.762" x2="0" y2="1.016" width="0.1524" layer="51"/>
-<wire x1="0" y1="-1.016" x2="0" y2="-0.762" width="0.1524" layer="51"/>
-<wire x1="1.016" y1="0.127" x2="1.016" y2="-0.127" width="1.27" layer="51" curve="-180" cap="flat"/>
-<wire x1="-1.016" y1="-0.127" x2="-1.016" y2="0.127" width="1.27" layer="51" curve="-180" cap="flat"/>
-<smd name="1" x="-1.524" y="0" dx="1.1684" dy="1.6002" layer="1"/>
-<smd name="2" x="0" y="0" dx="1.1684" dy="1.6002" layer="1"/>
-<smd name="3" x="1.524" y="0" dx="1.1684" dy="1.6002" layer="1"/>
-<text x="-2.413" y="1.27" size="1.27" layer="25" ratio="10">&gt;NAME</text>
-<text x="-0.1001" y="0" size="0.02" layer="27">&gt;VALUE</text>
-<rectangle x1="-0.508" y1="-0.762" x2="0.508" y2="0.762" layer="51"/>
-<wire x1="0" y1="0" x2="1.27" y2="0" width="0.4064" layer="1"/>
-<wire x1="0" y1="0" x2="1.27" y2="0" width="0.4064" layer="51"/>
-</package>
 <package name="PAD-JUMPER-2-NO_NO_SILK">
 <smd name="1" x="-0.45" y="0" dx="0.635" dy="1.27" layer="1" cream="no"/>
 <smd name="2" x="0.45" y="0" dx="0.635" dy="1.27" layer="1" cream="no"/>
@@ -2720,23 +2605,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pin name="2" x="5.08" y="0" visible="off" length="short" direction="pas" swaplevel="1" rot="R180"/>
 <pin name="1" x="-5.08" y="0" visible="off" length="short" direction="pas" swaplevel="1"/>
 </symbol>
-<symbol name="PAD-JUMPER-3-2OF3-NC_BY_TRACE">
-<wire x1="-0.635" y1="-1.397" x2="0.635" y2="-1.397" width="1.27" layer="94" curve="180" cap="flat"/>
-<wire x1="-0.635" y1="1.397" x2="0.635" y2="1.397" width="1.27" layer="94" curve="-180" cap="flat"/>
-<wire x1="1.27" y1="-0.635" x2="-1.27" y2="-0.635" width="0.1524" layer="94"/>
-<wire x1="-1.27" y1="-0.635" x2="-1.27" y2="0" width="0.1524" layer="94"/>
-<wire x1="-1.27" y1="0" x2="-1.27" y2="0.635" width="0.1524" layer="94"/>
-<wire x1="-1.27" y1="0.635" x2="1.27" y2="0.635" width="0.1524" layer="94"/>
-<wire x1="1.27" y1="0.635" x2="1.27" y2="-0.635" width="0.1524" layer="94"/>
-<wire x1="-2.54" y1="0" x2="-1.27" y2="0" width="0.1524" layer="94"/>
-<text x="2.54" y="0.381" size="1.778" layer="95">&gt;NAME</text>
-<text x="2.54" y="-1.905" size="1.778" layer="96">&gt;VALUE</text>
-<rectangle x1="-1.27" y1="-0.635" x2="1.27" y2="0.635" layer="94"/>
-<pin name="3" x="0" y="-5.08" visible="off" length="short" direction="pas" rot="R90"/>
-<pin name="1" x="0" y="5.08" visible="off" length="short" direction="pas" rot="R270"/>
-<pin name="2" x="-5.08" y="0" visible="off" length="short" direction="pas"/>
-<wire x1="0" y1="0" x2="0" y2="-2.54" width="0.254" layer="94"/>
-</symbol>
 </symbols>
 <devicesets>
 <deviceset name="JUMPER-PAD-2-NO" prefix="JP">
@@ -2766,33 +2634,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <connects>
 <connect gate="G$1" pin="1" pad="1"/>
 <connect gate="G$1" pin="2" pad="2"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="JUMPER-PAD-3-2OF3_NC_BY_TRACE" prefix="JP">
-<gates>
-<gate name="G$1" symbol="PAD-JUMPER-3-2OF3-NC_BY_TRACE" x="0" y="0"/>
-</gates>
-<devices>
-<device name="_SMALL" package="PAD-JUMPER-3-2OF3_NC_BY_TRACE_YES_SILK_FULL_BOX">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-<connect gate="G$1" pin="3" pad="3"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-<device name="_LARGE" package="PAD-JUMPER-3-2OF3_NC_BY_TRACE_YES_SILK_LARGE">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-<connect gate="G$1" pin="3" pad="3"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -3314,36 +3155,6 @@ ADDR -&gt; GND  = 0x76</description>
 <wire x1="2.2" y1="1.6" x2="-2.2" y2="1.6" width="0.127" layer="21"/>
 <text x="-2.2" y="1.8" size="1.016" layer="25" font="vector" ratio="16">&gt;NAME</text>
 </package>
-<package name="L0402">
-<description>&lt;b&gt;Description:&lt;/b&gt; Standard 0402 Package for Inductors&lt;br/&gt;</description>
-<smd name="P$1" x="-0.55" y="0" dx="0.5" dy="0.6" layer="1" rot="R180"/>
-<smd name="P$2" x="0.55" y="0" dx="0.5" dy="0.6" layer="1" rot="R180"/>
-<wire x1="-1.1" y1="0.55" x2="-1.1" y2="-0.55" width="0.127" layer="21"/>
-<wire x1="-1.1" y1="-0.55" x2="1.1" y2="-0.55" width="0.127" layer="21"/>
-<wire x1="1.1" y1="-0.55" x2="1.1" y2="0.55" width="0.127" layer="21"/>
-<wire x1="1.1" y1="0.55" x2="-1.1" y2="0.55" width="0.127" layer="21"/>
-<text x="-1.1" y="1.1" size="1.016" layer="25" font="vector" ratio="16">&gt;NAME</text>
-</package>
-<package name="L0603">
-<description>&lt;b&gt;Description:&lt;/b&gt; Standard 0603 Package for Inductors&lt;br/&gt;</description>
-<smd name="P$1" x="-0.75" y="0" dx="0.6" dy="0.9" layer="1" rot="R180"/>
-<smd name="P$2" x="0.75" y="0" dx="0.6" dy="0.9" layer="1" rot="R180"/>
-<wire x1="-1.4" y1="0.7" x2="-1.4" y2="-0.7" width="0.127" layer="21"/>
-<wire x1="-1.4" y1="-0.7" x2="1.4" y2="-0.7" width="0.127" layer="21"/>
-<wire x1="1.4" y1="-0.7" x2="1.4" y2="0.7" width="0.127" layer="21"/>
-<wire x1="1.4" y1="0.7" x2="-1.4" y2="0.7" width="0.127" layer="21"/>
-<text x="-1.4" y="1.1" size="1.016" layer="25" font="vector" ratio="16">&gt;NAME</text>
-</package>
-<package name="L1210">
-<description>&lt;b&gt;Description:&lt;/b&gt; Standard 1210 Package for Inductors&lt;br/&gt;</description>
-<smd name="P$1" x="-1.45" y="0" dx="0.9" dy="2.5" layer="1" rot="R180"/>
-<smd name="P$2" x="1.45" y="0" dx="0.9" dy="2.5" layer="1" rot="R180"/>
-<wire x1="-2.2" y1="1.6" x2="-2.2" y2="-1.575" width="0.127" layer="21"/>
-<wire x1="-2.2" y1="-1.575" x2="2.2" y2="-1.575" width="0.127" layer="21"/>
-<wire x1="2.2" y1="-1.575" x2="2.2" y2="1.6" width="0.127" layer="21"/>
-<wire x1="2.2" y1="1.6" x2="-2.2" y2="1.6" width="0.127" layer="21"/>
-<text x="-2.2" y="1.8" size="1.016" layer="25" font="vector" ratio="16">&gt;NAME</text>
-</package>
 </packages>
 <symbols>
 <symbol name="CAPACITOR_NP">
@@ -3374,18 +3185,6 @@ ADDR -&gt; GND  = 0x76</description>
 <wire x1="-1.016" y1="-2.286" x2="0" y2="-2.54" width="0.1524" layer="94"/>
 <text x="2.54" y="1.524" size="1.016" layer="95" font="vector" align="top-left">&gt;NAME</text>
 <text x="2.54" y="-1.524" size="1.016" layer="96" font="vector">&gt;VALUE</text>
-</symbol>
-<symbol name="INDUCTOR">
-<description>&lt;b&gt;Library:&lt;/b&gt;  MF_Passives&lt;br/&gt;
-&lt;b&gt;Description:&lt;/b&gt; Symbol for Inductors&lt;br/&gt;</description>
-<pin name="P$1" x="-5.08" y="0" visible="off" length="short" direction="pas" swaplevel="1"/>
-<pin name="P$2" x="5.08" y="0" visible="off" length="short" direction="pas" swaplevel="1" rot="R180"/>
-<text x="-5.08" y="5.08" size="1.016" layer="95" font="vector" align="top-left">&gt;NAME</text>
-<text x="-5.08" y="2.54" size="1.016" layer="96" font="vector">&gt;VALUE</text>
-<wire x1="-2.54" y1="0" x2="-1.27" y2="0" width="0.1524" layer="94" curve="-180"/>
-<wire x1="-1.27" y1="0" x2="0" y2="0" width="0.1524" layer="94" curve="-180"/>
-<wire x1="0" y1="0" x2="1.27" y2="0" width="0.1524" layer="94" curve="-180"/>
-<wire x1="1.27" y1="0" x2="2.54" y2="0" width="0.1524" layer="94" curve="-180"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -3582,60 +3381,6 @@ ADDR -&gt; GND  = 0x76</description>
 <attribute name="VALUE" value="" constant="no"/>
 <attribute name="VOLTAGE" value="" constant="no"/>
 <attribute name="WATTAGE" value="" constant="no"/>
-</technology>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="INDUCTOR" prefix="L" uservalue="yes">
-<description>&lt;b&gt;Library:&lt;/b&gt;  MF_Passives&lt;br/&gt;
-&lt;b&gt;Description:&lt;/b&gt; Device for Inductors. Manufacture part number (MPN) can be added via Attributes. Check https://factory.macrofab.com/parts for the house parts list.&lt;br/&gt;</description>
-<gates>
-<gate name="G$1" symbol="INDUCTOR" x="0" y="0"/>
-</gates>
-<devices>
-<device name="_0402" package="L0402">
-<connects>
-<connect gate="G$1" pin="P$1" pad="P$1"/>
-<connect gate="G$1" pin="P$2" pad="P$2"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="HOUSEPART" value="" constant="no"/>
-<attribute name="MPN" value="" constant="no"/>
-<attribute name="POPULATE" value="1" constant="no"/>
-<attribute name="URL" value="" constant="no"/>
-<attribute name="VALUE" value="" constant="no"/>
-</technology>
-</technologies>
-</device>
-<device name="_0603" package="L0603">
-<connects>
-<connect gate="G$1" pin="P$1" pad="P$1"/>
-<connect gate="G$1" pin="P$2" pad="P$2"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="HOUSEPART" value="" constant="no"/>
-<attribute name="MPN" value="" constant="no"/>
-<attribute name="POPULATE" value="1" constant="no"/>
-<attribute name="URL" value="" constant="no"/>
-<attribute name="VALUE" value="" constant="no"/>
-</technology>
-</technologies>
-</device>
-<device name="_1210" package="L1210">
-<connects>
-<connect gate="G$1" pin="P$1" pad="P$1"/>
-<connect gate="G$1" pin="P$2" pad="P$2"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="HOUSEPART" value="" constant="no"/>
-<attribute name="MPN" value="" constant="no"/>
-<attribute name="POPULATE" value="" constant="no"/>
-<attribute name="URL" value="" constant="no"/>
-<attribute name="VALUE" value="" constant="no"/>
 </technology>
 </technologies>
 </device>
@@ -4292,23 +4037,8 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <part name="U$23" library="microbuilder" deviceset="GND" device=""/>
 <part name="U$24" library="microbuilder" deviceset="GND" device=""/>
 <part name="U$26" library="microbuilder" deviceset="GND" device=""/>
-<part name="U8" library="Custom" deviceset="TPS61253YFFT" device="" value="TPS61253YFFR"/>
-<part name="L1" library="MF_Passives" deviceset="INDUCTOR" device="_1210" value="1uH">
-<attribute name="MPN" value="1277AS-H-1R0M=P2"/>
-</part>
-<part name="C22" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0402" value="4.7uF">
-<attribute name="MPN" value="GRM155R60J475ME47D"/>
-</part>
-<part name="U$2" library="MF_Aesthetics" deviceset="GND_RAIL" device=""/>
-<part name="C23" library="MF_Passives" deviceset="CAPACITOR_NP" device="_0603" value="10uF">
-<attribute name="MPN" value="GRM188R60J106ME47D"/>
-</part>
-<part name="U$41" library="MF_Aesthetics" deviceset="GND_RAIL" device=""/>
 <part name="U$42" library="MF_Aesthetics" deviceset="POWER_RAIL" device="" value="5.0V"/>
 <part name="U$46" library="MF_Aesthetics" deviceset="GND_RAIL" device=""/>
-<part name="JP9" library="SparkFun-Passives" deviceset="JUMPER-PAD-3-2OF3_NC_BY_TRACE" device="_SMALL">
-<attribute name="POPULATE" value="0"/>
-</part>
 <part name="5.0V_1" library="MF_Aesthetics" deviceset="POWER_RAIL" device="" value="5.0V"/>
 <part name="U$55" library="MF_Aesthetics" deviceset="GND_RAIL" device=""/>
 <part name="U$20" library="MF_Aesthetics" deviceset="POWER_RAIL" device="" value="VBAT_ON"/>
@@ -4322,8 +4052,6 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <part name="C24" library="MF_Passives" deviceset="CAPACITOR_NP" device="_1206" value="100uF">
 <attribute name="MPN" value="CL31A107MQHNNNE"/>
 </part>
-<part name="R10" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="100K"/>
-<part name="GND" library="MF_Aesthetics" deviceset="GND_RAIL" device=""/>
 <part name="R11" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="100K"/>
 <part name="R12" library="MF_Passives" deviceset="RESISTOR" device="_0402" value="10K"/>
 <part name="U$37" library="MF_Aesthetics" deviceset="GND_RAIL" device=""/>
@@ -5327,27 +5055,11 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <instance part="U$23" gate="G$1" x="71.628" y="33.02"/>
 <instance part="U$24" gate="G$1" x="69.088" y="17.78"/>
 <instance part="U$26" gate="G$1" x="8.636" y="22.86"/>
-<instance part="U8" gate="A" x="101.6" y="108.204"/>
-<instance part="L1" gate="G$1" x="86.106" y="113.284" smashed="yes" rot="R90">
-<attribute name="NAME" x="85.09" y="114.3" size="1.016" layer="95" font="vector" rot="R270" align="top-left"/>
-<attribute name="VALUE" x="87.376" y="112.268" size="1.016" layer="96" font="vector" rot="R90"/>
-</instance>
-<instance part="C22" gate="G$1" x="86.106" y="103.124" smashed="yes">
-<attribute name="NAME" x="81.534" y="104.394" size="1.016" layer="95" font="vector" align="top-left"/>
-<attribute name="VALUE" x="80.264" y="101.6" size="1.016" layer="96" font="vector"/>
-</instance>
-<instance part="U$2" gate="G$1" x="86.106" y="95.504"/>
-<instance part="C23" gate="G$1" x="124.46" y="108.204"/>
-<instance part="U$41" gate="G$1" x="124.46" y="103.124"/>
-<instance part="U$42" gate="G$1" x="124.46" y="113.284"/>
-<instance part="U$46" gate="G$1" x="119.126" y="98.044"/>
-<instance part="JP9" gate="G$1" x="102.616" y="90.17" smashed="yes" rot="R270">
-<attribute name="NAME" x="100.584" y="86.995" size="1.27" layer="95"/>
-<attribute name="POPULATE" x="102.616" y="90.17" size="1.778" layer="96" rot="R270" display="off"/>
-</instance>
+<instance part="U$42" gate="G$1" x="109.22" y="113.284"/>
+<instance part="U$46" gate="G$1" x="103.886" y="103.124"/>
 <instance part="5.0V_1" gate="G$1" x="91.948" y="157.226"/>
 <instance part="U$55" gate="G$1" x="91.948" y="135.636"/>
-<instance part="U$20" gate="G$1" x="81.788" y="121.158"/>
+<instance part="U$20" gate="G$1" x="99.568" y="113.538"/>
 <instance part="U$34" gate="G$1" x="58.674" y="143.51"/>
 <instance part="U$52" gate="G$1" x="148.844" y="152.4"/>
 <instance part="U$56" gate="G$1" x="205.74" y="33.02"/>
@@ -5357,8 +5069,6 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <attribute name="NAME" x="88.646" y="149.098" size="1.016" layer="95" font="vector" rot="R180" align="top-left"/>
 <attribute name="VALUE" x="90.424" y="141.478" size="1.016" layer="96" font="vector" rot="R90"/>
 </instance>
-<instance part="R10" gate="G$1" x="94.488" y="85.09" rot="R180"/>
-<instance part="GND" gate="G$1" x="94.488" y="74.93"/>
 <instance part="R11" gate="G$1" x="94.742" y="147.32" smashed="yes">
 <attribute name="NAME" x="91.694" y="150.876" size="1.016" layer="95" font="vector" align="top-left"/>
 <attribute name="VALUE" x="96.012" y="141.478" size="1.016" layer="96" font="vector" rot="R90"/>
@@ -5587,29 +5297,6 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <junction x="8.636" y="30.48"/>
 </segment>
 <segment>
-<pinref part="C22" gate="G$1" pin="P$2"/>
-<pinref part="U$2" gate="G$1" pin="P$1"/>
-<wire x1="86.106" y1="98.044" x2="86.106" y2="100.584" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="C23" gate="G$1" pin="P$2"/>
-<pinref part="U$41" gate="G$1" pin="P$1"/>
-</segment>
-<segment>
-<pinref part="U$46" gate="G$1" pin="P$1"/>
-<pinref part="U8" gate="A" pin="GND"/>
-<wire x1="116.84" y1="105.664" x2="119.126" y2="105.664" width="0.1524" layer="91"/>
-<wire x1="119.126" y1="105.664" x2="119.126" y2="103.124" width="0.1524" layer="91"/>
-<pinref part="U8" gate="A" pin="BP"/>
-<wire x1="119.126" y1="103.124" x2="119.126" y2="100.584" width="0.1524" layer="91"/>
-<wire x1="116.84" y1="108.204" x2="119.126" y2="108.204" width="0.1524" layer="91"/>
-<wire x1="119.126" y1="108.204" x2="119.126" y2="105.664" width="0.1524" layer="91"/>
-<junction x="119.126" y="105.664"/>
-<pinref part="U8" gate="A" pin="GND_2"/>
-<wire x1="116.84" y1="103.124" x2="119.126" y2="103.124" width="0.1524" layer="91"/>
-<junction x="119.126" y="103.124"/>
-</segment>
-<segment>
 <pinref part="U$55" gate="G$1" pin="P$1"/>
 <pinref part="C24" gate="G$1" pin="P$2"/>
 <wire x1="88.9" y1="144.78" x2="88.9" y2="138.176" width="0.1524" layer="91"/>
@@ -5618,11 +5305,6 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <wire x1="94.742" y1="142.24" x2="94.742" y2="138.176" width="0.1524" layer="91"/>
 <wire x1="94.742" y1="138.176" x2="91.948" y2="138.176" width="0.1524" layer="91"/>
 <junction x="91.948" y="138.176"/>
-</segment>
-<segment>
-<pinref part="R10" gate="G$1" pin="P$1"/>
-<pinref part="GND" gate="G$1" pin="P$1"/>
-<wire x1="94.488" y1="77.47" x2="94.488" y2="80.01" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="C16" gate="G$1" pin="P$1"/>
@@ -6037,23 +5719,6 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 </net>
 <net name="VBAT_ON" class="0">
 <segment>
-<pinref part="JP9" gate="G$1" pin="1"/>
-<wire x1="107.696" y1="90.17" x2="115.824" y2="90.17" width="0.1524" layer="91"/>
-<label x="107.95" y="90.424" size="1.778" layer="95"/>
-</segment>
-<segment>
-<wire x1="81.788" y1="108.204" x2="81.788" y2="118.618" width="0.1524" layer="91"/>
-<label x="81.534" y="109.22" size="1.778" layer="95" rot="R90"/>
-<pinref part="L1" gate="G$1" pin="P$1"/>
-<pinref part="C22" gate="G$1" pin="P$1"/>
-<wire x1="86.106" y1="105.664" x2="86.106" y2="108.204" width="0.1524" layer="91"/>
-<wire x1="81.788" y1="108.204" x2="86.106" y2="108.204" width="0.1524" layer="91"/>
-<pinref part="U8" gate="A" pin="VIN"/>
-<wire x1="86.106" y1="108.204" x2="91.44" y2="108.204" width="0.1524" layer="91"/>
-<junction x="86.106" y="108.204"/>
-<pinref part="U$20" gate="G$1" pin="P$1"/>
-</segment>
-<segment>
 <label x="49.53" y="138.684" size="1.778" layer="95"/>
 <wire x1="58.674" y1="140.97" x2="51.054" y2="140.97" width="0.1524" layer="91"/>
 <pinref part="U4" gate="G$1" pin="SOURCE"/>
@@ -6086,32 +5751,7 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <pinref part="U$56" gate="G$1" pin="P$1"/>
 </segment>
 </net>
-<net name="5VSW" class="0">
-<segment>
-<pinref part="U8" gate="A" pin="SW_2"/>
-<wire x1="91.44" y1="110.744" x2="89.408" y2="110.744" width="0.1524" layer="91"/>
-<wire x1="89.408" y1="110.744" x2="89.408" y2="113.284" width="0.1524" layer="91"/>
-<pinref part="L1" gate="G$1" pin="P$2"/>
-<wire x1="89.408" y1="113.284" x2="89.408" y2="118.364" width="0.1524" layer="91"/>
-<wire x1="89.408" y1="118.364" x2="86.106" y2="118.364" width="0.1524" layer="91"/>
-<pinref part="U8" gate="A" pin="SW"/>
-<wire x1="91.44" y1="113.284" x2="89.408" y2="113.284" width="0.1524" layer="91"/>
-<junction x="89.408" y="113.284"/>
-</segment>
-</net>
 <net name="5.0V" class="0">
-<segment>
-<wire x1="116.84" y1="110.744" x2="119.126" y2="110.744" width="0.1524" layer="91"/>
-<pinref part="U8" gate="A" pin="VOUT_2"/>
-<pinref part="C23" gate="G$1" pin="P$1"/>
-<junction x="124.46" y="110.744"/>
-<pinref part="U$42" gate="G$1" pin="P$1"/>
-<pinref part="U8" gate="A" pin="VOUT"/>
-<wire x1="119.126" y1="110.744" x2="124.46" y2="110.744" width="0.1524" layer="91"/>
-<wire x1="116.84" y1="113.284" x2="119.126" y2="113.284" width="0.1524" layer="91"/>
-<wire x1="119.126" y1="113.284" x2="119.126" y2="110.744" width="0.1524" layer="91"/>
-<junction x="119.126" y="110.744"/>
-</segment>
 <segment>
 <pinref part="5.0V_1" gate="G$1" pin="P$1"/>
 <pinref part="C24" gate="G$1" pin="P$1"/>
@@ -6121,25 +5761,6 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <wire x1="94.742" y1="152.4" x2="94.742" y2="154.686" width="0.1524" layer="91"/>
 <wire x1="94.742" y1="154.686" x2="91.948" y2="154.686" width="0.1524" layer="91"/>
 <junction x="91.948" y="154.686"/>
-</segment>
-</net>
-<net name="5V_EN" class="0">
-<segment>
-<pinref part="U8" gate="A" pin="EN"/>
-<wire x1="91.44" y1="105.664" x2="89.662" y2="105.664" width="0.1524" layer="91"/>
-<pinref part="JP9" gate="G$1" pin="2"/>
-<wire x1="89.662" y1="105.664" x2="89.662" y2="95.25" width="0.1524" layer="91"/>
-<wire x1="89.662" y1="95.25" x2="102.616" y2="95.25" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="SERVO_EN" class="0">
-<segment>
-<pinref part="JP9" gate="G$1" pin="3"/>
-<wire x1="97.536" y1="90.17" x2="94.488" y2="90.17" width="0.1524" layer="91"/>
-<label x="81.28" y="90.932" size="1.778" layer="95"/>
-<pinref part="R10" gate="G$1" pin="P$2"/>
-<wire x1="94.488" y1="90.17" x2="81.026" y2="90.17" width="0.1524" layer="91"/>
-<junction x="94.488" y="90.17"/>
 </segment>
 </net>
 <net name="SWCLK" class="0">
