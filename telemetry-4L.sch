@@ -4193,9 +4193,6 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <part name="JP10" library="SparkFun-Passives" deviceset="JUMPER-PAD-2-NO" device="YES_SILK">
 <attribute name="POPULATE" value="0"/>
 </part>
-<part name="JP11" library="SparkFun-Passives" deviceset="JUMPER-PAD-2-NO" device="YES_SILK">
-<attribute name="POPULATE" value="0"/>
-</part>
 <part name="JP3" library="microbuilder" deviceset="HEADER-1X12" device=""/>
 <part name="VDD_EXT_2V8" library="MF_Aesthetics" deviceset="POWER_RAIL" device="" value="VDD_EXT_2V8"/>
 <part name="VDD_EXT_2V1" library="MF_Aesthetics" deviceset="POWER_RAIL" device="" value="VDD_EXT_2V8"/>
@@ -5049,7 +5046,7 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <pinref part="JP3" gate="G$1" pin="1"/>
 </segment>
 </net>
-<net name="SERVO_EN" class="0">
+<net name="GPS_1PPS" class="0">
 <segment>
 <pinref part="U1" gate="G$1" pin="PA27/I15"/>
 <wire x1="104.14" y1="22.86" x2="119.38" y2="22.86" width="0.1524" layer="91"/>
@@ -5201,10 +5198,6 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <instance part="JP10" gate="G$1" x="139.7" y="116.84" smashed="yes">
 <attribute name="NAME" x="137.16" y="114.3" size="1.27" layer="95"/>
 <attribute name="POPULATE" x="139.7" y="116.84" size="1.778" layer="96" display="off"/>
-</instance>
-<instance part="JP11" gate="G$1" x="137.16" y="73.66" smashed="yes">
-<attribute name="NAME" x="134.62" y="71.12" size="1.27" layer="95"/>
-<attribute name="POPULATE" x="137.16" y="73.66" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="VDD_EXT_2V8" gate="G$1" x="138.684" y="137.16"/>
 <instance part="VDD_EXT_2V1" gate="G$1" x="248.412" y="160.02"/>
@@ -5597,7 +5590,6 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <pinref part="U5" gate="G$1" pin="1PPS"/>
 <wire x1="165.1" y1="73.66" x2="142.24" y2="73.66" width="0.1524" layer="91"/>
 <label x="142.24" y="73.66" size="1.778" layer="95"/>
-<pinref part="JP11" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="PWRKEY" class="0">
@@ -5881,13 +5873,6 @@ Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
 <pinref part="JP10" gate="G$1" pin="1"/>
 <wire x1="134.62" y1="116.84" x2="129.54" y2="116.84" width="0.1524" layer="91"/>
 <label x="129.54" y="116.84" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="SWDIO" class="0">
-<segment>
-<pinref part="JP11" gate="G$1" pin="1"/>
-<wire x1="132.08" y1="73.66" x2="127" y2="73.66" width="0.1524" layer="91"/>
-<label x="127" y="73.66" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="VBAT" class="0">
